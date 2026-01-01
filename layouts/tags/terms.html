@@ -1,0 +1,35 @@
+{{ define "content" }}
+{{- /* ... */ -}}
+{{- $tree := dict -}}
+{{- range partialCached "pages/posts" . "posts" -}}
+  {{ if .Params.tags }}
+    {{- range .Params.tags -}}
+      {{- $count := default 0 (index $tree .) -}}
+      {{- $tree = merge $tree (dict . (add $count 1)) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- /* convert map to slice so it can be sorted by count */ -}}
+{{ $tags := slice }}
+{{ range $name, $count := $tree }}
+  {{ $tags = $tags | append (dict "name" $name "count" $count) }}
+{{ end }}
+{{- /* ... */ -}}
+<article class="markdown book-article">
+  <div class="list-header">
+    <h1><i class="fa-solid fa-tags"></i> {{ i18n "Tags" | default "Tags" }}</h1>
+    {{- $count := printf `<em class="list-count">%d</em>` (len $tree) -}}
+    <p>{{ printf (i18n "List Label" | default "%s posts") $count | safeHTML }}</p>
+  </div>
+  <div class="taxonomy-chips">
+    {{ range sort $tags "count" "desc" "name" "asc" }}
+    <div class="taxonomy-item">
+      <a href="/search/?tags={{ .name }}" class="taxonomy-link">
+        <span class="taxonomy-name">{{ .name }}</span>
+        <span class="taxonomy-count">({{ .count }})</span>
+      </a>
+    </div>
+    {{ end }}
+  </div>
+</article>
+{{ end }}

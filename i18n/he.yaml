@@ -1,0 +1,71 @@
+- id: "Side Menu"
+  translation: "תפריט צדדי"
+
+- id: "ToC"
+  translation: "תוכן העניינים"
+
+- id: "Previous Page"
+  translation: "הקודם"
+
+- id: "Previous Post"
+  translation: "הקודם"
+
+- id: "No Previous Post"
+  translation: "אין פוסט קודם"
+
+- id: "Next Page"
+  translation: "הבא"
+
+- id: "Next Post"
+  translation: "הבא"
+
+- id: "No Next Post"
+  translation: "אין פוסט הבא"
+
+- id: "Recent Posts"
+  translation: "פוסטים אחרונים"
+
+- id: "Toolbar"
+  translation: "סרגל כלים"
+
+- id: "Categories"
+  translation: "קטגוריות"
+
+- id: "Category Parent"
+  translation: "קטגוריה עליונה"
+
+- id: "Category Child"
+  translation: "תת-קטגוריה"
+
+- id: "Categories Root"
+  translation: "הכל"
+
+- id: "Tags"
+  translation: "תגיות"
+
+- id: "Tags List"
+  translation: "רשימת תגיות"
+
+- id: "Search"
+  translation: "חיפוש"
+
+- id: "Search Label"
+  translation: "%s תוצאות עבור \"%q\""
+
+- id: "List Label"
+  translation: "%s פוסטים"
+
+- id: "More Label"
+  translation: "צפה בכל %d התוצאות"
+
+- id: "Search Label"
+  translation: "%s תוצאות עבור \"%q\""
+
+- id: "No Results"
+  translation: "לא נמצאו תוצאות."
+
+- id: "Date Format"
+  translation: "02.01.2006"
+
+- id: "searchConfig"
+  translation: "searchConfig"

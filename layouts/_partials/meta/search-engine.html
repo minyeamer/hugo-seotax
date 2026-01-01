@@ -1,0 +1,12 @@
+{{- with .Site.Params.searchEngine.google.siteVerificationTag }}
+<meta name="google-site-verification" content="{{ . }}" />
+{{- end }}
+{{- with .Site.Params.searchEngine.naver.siteVerificationTag }}
+<meta name="naver-site-verification" content="{{ . }}" />
+{{- end }}
+{{- with .Site.Params.searchEngine.bing.siteVerificationTag }}
+<meta name="msvalidate.01" content="{{ . }}" />
+{{- end }}
+{{- with .Site.Params.searchEngine.yandex.siteVerificationTag }}
+<meta name="yandex-verification" content="{{ . }}" />
+{{- end }}

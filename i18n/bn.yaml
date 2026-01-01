@@ -1,0 +1,71 @@
+- id: "Side Menu"
+  translation: "পার্শ্ব মেনু"
+
+- id: "ToC"
+  translation: "সূচীপত্র"
+
+- id: "Previous Page"
+  translation: "পূর্ববর্তী"
+
+- id: "Previous Post"
+  translation: "পূর্ববর্তী"
+
+- id: "No Previous Post"
+  translation: "কোনো পূর্ববর্তী পোস্ট নেই"
+
+- id: "Next Page"
+  translation: "পরবর্তী"
+
+- id: "Next Post"
+  translation: "পরবর্তী"
+
+- id: "No Next Post"
+  translation: "কোনো পরবর্তী পোস্ট নেই"
+
+- id: "Recent Posts"
+  translation: "সাম্প্রতিক পোস্ট"
+
+- id: "Toolbar"
+  translation: "টুলবার"
+
+- id: "Categories"
+  translation: "বিভাগ"
+
+- id: "Category Parent"
+  translation: "প্যারেন্ট বিভাগ"
+
+- id: "Category Child"
+  translation: "চাইল্ড বিভাগ"
+
+- id: "Categories Root"
+  translation: "সব"
+
+- id: "Tags"
+  translation: "ট্যাগ"
+
+- id: "Tags List"
+  translation: "ট্যাগ তালিকা"
+
+- id: "Search"
+  translation: "অনুসন্ধান"
+
+- id: "Search Label"
+  translation: "\"%q\" এর জন্য %sটি ফলাফল"
+
+- id: "List Label"
+  translation: "%sটি পোস্ট"
+
+- id: "More Label"
+  translation: "সব %dটি ফলাফল দেখুন"
+
+- id: "Search Label"
+  translation: "\"%q\" এর জন্য %sটি ফলাফল"
+
+- id: "No Results"
+  translation: "কোনো ফলাফল পাওয়া যায়নি।"
+
+- id: "Date Format"
+  translation: "02-01-2006"
+
+- id: "searchConfig"
+  translation: "searchConfig"

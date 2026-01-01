@@ -1,0 +1,23 @@
+{{ with first 5 (partialCached "pages/posts" . "posts") }}
+<div class="recent-posts">
+  <div class="recent-post-label">
+    <i class="fa-solid fa-clock"></i>
+    <span>{{ i18n "Recent Posts" | default "Recent posts" }}</span>
+  </div>
+
+  <ul class="recent-post-list">
+    {{ range . }}
+    <li class="recent-post-item">
+      <a href="{{ .RelPermalink }}" title="{{ .Title }}">
+        <div class="recent-post-title">{{ .Title }}</div>
+        <div class="recent-post-date">
+          <time datetime="{{ .Date.Format `2006-01-02` }}">
+            {{ .Date.Format "2006.01.02" }}
+          </time>
+        </div>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

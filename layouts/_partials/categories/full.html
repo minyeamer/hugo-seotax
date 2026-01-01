@@ -1,0 +1,10 @@
+{{ $categories := . }}
+{{ $path := "" }}
+
+{{ if reflect.IsSlice $categories }}
+  {{- $path = delimit $categories "/" -}}
+{{ else if eq (printf "%T" $categories) "string" }}
+  {{- $path = $categories -}}
+{{ end }}
+
+{{ return $path }}

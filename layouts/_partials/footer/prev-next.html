@@ -1,0 +1,80 @@
+{{ $currentLink := .RelPermalink }}
+{{ $currentCategories := partial "categories/full" .Params.categories }}
+{{ $currentCategory1 := partial "categories/level1" .Params.categories }}
+
+{{/* Use cached pages list */}}
+{{ $pages := partialCached "pages/posts" . "posts" }}
+
+{{/* Classify pages into 3 priority groups */}}
+{{ $group1 := slice }}  {{/* Same full category */}}
+{{ $group2 := slice }}  {{/* Same parent category only */}}
+{{ $group3 := slice }}  {{/* All other pages */}}
+
+{{ range $pages }}
+  {{ $categories := partial "categories/full" .Params.categories }}
+  {{ $category1 := partial "categories/level1" .Params.categories }}
+
+  {{ if eq .RelPermalink $currentLink }}
+    {{ $group1 = $group1 | append . }}
+    {{ $group2 = $group2 | append . }}
+    {{ $group3 = $group3 | append . }}
+  {{ else if eq $categories $currentCategories }}
+    {{ $group1 = $group1 | append . }}
+  {{ else if eq $category1 $currentCategory1 }}
+    {{ $group2 = $group2 | append . }}
+  {{ else }}
+    {{ $group3 = $group3 | append . }}
+  {{ end }}
+{{ end }}
+
+{{/* Find prev/next by searching groups in priority order */}}
+{{ $prev := "" }}
+{{ $next := "" }}
+{{ $matches := false }}
+
+{{/* Find current page position in filtered pages to determine adjacent pages */}}
+{{ range $gid, $group := slice $group1 $group2 $group3 }}
+  {{ range $pid, $page := $group }}
+    {{ if and (not $matches) (eq $page.RelPermalink $currentLink) }}
+
+      {{/* Set previous page if not at the end of the collection */}}
+      {{ if and (not $prev) (lt $pid (sub (len $group) 1)) }}
+        {{ $prev = index $group (add $pid 1) }}
+      {{ end }}
+
+      {{/* Set next page if not at the beginning of the collection */}}
+      {{ if and (not $next) (gt $pid 0) }}
+        {{ $next = index $group (sub $pid 1) }}
+      {{ end }}
+
+      {{ if and (not $matches) (or (eq $gid 2) (and $prev $next)) }}
+        {{ $matches := true }}
+      {{ end }}
+
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ with $prev }}
+<a href="{{ .RelPermalink }}" class="prev-link">
+  <span class="prev-next-label"><i class="fa-solid fa-backward"></i> {{ i18n "Previous Post" | default "PREV" }}</span>
+  <span class="prev-next-title">{{ partial "title" . }}</span>
+</a>
+{{ else }}
+<a href="" class="prev-link prev-link-disabled">
+  <span class="prev-next-label"><i class="fa-solid fa-backward"></i> {{ i18n "Previous Post" | default "PREV" }}</span>
+  <span class="prev-next-title">{{ i18n "No Previous Post" | default "No previous post" }}</span>
+</a>
+{{ end }}
+
+{{ with $next }}
+<a href="{{ .RelPermalink }}" class="next-link">
+  <span class="prev-next-label">{{ i18n "Next Post" | default "NEXT" }} <i class="fa-solid fa-forward"></i></span>
+  <span class="prev-next-title">{{ partial "title" . }}</span>
+</a>
+{{ else }}
+<a href="" class="next-link next-link-disabled">
+  <span class="prev-next-label">{{ i18n "Next Post" | default "NEXT" }} <i class="fa-solid fa-forward"></i></span>
+  <span class="prev-next-title">{{ i18n "No Next Post" | default "No next post" }}</span>
+</a>
+{{ end }}

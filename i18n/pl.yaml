@@ -1,0 +1,71 @@
+- id: "Side Menu"
+  translation: "Menu boczne"
+
+- id: "ToC"
+  translation: "Spis treści"
+
+- id: "Previous Page"
+  translation: "POPRZEDNI"
+
+- id: "Previous Post"
+  translation: "POPRZEDNI"
+
+- id: "No Previous Post"
+  translation: "Brak poprzedniego wpisu"
+
+- id: "Next Page"
+  translation: "NASTĘPNY"
+
+- id: "Next Post"
+  translation: "NASTĘPNY"
+
+- id: "No Next Post"
+  translation: "Brak następnego wpisu"
+
+- id: "Recent Posts"
+  translation: "Najnowsze wpisy"
+
+- id: "Toolbar"
+  translation: "Pasek narzędzi"
+
+- id: "Categories"
+  translation: "Kategorie"
+
+- id: "Category Parent"
+  translation: "Kategoria nadrzędna"
+
+- id: "Category Child"
+  translation: "Podkategoria"
+
+- id: "Categories Root"
+  translation: "Wszystkie"
+
+- id: "Tags"
+  translation: "Tagi"
+
+- id: "Tags List"
+  translation: "Lista tagów"
+
+- id: "Search"
+  translation: "Szukaj"
+
+- id: "Search Label"
+  translation: "%s wyników dla \"%q\""
+
+- id: "List Label"
+  translation: "%s wpisów"
+
+- id: "More Label"
+  translation: "Zobacz wszystkie %d wyniki"
+
+- id: "Search Label"
+  translation: "%s wyników dla \"%q\""
+
+- id: "No Results"
+  translation: "Nie znaleziono wyników."
+
+- id: "Date Format"
+  translation: "02.01.2006"
+
+- id: "searchConfig"
+  translation: "searchConfig"

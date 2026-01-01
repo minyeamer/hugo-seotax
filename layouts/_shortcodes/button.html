@@ -1,0 +1,9 @@
+{{- /* --- Parameters --- */ -}}
+{{- $href := .Get "href" -}}
+{{- $class := .Get "class" -}}
+{{- /* --- Render --- */ -}}
+{{- $href := partial "links/portable-link" (dict "Page" .Page "Destination" $href) -}}
+{{- $isRemote := (urls.Parse $href).IsAbs -}}
+<a {{ with $href }}href="{{ $href }}"{{ end }} {{ with $isRemote }}target="_blank" rel="noopener"{{ end }} class="sc-button {{ with $class }} {{ . }}{{ end }}">
+  {{- .InnerDeindent -}}
+</a>

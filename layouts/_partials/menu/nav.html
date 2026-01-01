@@ -1,0 +1,21 @@
+<nav>
+{{ partial "menu/profile" . }}
+
+{{ partial "menu/links" . }}
+
+{{ partial "menu/search-input" . }}
+
+{{ if default false .Site.Params.menu.categories }}
+{{ partial "menu/categories" . }}
+{{ end }}
+
+{{ if default false .Site.Params.menu.recentPosts }}
+{{ partial "menu/recent-posts" . }}
+{{ end }}
+</nav>
+
+<!-- Restore menu position as soon as possible to avoid flickering -->
+{{ $script := resources.Get "js/menu-reset.js" | resources.Minify }}
+{{ with $script.Content }}
+  <script>{{ . | safeJS }}</script>
+{{ end }}

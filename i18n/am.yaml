@@ -1,0 +1,71 @@
+- id: "Side Menu"
+  translation: "የግብ ምናተንት"
+
+- id: "ToC"
+  translation: "የዝርዝራዎች ሰንጠሬዥ"
+
+- id: "Previous Page"
+  translation: "የቀደመው"
+
+- id: "Previous Post"
+  translation: "የቀደመው"
+
+- id: "No Previous Post"
+  translation: "የቀደመ ጽሁፍ የለም"
+
+- id: "Next Page"
+  translation: "የሚቀጥልው"
+
+- id: "Next Post"
+  translation: "የሚቀጥልው"
+
+- id: "No Next Post"
+  translation: "የሚቀጥል ጽሁፍ የለም"
+
+- id: "Recent Posts"
+  translation: "የቅርብ ጊዜ ጽሁፎች"
+
+- id: "Toolbar"
+  translation: "የመሳሪያ መጣጠን"
+
+- id: "Categories"
+  translation: "ምድቦች"
+
+- id: "Category Parent"
+  translation: "የወላጅ ምድብ"
+
+- id: "Category Child"
+  translation: "የልጅ ምድብ"
+
+- id: "Categories Root"
+  translation: "ሁሉም"
+
+- id: "Tags"
+  translation: "መለያዎች"
+
+- id: "Tags List"
+  translation: "የመለያዎች ዝርዝር"
+
+- id: "Search"
+  translation: "ፈልግ"
+
+- id: "Search Label"
+  translation: "%s ውጤቶች ለ\"%q\""
+
+- id: "List Label"
+  translation: "%s ጽሁፎች"
+
+- id: "More Label"
+  translation: "ሁሉንም %d ውጤቶች ያዩ"
+
+- id: "Search Label"
+  translation: "%s ውጤቶች ለ\"%q\""
+
+- id: "No Results"
+  translation: "ምንም ውጤት አልተጋኘም።"
+
+- id: "Date Format"
+  translation: "02/01/2006"
+
+- id: "searchConfig"
+  translation: "{ cache: true }"

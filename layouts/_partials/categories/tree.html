@@ -1,0 +1,20 @@
+{{ $treeL1 := dict }}
+  {{ range partialCached "pages/posts" . "posts" }}
+    {{ if .Params.categories }}
+      {{- $category1 := partial "categories/level1" .Params.categories | string -}}
+      {{ if $category1 }}
+        {{ if not (index $treeL1 $category1) }}
+          {{ $treeL1 = $treeL1 | merge (dict $category1 dict) }}
+        {{ end }}
+        {{- $category2 := partial "categories/level2" .Params.categories | string -}}
+        {{ if $category2 }}
+          {{ $treeL2 := index $treeL1 $category1 }}
+          {{ if not (index $treeL2 $category2) }}
+            {{ $treeL2 = $treeL2 | merge (dict $category2 dict) }}
+            {{ $treeL1 = $treeL1 | merge (dict $category1 $treeL2) }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ return $treeL1 }}

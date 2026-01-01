@@ -1,0 +1,36 @@
+{{- $json := dict -}}
+{{- $pages := partialCached "pages/search" . "search" -}}
+{{- $treeL1 := partialCached "categories/tree" . "categories" -}}
+{{- /* Create categories map with name and post IDs */ -}}
+{{- range $key1 := (partial "keys" $treeL1) -}}
+  {{- $ids1 := slice -}}
+  {{- $pagesL1 := dict -}}
+  {{- range $id1, $page1 := $pages -}}
+    {{- if eq (partial "categories/level1" $page1.Params.categories | default "") $key1 -}}
+      {{- $ids1 = $ids1 | append $id1 -}}
+      {{- $pagesL1 = $pagesL1 | merge (dict (string $id1) $page1) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- /* Add level-1 category to map */ -}}
+  {{- $category1 := dict "A" (dict "name" $key1 "ids" $ids1) -}}
+  {{- /* Create level-2 categories map with name and post IDs */ -}}
+  {{- $treeL2 := index $treeL1 $key1 -}}
+  {{- if $treeL2 -}}
+    {{- $category2 := dict -}}
+    {{- range $key2 := (partial "keys" $treeL2) -}}
+      {{- $ids2 := slice -}}
+      {{- range $id2, $page2 := $pagesL1 -}}
+        {{- if eq (partial "categories/level2" $page2.Params.categories | default "") $key2 -}}
+          {{- $ids2 = $ids2 | append (int $id2) -}}
+        {{- end -}}
+      {{- end -}}
+      {{- $category2 = $category2 | merge (dict (lower $key2) (dict "name" $key2 "ids" $ids2)) -}}
+    {{- end -}}
+    {{- /* Merge level-2 categories map into categories map using a lowercase key */ -}}
+    {{- $category1 = $category1 | merge $category2 -}}
+  {{- end -}}
+  {{- /* Merge the categories map into json using a lowercase key */ -}}
+  {{- $json = $json | merge (dict (lower $key1) $category1) -}}
+{{- end -}}
+{{- /* Return the categories map as JSON */ -}}
+{{- $json | jsonify -}}

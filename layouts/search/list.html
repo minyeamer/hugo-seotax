@@ -1,0 +1,23 @@
+{{ define "content" }}
+<article class="markdown content-wrap">
+  <div class="list-header" id="list-header"></div>
+  <div class="taxonomy-section hidden" id="taxonomy-section"></div>
+
+  <div class="search-data hidden" id="search-data">
+    {{- range $index, $page := partialCached "pages/search" . "search" -}}
+      <div class="search-item" data-id="{{ $index }}">
+        {{ partial "post-item.html" . }}
+      </div>
+    {{- end -}}
+  </div>
+
+  <div class="search-no-results hidden" id="search-no-results">
+    <p>{{ i18n "No Results" | default "No results found." }}</p>
+  </div>
+
+  <div class="post-list hidden" id="search-results"></div>
+
+  <div id="pagination-anchor"></div>
+  <nav class="pagination hidden" id="pagination"></nav>
+</article>
+{{ end }}

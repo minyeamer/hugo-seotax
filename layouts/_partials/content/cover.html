@@ -1,0 +1,5 @@
+{{ if .Params.cover }}
+<div class="content-cover-wrap">
+  <img src="{{ .Params.cover | absURL }}" class="content-cover" alt="Cover Image">
+</div>
+{{ end }}

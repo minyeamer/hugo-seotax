@@ -1,0 +1,28 @@
+{{- /* --- Parameters --- */ -}}
+{{- $ratio := split (.Get "ratio") ":" -}}
+{{- $class := .Get "class" -}}
+{{- /* --- Render HTML --- */ -}}
+{{- if strings.Contains .InnerDeindent "<--->" -}}
+<div class="sc-columns flex flex-wrap {{ with $class }} {{ . }}{{ end }}">
+{{- range $index, $content := split .InnerDeindent "<--->" -}}
+  {{- $grow := default 1 (index $ratio $index) -}}
+  <div class="flex-even markdown-inner" style="flex-grow: {{ $grow }};">
+    {{ $content | safeHTML }}
+  </div>
+{{- end -}}
+</div>
+{{- /* --- Render Markdown --- */ -}}
+{{ else }}
+{{- if $ratio -}}
+<style>
+{{- range $index, $grow := $ratio -}}
+.sc-columns-{{ $.Ordinal }}>ul>li:nth-child({{ $index | add 1 }}){
+  flex-grow: {{ default 1 $grow }};
+}
+{{- end -}}
+</style>
+{{- end -}}
+<div class="sc-columns sc-columns-{{ .Ordinal }} {{ with $class }}{{ . }}{{ end }}">
+{{ .InnerDeindent | safeHTML }}
+</div>
+{{- end -}}

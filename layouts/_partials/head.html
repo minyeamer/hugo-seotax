@@ -1,0 +1,160 @@
+{{ "<!--" | safeHTML }}
+Made with Miny Theme
+https://github.com/minyeamer/hugo-miny
+{{ "-->" | safeHTML }}
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{{- if hugo.IsProduction | and (ne .Params.robotsNoIndex true) }}
+<meta name="robots" content="index, follow">
+{{- else }}
+<meta name="robots" content="noindex, nofollow">
+{{- end }}
+
+<meta name="author" content="{{ partial `meta/author.html` . }}">
+<meta name="keywords" content="{{ partial `meta/keywords.html` . }}">
+<meta name="description" content="{{ partial `meta/description.html` . }}">
+
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark">
+
+{{- /* Favicons */ -}}
+{{- partial "meta/favicons.html" . }}
+
+{{- /* Search Engine Verification Tags */ -}}
+{{- partial "meta/search-engine.html" . }}
+
+{{- /* SEO: OpenGraph tags */ -}}
+{{- partial "meta/seo/opengraph.html" . }}
+
+{{- /* SEO: Twitter Cards */ -}}
+{{- partial "meta/seo/twitter_cards.html" . }}
+
+{{- /* SEO: Schema.org JSON-LD */ -}}
+{{- partial "meta/seo/schema_json.html" . }}
+
+<title>{{- partial "title" . -}} | {{- .Site.Title -}}</title>
+<link rel="icon" href="{{ .Site.Params.favicon | default `favicon.png` | relURL }}" >
+
+{{- $manifest := resources.Get "data/manifest.json" | resources.ExecuteAsTemplate "data/manifest.json" . }}
+<link rel="manifest" href="{{ $manifest.RelPermalink }}">
+<link rel="canonical" href="{{ if .Params.canonicalURL -}} {{ trim .Params.canonicalURL ` ` }} {{- else -}} {{ .Permalink }} {{- end }}">
+
+{{- range .Translations }}
+  <link rel="alternate" hreflang="{{ default .Site.LanguageCode .Language.Lang }}" href="{{ .Permalink }}" title="{{ partial `title` . }}">
+{{- end -}}
+
+<!-- Theme stylesheet, you can customize scss by creating `assets/css/custom.scss` in your website -->
+{{- $styles := resources.Get "main.scss" | resources.ExecuteAsTemplate "main.scss" . | css.Sass | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ partial `links/resource-precache` $styles }}" {{ template `integrity` $styles }}>
+
+<!-- Google Analytics -->
+{{- if and hugo.IsProduction .Site.Params.GoogleAnalytics.tagId }}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.GoogleAnalytics.tagId }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ .Site.Params.GoogleAnalytics.tagId }}');
+</script>
+{{- end -}}
+
+<!-- Service Worker -->
+{{- if .Site.Params.serviceWorker -}}
+  {{- $swJS := resources.Get "sw-register.js" | resources.ExecuteAsTemplate "sw.js" . | resources.Minify | resources.Fingerprint }}
+  <script defer src="{{ $swJS.RelPermalink }}" {{ template `integrity` $swJS }}></script>
+{{- end -}}
+
+<!-- RSS -->
+{{- with .OutputFormats.Get "rss" -}}
+  {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{- end -}}
+
+{{- define `integrity` -}}
+  {{- if (urls.Parse .Permalink).Host -}}
+    integrity="{{ .Data.Integrity }}" crossorigin="anonymous"
+  {{- end -}}
+{{- end -}}
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" />
+
+<!-- Highlight.js -->
+<!-- https://highlightjs.org/ -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/xcode.min.css"> // [data-theme="light"] -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/vs2015.min.css"> // [data-theme="dark"] -->
+<script>
+(function() {
+  const originalWarn = console.warn;
+  console.warn = function(...args) {
+    // Suppress only highlight.js security warnings
+    const stack = new Error().stack || '';
+    if (stack.includes('highlight.min.js') || 
+        stack.includes('highlightjs-line-numbers')) {
+      return;
+    }
+    // Display other warnings
+    originalWarn.apply(console, args);
+  };
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js" crossorigin="anonymous"></script>
+<!-- https://github.com/wcoder/highlightjs-line-numbers.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.9.0/highlightjs-line-numbers.min.js" crossorigin="anonymous"></script>
+
+<!-- Scroll Progress Bar -->
+{{- $scrollProgressJS := resources.Get "js/scroll-progress.js" | resources.ExecuteAsTemplate "js/scroll-progress.js" . | resources.Minify | resources.Fingerprint }}
+<script defer src="{{ partial `links/resource-precache` $scrollProgressJS }}" {{ template `integrity` $scrollProgressJS }}></script>
+
+<!-- Set color scheme - toggle dark/light theme -->
+{{- $setThemeJS := resources.Get "js/set-theme.js" | resources.ExecuteAsTemplate "js/set-theme.js" . | resources.Minify | resources.Fingerprint }}
+<script defer src="{{ partial `links/resource-precache` $setThemeJS }}" {{ template `integrity` $setThemeJS }}></script>
+
+<!-- Code Copy -->
+{{- $copyCodeJS := resources.Get "js/copy-code.js" | resources.ExecuteAsTemplate "js/copy-code.js" . | resources.Minify | resources.Fingerprint }}
+<script defer src="{{ partial `links/resource-precache` $copyCodeJS }}" {{ template `integrity` $copyCodeJS }}></script>
+
+<!-- ToC Highlight -->
+{{- $tocHighlightJS := resources.Get "js/toc-highlight.js" | resources.ExecuteAsTemplate "js/toc-highlight.js" . | resources.Minify | resources.Fingerprint }}
+<script defer src="{{ partial `links/resource-precache` $tocHighlightJS }}" {{ template `integrity` $tocHighlightJS }}></script>
+
+<!-- Search -->
+{{- if default true .Site.Params.search.enabled -}}
+  <script>
+    window.siteSearch = window.siteSearch || {};
+  </script>
+
+  <!-- Search Data: Content -->
+  {{- $dataContent := resources.Get "data/content.json" | resources.ExecuteAsTemplate "data/content.json" . | resources.Minify | resources.Fingerprint }}
+  <script>
+    window.siteSearch.contentUrl = "{{ $dataContent.RelPermalink }}";
+  </script>
+
+  <!-- Search Data: Categories -->
+  {{- $dataCategories := resources.Get "data/categories.json" | resources.ExecuteAsTemplate "data/categories.json" . | resources.Minify | resources.Fingerprint }}
+  <script>
+    window.siteSearch.categoriesUrl = "{{ $dataCategories.RelPermalink }}";
+  </script>
+
+  <!-- Search Data: Tags -->
+  {{- $dataTags := resources.Get "data/tags.json" | resources.ExecuteAsTemplate "data/tags.json" . | resources.Minify | resources.Fingerprint }}
+  <script>
+    window.siteSearch.tagsUrl = "{{ $dataTags.RelPermalink }}";
+  </script>
+
+  <!-- Search Initialization -->
+  {{- $searchInitJS := resources.Get "js/search/init.js" | resources.ExecuteAsTemplate "js/search/init.js" . | resources.Minify | resources.Fingerprint }}
+  <!-- https://cdn.jsdelivr.net/npm/fuse.js@7.1.0 -->
+  <script defer src="{{ `fuse.min.js` | relURL }}"></script>
+  <script defer src="{{ partial `links/resource-precache` $searchInitJS }}" {{ template `integrity` $searchInitJS }}></script>
+
+  <!-- Search Input -->
+  {{- $searchInputJS := resources.Get "js/search/input.js" | resources.ExecuteAsTemplate "js/search/input.js" . | resources.Minify | resources.Fingerprint }}
+  <script defer src="{{ partial `links/resource-precache` $searchInputJS }}" {{ template `integrity` $searchInputJS }}></script>
+
+  <!-- Search List -->
+  {{- $searchListJS := resources.Get "js/search/list.js" | resources.ExecuteAsTemplate "js/search/list.js" . | resources.Minify | resources.Fingerprint }}
+  <script defer src="{{ partial `links/resource-precache` $searchListJS }}" {{ template `integrity` $searchListJS }}></script>
+{{- end -}}

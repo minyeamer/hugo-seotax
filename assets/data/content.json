@@ -1,0 +1,9 @@
+{{- $json := slice -}}
+{{- range $index, $page := partialCached "pages/search" . "search" -}}
+  {{- $title := partial "title" $page -}}
+  {{- $content := $page.Plain -}}
+  {{- $page := dict "id" $index "href" $page.RelPermalink "title" $title "content" $content -}}
+  {{- $json = $json | append $page -}}
+{{- end -}}
+{{- /* Return the contents as JSON */ -}}
+{{- $json | jsonify -}}

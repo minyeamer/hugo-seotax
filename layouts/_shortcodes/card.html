@@ -1,0 +1,25 @@
+{{- /* --- Parameters --- */ -}}
+{{- $href := .Get "href" -}}
+{{- $class := .Get "class" -}}
+{{- /* {{- $image := .Get "image" -}} */ -}}
+{{- /* --- Render --- */ -}}
+{{- with $href -}}
+{{- $destination := partial "links/portable-link" (dict "Page" $.Page "Destination" .) -}}
+<a class="sc-card {{ with $class }} {{ . }}{{ end }}" href="{{ $destination | safeURL }}">
+{{- template "card-content" $ -}}
+</a>
+{{- else -}}
+<div class="sc-card {{ with $class }} {{ . }}{{ end }}">
+{{- template "card-content" $ -}}
+</div>
+{{- end -}}
+{{- /* --- Template --- */ -}}
+{{- define "card-content" -}}
+{{- with .Get "image" -}}
+  {{- $destination := partial "links/portable-image" (dict "Page" $.Page "Destination" .) -}}
+  <img src="{{ $destination | safeURL }}" />
+{{- end }}
+  <div class="markdown-inner">
+  {{ with .Inner }}{{ . }}{{ end }}
+  </div>
+{{- end -}}

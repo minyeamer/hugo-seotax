@@ -1,0 +1,9 @@
+{{- /* --- Parameters --- */ -}}
+{{- $title := .Get "title" -}}
+{{- $value := .Get "value" -}}
+{{- $style := .Get "style" | default "default" -}}
+{{- /* --- Render --- */ -}}
+<span class="sc-badge {{ $style }}">
+  {{- with $title }}<span class="sc-badge-title">{{ . | plainify }}</span>{{ end -}}
+  {{- with $value }}<span class="sc-badge-value">{{ . | plainify }}</span>{{ end -}}
+</span>

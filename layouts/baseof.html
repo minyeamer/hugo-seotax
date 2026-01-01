@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="{{ default .Site.Language.Lang .Site.LanguageCode }}" dir="{{ default `ltr` .Site.Language.LanguageDirection }}">
+<head>
+  {{ partial "head" . }}
+</head>
+<body dir="{{ default `ltr` .Site.Language.LanguageDirection }}" class="site-kind-{{ .Kind }} site-type-{{ .Type }} site-layout-{{ .Layout }}">
+
+  <div class="scroll-progress">
+    <div class="scroll-progress-bar"></div>
+  </div>
+
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    {{ template "menu-container" . }} <!-- Left menu -->
+
+    <div class="main-wrap">
+      {{ template "header" . }} <!-- Header above page content -->
+      {{ template "content" . }} <!-- Page Content -->
+      {{ template "footer" . }} <!-- Footer under page content -->
+
+      <label for="menu-control" class="hidden site-menu-overlay"></label>
+    </div>
+
+    {{ template "toc-container" . }} <!-- Right ToC -->
+    {{ template "toolbar" . }} <!-- Right corner toolbar -->
+  </main>
+</body>
+</html>
+
+{{ define "menu-container" }}
+<aside class="site-menu" aria-label="{{ i18n `Side Menu` | default `Side Menu` }}">
+  <div class="menu-content">
+    {{ template "menu" . }}
+  </div>
+</aside>
+{{ end }}
+
+{{ define "menu" }}
+  {{ partial "menu/nav" . }}
+{{ end }}
+
+{{ define "header" }}
+<header class="site-header">
+  {{ partial "header/mobile" . }}
+
+  {{ if partial "toc-show" . }}
+  <aside class="hidden clearfix">
+    {{ template "toc" . }}
+  </aside>
+  {{ end }}
+</header>
+{{ end }}
+
+{{ define "content" }}
+<article class="content-wrap markdown">
+  {{ template "content-header" . }}
+  {{ partial "content/cover" . }}
+  {{- .Content -}}
+</article>
+{{ end }}
+
+{{ define "content-header" }}
+  <header class="content-header">
+    {{ partial "content/categories" . }}
+    {{ partial "content/title" . }}
+    {{ partial "content/date" . }}
+  </header>
+{{ end }}
+
+{{ define "footer" }}
+<footer class="site-footer">
+  {{ if eq .Section (default "posts" .Site.Params.posts.section) }}
+  {{ template "tags" . }}
+  {{ template "prev-next" . }}
+  {{ template "comments" . }}
+  {{ end }}
+  {{ template "copyright" . }}
+</footer>
+{{ end }}
+
+{{ define "tags" }}
+  <div class="tags-wrap">
+    {{- partial "footer/tags" . -}}
+  </div>
+{{ end }}
+
+{{ define "prev-next" }}
+  <div class="prev-next-wrap">
+    {{- partial "footer/prev-next" . -}}
+  </div>
+{{ end }}
+
+{{ define "comments" }}
+{{ if default true (default .Site.Params.comments.enabled .Params.comments.enabled) }}
+  <div class="comments-wrap">
+    {{- partial "footer/comments" . -}}
+  </div>
+{{ end }}
+{{ end }}
+
+{{ define "copyright" }}
+{{ if .Site.Copyright }}
+  <div class="copyright-wrap flex justify-center">
+    {{ partial "footer/copyright" . }}
+  </div>
+{{ end }}
+{{ end }}
+
+{{ define "toc-container" }}
+{{ if partial "toc-show" . }}
+<aside class="site-toc" aria-label="{{ i18n `ToC` | default `Table of Contents` }}">
+  <div class="toc-content">
+    {{ template "toc" . }}
+  </div>
+  <div class="hidden" id="toc-config"
+    data-start="{{ .Site.Params.tableOfContents.startLevel }}"
+    data-end="{{ .Site.Params.tableOfContents.endLevel }}">
+  </div>
+</aside>
+{{ end }}
+{{ end }}
+
+{{ define "toc" }}
+  {{ .TableOfContents }}
+{{ end }}
+
+{{ define "toolbar" }}
+<div class="site-toolbar" role="toolbar" aria-label="{{ i18n `Toolbar` | default `Toolbar` }}'">
+  {{ partial "toolbar" . }}
+</div>
+{{ end }}

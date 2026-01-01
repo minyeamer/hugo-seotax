@@ -1,0 +1,9 @@
+{{ if .Params.categories }}
+<div class="content-category">
+  {{ $category1 := partial "categories/level1" .Params.categories }}
+  {{ $category2 := partial "categories/level2" .Params.categories }}
+  <a href="/search/?category1={{ $category1 }}&category2={{ $category2 }}" class="content-category-link">
+    {{ partial "categories/full" .Params.categories }}
+  </a>
+</div>
+{{ end }}

@@ -1,0 +1,11 @@
+{{- /* --- Parameters --- */ -}}
+{{- $open := .Get "open" -}}
+{{- $title := .Get "title" -}}
+{{- /* --- Render --- */ -}}
+<details {{ if or $open (in .Params `open`) }}open{{ end }}>
+  {{- $summary := cond .IsNamedParams $title (.Get 0) -}}
+  <summary>{{ $summary | .Page.RenderString }}</summary>
+  <div class="markdown-inner">
+    {{ .InnerDeindent | safeHTML }}
+  </div>
+</details>

@@ -1,0 +1,71 @@
+- id: "Side Menu"
+  translation: "Boční nabídka"
+
+- id: "ToC"
+  translation: "Obsah"
+
+- id: "Previous Page"
+  translation: "PŘEDCHOZÍ"
+
+- id: "Previous Post"
+  translation: "PŘEDCHOZÍ"
+
+- id: "No Previous Post"
+  translation: "Žádný předchozí příspěvek"
+
+- id: "Next Page"
+  translation: "DALŠÍ"
+
+- id: "Next Post"
+  translation: "DALŠÍ"
+
+- id: "No Next Post"
+  translation: "Žádný další příspěvek"
+
+- id: "Recent Posts"
+  translation: "Nejnovější příspěvky"
+
+- id: "Toolbar"
+  translation: "Panel nástrojů"
+
+- id: "Categories"
+  translation: "Kategorie"
+
+- id: "Category Parent"
+  translation: "Nadřazená kategorie"
+
+- id: "Category Child"
+  translation: "Podřízená kategorie"
+
+- id: "Categories Root"
+  translation: "Vše"
+
+- id: "Tags"
+  translation: "Štítky"
+
+- id: "Tags List"
+  translation: "Seznam štítků"
+
+- id: "Search"
+  translation: "Vyhledávat"
+
+- id: "Search Label"
+  translation: "%s výsledků pro \"%q\""
+
+- id: "List Label"
+  translation: "%s příspěvků"
+
+- id: "More Label"
+  translation: "Zobrazit všechny %d výsledky"
+
+- id: "Search Label"
+  translation: "%s výsledků pro \"%q\""
+
+- id: "No Results"
+  translation: "Nebyly nalezeny žádné výsledky."
+
+- id: "Date Format"
+  translation: "02.01.2006"
+
+- id: "searchConfig"
+  translation: "searchConfig"

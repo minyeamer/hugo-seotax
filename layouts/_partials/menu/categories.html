@@ -1,0 +1,74 @@
+<div class="menu-categories">
+  {{ $pages := partialCached "pages/posts" . "posts" }}
+
+  <input type="checkbox" class="hidden toggle" id="categories-control" checked />
+  <label for="categories-control" class="categories-toggle categories-link">
+    <a href="/categories/" class="categories-root">
+      <i class="fa-solid fa-folder"></i>
+      {{ i18n "Categories Root" | default "Categories Root" }}
+      <span class="category-count">({{- $pages | len -}})</span>
+    </a>
+    <i class="fa-solid fa-chevron-down categories-arrow"></i>
+  </label>
+
+  <ul class="categories-list" id="categories-list">
+    {{ $treeL1 := partialCached "categories/tree" . "categories" }}
+    {{ range $category1 := (partial "keys" $treeL1) }}
+
+    {{/* Count parent category */}}
+    {{ $pagesL1 := slice }}
+    {{ $category1Count := 0 }}
+    {{ range $pages }}
+      {{ if .Params.categories }}
+        {{ if eq $category1 (partial "categories/level1" .Params.categories) }}
+          {{ $pagesL1 = $pagesL1 | append . }}
+          {{ $category1Count = add $category1Count 1 }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    <li>
+      {{ $treeL2 := index $treeL1 $category1 }}
+      {{ if $treeL2 }}
+      <input type="checkbox" class="hidden toggle" id="cat-{{ $category1 | urlize }}" />
+      <label for="cat-{{ $category1 | urlize }}" class="categories-toggle categories-link">
+        <a href="/search/?category1={{ $category1 }}">
+          <i class="fa-solid fa-folder"></i>
+          {{- $category1 -}}
+          <span class="category-count">({{- $category1Count -}})</span>
+        </a>
+        <i class="fa-solid fa-chevron-down categories-arrow"></i>
+      </label>
+      <ul>
+        {{ range $category2 := (partial "keys" $treeL2) }}
+
+        {{/* Count child category */}}
+        {{ $category2Count := 0 }}
+        {{ range $pagesL1 }}
+          {{ if .Params.categories }}
+            {{ if eq $category2 (partial "categories/level2" .Params.categories) }}
+              {{ $category2Count = add $category2Count 1 }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+
+        <li class="categories-link">
+          <a href="/search/?category1={{ $category1 }}&category2={{ $category2 }}">
+            <i class="fa-solid fa-file"></i>
+            {{- $category2 -}}
+            <span class="category-count">({{- $category2Count -}})</span>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+      {{ else }}
+      <a href="/search/?category1={{ $category1 }}">
+        <i class="fa-solid fa-file"></i>
+        {{- $category1 -}}
+        <span class="category-count">({{- $category1Count -}})</span>
+      </a>
+      {{ end }}
+    </li>
+    {{ end }}
+  </ul>
+</div>

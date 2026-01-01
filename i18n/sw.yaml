@@ -1,0 +1,71 @@
+- id: "Side Menu"
+  translation: "Menyu ya Pembeni"
+
+- id: "ToC"
+  translation: "Yaliyomo"
+
+- id: "Previous Page"
+  translation: "ILIYOTANGULIA"
+
+- id: "Previous Post"
+  translation: "ILIYOTANGULIA"
+
+- id: "No Previous Post"
+  translation: "Hakuna chapisho lililotangulia"
+
+- id: "Next Page"
+  translation: "IFUATAYO"
+
+- id: "Next Post"
+  translation: "IFUATAYO"
+
+- id: "No Next Post"
+  translation: "Hakuna chapisho lifuatalo"
+
+- id: "Recent Posts"
+  translation: "Machapisho ya hivi karibuni"
+
+- id: "Toolbar"
+  translation: "Upau wa Zana"
+
+- id: "Categories"
+  translation: "Kategoria"
+
+- id: "Category Parent"
+  translation: "Kategoria ya mzazi"
+
+- id: "Category Child"
+  translation: "Kategoria ndogo"
+
+- id: "Categories Root"
+  translation: "Zote"
+
+- id: "Tags"
+  translation: "Lebo"
+
+- id: "Tags List"
+  translation: "Orodha ya lebo"
+
+- id: "Search"
+  translation: "Tafuta"
+
+- id: "Search Label"
+  translation: "Matokeo %s ya \"%q\""
+
+- id: "List Label"
+  translation: "Machapisho %s"
+
+- id: "More Label"
+  translation: "Angalia matokeo yote %d"
+
+- id: "Search Label"
+  translation: "Matokeo %s ya \"%q\""
+
+- id: "No Results"
+  translation: "Hakuna matokeo yaliyopatikana."
+
+- id: "Date Format"
+  translation: "02/01/2006"
+
+- id: "searchConfig"
+  translation: "searchConfig"

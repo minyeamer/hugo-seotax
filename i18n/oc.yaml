@@ -1,0 +1,71 @@
+- id: "Side Menu"
+  translation: "Menú lateral"
+
+- id: "ToC"
+  translation: "Taùla de las matièras"
+
+- id: "Previous Page"
+  translation: "PRECEDENT"
+
+- id: "Previous Post"
+  translation: "PRECEDENT"
+
+- id: "No Previous Post"
+  translation: "Pas cap de publicacion precedenta"
+
+- id: "Next Page"
+  translation: "SEGUENT"
+
+- id: "Next Post"
+  translation: "SEGUENT"
+
+- id: "No Next Post"
+  translation: "Pas cap de publicacion seguenta"
+
+- id: "Recent Posts"
+  translation: "Publicacions recentas"
+
+- id: "Toolbar"
+  translation: "Barra d'aisinas"
+
+- id: "Categories"
+  translation: "Categorias"
+
+- id: "Category Parent"
+  translation: "Categoria parenta"
+
+- id: "Category Child"
+  translation: "Soscategoria"
+
+- id: "Categories Root"
+  translation: "Totas"
+
+- id: "Tags"
+  translation: "Etiquetas"
+
+- id: "Tags List"
+  translation: "Lista d'etiquetas"
+
+- id: "Search"
+  translation: "Recercar"
+
+- id: "Search Label"
+  translation: "%s resultats per \"%q\""
+
+- id: "List Label"
+  translation: "%s publicacions"
+
+- id: "More Label"
+  translation: "Veire totes los %d resultats"
+
+- id: "Search Label"
+  translation: "%s resultats per \"%q\""
+
+- id: "No Results"
+  translation: "Cap de resultat trobat."
+
+- id: "Date Format"
+  translation: "02/01/2006"
+
+- id: "searchConfig"
+  translation: "searchConfig"

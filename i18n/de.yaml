@@ -1,0 +1,71 @@
+- id: "Side Menu"
+  translation: "Seitenmenü"
+
+- id: "ToC"
+  translation: "Inhaltsverzeichnis"
+
+- id: "Previous Page"
+  translation: "ZURÜCK"
+
+- id: "Previous Post"
+  translation: "ZURÜCK"
+
+- id: "No Previous Post"
+  translation: "Kein vorheriger Beitrag"
+
+- id: "Next Page"
+  translation: "WEITER"
+
+- id: "Next Post"
+  translation: "WEITER"
+
+- id: "No Next Post"
+  translation: "Kein nächster Beitrag"
+
+- id: "Recent Posts"
+  translation: "Neueste Beiträge"
+
+- id: "Toolbar"
+  translation: "Symbolleiste"
+
+- id: "Categories"
+  translation: "Kategorien"
+
+- id: "Category Parent"
+  translation: "Übergeordnete Kategorie"
+
+- id: "Category Child"
+  translation: "Untergeordnete Kategorie"
+
+- id: "Categories Root"
+  translation: "Alle"
+
+- id: "Tags"
+  translation: "Schlagwörter"
+
+- id: "Tags List"
+  translation: "Schlagwortliste"
+
+- id: "Search"
+  translation: "Suche"
+
+- id: "Search Label"
+  translation: "%s Ergebnisse für \"%q\""
+
+- id: "List Label"
+  translation: "%s Beiträge"
+
+- id: "More Label"
+  translation: "Alle %d Ergebnisse anzeigen"
+
+- id: "Search Label"
+  translation: "%s Ergebnisse für \"%q\""
+
+- id: "No Results"
+  translation: "Keine Ergebnisse gefunden."
+
+- id: "Date Format"
+  translation: "02.01.2006"
+
+- id: "searchConfig"
+  translation: "searchConfig"

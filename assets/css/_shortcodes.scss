@@ -1,0 +1,334 @@
+.markdown {
+
+  // {{< badge >}}
+  .sc-badge {
+    display: inline-block;
+    font-size: $font-size-14;
+    font-weight: $body-font-weight;
+    vertical-align: middle;
+    border-radius: $border-radius;
+    overflow: hidden;
+    text-wrap: nowrap;
+    color: var(--body-font-color);
+
+    span {
+      display: inline-block;
+      padding: 0 $padding-8;
+    }
+
+    span.sc-badge-title {
+      --background-opacity: 0.1;
+    }
+
+    span.sc-badge-value {
+      --background-opacity: 1;
+      color: var(--body-background);
+    }
+
+    @each $name, $color in $hint-colors {
+      &.#{$name} span {
+        background-color: rgba($color, var(--background-opacity));
+      }
+    }
+  }
+
+  // {{< bookmark >}}
+  .sc-bookmark-card {
+    display: flex;
+    width: 100%;
+    margin: $padding-20 0;
+    border: 1px solid var(--gray-300);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--body-background);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+      box-shadow: 0 4px 12px var(--box-shadow);
+      border-color: var(--color-link);
+      text-decoration: none;
+    }
+
+    .sc-bookmark-image {
+      flex-shrink: 0;
+      width: 200px;
+      height: 150px;
+      overflow: hidden;
+      background: var(--gray-200);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .sc-bookmark-content {
+      flex: 1;
+      padding: $padding-16;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .sc-bookmark-title {
+      margin: 0 0 $padding-8 0;
+      font-size: $font-size-18;
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--body-font-color);
+      overflow: hidden;
+      word-break: break-word;
+    }
+
+    .sc-bookmark-description {
+      margin: 0 0 $padding-8 0;
+      font-size: $font-size-14;
+      line-height: 1.5;
+      color: var(--gray-500);
+    }
+
+    .sc-bookmark-url {
+      font-size: $font-size-12;
+      color: var(--gray-500);
+    }
+  }
+
+  // {{< button >}}
+  a.sc-button[href] {
+    display: inline-block;
+    font-size: $font-size-14;
+    color: var(--color-link);
+    line-height: $padding-16 * 2;
+    padding: 0 $padding-16;
+    border: $padding-1 solid var(--color-link);
+    border-radius: $border-radius;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  // {{< card >}}
+  .sc-card {
+    display: block;
+    overflow: hidden;
+    height: 100%;
+    border-radius: $border-radius;
+    border: $padding-1 solid var(--gray-200);
+    
+    &[href], &[href]:visited {
+      color: var(--body-font-color);
+    }
+    &[href]:hover {
+      text-decoration: none;
+      background: var(--gray-100);
+    }
+
+    > img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .markdown-inner {
+      padding: $padding-16;
+    }
+  }
+
+  // {{< columns >}}
+  .sc-columns {
+    gap: $padding-16;
+
+    >div {
+      margin: $padding-16 0;
+      min-width: $body-min-width * 0.66;
+    }
+
+    >ul {
+      list-style: none;
+      display: flex;
+      padding: 0;
+      flex-wrap: wrap;
+      gap: $padding-16;
+
+      >li {
+        flex: 1 1;
+        min-width: $body-min-width * 0.66;
+      }
+    }
+  }
+
+  // {{< data-table >}}
+  .data-container {
+    overflow-x: auto;
+    margin: 1rem 0;
+    background: transparent;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background: transparent;
+
+    thead {
+      background-color: var(--data-thead-color);
+      font-weight: 700;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    th,
+    td {
+      padding: 8px 12px;
+      text-align: left;
+      border: 1px solid var(--gray-300);
+      white-space: nowrap;
+      max-width: 300px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    tbody tr:nth-child(odd) {
+      background-color: var(--data-tbody-odd);
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: var(--data-tbody-even);
+    }
+
+    tbody tr:hover {
+      background-color: var(--data-tbody-hover);
+    }
+  }
+
+  // {{< hint >}}
+  .sc-hint {
+    padding: $padding-12 $padding-20;
+    line-height: 1.8;
+
+    @each $name, $color in $hint-colors {
+      &.#{$name} {
+        border-color: $color;
+        background-color: rgba($color, 0.1);
+      }
+    }
+  }
+
+  // {{< image >}}
+  .sc-image {
+    input + img {
+      cursor: zoom-in;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    input:checked + img {
+      position: fixed;
+
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      
+      background: var(--body-background);
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+      
+      z-index: 1;
+      cursor: zoom-out;
+      padding: $padding-16;
+    }
+  }
+
+  // {{< steps >}}
+  .sc-steps {
+    position: relative;
+
+    >ol {
+      counter-reset: steps;
+      list-style: none;
+      padding-inline-start: $padding-16 + $padding-4;
+      margin-top: $padding-16 * 2;
+
+      >li::before {
+        content: counter(steps);
+        counter-increment: steps;
+
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        left: $padding-8;
+
+        height: $padding-16 * 1.5;
+        width: $padding-16 * 1.5;
+        padding: $padding-4;
+        border-radius: $padding-8;
+
+        white-space: nowrap;
+        line-height: $padding-16;
+
+        color: var(--body-background);
+        background: var(--gray-500);
+        outline: $padding-4 solid var(--body-background);
+      }
+
+      >li {
+        @extend .markdown-inner;
+        border-inline-start: $padding-1 solid var(--gray-500);
+        padding-inline-start: $padding-16 * 3;
+        
+        padding-bottom: $padding-16 * 2;
+      }
+
+      >li:last-child {
+        border: 0;
+      }
+    }
+  }
+
+  // {{< tabs >}}
+  .sc-tabs {
+    margin-top: $padding-16;
+    margin-bottom: $padding-16;
+
+    border: $padding-1 solid var(--gray-200);
+    border-radius: $border-radius;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    label {
+      display: inline-block;
+      padding: $padding-8 $padding-16;
+      border-bottom: $padding-1 transparent;
+      cursor: pointer;
+    }
+
+    .sc-tabs-content {
+      order: 999; //Move content blocks to the end
+      width: 100%;
+      border-top: $padding-1 solid var(--gray-100);
+      padding: $padding-16;
+      display: none;
+    }
+
+    input[type="radio"]:checked+label {
+      border-bottom: $padding-1 solid var(--color-link);
+    }
+
+    input[type="radio"]:checked+label+.sc-tabs-content {
+      display: block;
+    }
+
+    input[type="radio"]:focus+label {
+      @include outline;
+    }
+  }
+}

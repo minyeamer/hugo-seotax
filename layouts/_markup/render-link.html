@@ -1,0 +1,18 @@
+{{- $destination := .Destination -}}
+{{- $isExternal := false -}}
+
+{{- if .Page.Site.Params.portableLinks -}}
+  {{- $destination = partial "links/portable-link" . -}}
+{{- end -}}
+
+{{- /* Check if the link is external by comparing hostnames */ -}}
+{{- if or (hasPrefix $destination "http://") (hasPrefix $destination "https://") -}}
+  {{- $destURL := urls.Parse $destination -}}
+  {{- $siteURL := urls.Parse .Page.Site.BaseURL -}}
+  {{- if ne $destURL.Host $siteURL.Host -}}
+    {{- $isExternal = true -}}
+  {{- end -}}
+{{- end -}}
+
+<a href="{{ $destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $isExternal }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ .Text | safeHTML }}</a>
+{{- /**/ -}}

@@ -1,0 +1,116 @@
+// Used in layout
+$padding-1: 1px !default;
+$padding-4: 0.25rem !default;
+$padding-8: 0.5rem !default;
+$padding-12: 0.75rem !default;
+$padding-16: 1rem !default;
+$padding-20: 1.25rem !default;
+$padding-24: 1.5rem !default;
+$padding-32: 2rem !default;
+$padding-40: 2.5rem !default;
+$padding-48: 3rem !default;
+$padding-64: 4rem !default;
+
+$font-size-base: 16px !default;
+$font-size-12: 0.75rem !default;
+$font-size-14: 0.875rem !default;
+$font-size-16: 1rem !default;
+$font-size-18: 1.125rem !default;
+$font-size-20: 1.25rem !default;
+$font-size-24: 1.5rem !default;
+$font-size-32: 2rem !default;
+$font-size-40: 2.5rem !default;
+
+$border-radius: $padding-4 !default;
+
+$body-font-weight: normal !default;
+
+$body-min-width: 20rem !default;
+$body-max-width: 48rem !default;
+$body-wide-width: 56rem !default;
+$container-max-width: 80rem !default;
+
+$menu-width: 16rem !default;
+$toc-width: 16rem !default;
+
+$wide-breakpoint: $menu-width + $body-wide-width * 1.1 + $toc-width !default;
+$toc-breakpoint: $menu-width + $body-max-width * 1.1 + $toc-width !default;
+$menu-breakpoint: $menu-width + $body-max-width * 1.3 !default;
+$narrow-breakpoint: ($body-min-width + $body-max-width) / 2;
+
+$preview-width: 200px;
+$preview-height: 170px;
+$preview-mobile-width: 160px;
+$preview-mobile-height: 160px;
+
+$hint-colors: (
+  default: #64748b,
+  info: #4486dd,
+  success: #3bad3b,
+  warning: #f59e42,
+  danger: #d84747,
+
+  note: #4486dd,
+  tip: #3bad3b,
+  important: #8144dd,
+  caution: #d84747
+) !default;
+
+// Themes
+@mixin theme-light {
+  --gray-100: #f8f9fa;
+  --gray-200: #e9ecef;
+  --gray-300: #c7cfd3;
+  --gray-500: #6f767e;
+  --gray-800: #495057;
+
+  --color-link: #0055bb;
+  --color-visited-link: #5500bb;
+  --color-page-link: #adb5bd;
+  --color-social-link: #fff;
+  --link-background: rgba(0, 85, 187, 0.1);
+
+  --body-background: white;
+  --body-font-color: black;
+
+  --toc-font-color: black;
+  --toc-active-color: black;
+
+  --icon-filter: none;
+  --box-shadow: rgba(0, 0, 0, 0.1);
+  --lineno-font-color: rgba(0, 0, 0, 0.5);
+
+  --data-thead-color: #d1d5db;
+  --data-tbody-odd: rgba(255, 255, 255, 0.3);
+  --data-tbody-even: rgba(248, 249, 250, 0.5);
+  --data-tbody-hover: rgba(233, 236, 239, 0.8);
+}
+
+@mixin theme-dark {
+  --gray-100: #23272a;
+  --gray-200: #2d3339;
+  --gray-300: #3d444a;
+  --gray-500: #6c757d;
+  --gray-800: #adb5bd;
+
+  --color-link: #8ecfff;
+  --color-visited-link: #a7aaff;
+  --color-page-link: black;
+  --color-social-link: #222;
+  --link-background: rgba(0, 85, 187, 0.1);
+
+  --body-background: #181a1b;
+  --body-font-color: #f5f6fa;
+
+  --toc-font-color: #acacac;
+  --toc-active-color: white;
+
+  --icon-filter: brightness(0) invert(1);
+  --box-shadow: rgba(255, 255, 255, 0.1);
+  --lineno-font-color: rgba(255, 255, 255, 0.5);
+
+  --data-thead-color: #2d3748;
+  --data-tbody-odd: rgba(0, 0, 0, 0.2);
+  --data-tbody-even: rgba(52, 58, 64, 0.3);
+  --data-tbody-hover: rgba(73, 80, 87, 0.5);
+}

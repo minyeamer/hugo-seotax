@@ -1,0 +1,71 @@
+- id: "Side Menu"
+  translation: "Zijmenu"
+
+- id: "ToC"
+  translation: "Inhoudsopgave"
+
+- id: "Previous Page"
+  translation: "VORIGE"
+
+- id: "Previous Post"
+  translation: "VORIGE"
+
+- id: "No Previous Post"
+  translation: "Geen vorig bericht"
+
+- id: "Next Page"
+  translation: "VOLGENDE"
+
+- id: "Next Post"
+  translation: "VOLGENDE"
+
+- id: "No Next Post"
+  translation: "Geen volgend bericht"
+
+- id: "Recent Posts"
+  translation: "Recente berichten"
+
+- id: "Toolbar"
+  translation: "Werkbalk"
+
+- id: "Categories"
+  translation: "Categorieën"
+
+- id: "Category Parent"
+  translation: "Bovenliggende categorie"
+
+- id: "Category Child"
+  translation: "Subcategorie"
+
+- id: "Categories Root"
+  translation: "Alle"
+
+- id: "Tags"
+  translation: "Tags"
+
+- id: "Tags List"
+  translation: "Taglijst"
+
+- id: "Search"
+  translation: "Zoeken"
+
+- id: "Search Label"
+  translation: "%s resultaten voor \"%q\""
+
+- id: "List Label"
+  translation: "%s berichten"
+
+- id: "More Label"
+  translation: "Bekijk alle %d resultaten"
+
+- id: "Search Label"
+  translation: "%s resultaten voor \"%q\""
+
+- id: "No Results"
+  translation: "Geen resultaten gevonden."
+
+- id: "Date Format"
+  translation: "02-01-2006"
+
+- id: "searchConfig"
+  translation: "searchConfig"

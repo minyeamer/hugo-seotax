@@ -1,0 +1,17 @@
+<div class="menu-links">
+  <a href="{{ .Site.Params.social.github }}" target="_blank" id="github-link" title="GitHub" {{ if not .Site.Params.social.github }}class="disabled"{{ end }}>
+    <i class="fa-brands fa-github"></i>
+  </a>
+
+  <a href="{{ `/categories/` | relURL }}" id="categories-link" title="Categories">
+    <i class="fa-solid fa-folder"></i>
+  </a>
+
+  <a href="{{ `/tags/` | relURL }}" id="tags-link" title="Tags">
+    <i class="fa-solid fa-tags"></i>
+  </a>
+
+  <button class="dark-mode-toggle" id="theme-toggle-button" aria-label="Toggle color scheme">
+    <i class="fa-solid fa-circle-half-stroke"></i>
+  </button>
+</div>

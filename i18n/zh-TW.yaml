@@ -1,0 +1,71 @@
+- id: "Side Menu"
+  translation: "側邊選單"
+
+- id: "ToC"
+  translation: "目錄"
+
+- id: "Previous Page"
+  translation: "上一頁"
+
+- id: "Previous Post"
+  translation: "上一篇"
+
+- id: "No Previous Post"
+  translation: "沒有上一篇文章"
+
+- id: "Next Page"
+  translation: "下一頁"
+
+- id: "Next Post"
+  translation: "下一篇"
+
+- id: "No Next Post"
+  translation: "沒有下一篇文章"
+
+- id: "Recent Posts"
+  translation: "最新文章"
+
+- id: "Toolbar"
+  translation: "工具列"
+
+- id: "Categories"
+  translation: "分類"
+
+- id: "Category Parent"
+  translation: "父分類"
+
+- id: "Category Child"
+  translation: "子分類"
+
+- id: "Categories Root"
+  translation: "全部"
+
+- id: "Tags"
+  translation: "標籤"
+
+- id: "Tags List"
+  translation: "標籤列表"
+
+- id: "Search"
+  translation: "搜索"
+
+- id: "Search Label"
+  translation: "\"%q\"的%s個搜尋結果"
+
+- id: "List Label"
+  translation: "%s篇文章"
+
+- id: "More Label"
+  translation: "查看全部%d個結果"
+
+- id: "Search Label"
+  translation: "\"%q\"的%s個搜尋結果"
+
+- id: "No Results"
+  translation: "未找到結果。"
+
+- id: "Date Format"
+  translation: "2006年01月02日"
+
+- id: "searchConfig"
+  translation: "searchConfig"

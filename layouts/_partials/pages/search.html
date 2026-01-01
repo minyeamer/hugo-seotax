@@ -1,0 +1,3 @@
+{{- $pages := partialCached "pages/posts" . "posts" -}}
+{{- $pages = where $pages "Params.searchExclude" "!=" true -}}
+{{- return $pages -}}

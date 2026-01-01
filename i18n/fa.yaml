@@ -1,0 +1,71 @@
+- id: "Side Menu"
+  translation: "منوی کناری"
+
+- id: "ToC"
+  translation: "فهرست مطالب"
+
+- id: "Previous Page"
+  translation: "قبلی"
+
+- id: "Previous Post"
+  translation: "قبلی"
+
+- id: "No Previous Post"
+  translation: "نوشته قبلی وجود ندارد"
+
+- id: "Next Page"
+  translation: "بعدی"
+
+- id: "Next Post"
+  translation: "بعدی"
+
+- id: "No Next Post"
+  translation: "نوشته بعدی وجود ندارد"
+
+- id: "Recent Posts"
+  translation: "نوشته‌های اخیر"
+
+- id: "Toolbar"
+  translation: "نوار ابزار"
+
+- id: "Categories"
+  translation: "دسته بندی ها"
+
+- id: "Category Parent"
+  translation: "دسته‌بندی والد"
+
+- id: "Category Child"
+  translation: "دسته‌بندی فرزند"
+
+- id: "Categories Root"
+  translation: "همه"
+
+- id: "Tags"
+  translation: "برچسب‌ها"
+
+- id: "Tags List"
+  translation: "فهرست برچسب‌ها"
+
+- id: "Search"
+  translation: "جستجو"
+
+- id: "Search Label"
+  translation: "%s نتیجه برای \"%q\""
+
+- id: "List Label"
+  translation: "%s نوشته"
+
+- id: "More Label"
+  translation: "مشاهده همه %d نتیجه"
+
+- id: "Search Label"
+  translation: "%s نتیجه برای \"%q\""
+
+- id: "No Results"
+  translation: "نتیجه‌ای یافت نشد."
+
+- id: "Date Format"
+  translation: "1385/01/01"
+
+- id: "searchConfig"
+  translation: "searchConfig"

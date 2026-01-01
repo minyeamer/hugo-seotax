@@ -1,0 +1,71 @@
+- id: "Side Menu"
+  translation: "Yan Menü"
+
+- id: "ToC"
+  translation: "İçindekiler"
+
+- id: "Previous Page"
+  translation: "ÖNCEKİ"
+
+- id: "Previous Post"
+  translation: "ÖNCEKİ"
+
+- id: "No Previous Post"
+  translation: "Önceki yazı yok"
+
+- id: "Next Page"
+  translation: "SONRAKİ"
+
+- id: "Next Post"
+  translation: "SONRAKİ"
+
+- id: "No Next Post"
+  translation: "Sonraki yazı yok"
+
+- id: "Recent Posts"
+  translation: "Son yazılar"
+
+- id: "Toolbar"
+  translation: "Araç Çubuğu"
+
+- id: "Categories"
+  translation: "Kategoriler"
+
+- id: "Category Parent"
+  translation: "Üst kategori"
+
+- id: "Category Child"
+  translation: "Alt kategori"
+
+- id: "Categories Root"
+  translation: "Tümü"
+
+- id: "Tags"
+  translation: "Etiketler"
+
+- id: "Tags List"
+  translation: "Etiket listesi"
+
+- id: "Search"
+  translation: "Arama"
+
+- id: "Search Label"
+  translation: "\"%q\" için %s sonuç"
+
+- id: "List Label"
+  translation: "%s yazı"
+
+- id: "More Label"
+  translation: "Tüm %d sonuçları gör"
+
+- id: "Search Label"
+  translation: "\"%q\" için %s sonuç"
+
+- id: "No Results"
+  translation: "Sonuç bulunamadı."
+
+- id: "Date Format"
+  translation: "02.01.2006"
+
+- id: "searchConfig"
+  translation: "searchConfig"

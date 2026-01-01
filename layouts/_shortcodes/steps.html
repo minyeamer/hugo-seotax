@@ -1,0 +1,6 @@
+{{- /* --- Parameters --- */ -}}
+{{- $class := .Get "class" -}}
+{{- /* --- Render --- */ -}}
+<div class="sc-steps {{ with $class }}{{ . }}{{ end }}">
+  {{ .Inner }}
+</div>

@@ -1,0 +1,18 @@
+<div class="menu-profile">
+  {{- with site.Params.menu.profileImage -}}
+  <div class="profile-image-wrap">
+    <a href="{{ $.Site.BaseURL }}">
+      <img src="{{ . | relURL }}" alt="Profile" class="profile-image" />
+    </a>
+  </div>
+  {{- end -}}
+
+  <h2 class="profile-title">
+    <a class="flex align-center" href="{{ .Site.BaseURL }}">
+      {{- with .Site.Params.menu.logoImage -}}
+        <img src="{{ . | relURL }}" alt="Logo" />
+      {{- end -}}
+      <span>{{ .Site.Title }}</span>
+    </a>
+  </h2>
+</div>

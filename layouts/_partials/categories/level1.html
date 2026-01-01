@@ -1,0 +1,10 @@
+{{ $categories := . }}
+{{ $value := "" }}
+
+{{ if reflect.IsSlice $categories }}
+  {{- $value = cond (gt (len $categories) 0) (index $categories 0 | string) "" -}}
+{{ else if eq (printf "%T" $categories) "string" }}
+  {{- $value = $categories -}}
+{{ end }}
+
+{{ return $value }}

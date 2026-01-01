@@ -1,0 +1,71 @@
+- id: "Side Menu"
+  translation: "Sidomeny"
+
+- id: "ToC"
+  translation: "Innehållsförteckning"
+
+- id: "Previous Page"
+  translation: "FÖREGÅENDE"
+
+- id: "Previous Post"
+  translation: "FÖREGÅENDE"
+
+- id: "No Previous Post"
+  translation: "Inget föregående inlägg"
+
+- id: "Next Page"
+  translation: "NÄSTA"
+
+- id: "Next Post"
+  translation: "NÄSTA"
+
+- id: "No Next Post"
+  translation: "Inget nästa inlägg"
+
+- id: "Recent Posts"
+  translation: "Senaste inlägg"
+
+- id: "Toolbar"
+  translation: "Verktygsfält"
+
+- id: "Categories"
+  translation: "Kategorier"
+
+- id: "Category Parent"
+  translation: "Överordnad kategori"
+
+- id: "Category Child"
+  translation: "Underkategori"
+
+- id: "Categories Root"
+  translation: "Alla"
+
+- id: "Tags"
+  translation: "Taggar"
+
+- id: "Tags List"
+  translation: "Tagglista"
+
+- id: "Search"
+  translation: "Sök"
+
+- id: "Search Label"
+  translation: "%s resultat för \"%q\""
+
+- id: "List Label"
+  translation: "%s inlägg"
+
+- id: "More Label"
+  translation: "Se alla %d resultat"
+
+- id: "Search Label"
+  translation: "%s resultat för \"%q\""
+
+- id: "No Results"
+  translation: "Inga resultat hittades."
+
+- id: "Date Format"
+  translation: "2006-01-02"
+
+- id: "searchConfig"
+  translation: "searchConfig"

@@ -1,0 +1,71 @@
+- id: "Side Menu"
+  translation: "Бічне меню"
+
+- id: "ToC"
+  translation: "Зміст"
+
+- id: "Previous Page"
+  translation: "НАЗАД"
+
+- id: "Previous Post"
+  translation: "НАЗАД"
+
+- id: "No Previous Post"
+  translation: "Немає попередньої публікації"
+
+- id: "Next Page"
+  translation: "ВПЕРЕД"
+
+- id: "Next Post"
+  translation: "ВПЕРЕД"
+
+- id: "No Next Post"
+  translation: "Немає наступної публікації"
+
+- id: "Recent Posts"
+  translation: "Останні публікації"
+
+- id: "Toolbar"
+  translation: "Панель інструментів"
+
+- id: "Categories"
+  translation: "Категорії"
+
+- id: "Category Parent"
+  translation: "Батьківська категорія"
+
+- id: "Category Child"
+  translation: "Підкатегорія"
+
+- id: "Categories Root"
+  translation: "Всі"
+
+- id: "Tags"
+  translation: "Теги"
+
+- id: "Tags List"
+  translation: "Список тегів"
+
+- id: "Search"
+  translation: "Пошук"
+
+- id: "Search Label"
+  translation: "%s результатів для \"%q\""
+
+- id: "List Label"
+  translation: "%s публікацій"
+
+- id: "More Label"
+  translation: "Показати всі %d результатів"
+
+- id: "Search Label"
+  translation: "%s результатів для \"%q\""
+
+- id: "No Results"
+  translation: "Результатів не знайдено."
+
+- id: "Date Format"
+  translation: "02.01.2006"
+
+- id: "searchConfig"
+  translation: "searchConfig"

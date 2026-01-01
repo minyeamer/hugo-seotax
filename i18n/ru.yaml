@@ -1,0 +1,71 @@
+- id: "Side Menu"
+  translation: "Боковое меню"
+
+- id: "ToC"
+  translation: "Оглавление"
+
+- id: "Previous Page"
+  translation: "НАЗАД"
+
+- id: "Previous Post"
+  translation: "НАЗАД"
+
+- id: "No Previous Post"
+  translation: "Нет предыдущей публикации"
+
+- id: "Next Page"
+  translation: "ВПЕРЁД"
+
+- id: "Next Post"
+  translation: "ВПЕРЁД"
+
+- id: "No Next Post"
+  translation: "Нет следующей публикации"
+
+- id: "Recent Posts"
+  translation: "Последние публикации"
+
+- id: "Toolbar"
+  translation: "Панель инструментов"
+
+- id: "Categories"
+  translation: "Категории"
+
+- id: "Category Parent"
+  translation: "Родительская категория"
+
+- id: "Category Child"
+  translation: "Подкатегория"
+
+- id: "Categories Root"
+  translation: "Все"
+
+- id: "Tags"
+  translation: "Теги"
+
+- id: "Tags List"
+  translation: "Список тегов"
+
+- id: "Search"
+  translation: "Поиск"
+
+- id: "Search Label"
+  translation: "%s результатов для \"%q\""
+
+- id: "List Label"
+  translation: "%s публикаций"
+
+- id: "More Label"
+  translation: "Показать все %d результатов"
+
+- id: "Search Label"
+  translation: "%s результатов для \"%q\""
+
+- id: "No Results"
+  translation: "Результатов не найдено."
+
+- id: "Date Format"
+  translation: "02.01.2006"
+
+- id: "searchConfig"
+  translation: "searchConfig"

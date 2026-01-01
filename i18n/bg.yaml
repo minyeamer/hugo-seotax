@@ -1,0 +1,71 @@
+- id: "Side Menu"
+  translation: "Странично меню"
+
+- id: "ToC"
+  translation: "Съдържание"
+
+- id: "Previous Page"
+  translation: "ПРЕДИШНА"
+
+- id: "Previous Post"
+  translation: "ПРЕДИШНА"
+
+- id: "No Previous Post"
+  translation: "Няма предишна публикация"
+
+- id: "Next Page"
+  translation: "СЛЕДВАЩА"
+
+- id: "Next Post"
+  translation: "СЛЕДВАЩА"
+
+- id: "No Next Post"
+  translation: "Няма следваща публикация"
+
+- id: "Recent Posts"
+  translation: "Последни публикации"
+
+- id: "Toolbar"
+  translation: "Лента с инструменти"
+
+- id: "Categories"
+  translation: "Категории"
+
+- id: "Category Parent"
+  translation: "Родителска категория"
+
+- id: "Category Child"
+  translation: "Дъщерна категория"
+
+- id: "Categories Root"
+  translation: "Всички"
+
+- id: "Tags"
+  translation: "Етикети"
+
+- id: "Tags List"
+  translation: "Списък на етикети"
+
+- id: "Search"
+  translation: "Търсене"
+
+- id: "Search Label"
+  translation: "%s резултата за \"%q\""
+
+- id: "List Label"
+  translation: "%s публикации"
+
+- id: "More Label"
+  translation: "Виж всички %d резултата"
+
+- id: "Search Label"
+  translation: "%s резултата за \"%q\""
+
+- id: "No Results"
+  translation: "Не са намерени резултати."
+
+- id: "Date Format"
+  translation: "02.01.2006"
+
+- id: "searchConfig"
+  translation: "{ cache: true }"

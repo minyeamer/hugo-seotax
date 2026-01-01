@@ -1,0 +1,71 @@
+- id: "Side Menu"
+  translation: "Menú lateral"
+
+- id: "ToC"
+  translation: "Tabla de contenidos"
+
+- id: "Previous Page"
+  translation: "ANTERIOR"
+
+- id: "Previous Post"
+  translation: "ANTERIOR"
+
+- id: "No Previous Post"
+  translation: "No hay publicación anterior"
+
+- id: "Next Page"
+  translation: "SIGUIENTE"
+
+- id: "Next Post"
+  translation: "SIGUIENTE"
+
+- id: "No Next Post"
+  translation: "No hay publicación siguiente"
+
+- id: "Recent Posts"
+  translation: "Publicaciones recientes"
+
+- id: "Toolbar"
+  translation: "Barra de herramientas"
+
+- id: "Categories"
+  translation: "Categorías"
+
+- id: "Category Parent"
+  translation: "Categoría padre"
+
+- id: "Category Child"
+  translation: "Categoría hija"
+
+- id: "Categories Root"
+  translation: "Todas"
+
+- id: "Tags"
+  translation: "Etiquetas"
+
+- id: "Tags List"
+  translation: "Lista de etiquetas"
+
+- id: "Search"
+  translation: "Buscar"
+
+- id: "Search Label"
+  translation: "%s resultados para \"%q\""
+
+- id: "List Label"
+  translation: "%s publicaciones"
+
+- id: "More Label"
+  translation: "Ver todos los %d resultados"
+
+- id: "Search Label"
+  translation: "%s resultados para \"%q\""
+
+- id: "No Results"
+  translation: "No se encontraron resultados."
+
+- id: "Date Format"
+  translation: "02/01/2006"
+
+- id: "searchConfig"
+  translation: "searchConfig"

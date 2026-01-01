@@ -1,0 +1,9 @@
+{{- $keywords := slice }}
+{{- if .Params.keywords }}
+  {{- $keywords = .Params.keywords -}}
+{{- else if .Params.tags }}
+  {{- $keywords = .Params.tags -}}
+{{- else if .Site.Params.keywords }}
+  {{- $keywords = .Site.Params.keywords -}}
+{{- end }}
+{{- return delimit $keywords ", " }}

@@ -1,0 +1,14 @@
+{{- /* Return sorted keys from a map or slice */ -}}
+{{- $input := . -}}
+{{- $keys := slice -}}
+{{- $type := printf "%T" $input -}}
+{{- if in $type "map" -}}
+  {{- range $k, $_ := $input -}}
+    {{- $keys = $keys | append (printf "%v" $k) -}}
+  {{- end -}}
+{{- else if in $type "[]" -}}
+  {{- range $v := $input -}}
+    {{- $keys = $keys | append (printf "%v" $v) -}}
+  {{- end -}}
+{{- end -}}
+{{- return (sort $keys) -}}

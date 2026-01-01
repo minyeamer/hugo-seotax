@@ -1,0 +1,59 @@
+{{/* Pagination partial */}}
+{{/* Usage: {{ partial "pagination.html" .Paginate }} */}}
+
+{{ $paginate := . }}
+{{ if gt $paginate.TotalPages 1 }}
+<div id="pagination-anchor"></div>
+<nav class="pagination">
+  {{ $currentPage := $paginate.PageNumber }}
+  {{ $totalPages := $paginate.TotalPages }}
+
+  {{/* Calculate 10-unit page range */}}
+  {{ $groupNumber := div (sub $currentPage 1) 10 }}
+  {{ $groupStart := add (mul $groupNumber 10) 1 }}
+  {{ $groupEnd := add $groupStart 9 }}
+  {{ if gt $groupEnd $totalPages }}
+    {{ $groupEnd = $totalPages }}
+  {{ end }}
+
+  {{/* Calculate previous and next group pages */}}
+  {{ $prevGroupPage := sub $groupStart 10 }}
+  {{ $nextGroupPage := add $groupEnd 1 }}
+
+  {{/* Previous group button */}}
+  {{ if gt $groupStart 1 }}
+  <a href="{{ $paginate.First.URL }}{{ if gt $prevGroupPage 1 }}page/{{ $prevGroupPage }}/{{ end }}#pagination-anchor" class="pagination-nav pagination-link">
+    <i class="fa-solid fa-backward"></i> {{ i18n "Previous Page" | default "PREV" }}
+  </a>
+  {{ else }}
+  <span class="pagination-nav disabled">
+    <i class="fa-solid fa-backward"></i> {{ i18n "Previous Page" | default "PREV" }}
+  </span>
+  {{ end }}
+
+  {{/* Page numbers */}}
+  <div class="pagination-pages">
+    {{ range $i := seq $groupStart $groupEnd }}
+      {{ if eq $i $currentPage }}
+      <span class="pagination-page current" id="current-page">{{ $i }}</span>
+      {{ else }}
+      <a href="{{ $paginate.First.URL }}{{ if gt $i 1 }}page/{{ $i }}/{{ end }}#pagination-anchor" class="pagination-page pagination-link">
+        {{- $i -}}
+      </a>
+      {{ end }}
+    {{ end }}
+  </div>
+
+  {{/* Next group button */}}
+  {{ if le $nextGroupPage $totalPages }}
+  <a href="{{ $paginate.First.URL }}page/{{ $nextGroupPage }}/#pagination-anchor" class="pagination-nav pagination-link">
+    {{ i18n "Next Page" | default "NEXT" }} <i class="fa-solid fa-forward"></i>
+  </a>
+  {{ else }}
+  <span class="pagination-nav disabled">
+    {{ i18n "Next Page" | default "NEXT" }} <i class="fa-solid fa-forward"></i>
+  </span>
+  {{ end }}
+
+</nav>
+{{ end }}

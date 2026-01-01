@@ -1,0 +1,50 @@
+{{- /* --- Parameters --- */ -}}
+{{- $delimiter := .Get "delimiter" | default "," -}}
+{{- $alignCenter := .Get "align-center" | default "" -}}
+{{- $class := .Get "class" -}}
+{{- /* --- CSV to Rows --- */ -}}
+{{- $csv := trim .Inner " \n\r\t" -}}
+{{- $lines := split $csv "\n" -}}
+{{- $allLines := slice -}}
+{{- range $lines -}}
+  {{- if . -}}
+    {{- $allLines = $allLines | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- $headerLine := index $allLines 0 -}}
+{{- $header := split $headerLine $delimiter -}}
+{{- $dataRows := after 1 $allLines -}}
+{{- /* --- Align Center --- */ -}}
+{{- $centerColumns := slice -}}
+{{- if $alignCenter -}}
+  {{- $centerList := split $alignCenter "," -}}
+  {{- range $centerList -}}
+    {{- $centerColumns = $centerColumns | append (trim . " ") -}}
+  {{- end -}}
+{{- end -}}
+{{- /* --- Render --- */ -}}
+<div class="data-container {{ with $class }}{{ . }}{{ end }}">
+  <table class="data-table">
+    <thead>
+      <tr>
+        {{- range $index, $col := $header -}}
+          {{- $colNum := add $index 1 | string -}}
+          {{- $isCenter := in $centerColumns $colNum -}}
+          <th title="{{ $col }}" {{ if $isCenter }}style="text-align: center;"{{ end }}>{{ $col | markdownify }}</th>
+        {{- end -}}
+      </tr>
+    </thead>
+    <tbody>
+      {{- range $dataRows -}}
+        {{- $rowCells := split . $delimiter -}}
+        <tr>
+          {{- range $index, $cell := $rowCells -}}
+            {{- $colNum := add $index 1 | string -}}
+            {{- $isCenter := in $centerColumns $colNum -}}
+            <td title="{{ $cell }}" {{ if $isCenter }}style="text-align: center;"{{ end }}>{{ $cell | markdownify }}</td>
+          {{- end -}}
+        </tr>
+      {{- end -}}
+    </tbody>
+  </table>
+</div>

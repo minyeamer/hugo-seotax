@@ -1,0 +1,77 @@
+- id: "Side Menu"
+  translation: "메뉴"
+
+- id: "ToC"
+  translation: "목차"
+
+- id: "Previous Page"
+  translation: "이전"
+
+- id: "Previous Post"
+  translation: "PREV"
+
+- id: "No Previous Post"
+  translation: "이전 게시글이 없습니다"
+
+- id: "Next Page"
+  translation: "다음"
+
+- id: "Next Post"
+  translation: "NEXT"
+
+- id: "No Next Post"
+  translation: "다음 게시글이 없습니다"
+
+- id: "Recent Posts"
+  translation: "최신글"
+
+- id: "Toolbar"
+  translation: "툴바"
+
+- id: "Categories"
+  translation: "카테고리"
+
+- id: "Category Parent"
+  translation: "상위 카테고리"
+
+- id: "Category Child"
+  translation: "하위 카테고리"
+
+- id: "Categories Root"
+  translation: "전체"
+
+- id: "Tags"
+  translation: "태그"
+
+- id: "Search"
+  translation: "검색"
+
+- id: "Search Label"
+  translation: "검색 결과"
+
+- id: "Search Tags"
+  translation: "검색 태그"
+
+- id: "List Label"
+  translation: "전체 글 %s"
+
+- id: "More Label"
+  translation: "더보기 (총 %d개)"
+
+- id: "Search Label"
+  translation: "\"%q\" 검색 결과 %s"
+
+- id: "No Results"
+  translation: "결과가 없습니다."
+
+- id: "Date Format"
+  translation: "2006년 01월 02일"
+
+- id: "searchConfig"
+  translation: |
+    {
+      encode: false,
+      tokenize: function(str) {
+        return str.replace(/[\x00-\x7F]/g, "").split("");
+      }
+    }

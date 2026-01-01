@@ -1,0 +1,20 @@
+// Default light theme
+:root {
+  @include theme-light;
+}
+
+// Theme switching based on data-theme attribute
+[data-theme="dark"] {
+  @include theme-dark;
+}
+
+[data-theme="light"] {
+  @include theme-light;
+}
+
+// Detect system dark mode (only when data-theme is not set)
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    @include theme-dark;
+  }
+}

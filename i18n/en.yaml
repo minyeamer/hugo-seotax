@@ -1,0 +1,71 @@
+- id: "Side Menu"
+  translation: "Side Menu"
+
+- id: "ToC"
+  translation: "Table of Contents"
+
+- id: "Previous Page"
+  translation: "PREV"
+
+- id: "Previous Post"
+  translation: "PREV"
+
+- id: "No Previous Post"
+  translation: "No previous post"
+
+- id: "Next Page"
+  translation: "NEXT"
+
+- id: "Next Post"
+  translation: "NEXT"
+
+- id: "No Next Post"
+  translation: "No next post"
+
+- id: "Recent Posts"
+  translation: "Recent posts"
+
+- id: "Toolbar"
+  translation: "Toolbar"
+
+- id: "Categories"
+  translation: "Categories"
+
+- id: "Category Parent"
+  translation: "Parent Category"
+
+- id: "Category Child"
+  translation: "Child Category"
+
+- id: "Categories Root"
+  translation: "All"
+
+- id: "Tags"
+  translation: "Tags"
+
+- id: "Tags List"
+  translation: "Tags List"
+
+- id: "Search"
+  translation: "Search"
+
+- id: "Search Label"
+  translation: "Search Results"
+
+- id: "List Label"
+  translation: "%s posts"
+
+- id: "More Label"
+  translation: "See all %d results"
+
+- id: "Search Label"
+  translation: "%s results for \"%q\""
+
+- id: "No Results"
+  translation: "No results found."
+
+- id: "Date Format"
+  translation: "2006-01-02"
+
+- id: "searchConfig"
+  translation: '{ cache: true }'

@@ -1,0 +1,22 @@
+{{- $json := dict -}}
+{{- $pages := partialCached "pages/search" . "search" -}}
+{{- /* Get unique tags */ -}}
+{{- $tags := slice -}}
+{{- range $page := $pages -}}
+  {{- range $page.Params.tags -}}
+    {{- $tags = $tags | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- /* Create tags map with name and post IDs */ -}}
+{{- range $t := sort (uniq $tags) -}}
+  {{- $ids := slice -}}
+  {{- range $id, $page := $pages -}}
+    {{- if in $page.Params.tags $t -}}
+      {{- $ids = $ids | append $id -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $tag := dict "name" $t "ids" $ids -}}
+  {{- $json = $json | merge (dict (lower $t) $tag) -}}
+{{- end -}}
+{{- /* Return the tags map as JSON */ -}}
+{{- $json | jsonify -}}

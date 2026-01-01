@@ -1,0 +1,71 @@
+- id: "Side Menu"
+  translation: "Sidemeny"
+
+- id: "ToC"
+  translation: "Innholdsfortegnelse"
+
+- id: "Previous Page"
+  translation: "FORRIGE"
+
+- id: "Previous Post"
+  translation: "FORRIGE"
+
+- id: "No Previous Post"
+  translation: "Ingen forrige innlegg"
+
+- id: "Next Page"
+  translation: "NESTE"
+
+- id: "Next Post"
+  translation: "NESTE"
+
+- id: "No Next Post"
+  translation: "Ingen neste innlegg"
+
+- id: "Recent Posts"
+  translation: "Nyeste innlegg"
+
+- id: "Toolbar"
+  translation: "Verktøylinje"
+
+- id: "Categories"
+  translation: "Kategorier"
+
+- id: "Category Parent"
+  translation: "Overordnet kategori"
+
+- id: "Category Child"
+  translation: "Underkategori"
+
+- id: "Categories Root"
+  translation: "Alle"
+
+- id: "Tags"
+  translation: "Etiketter"
+
+- id: "Tags List"
+  translation: "Etiketteliste"
+
+- id: "Search"
+  translation: "Søk"
+
+- id: "Search Label"
+  translation: "%s resultater for \"%q\""
+
+- id: "List Label"
+  translation: "%s innlegg"
+
+- id: "More Label"
+  translation: "Se alle %d resultater"
+
+- id: "Search Label"
+  translation: "%s resultater for \"%q\""
+
+- id: "No Results"
+  translation: "Ingen resultater funnet."
+
+- id: "Date Format"
+  translation: "02.01.2006"
+
+- id: "searchConfig"
+  translation: "searchConfig"

@@ -1,0 +1,19 @@
+{{- with (index .Attributes "filename") -}}
+  {{- $href := index $.Attributes "href" -}}
+  {{- if $href -}}
+    {{- $href = partial "links/portable-link" (dict "Page" $.PageInner "Destination" $href) -}}
+  {{- end -}}
+<div class="sc-codeblock-filename">
+  <a {{ with $href }}href="{{ . }}"{{ end }}>{{ . }}</a>
+</div>
+{{- end -}}
+
+<div class="sc-codeblock" data-lang="{{ .Type }}">
+  <div class="code-actions">
+    <button class="code-copy-button code-action" onclick="copyCode(this)">
+      <i class="fa-solid fa-copy"></i>Copy
+    </button>
+    <span class="code-language code-action">{{ .Type | default "text" }}</span>
+  </div>
+  {{- (transform.HighlightCodeBlock . .Options).Wrapped | safeHTML -}}
+</div>
