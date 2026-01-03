@@ -1,6 +1,6 @@
-'use strict';
-
 (function () {
+  'use strict';
+
   const searchInput = document.querySelector('#search-input');
   const searchResults = document.querySelector('#search-input-results');
 

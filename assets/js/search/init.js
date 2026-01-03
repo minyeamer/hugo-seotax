@@ -1,5 +1,3 @@
-'use strict';
-
 {{ $searchConfig := i18n "searchConfig" | default "{}" }}
 
 window.siteSearch.getIndexConfig = function() {

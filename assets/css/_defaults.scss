@@ -38,6 +38,9 @@ $toc-breakpoint: $menu-width + $body-max-width * 1.1 + $toc-width !default;
 $menu-breakpoint: $menu-width + $body-max-width * 1.3 !default;
 $narrow-breakpoint: ($body-min-width + $body-max-width) / 2;
 
+$toc-overlay-width: 32rem;
+$toc-overlay-height: 80vh;
+
 $preview-width: 200px;
 $preview-height: 170px;
 $preview-mobile-width: 160px;

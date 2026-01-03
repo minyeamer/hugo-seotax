@@ -73,16 +73,52 @@ nav ul {
 /* Main Container */
 
 .container {
-  max-width: $container-max-width;
-  margin: 0 auto;
+  // Descktop: flexible layout
+  @media screen and (min-width: $menu-breakpoint) {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  // Mobile: fixed layout for overlay
+  @media screen and (max-width: $menu-breakpoint) {
+    display: block;
+    max-width: $container-max-width;
+    margin: 0 auto;
+  }
 }
 
 .main-wrap {
   max-width: $body-wide-width;
   min-width: $body-min-width;
-  margin: 0 auto;
   flex: 1 1 0;
   padding: $padding-16;
+
+  // Desktop: center content with auto margins
+  @media screen and (min-width: $menu-breakpoint) {
+    margin: 0 auto;
+    width: 100%;
+    padding: $padding-32 $padding-16;
+  }
+
+  // Mobile: full width
+  @media screen and (max-width: $menu-breakpoint) {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  // Reduce content width to prevent overlap
+  @media (max-width: $wide-breakpoint) {
+    max-width: $body-max-width;
+  }
+
+  // Restore content width when ToC disappears
+  @media screen and (max-width: $toc-breakpoint) {
+    max-width: $body-wide-width;
+  }
 
   i {
     font-size: $font-size-base;
@@ -133,29 +169,78 @@ nav ul {
 /* Menu */
 
 .site-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: $menu-width;
-  z-index: 100;
   flex-shrink: 0;
   font-size: $font-size-14;
+  transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+  // Desktop: sticky positioning
+  @media screen and (min-width: $menu-breakpoint) {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  // Mobile: fixed positioning
+  @media screen and (max-width: $menu-breakpoint) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 150;
+    visibility: hidden;
+    margin-inline-start: -$menu-width;
+  }
+
+  &.menu-hidden {
+    @media screen and (min-width: $menu-breakpoint) {
+      width: 0;
+      opacity: 0;
+      overflow: hidden;
+    }
+
+    @media screen and (max-width: $menu-breakpoint) {
+      transform: translateX(-$menu-width);
+    }
+  }
 
   .menu-content {
     width: $menu-width;
-    padding: $padding-32;
+    padding: $padding-32 $padding-16;
     background: var(--gray-200);
+    min-height: 100%;
 
-    @include fixed;
+    // Desktop: no fixed height needed
+    @media screen and (min-width: $menu-breakpoint) {
+      height: auto;
+    }
+
+    // Mobile: use fixed mixin
+    @media screen and (max-width: $menu-breakpoint) {
+      @include fixed;
+    }
+  }
+
+  .menu-toggle-button {
+    position: absolute;
+    top: $padding-16;
+    right: $padding-16;
+    background: transparent;
+    border: none;
+    padding: $padding-8;
+    cursor: pointer;
+    z-index: 10;
+    display: block;
+
+    i {
+      font-size: $font-size-16;
+    }
   }
 
   a, label {
     color: inherit;
     word-wrap: break-word;
-  }
-
-  a.active {
-    color: var(--color-link);
   }
 
   label > img:last-child {
@@ -181,6 +266,55 @@ nav ul {
       display: block;
     }
   }
+}
+
+.menu-display-button {
+  position: fixed;
+  top: $padding-16;
+  left: $padding-16;
+  background: transparent;
+  border: none;
+  margin: $padding-12;
+  cursor: pointer;
+  z-index: 110;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: none;
+  box-shadow: none;
+
+  &:hover {
+    background: var(--gray-200);
+    transform: scale(1.1);
+  }
+
+  i {
+    font-size: $font-size-20;
+  }
+
+  // Hide on mobile
+  @media screen and (max-width: $menu-breakpoint) {
+    display: none;
+  }
+}
+
+// Show button on desktop when menu is hidden
+@media screen and (min-width: $menu-breakpoint) {
+  .site-menu.menu-hidden ~ .menu-display-button {
+    display: block;
+  }
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 140;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
 // for RTL support
@@ -388,6 +522,17 @@ body[dir="rtl"] .site-menu {
   display: none;
   margin-bottom: $padding-16;
 
+  // Show on mobile
+  @media screen and (max-width: $toc-breakpoint) {
+    display: block;
+    position: sticky;
+    z-index: 100;
+    opacity: 0.9;
+    top: 0;
+    background-color: var(--body-background);
+    padding: 1rem;
+  }
+
   label {
     line-height: 0;
   }
@@ -418,6 +563,10 @@ body[dir="rtl"] .site-menu {
 
 .content-wrap {
   margin-bottom: $padding-16 * 4;
+
+  @media screen and (max-width: $toc-breakpoint) {
+    margin-top: 2rem;
+  }
 }
 
 .content-header {
@@ -675,20 +824,101 @@ body[dir="rtl"] .site-menu {
 /* ToC */
 
 .site-toc {
-  position: fixed;
-  top: 0;
-  right: 0;
   width: $toc-width;
-  z-index: 100;
-  margin-right: $padding-48;
-  overflow-x: hidden;
+  flex-shrink: 0;
   font-size: $font-size-14;
+  transition: opacity 0.3s ease-in-out;
+
+  // Desktop: sticky positioning
+  @media screen and (min-width: $toc-breakpoint) {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-right: $padding-48;
+  }
+  
+  // Mobile: hidden by default, overlay when active
+  @media screen and (max-width: $toc-breakpoint) {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    margin-right: $padding-48;
+    overflow-x: hidden;
+
+    // Overlay: show ToC as modal
+    &.overlay-mode {
+      display: block !important;
+      position: fixed !important;
+      visibility: visible !important;
+      top: 10vh;
+      left: 50%;
+      right: auto;
+      width: 40%;
+      min-width: $toc-overlay-width;
+      height: auto;
+      max-height: $toc-overlay-height;
+      margin: 0;
+      transform: translateX(-50%);
+      background: var(--body-background);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      z-index: 1001;
+      overflow-y: auto;
+      border-radius: $border-radius;
+
+      .toc-content {
+        width: 100%;
+        height: auto;
+        padding: $padding-24;
+      }
+
+      .toc-toggle-button {
+        display: block;
+      }
+    }
+  }
+
+  @media screen and (min-width: $container-max-width) {
+    .toc-content {
+      padding: $padding-32 $padding-16;
+    }
+  }
+
+  @media screen and (max-width: ($toc-overlay-width * 1.1)) {
+    &.overlay-mode {
+      width: 90%;
+      min-width: 0;
+    }
+  }
 
   .toc-content {
     width: $toc-width;
     padding: $padding-16;
+    min-height: 100%;
 
-    @include fixed;
+    // Desktop: no fixed height needed
+    @media screen and (min-width: $toc-breakpoint) {
+      height: auto;
+    }
+  }
+
+  .toc-toggle-button {
+    position: absolute;
+    top: $padding-16;
+    right: $padding-16;
+    background: transparent;
+    border: none;
+    padding: $padding-8;
+    cursor: pointer;
+    z-index: 10;
+    display: none;
+
+    i {
+      font-size: $font-size-16;
+    }
   }
 
   img {
@@ -701,7 +931,7 @@ body[dir="rtl"] .site-menu {
   }
 
   a {
-    color: #000;
+    color: var(--toc-font-color);
   }
 }
 
@@ -720,6 +950,26 @@ body[dir="rtl"] .site-menu {
   }
 }
 
+.toc-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+
+  &.active {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
 /* Toolbar */
 
 .site-toolbar {
@@ -733,6 +983,10 @@ body[dir="rtl"] .site-menu {
   display: flex;
   align-items: flex-end;
   flex-direction: column;
+
+  @media screen and (max-width: $toc-breakpoint) {
+    margin-right: $padding-32;
+  }
 
   .toolbar-button {
     width: $font-size-40;
@@ -769,40 +1023,14 @@ body[dir="rtl"] .site-menu {
   will-change: transform, margin, opacity;
 }
 
-@media (max-width: $wide-breakpoint) {
-  .site-page {
-    max-width: $body-max-width;
-  }
-}
-
 @media screen and (max-width: $toc-breakpoint) {
-  .site-toc {
-    visibility: hidden;
-  }
-
-  .site-toolbar {
-    margin-right: $padding-32;
-  }
-
-  .site-header {
-    display: block;
-    position: sticky;
-    z-index: 100;
-    opacity: 0.9;
-    top: 0;
-    background-color: var(--body-background);
-    padding: 1rem;
-  }
-
   #menu-control,
   #toc-control {
     display: inline;
   }
 
   #menu-icon {
-    pointer-events: none;
-    opacity: 0.5;
-    cursor: default;
+    display: none;
   }
 
   #toc-icon {
@@ -817,31 +1045,20 @@ body[dir="rtl"] .site-menu {
     .book-header aside {
       display: block;
     }
-  }
 
-  .content-wrap {
-    margin-top: 2rem;
+    .site-toc {
+      visibility: visible;
+    }
   }
 }
 
 @media screen and (max-width: $menu-breakpoint) {
-  .site-menu {
-    visibility: hidden;
-    margin-inline-start: -$menu-width;
-    z-index: 1;
-
-    .menu-content {
-      background: var(--body-background);
-    }
-  }
-
   #menu-control {
     display: inline;
   }
 
   #menu-icon {
-    pointer-events: auto;
-    opacity: 1;
+    display: block;
     cursor: pointer;
   }
 
@@ -849,9 +1066,15 @@ body[dir="rtl"] .site-menu {
     @include outline;
   }
 
+  #menu-control:checked ~ .menu-overlay {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   #menu-control:checked ~ main {
     .site-menu {
-      visibility: initial;
+      visibility: visible;
     }
 
     .site-menu .menu-content {
@@ -859,8 +1082,10 @@ body[dir="rtl"] .site-menu {
       box-shadow: 0 0 $padding-8 rgba(0, 0, 0, 0.1);
     }
 
-    .main-wrap {
-      opacity: 0.25;
+    .menu-overlay {
+      display: block;
+      opacity: 1;
+      pointer-events: auto;
     }
 
     .site-menu-overlay {
@@ -878,14 +1103,5 @@ body[dir="rtl"] .site-menu {
     .site-menu .menu-content {
       transform: translateX(-$menu-width);
     }
-  }
-}
-
-// Extra space for big screens
-@media screen and (min-width: $container-max-width) {
-  .main-wrap,
-  .site-menu .menu-content,
-  .site-toc .toc-content {
-    padding: $padding-16 * 2 $padding-16;
   }
 }
