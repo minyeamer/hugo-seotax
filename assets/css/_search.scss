@@ -13,9 +13,8 @@
   }
 
   input {
-    width: 100%;
+    flex: 1;
     padding: $padding-8;
-    margin: 0 $padding-8 0 0;
 
     border: 1px solid var(--gray-500);
     border-radius: $border-radius;
@@ -32,6 +31,7 @@
     background: transparent;
     border: none;
     color: var(--body-font-color);
+    margin: $padding-4;
     cursor: pointer;
 
     &:hover {
@@ -163,6 +163,8 @@
 .post-item {
   border: 1px solid var(--gray-200);
   border-radius: 8px;
+  max-width: $body-wide-width;
+  margin: auto;
   padding: $padding-24;
   background: var(--body-background);
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
@@ -170,6 +172,10 @@
   &:hover {
     box-shadow: 0 4px 12px var(--box-shadow);
     border-color: var(--color-link);
+  }
+
+  @media screen and (max-width: $menu-breakpoint) {
+    padding: $padding-16;
   }
 }
 
@@ -201,8 +207,7 @@
 .post-text-area {
   flex: 1;
   min-width: 0;
-  display: flex;
-  flex-direction: column;
+  display: grid;
 
   h2.post-title {
     margin-top: 0;
@@ -214,6 +219,8 @@
 .post-title {
   font-size: $font-size-24;
   line-height: 1.3;
+  overflow-wrap: break-word;
+  word-break: keep-all;
 
   a {
     color: var(--body-font-color);
@@ -234,9 +241,9 @@
   color: var(--gray-800);
   line-height: 1.6;
   margin-bottom: 1rem;
-  overflow: hidden;
-  word-wrap: break-word;
   flex: 1;
+  overflow-wrap: break-word;
+  word-break: keep-all;
 }
 
 .post-categories {
@@ -266,7 +273,7 @@
   .tag {
     display: inline-block;
     flex-shrink: 0;
-    flex: none;
+    flex: 0 0 auto;
     background: var(--gray-100);
     color: var(--body-font-color);
     padding: $padding-4 $padding-8;
@@ -292,7 +299,6 @@
   display: flex;
   flex-wrap: nowrap;
   gap: $padding-8;
-  overflow: hidden;
   position: relative;
 
   line-height: 1.6;
@@ -350,7 +356,6 @@
   width: $preview-width;
   height: $preview-height;
   border-radius: 8px;
-  overflow: hidden;
 
   .post-cover-img {
     width: 100%;
@@ -385,7 +390,6 @@
       width: 100%;
       height: 200px;
       border-radius: 8px;
-      overflow: hidden;
       margin-top: $padding-8;
 
       .post-cover-mobile-img {

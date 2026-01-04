@@ -6,7 +6,6 @@ html {
 }
 
 body {
-  min-width: $body-min-width;
   color: var(--body-font-color);
   background: var(--body-background);
 
@@ -73,33 +72,33 @@ nav ul {
 /* Main Container */
 
 .container {
+  width: 100%;
+  max-width: 100%;
+
   // Descktop: flexible layout
   @media screen and (min-width: $menu-breakpoint) {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    max-width: 100%;
-    width: 100%;
   }
 
   // Mobile: fixed layout for overlay
   @media screen and (max-width: $menu-breakpoint) {
     display: block;
-    max-width: $container-max-width;
-    margin: 0 auto;
   }
 }
 
 .main-wrap {
   width: 100%;
   max-width: $body-wide-width;
-  min-width: $body-min-width;
   flex: 1 1 0;
   margin: 0 auto;
 
-  // Desktop: center content with auto margins
-  @media screen and (min-width: $toc-breakpoint) {
-    padding: $padding-32 0;
+  // Mobile: fixed layout for overlay
+  @media screen and (max-width: $menu-breakpoint) {
+    display: block;
+    max-width: 100%;
+    padding: 0 $padding-16;
   }
 
   i {
@@ -123,7 +122,7 @@ nav ul {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 3px;
   z-index: 9999;
   pointer-events: none;
@@ -507,7 +506,7 @@ body[dir="rtl"] .site-menu {
   @media screen and (max-width: $toc-breakpoint) {
     display: block;
     position: sticky;
-    z-index: 100;
+    z-index: 1000;
     opacity: 0.9;
     top: 0;
     background-color: var(--body-background);
@@ -985,21 +984,36 @@ body[dir="rtl"] .site-menu {
     margin-right: $padding-32;
   }
 
-  .toolbar-button {
-    width: $font-size-40;
-    height: $font-size-40;
-    margin: $padding-4;
+  @media screen and (max-width: $menu-breakpoint) {
+    margin-right: $padding-16;
+  }
 
+  .toolbar-button {
+    margin: $padding-4;
     border: 0px;
     border-radius: 50%;
     background: var(--gray-200);
     color: var(--body-font-color);
 
-    cursor: pointer;
+    width: $font-size-40;
+    height: $font-size-40;
+    box-shadow: none;
 
     i {
       font-size: $font-size-20;
     }
+
+    @media screen and (max-width: $menu-breakpoint) {
+      width: $font-size-32;
+      height: $font-size-32;
+      box-shadow: 0 0 4px var(--body-font-color);
+
+      i {
+        font-size: $font-size-16;
+      }
+    }
+
+    cursor: pointer;
 
     &:hover {
       color: var(--color-link);
