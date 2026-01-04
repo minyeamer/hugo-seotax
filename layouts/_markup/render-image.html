@@ -2,5 +2,8 @@
 {{- if .Page.Site.Params.portableLinks -}}
   {{- $destination = partial "links/portable-image" . -}}
 {{- end -}}
-<img src="{{ $destination | safeURL }}" alt="{{ .Text }}" {{ with .Title }}title="{{ . }}"{{ end }}/>
+<label class="md-image" for="md-image-toggle-{{ .Ordinal }}">
+  <input class="hidden toggle" type="checkbox" id="md-image-toggle-{{ .Ordinal }}" />
+  <img src="{{ $destination | safeURL }}" alt="{{ .Text }}" {{ with .Title }}title="{{ . }}"{{ end }}/>
+</label>
 {{- /**/ -}}

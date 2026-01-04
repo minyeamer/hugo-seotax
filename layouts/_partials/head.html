@@ -128,6 +128,10 @@ https://github.com/minyeamer/hugo-miny
 {{- $tocHighlightJS := resources.Get "js/toc-highlight.js" | resources.ExecuteAsTemplate "js/toc-highlight.js" . | resources.Minify | resources.Fingerprint }}
 <script defer src="{{ partial `links/resource-precache` $tocHighlightJS }}" {{ template `integrity` $tocHighlightJS }}></script>
 
+<!-- Image Zoom -->
+{{- $imageZoomJS := resources.Get "js/image-zoom.js" | resources.ExecuteAsTemplate "js/image-zoom.js" . | resources.Minify | resources.Fingerprint }}
+<script defer src="{{ partial `links/resource-precache` $imageZoomJS }}" {{ template `integrity` $imageZoomJS }}></script>
+
 <!-- Search -->
 {{- if default true .Site.Params.search.enabled -}}
   <script>

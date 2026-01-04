@@ -220,13 +220,23 @@
   }
 
   // {{< image >}}
-  .sc-image {
-    input + img {
+  .sc-image, .md-image {
+    display: block;
+    width: 100%;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    input ~ img,
+    input ~ a img {
       cursor: zoom-in;
       transition: transform 0.2s ease-in-out;
     }
 
-    input:checked + img {
+    input:checked ~ img,
+    input:checked ~ a img {
       position: fixed;
 
       top: 0;
@@ -236,10 +246,12 @@
       
       background: var(--body-background);
       object-fit: contain;
-      width: 100%;
-      height: 100%;
+      width: 100% !important;
+      height: 100% !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
       
-      z-index: 1;
+      z-index: 1000;
       cursor: zoom-out;
       padding: $padding-16;
     }
