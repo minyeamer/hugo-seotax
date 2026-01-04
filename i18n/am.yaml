@@ -1,8 +1,17 @@
-- id: "Side Menu"
-  translation: "የግብ ምናተንት"
+- id: "Site Menu"
+  translation: "ምናሌ"
 
-- id: "ToC"
+- id: "Toggle Menu"
+  translation: "ምናሌ መደበቅ/ማሳየት"
+
+- id: "Open Menu"
+  translation: "ምናሌ ክፈት"
+
+- id: "Site ToC"
   translation: "የዝርዝራዎች ሰንጠሬዥ"
+
+- id: "Toggle ToC"
+  translation: "ሰንጠሬዥ መደበቅ/ማሳየት"
 
 - id: "Previous Page"
   translation: "የቀደመው"
@@ -49,8 +58,8 @@
 - id: "Search"
   translation: "ፈልግ"
 
-- id: "Search Label"
-  translation: "%s ውጤቶች ለ\"%q\""
+- id: "Search Results"
+  translation: "የፍለጋ ውጤቶች"
 
 - id: "List Label"
   translation: "%s ጽሁፎች"
@@ -60,6 +69,12 @@
 
 - id: "Search Label"
   translation: "%s ውጤቶች ለ\"%q\""
+
+- id: "Categories Label"
+  translation: "%s ምድቦች"
+
+- id: "Tags Label"
+  translation: "%s መለያዎች"
 
 - id: "No Results"
   translation: "ምንም ውጤት አልተጋኘም።"

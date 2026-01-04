@@ -1,8 +1,17 @@
-- id: "Side Menu"
-  translation: "Boční nabídka"
+- id: "Site Menu"
+  translation: "Nabídka"
 
-- id: "ToC"
+- id: "Toggle Menu"
+  translation: "Přepnout nabídku"
+
+- id: "Open Menu"
+  translation: "Otevřít nabídku"
+
+- id: "Site ToC"
   translation: "Obsah"
+
+- id: "Toggle ToC"
+  translation: "Přepnout obsah"
 
 - id: "Previous Page"
   translation: "PŘEDCHOZÍ"
@@ -49,8 +58,8 @@
 - id: "Search"
   translation: "Vyhledávat"
 
-- id: "Search Label"
-  translation: "%s výsledků pro \"%q\""
+- id: "Search Results"
+  translation: "Výsledky vyhledávání"
 
 - id: "List Label"
   translation: "%s příspěvků"
@@ -60,6 +69,12 @@
 
 - id: "Search Label"
   translation: "%s výsledků pro \"%q\""
+
+- id: "Categories Label"
+  translation: "%s kategorií"
+
+- id: "Tags Label"
+  translation: "%s štítků"
 
 - id: "No Results"
   translation: "Nebyly nalezeny žádné výsledky."

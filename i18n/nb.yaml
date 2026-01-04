@@ -1,8 +1,17 @@
-- id: "Side Menu"
-  translation: "Sidemeny"
+- id: "Site Menu"
+  translation: "Meny"
 
-- id: "ToC"
+- id: "Toggle Menu"
+  translation: "Vis/skjul meny"
+
+- id: "Open Menu"
+  translation: "Åpne meny"
+
+- id: "Site ToC"
   translation: "Innholdsfortegnelse"
+
+- id: "Toggle ToC"
+  translation: "Vis/skjul innholdsfortegnelse"
 
 - id: "Previous Page"
   translation: "FORRIGE"
@@ -49,8 +58,8 @@
 - id: "Search"
   translation: "Søk"
 
-- id: "Search Label"
-  translation: "%s resultater for \"%q\""
+- id: "Search Results"
+  translation: "Søkeresultater"
 
 - id: "List Label"
   translation: "%s innlegg"
@@ -60,6 +69,12 @@
 
 - id: "Search Label"
   translation: "%s resultater for \"%q\""
+
+- id: "Categories Label"
+  translation: "%s kategorier"
+
+- id: "Tags Label"
+  translation: "%s etiketter"
 
 - id: "No Results"
   translation: "Ingen resultater funnet."

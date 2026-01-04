@@ -1,5 +1,8 @@
 <div class="flex align-center justify-between">
-  <label for="menu-control">
+  <label for="menu-control"
+    aria-label="{{ i18n `Toggle Menu` | default `Toggle Menu` }}"
+    title="{{ i18n `Toggle Menu` | default `Toggle Menu` }}">
+
     <i class="fa-solid fa-bars menu-icon" id="menu-icon"></i>
   </label>
 
@@ -7,7 +10,10 @@
     <a href="{{ .Site.BaseURL }}" class="mobile-title">{{ .Site.Title }}</a>
   </h3>
 
-  <label for="toc-control">
+  <label for="toc-control"
+    aria-label="{{ i18n `Toggle ToC` | default `Toggle ToC` }}"
+    title="{{ i18n `Toggle ToC` | default `Toggle ToC` }}">
+
     {{ if partial "toc-show" . }}
     <i class="fa-solid fa-list menu-icon" id="toc-icon"></i>
     {{ end }}

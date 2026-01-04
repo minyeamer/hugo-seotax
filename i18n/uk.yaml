@@ -1,8 +1,17 @@
-- id: "Side Menu"
-  translation: "Бічне меню"
+- id: "Site Menu"
+  translation: "Меню"
 
-- id: "ToC"
+- id: "Toggle Menu"
+  translation: "Розгорнути/згорнути меню"
+
+- id: "Open Menu"
+  translation: "Відкрити меню"
+
+- id: "Site ToC"
   translation: "Зміст"
+
+- id: "Toggle ToC"
+  translation: "Розгорнути/згорнути зміст"
 
 - id: "Previous Page"
   translation: "НАЗАД"
@@ -49,8 +58,8 @@
 - id: "Search"
   translation: "Пошук"
 
-- id: "Search Label"
-  translation: "%s результатів для \"%q\""
+- id: "Search Results"
+  translation: "Результати пошуку"
 
 - id: "List Label"
   translation: "%s публікацій"
@@ -60,6 +69,12 @@
 
 - id: "Search Label"
   translation: "%s результатів для \"%q\""
+
+- id: "Categories Label"
+  translation: "%s категорій"
+
+- id: "Tags Label"
+  translation: "%s міток"
 
 - id: "No Results"
   translation: "Результатів не знайдено."

@@ -1,8 +1,17 @@
-- id: "Side Menu"
-  translation: "Zijmenu"
+- id: "Site Menu"
+  translation: "Menu"
 
-- id: "ToC"
+- id: "Toggle Menu"
+  translation: "Menu in-/uitklappen"
+
+- id: "Open Menu"
+  translation: "Menu openen"
+
+- id: "Site ToC"
   translation: "Inhoudsopgave"
+
+- id: "Toggle ToC"
+  translation: "Inhoudsopgave in-/uitklappen"
 
 - id: "Previous Page"
   translation: "VORIGE"
@@ -49,8 +58,8 @@
 - id: "Search"
   translation: "Zoeken"
 
-- id: "Search Label"
-  translation: "%s resultaten voor \"%q\""
+- id: "Search Results"
+  translation: "Zoekresultaten"
 
 - id: "List Label"
   translation: "%s berichten"
@@ -60,6 +69,12 @@
 
 - id: "Search Label"
   translation: "%s resultaten voor \"%q\""
+
+- id: "Categories Label"
+  translation: "%s categorieën"
+
+- id: "Tags Label"
+  translation: "%s tags"
 
 - id: "No Results"
   translation: "Geen resultaten gevonden."

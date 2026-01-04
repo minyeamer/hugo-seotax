@@ -1,8 +1,17 @@
-- id: "Side Menu"
-  translation: "Menyu ya Pembeni"
+- id: "Site Menu"
+  translation: "Menyu"
 
-- id: "ToC"
+- id: "Toggle Menu"
+  translation: "Fungua/Funga menyu"
+
+- id: "Open Menu"
+  translation: "Fungua menyu"
+
+- id: "Site ToC"
   translation: "Yaliyomo"
+
+- id: "Toggle ToC"
+  translation: "Fungua/Funga yaliyomo"
 
 - id: "Previous Page"
   translation: "ILIYOTANGULIA"
@@ -49,8 +58,8 @@
 - id: "Search"
   translation: "Tafuta"
 
-- id: "Search Label"
-  translation: "Matokeo %s ya \"%q\""
+- id: "Search Results"
+  translation: "Matokeo ya utafutaji"
 
 - id: "List Label"
   translation: "Machapisho %s"
@@ -60,6 +69,12 @@
 
 - id: "Search Label"
   translation: "Matokeo %s ya \"%q\""
+
+- id: "Categories Label"
+  translation: "Kategoria %s"
+
+- id: "Tags Label"
+  translation: "Lebo %s"
 
 - id: "No Results"
   translation: "Hakuna matokeo yaliyopatikana."

@@ -1,8 +1,17 @@
-- id: "Side Menu"
-  translation: "サイドメニュー"
+- id: "Site Menu"
+  translation: "メニュー"
 
-- id: "ToC"
+- id: "Toggle Menu"
+  translation: "メニューを開く/閉じる"
+
+- id: "Open Menu"
+  translation: "メニューを開く"
+
+- id: "Site ToC"
   translation: "目次"
+
+- id: "Toggle ToC"
+  translation: "目次を開く/閉じる"
 
 - id: "Previous Page"
   translation: "前へ"
@@ -49,8 +58,8 @@
 - id: "Search"
   translation: "検索"
 
-- id: "Search Label"
-  translation: "\"%q\"の検索結果%s件"
+- id: "Search Results"
+  translation: "検索結果"
 
 - id: "List Label"
   translation: "%s件の投稿"
@@ -60,6 +69,12 @@
 
 - id: "Search Label"
   translation: "\"%q\"の検索結果%s件"
+
+- id: "Categories Label"
+  translation: "全%sカテゴリー"
+
+- id: "Tags Label"
+  translation: "全%sタグ"
 
 - id: "No Results"
   translation: "結果が見つかりませんでした。"

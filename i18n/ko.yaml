@@ -1,8 +1,17 @@
-- id: "Side Menu"
+- id: "Site Menu"
   translation: "메뉴"
 
-- id: "ToC"
+- id: "Toggle Menu"
+  translation: "메뉴 접기/펼치기"
+
+- id: "Open Menu"
+  translation: "메뉴 펼치기"
+
+- id: "Site ToC"
   translation: "목차"
+
+- id: "Toggle ToC"
+  translation: "목차 접기/펼치기"
 
 - id: "Previous Page"
   translation: "이전"
@@ -46,7 +55,7 @@
 - id: "Search"
   translation: "검색"
 
-- id: "Search Label"
+- id: "Search Results"
   translation: "검색 결과"
 
 - id: "Search Tags"
@@ -56,10 +65,16 @@
   translation: "전체 글 %s"
 
 - id: "More Label"
-  translation: "더보기 (총 %d개)"
+  translation: "더 보기 (총 %d개)"
 
 - id: "Search Label"
   translation: "\"%q\" 검색 결과 %s"
+
+- id: "Categories Label"
+  translation: "전체 카테고리 %s"
+
+- id: "Tags Label"
+  translation: "전체 태그 %s"
 
 - id: "No Results"
   translation: "결과가 없습니다."

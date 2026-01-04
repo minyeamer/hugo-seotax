@@ -1,8 +1,17 @@
-- id: "Side Menu"
-  translation: "Sidomeny"
+- id: "Site Menu"
+  translation: "Meny"
 
-- id: "ToC"
+- id: "Toggle Menu"
+  translation: "Visa/dölj meny"
+
+- id: "Open Menu"
+  translation: "Öppna meny"
+
+- id: "Site ToC"
   translation: "Innehållsförteckning"
+
+- id: "Toggle ToC"
+  translation: "Visa/dölj innehållsförteckning"
 
 - id: "Previous Page"
   translation: "FÖREGÅENDE"
@@ -49,8 +58,8 @@
 - id: "Search"
   translation: "Sök"
 
-- id: "Search Label"
-  translation: "%s resultat för \"%q\""
+- id: "Search Results"
+  translation: "Sökresultat"
 
 - id: "List Label"
   translation: "%s inlägg"
@@ -60,6 +69,12 @@
 
 - id: "Search Label"
   translation: "%s resultat för \"%q\""
+
+- id: "Categories Label"
+  translation: "%s kategorier"
+
+- id: "Tags Label"
+  translation: "%s taggar"
 
 - id: "No Results"
   translation: "Inga resultat hittades."

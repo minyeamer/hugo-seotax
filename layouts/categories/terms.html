@@ -1,11 +1,115 @@
 {{ define "content" }}
 <article class="markdown content-wrap">
-
+{{- $treeL1 := partialCached "categories/tree" . "categories" -}}
+{{/* Count leaf categories */}}
+{{ $leafCount := 0 }}
+{{ range $category1, $treeL2 := $treeL1 }}
+  {{ $leafCount = add $leafCount (cond $treeL2 (len $treeL2) 1) }}
+{{ end }}
 <header class="list-header">
   <h1><i class="fa-solid fa-folder"></i> {{ i18n "Categories" | default "Categories" }}</h1>
+  {{- $count := printf `<em class="list-count">%d</em>` $leafCount -}}
+  <p>{{ printf (i18n "Categories Label" | default "%s categories") $count | safeHTML }}</p>
 </header>
-
-<div class="categories-tree"></div>
-
+{{/* Categories list for parent category */}}
+<div class="categories-tree">
+  {{ $pages := partialCached "pages/posts" . "posts" }}
+  <ul class="categories-list">
+    {{ range $category1 := (partial "keys" $treeL1) }}
+    {{/* Count and list pages including parent category */}}
+    {{ $pagesL1 := slice }}
+    {{ $category1Count := 0 }}
+    {{ range $pages }}
+      {{ if .Params.categories }}
+        {{ if eq $category1 (partial "categories/level1" .Params.categories) }}
+          {{ $pagesL1 = $pagesL1 | append . }}
+          {{ $category1Count = add $category1Count 1 }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+    {{/* Categories item for parent category */}}
+    <li>
+      {{ $treeL2 := index $treeL1 $category1 }}
+      {{ if $treeL2 }}
+      <a href="/search/?category1={{ $category1 }}" class="categories-item">
+        <i class="fa-solid fa-folder"></i> {{ $category1 -}}
+        <span class="category-count"> ({{- $category1Count -}})</span>
+      </a>
+      {{/* Categories list for child category */}}
+      <ul class="categories-list">
+        {{ range $category2 := (partial "keys" $treeL2) }}
+          {{/* Count and list pages including child category */}}
+          {{ $pagesL2 := slice }}
+          {{ $category2Count := 0 }}
+          {{ range $pagesL1 }}
+            {{ if .Params.categories }}
+              {{ if eq $category2 (partial "categories/level2" .Params.categories) }}
+                {{ $pagesL2 = $pagesL2 | append . }}
+                {{ $category2Count = add $category2Count 1 }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+          {{/* Categories item for child category */}}
+          <li>
+            <a href="/search/?category1={{ $category1 }}&category2={{ $category2 }}" class="categories-item">
+              <i class="fa-solid fa-file"></i> {{ $category2 -}}
+              <span class="category-count"> ({{- $category2Count -}})</span>
+            </a>
+            {{ if $pagesL2 }}
+            {{/* Category posts for child category */}}
+            <ul class="category-posts">
+              {{ range $pagesL2 | first 3 }}
+              <li>
+                <a href="{{ .RelPermalink }}" class="category-post">
+                  <i class="fa-solid fa-newspaper"></i> {{ .LinkTitle -}}
+                </a>
+              </li>
+              {{ end }}
+              {{/* Show more link if there are additional posts beyond the limit */}}
+              {{ if gt (len $pagesL2) 3 }}
+                <li>
+                  <a href="/search/?category1={{ $category1 }}&category2={{ $category2 }}" class="category-post more">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    {{ printf (i18n "More Label" | default "See all %d results") (len $pagesL2) -}}
+                  </a>
+                </li>
+              {{ end }}
+            </ul>
+            {{ end }}
+          </li>
+        {{ end }}
+      </ul>
+      {{ else }}
+      {{/* Categories item for parent category if child categories not exist */}}
+      <a href="/search/?category1={{ $category1 }}" class="categories-item">
+        <i class="fa-solid fa-file"></i> {{ $category1 -}}
+        <span class="category-count"> ({{- $category1Count -}})</span>
+      </a>
+      {{ if $pagesL1 }}
+      {{/* Category posts for parent category if child categories not exist */}}
+      <ul class="category-posts">
+        {{ range $pagesL1 | first 3 }}
+        <li>
+          <a href="{{ .RelPermalink }}" class="category-post">
+            <i class="fa-solid fa-newspaper"></i> {{ .LinkTitle -}}
+          </a>
+        </li>
+        {{/* Show more link if there are additional posts beyond the limit */}}
+        {{ if gt (len $pagesL1) 3 }}
+          <li>
+            <a href="/search/?category1={{ $category1 }}" class="category-post more">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              {{ printf (i18n "More Label" | default "See all %d results") (len $pagesL1) -}}
+            </a>
+          </li>
+        {{ end }}
+        {{ end }}
+      </ul>
+      {{ end }}
+    {{ end }}
+    </li>
+    {{ end }}
+  </ul>
+</div>
 </article>
 {{ end }}

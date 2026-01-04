@@ -1,8 +1,17 @@
-- id: "Side Menu"
-  translation: "Menu boczne"
+- id: "Site Menu"
+  translation: "Menu"
 
-- id: "ToC"
+- id: "Toggle Menu"
+  translation: "Rozwiń/zwiń menu"
+
+- id: "Open Menu"
+  translation: "Otwórz menu"
+
+- id: "Site ToC"
   translation: "Spis treści"
+
+- id: "Toggle ToC"
+  translation: "Rozwiń/zwiń spis treści"
 
 - id: "Previous Page"
   translation: "POPRZEDNI"
@@ -49,8 +58,8 @@
 - id: "Search"
   translation: "Szukaj"
 
-- id: "Search Label"
-  translation: "%s wyników dla \"%q\""
+- id: "Search Results"
+  translation: "Wyniki wyszukiwania"
 
 - id: "List Label"
   translation: "%s wpisów"
@@ -60,6 +69,12 @@
 
 - id: "Search Label"
   translation: "%s wyników dla \"%q\""
+
+- id: "Categories Label"
+  translation: "%s kategorii"
+
+- id: "Tags Label"
+  translation: "%s tagów"
 
 - id: "No Results"
   translation: "Nie znaleziono wyników."

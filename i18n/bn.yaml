@@ -1,8 +1,17 @@
-- id: "Side Menu"
-  translation: "পার্শ্ব মেনু"
+- id: "Site Menu"
+  translation: "মেনু"
 
-- id: "ToC"
+- id: "Toggle Menu"
+  translation: "মেনু খোলা/বন্ধ করুন"
+
+- id: "Open Menu"
+  translation: "মেনু খুলুন"
+
+- id: "Site ToC"
   translation: "সূচীপত্র"
+
+- id: "Toggle ToC"
+  translation: "সূচীপত্র খোলা/বন্ধ করুন"
 
 - id: "Previous Page"
   translation: "পূর্ববর্তী"
@@ -49,8 +58,8 @@
 - id: "Search"
   translation: "অনুসন্ধান"
 
-- id: "Search Label"
-  translation: "\"%q\" এর জন্য %sটি ফলাফল"
+- id: "Search Results"
+  translation: "অনুসন্ধান ফলাফল"
 
 - id: "List Label"
   translation: "%sটি পোস্ট"
@@ -60,6 +69,12 @@
 
 - id: "Search Label"
   translation: "\"%q\" এর জন্য %sটি ফলাফল"
+
+- id: "Categories Label"
+  translation: "%s বিভাগ"
+
+- id: "Tags Label"
+  translation: "%s ট্যাগ"
 
 - id: "No Results"
   translation: "কোনো ফলাফল পাওয়া যায়নি।"

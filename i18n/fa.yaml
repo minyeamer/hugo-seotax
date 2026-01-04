@@ -1,8 +1,17 @@
-- id: "Side Menu"
-  translation: "منوی کناری"
+- id: "Site Menu"
+  translation: "منو"
 
-- id: "ToC"
+- id: "Toggle Menu"
+  translation: "باز/بسته کردن منو"
+
+- id: "Open Menu"
+  translation: "باز کردن منو"
+
+- id: "Site ToC"
   translation: "فهرست مطالب"
+
+- id: "Toggle ToC"
+  translation: "باز/بسته کردن فهرست مطالب"
 
 - id: "Previous Page"
   translation: "قبلی"
@@ -49,8 +58,8 @@
 - id: "Search"
   translation: "جستجو"
 
-- id: "Search Label"
-  translation: "%s نتیجه برای \"%q\""
+- id: "Search Results"
+  translation: "نتایج جستجو"
 
 - id: "List Label"
   translation: "%s نوشته"
@@ -60,6 +69,12 @@
 
 - id: "Search Label"
   translation: "%s نتیجه برای \"%q\""
+
+- id: "Categories Label"
+  translation: "%s دسته‌بندی"
+
+- id: "Tags Label"
+  translation: "%s برچسب"
 
 - id: "No Results"
   translation: "نتیجه‌ای یافت نشد."

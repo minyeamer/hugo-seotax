@@ -1,8 +1,17 @@
-- id: "Side Menu"
-  translation: "Yan Menü"
+- id: "Site Menu"
+  translation: "Menü"
 
-- id: "ToC"
+- id: "Toggle Menu"
+  translation: "Menüyü aç/kapat"
+
+- id: "Open Menu"
+  translation: "Menüyü aç"
+
+- id: "Site ToC"
   translation: "İçindekiler"
+
+- id: "Toggle ToC"
+  translation: "İçindekileri aç/kapat"
 
 - id: "Previous Page"
   translation: "ÖNCEKİ"
@@ -49,8 +58,8 @@
 - id: "Search"
   translation: "Arama"
 
-- id: "Search Label"
-  translation: "\"%q\" için %s sonuç"
+- id: "Search Results"
+  translation: "Arama sonuçları"
 
 - id: "List Label"
   translation: "%s yazı"
@@ -60,6 +69,12 @@
 
 - id: "Search Label"
   translation: "\"%q\" için %s sonuç"
+
+- id: "Categories Label"
+  translation: "%s kategori"
+
+- id: "Tags Label"
+  translation: "%s etiket"
 
 - id: "No Results"
   translation: "Sonuç bulunamadı."

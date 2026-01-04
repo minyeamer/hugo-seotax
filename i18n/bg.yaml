@@ -1,8 +1,17 @@
-- id: "Side Menu"
-  translation: "Странично меню"
+- id: "Site Menu"
+  translation: "Меню"
 
-- id: "ToC"
+- id: "Toggle Menu"
+  translation: "Превключване на менюто"
+
+- id: "Open Menu"
+  translation: "Отваряне на менюто"
+
+- id: "Site ToC"
   translation: "Съдържание"
+
+- id: "Toggle ToC"
+  translation: "Превключване на съдържанието"
 
 - id: "Previous Page"
   translation: "ПРЕДИШНА"
@@ -49,8 +58,8 @@
 - id: "Search"
   translation: "Търсене"
 
-- id: "Search Label"
-  translation: "%s резултата за \"%q\""
+- id: "Search Results"
+  translation: "Резултати от търсенето"
 
 - id: "List Label"
   translation: "%s публикации"
@@ -60,6 +69,12 @@
 
 - id: "Search Label"
   translation: "%s резултата за \"%q\""
+
+- id: "Categories Label"
+  translation: "%s категории"
+
+- id: "Tags Label"
+  translation: "%s етикета"
 
 - id: "No Results"
   translation: "Не са намерени резултати."

@@ -1,8 +1,17 @@
-- id: "Side Menu"
-  translation: "Menú lateral"
+- id: "Site Menu"
+  translation: "Menú"
 
-- id: "ToC"
+- id: "Toggle Menu"
+  translation: "Desplegar/replegar lo menú"
+
+- id: "Open Menu"
+  translation: "Dobrir lo menú"
+
+- id: "Site ToC"
   translation: "Taùla de las matièras"
+
+- id: "Toggle ToC"
+  translation: "Desplegar/replegar la taùla"
 
 - id: "Previous Page"
   translation: "PRECEDENT"
@@ -49,8 +58,8 @@
 - id: "Search"
   translation: "Recercar"
 
-- id: "Search Label"
-  translation: "%s resultats per \"%q\""
+- id: "Search Results"
+  translation: "Resultats de recèrca"
 
 - id: "List Label"
   translation: "%s publicacions"
@@ -60,6 +69,12 @@
 
 - id: "Search Label"
   translation: "%s resultats per \"%q\""
+
+- id: "Categories Label"
+  translation: "%s categorias"
+
+- id: "Tags Label"
+  translation: "%s etiquetas"
 
 - id: "No Results"
   translation: "Cap de resultat trobat."

@@ -11,7 +11,7 @@
   searchInput.addEventListener('focus', init);           // Initialize search index on first focus
   searchInput.addEventListener('keyup', search);         // Perform search on key input
   searchInput.addEventListener('keydown', handleEscape); // Clear results on ESC key
-  searchInput.addEventListener('blur', clearResults);    // Clear results when input loses focus
+  searchInput.addEventListener('blur', () => setTimeout(clearResults, 200));    // Clear results when input loses focus
 
   // Global hotkey listener to focus search input
   document.addEventListener('keypress', focusSearchFieldOnKeyPress);
@@ -111,12 +111,13 @@
 
       const a = document.createElement('a');
       a.href = `{{ "/search/" | relURL }}?query=${encodeURIComponent(searchInput.value)}`;
-      const moreLabel = `{{ printf (i18n "More Label") | default "See all %d results" }}`;
+      const moreLabel = `{{ i18n "More Label" | default "See all %d results" }}`;
       a.textContent = moreLabel.replace('%d', searchHits.length);
 
       li.appendChild(a);
       fragment.appendChild(li);
-      searchResults.appendChild(fragment);
     }
+
+    searchResults.appendChild(fragment);
   }
 })();

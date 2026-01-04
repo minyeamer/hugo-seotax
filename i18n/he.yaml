@@ -1,8 +1,17 @@
-- id: "Side Menu"
-  translation: "תפריט צדדי"
+- id: "Site Menu"
+  translation: "תפריט"
 
-- id: "ToC"
+- id: "Toggle Menu"
+  translation: "הצג/הסתר תפריט"
+
+- id: "Open Menu"
+  translation: "פתח תפריט"
+
+- id: "Site ToC"
   translation: "תוכן העניינים"
+
+- id: "Toggle ToC"
+  translation: "הצג/הסתר תוכן העניינים"
 
 - id: "Previous Page"
   translation: "הקודם"
@@ -49,8 +58,8 @@
 - id: "Search"
   translation: "חיפוש"
 
-- id: "Search Label"
-  translation: "%s תוצאות עבור \"%q\""
+- id: "Search Results"
+  translation: "תוצאות חיפוש"
 
 - id: "List Label"
   translation: "%s פוסטים"
@@ -60,6 +69,12 @@
 
 - id: "Search Label"
   translation: "%s תוצאות עבור \"%q\""
+
+- id: "Categories Label"
+  translation: "%s קטגוריות"
+
+- id: "Tags Label"
+  translation: "%s תגיות"
 
 - id: "No Results"
   translation: "לא נמצאו תוצאות."

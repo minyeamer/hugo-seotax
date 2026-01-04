@@ -31,7 +31,7 @@
 </html>
 
 {{ define "menu-container" }}
-<aside class="site-menu" aria-label="{{ i18n `Side Menu` | default `Side Menu` }}">
+<aside class="site-menu" aria-label="{{ i18n `Site Menu` | default `Menu` }}">
   <div class="menu-content">
     {{ template "menu" . }}
   </div>
@@ -45,12 +45,6 @@
 {{ define "header" }}
 <header class="site-header">
   {{ partial "header/mobile" . }}
-
-  {{ if partial "toc-show" . }}
-  <aside class="hidden clearfix">
-    {{ template "toc" . }}
-  </aside>
-  {{ end }}
 </header>
 {{ end }}
 
@@ -111,7 +105,7 @@
 
 {{ define "toc-container" }}
 {{ if partial "toc-show" . }}
-<aside class="site-toc" aria-label="{{ i18n `ToC` | default `Table of Contents` }}">
+<aside class="site-toc" aria-label="{{ i18n `Site ToC` | default `Table of Contents` }}">
   <div class="toc-content">
     {{ template "toc" . }}
   </div>

@@ -15,11 +15,11 @@
   {{ $tags = $tags | append (dict "name" $name "count" $count) }}
 {{ end }}
 {{- /* ... */ -}}
-<article class="markdown book-article">
+<article class="markdown content-wrap">
   <div class="list-header">
     <h1><i class="fa-solid fa-tags"></i> {{ i18n "Tags" | default "Tags" }}</h1>
     {{- $count := printf `<em class="list-count">%d</em>` (len $tree) -}}
-    <p>{{ printf (i18n "List Label" | default "%s posts") $count | safeHTML }}</p>
+    <p>{{ printf (i18n "Tags Label" | default "%s tags") $count | safeHTML }}</p>
   </div>
   <div class="taxonomy-chips">
     {{ range sort $tags "count" "desc" "name" "asc" }}

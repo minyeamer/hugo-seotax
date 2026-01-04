@@ -78,7 +78,6 @@ nav ul {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    gap: 0;
     max-width: 100%;
     width: 100%;
   }
@@ -92,32 +91,15 @@ nav ul {
 }
 
 .main-wrap {
+  width: 100%;
   max-width: $body-wide-width;
   min-width: $body-min-width;
   flex: 1 1 0;
-  padding: $padding-16;
+  margin: 0 auto;
 
   // Desktop: center content with auto margins
-  @media screen and (min-width: $menu-breakpoint) {
-    margin: 0 auto;
-    width: 100%;
-    padding: $padding-32 $padding-16;
-  }
-
-  // Mobile: full width
-  @media screen and (max-width: $menu-breakpoint) {
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  // Reduce content width to prevent overlap
-  @media (max-width: $wide-breakpoint) {
-    max-width: $body-max-width;
-  }
-
-  // Restore content width when ToC disappears
-  @media screen and (max-width: $toc-breakpoint) {
-    max-width: $body-wide-width;
+  @media screen and (min-width: $toc-breakpoint) {
+    padding: $padding-32 0;
   }
 
   i {
@@ -416,7 +398,7 @@ body[dir="rtl"] .site-menu {
     max-width: $font-size-18;
   }
 
-  .categories-root {
+  .categories-root, .categories-leaf {
     display: flex;
     align-items: center;
     width: 100%;
@@ -431,7 +413,7 @@ body[dir="rtl"] .site-menu {
     cursor: pointer;
   }
 
-  .categories-link:hover {
+  .categories-label:hover {
     color: var(--color-link);
     background-color: var(--link-background);
   }
@@ -520,7 +502,6 @@ body[dir="rtl"] .site-menu {
 
 .site-header {
   display: none;
-  margin-bottom: $padding-16;
 
   // Show on mobile
   @media screen and (max-width: $toc-breakpoint) {
@@ -562,10 +543,10 @@ body[dir="rtl"] .site-menu {
 /* Content */
 
 .content-wrap {
-  margin-bottom: $padding-16 * 4;
+  margin-bottom: $padding-64;
 
   @media screen and (max-width: $toc-breakpoint) {
-    margin-top: 2rem;
+    margin-top: $padding-16;
   }
 }
 
@@ -579,6 +560,23 @@ body[dir="rtl"] .site-menu {
   margin-bottom: $padding-8;
   font-size: $font-size-16;
   font-weight: 400;
+}
+
+.content-title {
+  font-size: $font-size-40;
+  font-weight: 700;
+  color: var(--body-font-color);
+
+  @media screen and (max-width: $body-max-width) {
+    font-size: $font-size-32;
+  }
+}
+
+.content-date {
+  color: var(--gray-500);
+  font-size: $font-size-14;
+  font-weight: 400;
+  margin-top: $padding-8;
 }
 
 .markdown .content-category-link {
@@ -595,25 +593,22 @@ body[dir="rtl"] .site-menu {
   }
 }
 
-.content-title {
-  font-size: $font-size-40;
-  font-weight: 700;
-  color: var(--body-font-color);
-
-  @media (max-width: $body-max-width) {
-    font-size: $font-size-32;
-  }
-}
-
 .markdown .content-title {
   margin: 0;
 }
 
-.content-date {
-  color: var(--gray-500);
-  font-size: $font-size-14;
-  font-weight: 400;
-  margin-top: $padding-8;
+.content-cover-wrap {
+  margin: $padding-32 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .content-cover {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
 }
 
 /* Footer */
@@ -804,7 +799,7 @@ body[dir="rtl"] .site-menu {
   visibility: hidden;
 }
 
-@media (max-width: $body-max-width) {
+@media screen and (max-width: $body-max-width) {
   .pagination {
     flex-wrap: wrap;
     gap: $padding-8;
@@ -836,9 +831,8 @@ body[dir="rtl"] .site-menu {
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
-    margin-right: $padding-48;
   }
-  
+
   // Mobile: hidden by default, overlay when active
   @media screen and (max-width: $toc-breakpoint) {
     display: none;
@@ -846,7 +840,6 @@ body[dir="rtl"] .site-menu {
     top: 0;
     right: 0;
     z-index: 100;
-    margin-right: $padding-48;
     overflow-x: hidden;
 
     // Overlay: show ToC as modal
@@ -878,6 +871,10 @@ body[dir="rtl"] .site-menu {
       .toc-toggle-button {
         display: block;
       }
+
+      #TableOfContents > ul {
+        margin-left: $padding-16;
+      }
     }
   }
 
@@ -895,9 +892,9 @@ body[dir="rtl"] .site-menu {
   }
 
   .toc-content {
-    width: $toc-width;
-    padding: $padding-16;
+    width: 100%;
     min-height: 100%;
+    padding: $padding-32 $padding-16;
 
     // Desktop: no fixed height needed
     @media screen and (min-width: $toc-breakpoint) {
@@ -1014,6 +1011,77 @@ body[dir="rtl"] .site-menu {
   }
 }
 
+/* Categories List */
+
+.categories-tree {
+  overflow: auto hidden;
+  white-space: nowrap;
+
+  ul {
+    margin-left: 2.4em;
+    list-style-type: none;
+  }
+
+  .category-count {
+    color: var(--gray-500);
+    font-size: $font-size-14;
+    white-space: nowrap;
+  }
+}
+
+.categories-list {
+  li {
+    position: relative;
+
+    &::before {
+      content: " ";
+      position: absolute;
+      top: 2.4em;
+      left: 0.1em;
+      width: 0.2em;
+      height: calc(100% - 2.4em);
+      background: var(--gray-200);
+    }
+  }
+
+  .categories-item {
+    color: var(--body-font-color);
+    font-size: 1.2em;
+    text-decoration: none;
+    padding: 0.2em 0;
+    display: block;
+
+    .fa-file, .fa-folder {
+      font-size: 1.2em;
+    }
+  }
+}
+
+.category-posts {
+  margin-top: 0.5em;
+
+  li::before {
+    display: none !important;
+  }
+
+  .category-post {
+    color: var(--body-font-color);
+    text-decoration: none;
+    font-size: 1em;
+    padding: 0.1em 0;
+    display: block;
+
+    .fa-newspaper {
+      font-size: 1em;
+    }
+  }
+
+  .category-post.more {
+    font-style: italic;
+    color: var(--gray-500);
+  }
+}
+
 /* Responsive styles */
 
 .menu-content,
@@ -1023,6 +1091,48 @@ body[dir="rtl"] .site-menu {
   will-change: transform, margin, opacity;
 }
 
+// When side ToC exists
+.container:has(.site-toc) {
+
+  // Apply full ToC margin right on screens larger than wide breakpoint
+  @media screen and (min-width: $wide-breakpoint) {
+    .site-menu {
+      margin-right: $toc-margin-right;
+    }
+
+    .site-toc {
+      margin-right: $toc-margin-right;
+    }
+  }
+
+  // Halve ToC margin right on screens smaller than wide breakpoint
+  @media screen and (max-width: $wide-breakpoint) {
+    .main-wrap {
+      max-width: $body-max-width;
+    }
+
+    .site-menu {
+      margin-right: ($toc-margin-right / 2);
+    }
+
+    .site-toc {
+      margin-right: ($toc-margin-right / 2);
+    }
+  }
+
+  // Restore content width when side ToC disappears
+  @media screen and (max-width: $toc-breakpoint) {
+    .main-wrap {
+      max-width: $body-wide-width;
+    }
+
+    .site-toc {
+      margin-right: 0;
+    }
+  }
+}
+
+// Enable ToC control in mobile header when side ToC disappears
 @media screen and (max-width: $toc-breakpoint) {
   #menu-control,
   #toc-control {
@@ -1030,40 +1140,23 @@ body[dir="rtl"] .site-menu {
   }
 
   #menu-icon {
-    display: none;
+    visibility: hidden;
   }
 
   #toc-icon {
     cursor: pointer;
   }
-
-  #toc-control:focus ~ main label[for="toc-control"] {
-    @include outline;
-  }
-
-  #toc-control:checked ~ main {
-    .book-header aside {
-      display: block;
-    }
-
-    .site-toc {
-      visibility: visible;
-    }
-  }
 }
 
+// Enable menu control in mobile header when side menu disappears
 @media screen and (max-width: $menu-breakpoint) {
   #menu-control {
     display: inline;
   }
 
   #menu-icon {
-    display: block;
+    visibility: visible;
     cursor: pointer;
-  }
-
-  #menu-control:focus ~ main label[for="menu-control"] {
-    @include outline;
   }
 
   #menu-control:checked ~ .menu-overlay {

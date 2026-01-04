@@ -1,8 +1,17 @@
-- id: "Side Menu"
-  translation: "Боковое меню"
+- id: "Site Menu"
+  translation: "Меню"
 
-- id: "ToC"
+- id: "Toggle Menu"
+  translation: "Развернуть/свернуть меню"
+
+- id: "Open Menu"
+  translation: "Открыть меню"
+
+- id: "Site ToC"
   translation: "Оглавление"
+
+- id: "Toggle ToC"
+  translation: "Развернуть/свернуть оглавление"
 
 - id: "Previous Page"
   translation: "НАЗАД"
@@ -49,8 +58,8 @@
 - id: "Search"
   translation: "Поиск"
 
-- id: "Search Label"
-  translation: "%s результатов для \"%q\""
+- id: "Search Results"
+  translation: "Результаты поиска"
 
 - id: "List Label"
   translation: "%s публикаций"
@@ -60,6 +69,12 @@
 
 - id: "Search Label"
   translation: "%s результатов для \"%q\""
+
+- id: "Categories Label"
+  translation: "%s категорий"
+
+- id: "Tags Label"
+  translation: "%s меток"
 
 - id: "No Results"
   translation: "Результатов не найдено."

@@ -71,7 +71,8 @@
       const menuToggleBtn = document.createElement('button');
       menuToggleBtn.className = 'menu-toggle-button';
       menuToggleBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
-      menuToggleBtn.setAttribute('aria-label', 'Toggle Menu');
+      menuToggleBtn.setAttribute('aria-label', '{{ i18n "Toggle Menu" | default "Toggle Menu" }}');
+      menuToggleBtn.setAttribute('title', '{{ i18n "Toggle Menu" | default "Toggle Menu" }}');
       menuToggleBtn.addEventListener('click', (e) => {
         e.preventDefault();
         toggleMenu();
@@ -85,7 +86,8 @@
       const menuDisplayBtn = document.createElement('button');
       menuDisplayBtn.className = 'menu-display-button';
       menuDisplayBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
-      menuDisplayBtn.setAttribute('aria-label', 'Open Menu');
+      menuDisplayBtn.setAttribute('aria-label', '{{ i18n "Open Menu" | default "Open Menu" }}');
+      menuDisplayBtn.setAttribute('title', '{{ i18n "Open Menu" | default "Open Menu" }}');
       menuDisplayBtn.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();

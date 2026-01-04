@@ -1,8 +1,17 @@
-- id: "Side Menu"
-  translation: "側邊選單"
+- id: "Site Menu"
+  translation: "選單"
 
-- id: "ToC"
+- id: "Toggle Menu"
+  translation: "展開/收合選單"
+
+- id: "Open Menu"
+  translation: "開啟選單"
+
+- id: "Site ToC"
   translation: "目錄"
+
+- id: "Toggle ToC"
+  translation: "展開/收合目錄"
 
 - id: "Previous Page"
   translation: "上一頁"
@@ -49,8 +58,8 @@
 - id: "Search"
   translation: "搜索"
 
-- id: "Search Label"
-  translation: "\"%q\"的%s個搜尋結果"
+- id: "Search Results"
+  translation: "搜尋結果"
 
 - id: "List Label"
   translation: "%s篇文章"
@@ -61,8 +70,14 @@
 - id: "Search Label"
   translation: "\"%q\"的%s個搜尋結果"
 
+- id: "Categories Label"
+  translation: "全部 %s 個分類"
+
+- id: "Tags Label"
+  translation: "全部 %s 個標籤"
+
 - id: "No Results"
-  translation: "未找到結果。"
+  translation: "未找到結果."
 
 - id: "Date Format"
   translation: "2006年01月02日"

@@ -30,10 +30,14 @@
 
     // Toggle overlay and panel
     if (tocControl.checked) {
-      if (tocOverlay) tocOverlay.classList.add('active');
+      if (tocOverlay) {
+        tocOverlay.classList.add('active');
+      }
       tocPanel.classList.add('overlay-mode');
     } else {
-      if (tocOverlay) tocOverlay.classList.remove('active');
+      if (tocOverlay) {
+        tocOverlay.classList.remove('active');
+      }
       tocPanel.classList.remove('overlay-mode');
     }
   }
@@ -46,7 +50,8 @@
       const tocToggleBtn = document.createElement('button');
       tocToggleBtn.className = 'toc-toggle-button';
       tocToggleBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-      tocToggleBtn.setAttribute('aria-label', 'Toggle ToC');
+      tocToggleBtn.setAttribute('aria-label', '{{ i18n "Toggle ToC" | default "Toggle ToC" }}');
+      tocToggleBtn.setAttribute('title', '{{ i18n "Toggle ToC" | default "Toggle ToC" }}');
       tocToggleBtn.addEventListener('click', (e) => {
         e.preventDefault();
         toggleToC();
@@ -96,9 +101,15 @@
 
         if (window.innerWidth > tocBreakpoint) {
           // Desktop: reset states
-          if (tocControl) tocControl.checked = false;
-          if (tocOverlay) tocOverlay.classList.remove('active');
-          if (tocPanel) tocPanel.classList.remove('overlay-mode');
+          if (tocControl) {
+            tocControl.checked = false;
+          }
+          if (tocOverlay) {
+            tocOverlay.classList.remove('active');
+          }
+          if (tocPanel) {
+            tocPanel.classList.remove('overlay-mode');
+          }
         }
       }, 250);
     });
