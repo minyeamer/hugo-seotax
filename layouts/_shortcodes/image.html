@@ -18,8 +18,11 @@
 {{- with .Get "max-height" -}}{{- $size = $size | append (print "max-height: " .) -}}{{- end -}}
 {{- /* --- Render --- */ -}}
 <label class="sc-image" for="sc-image-toggle-{{ .Ordinal }}" {{- with $align }}style="text-align: {{ . }};"{{ end -}}>
+  {{- if $href -}}
+  <a href="{{ $href }}" target="{{ $target }}">
+  {{- else -}}
   <input class="hidden toggle" type="checkbox" id="sc-image-toggle-{{ .Ordinal }}" />
-  {{- with $href }}<a href="{{ . }}" target="{{ $target }}">{{- end }}
+  {{- end -}}
   <img src="{{ $src }}"
     {{- with $alt }}alt="{{ . }}"{{ end -}}
     {{- with $class }}class="{{ . }}"{{ end -}}
