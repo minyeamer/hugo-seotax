@@ -135,15 +135,12 @@
 
     // Close menu on escape key
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
+      const isDesktop = window.innerWidth > menuBreakpoint;
+
+      if (!isDesktop && (e.key === 'Escape')) {
         const menuControl = document.getElementById('menu-control');
-        const menuPanel = document.querySelector('.site-menu');
-        const isDesktop = window.innerWidth > menuBreakpoint;
-        
-        const isMenuOpen = isDesktop 
-          ? (menuPanel && !menuPanel.classList.contains('menu-hidden'))
-          : (menuControl && menuControl.checked);
-        
+        const isMenuOpen = menuControl && menuControl.checked;
+
         if (isMenuOpen) {
           toggleMenu(false);
         }

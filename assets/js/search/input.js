@@ -25,7 +25,7 @@
       return;
     }
 
-    if (input === document.activeElement) {
+    if (searchInput === document.activeElement) {
       return;
     }
 
