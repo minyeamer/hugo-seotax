@@ -82,5 +82,14 @@
 - id: "Date Format"
   translation: "02-01-2006"
 
+- id: "Read Format Hour"
+  translation: "%h ঘণ্টা %m মিনিট পাঠ"
+
+- id: "Read Format Min"
+  translation: "%m মিনিট পাঠ"
+
+- id: "Read Format Sec"
+  translation: "%s সেকেন্ড পাঠ"
+
 - id: "searchConfig"
   translation: "searchConfig"

@@ -82,5 +82,14 @@
 - id: "Date Format"
   translation: "02.01.2006"
 
+- id: "Read Format Hour"
+  translation: "%h ч %m мин чтения"
+
+- id: "Read Format Min"
+  translation: "%m мин чтения"
+
+- id: "Read Format Sec"
+  translation: "%s сек чтения"
+
 - id: "searchConfig"
   translation: "searchConfig"

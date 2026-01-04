@@ -82,5 +82,14 @@
 - id: "Date Format"
   translation: "02.01.2006"
 
+- id: "Read Format Hour"
+  translation: "%h sa %m dk okuma"
+
+- id: "Read Format Min"
+  translation: "%m dk okuma"
+
+- id: "Read Format Sec"
+  translation: "%s sn okuma"
+
 - id: "searchConfig"
   translation: "searchConfig"

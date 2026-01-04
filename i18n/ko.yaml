@@ -82,6 +82,15 @@
 - id: "Date Format"
   translation: "2006년 01월 02일"
 
+- id: "Read Format Hour"
+  translation: "읽는데 %h시간 %m분"
+
+- id: "Read Format Min"
+  translation: "읽는데 %m분"
+
+- id: "Read Format Sec"
+  translation: "읽는데 %s초"
+
 - id: "searchConfig"
   translation: |
     {

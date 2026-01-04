@@ -82,5 +82,14 @@
 - id: "Date Format"
   translation: "02/01/2006"
 
+- id: "Read Format Hour"
+  translation: "%h ሰዓት %m ደቂቃ ንባብ"
+
+- id: "Read Format Min"
+  translation: "%m ደቂቃ ንባብ"
+
+- id: "Read Format Sec"
+  translation: "%s ሰከንድ ንባብ"
+
 - id: "searchConfig"
   translation: "{ cache: true }"

@@ -82,5 +82,14 @@
 - id: "Date Format"
   translation: "2006年01月02日"
 
+- id: "Read Format Hour"
+  translation: "読了約 %h時間 %m分"
+
+- id: "Read Format Min"
+  translation: "読了約 %m分"
+
+- id: "Read Format Sec"
+  translation: "読了約 %s秒"
+
 - id: "searchConfig"
   translation: "searchConfig"

@@ -1,7 +1,8 @@
 {{ with .Date }}
-<div class="content-date">
+<div class="content-datetime">
   <time datetime="{{ .Format `2006-01-02T15:04:05Z07:00` }}">
     {{ .Format "2006. 1. 2. 15:04" }}
   </time>
+  <span id="reading-time"></span>
 </div>
 {{ end }}
