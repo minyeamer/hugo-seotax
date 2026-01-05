@@ -155,6 +155,12 @@ nav ul {
   font-size: $font-size-14;
   transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
   // Desktop: sticky positioning
   @media screen and (min-width: $menu-breakpoint) {
     position: sticky;
@@ -822,6 +828,12 @@ body[dir="rtl"] .site-menu {
   flex-shrink: 0;
   font-size: $font-size-14;
   transition: opacity 0.3s ease-in-out;
+
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
 
   // Desktop: sticky positioning
   @media screen and (min-width: $toc-breakpoint) {
