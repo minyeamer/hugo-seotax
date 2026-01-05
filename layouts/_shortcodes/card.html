@@ -17,7 +17,7 @@
 {{- define "card-content" -}}
 {{- with .Get "image" -}}
   {{- $destination := partial "links/portable-image" (dict "Page" $.Page "Destination" .) -}}
-  <img src="{{ $destination | safeURL }}" />
+  <img src="{{ $destination | safeURL }}" loading="lazy" decoding="async" />
 {{- end }}
   <div class="markdown-inner">
   {{ with .Inner }}{{ . }}{{ end }}

@@ -27,7 +27,8 @@
     {{- with $alt }}alt="{{ . }}"{{ end -}}
     {{- with $class }}class="{{ . }}"{{ end -}}
     {{- with $title }}title="{{ . }}"{{ end -}}
-    {{- with $loading }}loading="{{ . }}"{{ end -}}
+    loading="{{ $loading | default "lazy" }}"
+    decoding="async"
     {{- with $size }}style="{{ delimit . `; ` }}"{{ end -}}>
   {{- with $href }}</a>{{- end }}
 </label>

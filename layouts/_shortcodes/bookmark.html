@@ -108,7 +108,7 @@
 <a href="{{ $url }}" target="_blank" class="sc-bookmark-card {{ with $class }} {{ . }}{{ end }}">
   {{- if $image -}}
   <div class="sc-bookmark-image">
-    <img src="{{ $image }}" alt="{{ $title }}">
+    <img src="{{ $image }}" alt="{{ $title }}" loading="lazy" decoding="async">
   </div>
   {{- end -}}
   <div class="sc-bookmark-content">

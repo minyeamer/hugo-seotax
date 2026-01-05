@@ -2,7 +2,7 @@
   {{- with site.Params.menu.profileImage -}}
   <div class="profile-image-wrap">
     <a href="{{ $.Site.BaseURL }}">
-      <img src="{{ . | relURL }}" alt="Profile" class="profile-image" />
+      <img src="{{ . | relURL }}" alt="Profile" class="profile-image" decoding="async" />
     </a>
   </div>
   {{- end -}}
