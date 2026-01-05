@@ -1015,12 +1015,102 @@ body[dir="rtl"] .site-menu {
 
     cursor: pointer;
 
-    &:hover {
-      color: var(--color-link);
-    }
-
     &:active {
       transform: scale(0.95);
+    }
+  }
+
+  .toolbar-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .toolbar-toggle-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    i {
+      position: absolute;
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .icon-expand {
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+
+    .icon-collapse {
+      opacity: 0;
+      transform: rotate(-90deg);
+    }
+  }
+
+  // Desktop: default expanded
+  @media screen and (min-width: $menu-breakpoint) {
+    #toolbar-toggle:checked ~ .toolbar-items {
+      display: none;
+    }
+
+    #toolbar-toggle:checked ~ .toolbar-toggle-label {
+      .icon-expand {
+        opacity: 1;
+        transform: rotate(0deg);
+      }
+
+      .icon-collapse {
+        opacity: 0;
+        transform: rotate(-90deg);
+      }
+    }
+
+    #toolbar-toggle:not(:checked) ~ .toolbar-toggle-label {
+      background-color: #8b1a1a;
+      color: white;
+
+      .icon-expand {
+        opacity: 0;
+        transform: rotate(90deg);
+      }
+
+      .icon-collapse {
+        opacity: 1;
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  // Mobile: default collapsed
+  @media screen and (max-width: $menu-breakpoint) {
+    #toolbar-toggle:not(:checked) ~ .toolbar-items {
+      display: none;
+    }
+
+    #toolbar-toggle:not(:checked) ~ .toolbar-toggle-label {
+      .icon-expand {
+        opacity: 1;
+        transform: rotate(0deg);
+      }
+
+      .icon-collapse {
+        opacity: 0;
+        transform: rotate(-90deg);
+      }
+    }
+
+    #toolbar-toggle:checked ~ .toolbar-toggle-label {
+      background-color: #8b1a1a;
+      color: white;
+      .icon-expand {
+        opacity: 0;
+        transform: rotate(90deg);
+      }
+      .icon-collapse {
+        opacity: 1;
+        transform: rotate(0deg);
+      }
     }
   }
 }
