@@ -36,6 +36,7 @@
   .sc-bookmark-card {
     display: flex;
     width: 100%;
+    max-height: 150px;
     margin: $padding-20 0;
     border: 1px solid var(--gray-300);
     border-radius: 8px;
@@ -69,28 +70,63 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      min-width: 0;
     }
 
     .sc-bookmark-title {
       margin: 0 0 $padding-8 0;
       font-size: $font-size-18;
       font-weight: 600;
-      line-height: 1.5;
+      line-height: 1.4;
       color: var(--body-font-color);
+
+      line-clamp: 2;
       overflow: hidden;
-      word-break: break-word;
+      word-break: break-all;
     }
 
     .sc-bookmark-description {
       margin: 0 0 $padding-8 0;
       font-size: $font-size-14;
-      line-height: 1.5;
+      line-height: 1.4;
       color: var(--gray-500);
+
+      line-clamp: 2;
+      overflow: hidden;
+      word-break: break-all;
     }
 
     .sc-bookmark-url {
       font-size: $font-size-12;
       color: var(--gray-500);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    @media screen and (max-width: $menu-breakpoint) {
+      max-height: 120px;
+
+      .sc-bookmark-image {
+        width: 120px;
+        height: 120px;
+      }
+
+      .sc-bookmark-content {
+        padding: $padding-12;
+      }
+
+      .sc-bookmark-title {
+        font-size: $font-size-16;
+        margin-bottom: $padding-4;
+        line-clamp: 1;
+      }
+
+      .sc-bookmark-description {
+        font-size: $font-size-12;
+        margin-bottom: $padding-4;
+        line-clamp: 2;
+      }
     }
   }
 
