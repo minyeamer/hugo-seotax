@@ -64,7 +64,7 @@
       display: flex;
       gap: 0.5rem;
       align-items: center;
-      z-index: 10;
+      z-index: $z-index-content;
     }
 
     .code-action {

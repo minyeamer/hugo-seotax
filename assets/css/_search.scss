@@ -4,7 +4,7 @@
   position: relative;
   margin: $padding-8 0;
   border-bottom: 1px solid transparent;
-  z-index: 10;
+  z-index: $z-index-content;
 
   .search-input-container {
     position: relative;
@@ -64,7 +64,7 @@
     background: var(--gray-100);
     border: 1px solid var(--gray-200);
     border-radius: $border-radius;
-    z-index: 11;
+    z-index: $z-index-menu-search;
 
     a {
       font-size: $font-size-14;

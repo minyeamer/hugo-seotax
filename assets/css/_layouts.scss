@@ -92,7 +92,7 @@ nav ul {
   width: 100%;
   max-width: $body-wide-width;
   flex: 1 1 0;
-  margin: 0 auto;
+  margin: $padding-16 auto;
 
   // Mobile: fixed layout for overlay
   @media screen and (max-width: $menu-breakpoint) {
@@ -124,7 +124,7 @@ nav ul {
   left: 0;
   width: 100vw;
   height: 3px;
-  z-index: 9999;
+  z-index: $z-index-scroll-progress;
   pointer-events: none;
 }
 
@@ -169,7 +169,7 @@ nav ul {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 150;
+    z-index: $z-index-menu;
     visibility: hidden;
     margin-inline-start: -$menu-width;
   }
@@ -211,7 +211,7 @@ nav ul {
     border: none;
     padding: $padding-8;
     cursor: pointer;
-    z-index: 10;
+    z-index: $z-index-content;
     display: block;
 
     i {
@@ -257,7 +257,7 @@ nav ul {
   border: none;
   margin: $padding-12;
   cursor: pointer;
-  z-index: 110;
+  z-index: $z-index-menu-button;
   width: 2.5rem;
   height: 2.5rem;
   display: none;
@@ -292,7 +292,7 @@ nav ul {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 140;
+  z-index: $z-index-menu-overlay;
   display: none;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -389,7 +389,7 @@ body[dir="rtl"] .site-menu {
   padding-bottom: $padding-16;
   border-bottom: 1px solid var(--gray-500);
   position: relative;
-  z-index: 1;
+  z-index: $z-index-base;
 
   i.fa-file, i.fa-folder, i.fa-chevron-down, i.fa-chevron-up {
     font-size: $font-size-14;
@@ -506,7 +506,7 @@ body[dir="rtl"] .site-menu {
   @media screen and (max-width: $toc-breakpoint) {
     display: block;
     position: sticky;
-    z-index: 1000;
+    z-index: $z-index-header;
     opacity: 0.9;
     top: 0;
     background-color: var(--body-background);
@@ -542,7 +542,7 @@ body[dir="rtl"] .site-menu {
 /* Content */
 
 .content-wrap {
-  margin-bottom: $padding-64;
+  margin-bottom: $padding-48;
 
   @media screen and (max-width: $toc-breakpoint) {
     margin-top: $padding-16;
@@ -838,7 +838,7 @@ body[dir="rtl"] .site-menu {
     position: fixed;
     top: 0;
     right: 0;
-    z-index: 100;
+    z-index: $z-index-toc;
     overflow-x: hidden;
 
     // Overlay: show ToC as modal
@@ -857,7 +857,7 @@ body[dir="rtl"] .site-menu {
       transform: translateX(-50%);
       background: var(--body-background);
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-      z-index: 1001;
+      z-index: $z-index-modal;
       overflow-y: auto;
       border-radius: $border-radius;
 
@@ -909,7 +909,7 @@ body[dir="rtl"] .site-menu {
     border: none;
     padding: $padding-8;
     cursor: pointer;
-    z-index: 10;
+    z-index: $z-index-content;
     display: none;
 
     i {
@@ -953,7 +953,7 @@ body[dir="rtl"] .site-menu {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
+  z-index: $z-index-modal-overlay;
   display: none;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -972,7 +972,7 @@ body[dir="rtl"] .site-menu {
   position: fixed;
   bottom: 0;
   right: 0;
-  z-index: 101;
+  z-index: $z-index-toolbar;
   margin-bottom: $padding-16;
   margin-right: $padding-64;
 

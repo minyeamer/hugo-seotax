@@ -38,15 +38,28 @@ $toc-margin-right: 3rem !default;
 $wide-breakpoint: $menu-width + $body-wide-width * 1.1 + $toc-width + $toc-margin-right !default;
 $toc-breakpoint: $menu-width + $body-max-width * 1.1 + $toc-width !default;
 $menu-breakpoint: $menu-width + $body-max-width * 1.3 !default;
-$narrow-breakpoint: ($body-min-width + $body-max-width) / 2;
+$narrow-breakpoint: ($body-min-width + $body-max-width) / 2 !default;
 
-$toc-overlay-width: 32rem;
-$toc-overlay-height: 80vh;
+$toc-overlay-width: 32rem !default;
+$toc-overlay-height: 80vh !default;
 
-$preview-width: 200px;
-$preview-height: 170px;
-$preview-mobile-width: 160px;
-$preview-mobile-height: 160px;
+$preview-width: 200px !default;
+$preview-height: 170px !default;
+$preview-mobile-width: 160px !default;
+$preview-mobile-height: 160px !default;
+
+$z-index-scroll-progress: 9999 !default;
+$z-index-modal: 1001 !default;
+$z-index-modal-overlay: 1000 !default;
+$z-index-menu: 210 !default;
+$z-index-menu-overlay: 209 !default;
+$z-index-menu-button: 200 !default;
+$z-index-header: 150 !default;
+$z-index-toolbar: 101 !default;
+$z-index-toc: 100 !default;
+$z-index-menu-search: 11 !default;
+$z-index-content: 10 !default;
+$z-index-base: 1 !default;
 
 $hint-colors: (
   default: #64748b,
