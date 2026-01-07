@@ -2,12 +2,62 @@
   'use strict';
 
   const menuBreakpoint = 256 + 768 * 1.3;
+  const storageKey = 'menu-expanded';
   let scrollPosition = 0;
+
+  function isMenuExpanded() {
+    const stored = localStorage.getItem(storageKey);
+    return stored === null ? true : stored === 'true';
+  }
+
+  /**
+   * Applies the desktop menu state (expanded/collapsed)
+   * @param {boolean} isExpanded
+   * @param {boolean} [animate=true] Whether to use CSS transitions
+   */
+  function applyDesktopState(isExpanded, animate = true) {
+    const menuPanel = document.querySelector('.site-menu');
+    const floatingToggle = document.querySelector('.menu-display-button');
+    if (!menuPanel) return;
+
+    if (!animate) {
+      menuPanel.style.transition = 'none';
+      if (floatingToggle) floatingToggle.style.transition = 'none';
+    }
+
+    if (isExpanded) {
+      if (floatingToggle) floatingToggle.style.display = 'none';
+      menuPanel.classList.remove('menu-hidden');
+    } else {
+      menuPanel.classList.add('menu-hidden');
+      if (floatingToggle) {
+        if (animate) {
+          // Wait for menu transition (0.3s) before showing display button
+          setTimeout(() => {
+            if (!isMenuExpanded() && window.innerWidth > menuBreakpoint) {
+              floatingToggle.style.display = 'block';
+            }
+          }, 300);
+        } else {
+          floatingToggle.style.display = 'block';
+        }
+      }
+    }
+
+    if (!animate) {
+      // Force a reflow to apply 'transition: none' immediately before restoring
+      menuPanel.offsetHeight;
+      menuPanel.style.transition = '';
+      if (floatingToggle) {
+        floatingToggle.offsetHeight;
+        floatingToggle.style.transition = '';
+      }
+    }
+  }
 
   function toggleMenu(forceState) {
     const menuControl = document.getElementById('menu-control');
     const menuPanel = document.querySelector('.site-menu');
-    const floatingToggle = document.querySelector('.menu-display-button');
 
     if (!menuControl || !menuPanel) {
       return;
@@ -17,39 +67,14 @@
     scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 
     if (window.innerWidth > menuBreakpoint) {
-      // Desktop: toggle class on menu panel
-      if (forceState !== undefined) {
-        if (forceState) {
-          // Opening menu: hide button immediately
-          if (floatingToggle) floatingToggle.style.display = 'none';
-          menuPanel.classList.remove('menu-hidden');
-        } else {
-          // Closing menu: wait for transition to complete
-          menuPanel.classList.add('menu-hidden');
-          if (floatingToggle) {
-            // Wait for CSS transition (0.3s)
-            setTimeout(() => {
-              floatingToggle.style.display = 'block';
-            }, 300);
-          }
-        }
-      } else {
-        const isHiding = !menuPanel.classList.contains('menu-hidden');
-        menuPanel.classList.toggle('menu-hidden');
-        if (floatingToggle) {
-          if (isHiding) {
-            // Closing: delay button appearance
-            setTimeout(() => {
-              floatingToggle.style.display = 'block';
-            }, 300);
-          } else {
-            // Opening: hide button immediately
-            floatingToggle.style.display = 'none';
-          }
-        }
-      }
+      // Desktop: save state and animate toggle
+      const currentState = isMenuExpanded();
+      const nextState = forceState !== undefined ? forceState : !currentState;
+
+      localStorage.setItem(storageKey, nextState);
+      applyDesktopState(nextState, true);
     } else {
-      // Mobile: use checkbox
+      // Mobile: use checkbox (no localStorage, no transition override needed here usually)
       if (forceState !== undefined) {
         menuControl.checked = forceState;
       } else {
@@ -65,8 +90,11 @@
 
   // Initialize on DOM ready
   function init() {
-    // Create desktop menu toggle button (inside menu)
+    const menuControl = document.getElementById('menu-control');
+    const menuPanel = document.querySelector('.site-menu');
     const menuContent = document.querySelector('.site-menu .menu-content');
+
+    // Create desktop menu toggle button (inside menu)
     if (menuContent) {
       const menuToggleBtn = document.createElement('button');
       menuToggleBtn.className = 'menu-toggle-button';
@@ -81,7 +109,6 @@
     }
 
     // Create menu display button (outside menu, for when collapsed)
-    const menuPanel = document.querySelector('.site-menu');
     if (menuPanel) {
       const menuDisplayBtn = document.createElement('button');
       menuDisplayBtn.className = 'menu-display-button';
@@ -91,13 +118,15 @@
       menuDisplayBtn.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        toggleMenu(true); // Force open
+        toggleMenu(true); // Force open (animated)
       });
       document.body.appendChild(menuDisplayBtn);
 
-      // Initial state: hide if menu is visible
-      if (!menuPanel.classList.contains('menu-hidden')) {
-        menuDisplayBtn.style.display = 'none';
+      // Initial state application for Desktop (from localStorage, NO animation)
+      if (window.innerWidth > menuBreakpoint) {
+        applyDesktopState(isMenuExpanded(), false);
+        // Remove initial guard class after JS takes over
+        document.documentElement.classList.remove('menu-initial-collapsed');
       }
     }
 
@@ -112,12 +141,9 @@
 
     // Handle menu overlay clicks - using event delegation
     document.addEventListener('click', (e) => {
-      const menuControl = document.getElementById('menu-control');
-      const menuPanel = document.querySelector('.site-menu');
       const isDesktop = window.innerWidth > menuBreakpoint;
-
-      const isMenuOpen = isDesktop 
-        ? (menuPanel && !menuPanel.classList.contains('menu-hidden'))
+      const isMenuOpen = isDesktop
+        ? isMenuExpanded()
         : (menuControl && menuControl.checked);
 
       if (!isMenuOpen) {
@@ -138,7 +164,6 @@
       const isDesktop = window.innerWidth > menuBreakpoint;
 
       if (!isDesktop && (e.key === 'Escape')) {
-        const menuControl = document.getElementById('menu-control');
         const isMenuOpen = menuControl && menuControl.checked;
 
         if (isMenuOpen) {
@@ -152,18 +177,14 @@
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
-        const menuControl = document.getElementById('menu-control');
-        const menuPanel = document.querySelector('.site-menu');
-        const floatingToggle = document.querySelector('.menu-display-button');
-
         if (window.innerWidth > menuBreakpoint) {
-          // Desktop: reset states
+          // Desktop: reset mobile state and apply saved desktop state (NO animation)
           if (menuControl) menuControl.checked = false;
-          if (menuPanel) menuPanel.classList.remove('menu-hidden');
-          if (floatingToggle) floatingToggle.style.display = 'none';
+          applyDesktopState(isMenuExpanded(), false);
         } else {
-          // Mobile: remove desktop class
+          // Mobile: remove desktop class and hide toggle
           if (menuPanel) menuPanel.classList.remove('menu-hidden');
+          const floatingToggle = document.querySelector('.menu-display-button');
           if (floatingToggle) floatingToggle.style.display = 'none';
         }
       }, 250);

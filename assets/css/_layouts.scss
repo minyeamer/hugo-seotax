@@ -149,6 +149,19 @@ nav ul {
 
 /* Menu */
 
+.menu-initial-collapsed {
+  .site-menu {
+    width: 0 !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+    transition: none !important;
+  }
+  .menu-display-button {
+    display: block !important;
+    transition: none !important;
+  }
+}
+
 .site-menu {
   width: $menu-width;
   flex-shrink: 0;
