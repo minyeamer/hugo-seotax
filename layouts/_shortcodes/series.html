@@ -1,0 +1,80 @@
+{{- /* --- Parameters --- */ -}}
+{{- $seriesName := .Get 0 -}}
+{{- $removePrefix := .Get 1 | default "" -}}
+{{- /* --- Render --- */ -}}
+{{- if $seriesName -}}
+  {{- $pages := (partialCached "pages/series" $seriesName $seriesName).ByDate -}}
+  <div id="series-anchor"></div>
+  <div class="sc-series">
+    <div class="series-bookmark">
+      <svg width="32" height="48" fill="currentColor" viewBox="0 0 32 48" class="series-corner-image">
+        <path fill="currentColor" d="M32 0H0v48h.163l16-16L32 47.836V0z"></path>
+      </svg>
+    </div>
+    <div class="series-header">
+      <h2 class="series-title">{{ $seriesName }}</h2>
+    </div>
+    <input type="checkbox" id="series-toggle" class="series-toggle-input" hidden>
+    {{- $activeIndex := 0 -}}
+    <div class="series-content">
+      <ol class="series-list">
+        {{/* Identify active page index and render series list */}}
+        {{- range $index, $page := $pages -}}
+        {{- $isActive := eq $page.RelPermalink $.Page.RelPermalink -}}
+        {{- if $isActive -}}
+          {{- $activeIndex = $index -}}
+        {{- end -}}
+        {{- /* Remove prefix from title */ -}}
+        {{- $displayTitle := $page.Title -}}
+        {{- if $removePrefix -}}
+          {{- $displayTitle = replaceRE (printf "^%s" $removePrefix) "" $displayTitle -}}
+        {{- end -}}
+        <li class="series-item {{ if $isActive }}active{{ end }}">
+          <span class="series-item-index">{{ add $index 1 }}.</span>
+          <a href="{{ $page.RelPermalink }}#series-anchor">{{ $displayTitle }}</a>
+        </li>
+        {{- end -}}
+      </ol>
+    </div>
+    <div class="series-footer">
+      <label for="series-toggle" class="series-toggle-label">
+        <span class="series-toggle-icon"><i class="fas fa-caret-up"></i></span>
+        <span class="series-toggle-text-hide">숨기기</span>
+        <span class="series-toggle-text-show">목록 보기</span>
+      </label>
+      <div class="series-nav">
+        {{- $count := len $pages -}}
+        <span class="series-nav-info">{{ add $activeIndex 1 }}/{{ $count }}</span>
+        {{/* Navigation buttons for adjacent pages in the series */}}
+        <div class="series-nav-buttons">
+          {{ if gt $activeIndex 0 -}}
+          <a href="{{ (index $pages (sub $activeIndex 1)).RelPermalink }}#series-anchor" class="series-nav-button"><i class="fas fa-chevron-left"></i></a>
+          {{- else -}}
+          <span class="series-nav-button disabled"><i class="fas fa-chevron-left"></i></span>
+          {{- end }}
+          {{ if lt (add $activeIndex 1) $count -}}
+          <a href="{{ (index $pages (add $activeIndex 1)).RelPermalink }}#series-anchor" class="series-nav-button"><i class="fas fa-chevron-right"></i></a>
+          {{- else -}}
+          <span class="series-nav-button disabled"><i class="fas fa-chevron-right"></i></span>
+          {{- end }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    /**
+     * Persist the expanded/collapsed state of the series list using localStorage.
+     */
+    (function() {
+      const toggle = document.getElementById('series-toggle');
+      const storageKey = 'series-expanded';
+      const isExpanded = localStorage.getItem(storageKey);
+      if (isExpanded === 'true') {
+        toggle.checked = true;
+      }
+      toggle.addEventListener('change', function() {
+        localStorage.setItem(storageKey, this.checked);
+      });
+    })();
+  </script>
+{{- end -}}

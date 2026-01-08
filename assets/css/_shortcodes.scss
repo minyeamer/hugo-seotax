@@ -379,4 +379,188 @@
       @include outline;
     }
   }
+
+  // {{< series >}}
+  .sc-series {
+    position: relative;
+    margin: 0 0 $padding-32 0;
+    padding: $padding-24 $padding-24 $padding-12 $padding-24;
+    background: var(--gray-100);
+    border-radius: 8px;
+
+    .series-bookmark {
+      position: absolute;
+      top: 0;
+      right: $padding-32;
+      width: 2.5rem;
+      height: 3.8rem;
+      margin: 0;
+      line-height: 0;
+      z-index: 1;
+
+      svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        path {
+          fill: var(--color-link);
+        }
+      }
+    }
+
+    .series-header {
+      margin-bottom: $padding-16;
+    }
+
+    .series-title {
+      margin: 0;
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: var(--body-font-color);
+      border: none;
+      padding: 0;
+    }
+
+    .series-toggle-input {
+      display: none;
+    }
+
+    .series-content {
+      margin-top: $padding-16;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
+    }
+
+    .series-toggle-input:checked ~ .series-content {
+      max-height: 100vh;
+    }
+
+    .series-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .series-item {
+      display: flex;
+      gap: $padding-8;
+      margin-bottom: $padding-8;
+      font-size: $font-size-16;
+
+      .series-item-index {
+        font-style: italic;
+        color: var(--gray-500);
+        flex-shrink: 0;
+      }
+
+      a {
+        color: var(--body-font-color);
+        text-decoration: none;
+        word-break: break-all;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      &.active a {
+        color: var(--color-link);
+        font-weight: 800;
+        pointer-events: none;
+      }
+    }
+
+    .series-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: $padding-12;
+    }
+
+    .series-toggle-label {
+      display: flex;
+      align-items: center;
+      gap: $padding-4;
+      color: var(--body-font-color);
+      font-size: $font-size-14;
+      user-select: none;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      .series-toggle-text-show { display: inline; }
+      .series-toggle-text-hide { display: none; }
+
+      .series-toggle-icon {
+        display: flex;
+        align-items: center;
+        transition: transform 0.3s;
+      }
+    }
+
+    .series-toggle-input:checked ~ .series-footer .series-toggle-label {
+      .series-toggle-text-show { display: none; }
+      .series-toggle-text-hide { display: inline; }
+      .series-toggle-icon { transform: rotate(0deg); }
+    }
+
+    .series-toggle-input:not(:checked) ~ .series-footer .series-toggle-label {
+      .series-toggle-icon { transform: rotate(180deg); }
+    }
+
+    .series-nav {
+      display: flex;
+      align-items: center;
+      gap: $padding-16;
+      color: var(--gray-500);
+      font-size: $font-size-14;
+
+      .series-nav-info {
+        font-family: monospace;
+      }
+
+      .series-nav-buttons {
+        display: flex;
+        gap: $padding-8;
+
+        .series-nav-button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 24px;
+          height: 24px;
+          border: 1px solid var(--color-link);
+          border-radius: 50%;
+          color: var(--color-link);
+          transition: all 0.2s;
+          cursor: pointer;
+
+          &:not(.disabled):hover {
+            background-color: var(--color-link);
+            color: var(--body-background);
+          }
+
+          &.disabled {
+            border-color: var(--gray-300);
+            color: var(--gray-500);
+            opacity: 0.3;
+            cursor: not-allowed;
+            pointer-events: none;
+          }
+          
+          i {
+            font-size: 0.75rem;
+          }
+        }
+      }
+    }
+  }
+
+  #series-anchor {
+    height: $padding-32;
+    margin-top: -$padding-32;
+  }
 }

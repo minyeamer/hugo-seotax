@@ -35,11 +35,18 @@
 {{ end }}{{ end }}
 
 {{- /* If it is part of a series, link to related articles */}}
-{{- $permalink := .Permalink }}
-{{- $siteSeries := .Site.Taxonomies.series }}
-{{ with .Params.series }}{{- range $name := . }}
-  {{- $series := index $siteSeries ($name | urlize) }}
-  {{- range $page := first 6 $series.Pages }}
-    {{- if ne $page.Permalink $permalink }}<meta property="og:see_also" content="{{ $page.Permalink }}" />{{ end }}
-  {{- end }}
-{{ end }}{{ end }}
+{{- $seriesName := "" -}}
+{{ if reflect.IsSlice .Params.series }}
+  {{- $seriesName = cond (gt (len .Params.series) 0) (index .Params.series 0 | string) "" -}}
+{{ else if eq (printf "%T" .Params.series) "string" }}
+  {{- $seriesName = .Params.series -}}
+{{ end }}
+{{- $permalink := .Permalink -}}
+{{- if $seriesName -}}
+  {{- $seeAlso := slice -}}
+  {{- range partialCached "pages/series" $seriesName $seriesName | first 6 -}}
+    {{- if ne .Permalink $permalink -}}
+      <meta property="og:see_also" content="{{ .Permalink }}" />
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

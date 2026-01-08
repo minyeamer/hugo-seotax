@@ -1,6 +1,5 @@
-{{- $section := default "posts" .Site.Params.posts.section -}}
-{{- $pages := where .Site.RegularPages "Section" $section -}}
-{{- $pages = where $pages "Content" "!=" "" -}}
+{{- $section := default "posts" site.Params.posts.section -}}
+{{- $pages := where site.RegularPages "Section" $section -}}
 {{- $pages = where $pages "Params.hidden" "!=" true -}}
 {{- $pages = $pages.ByDate.Reverse -}}
 {{- return $pages -}}

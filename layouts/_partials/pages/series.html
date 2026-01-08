@@ -1,0 +1,16 @@
+{{- $seriesName := . -}}
+{{- $pages := slice -}}
+{{- if $seriesName -}}
+  {{- range partialCached "pages/posts" site "posts" -}}
+    {{- $postSeries := .Params.series -}}
+    {{- if $postSeries -}}
+      {{- if not (reflect.IsSlice $postSeries) -}}
+        {{- $postSeries = slice $postSeries -}}
+      {{- end -}}
+      {{- if in $postSeries $seriesName -}}
+        {{- $pages = $pages | append . -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $pages -}}
