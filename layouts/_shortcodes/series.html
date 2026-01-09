@@ -68,7 +68,7 @@
     (function() {
       const toggle = document.getElementById('series-toggle');
       const storageKey = 'series-expanded';
-      const isExpanded = localStorage.getItem(storageKey);
+      const isExpanded = localStorage.getItem(storageKey) ?? 'true';
       if (isExpanded === 'true') {
         toggle.checked = true;
       }
