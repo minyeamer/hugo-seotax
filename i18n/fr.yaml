@@ -52,11 +52,17 @@
 - id: "Tags"
   translation: "Étiquettes"
 
-- id: "Tags List"
-  translation: "Liste des étiquettes"
+- id: "Hide"
+  translation: "Masquer"
+
+- id: "Show"
+  translation: "Afficher la liste"
 
 - id: "Search"
   translation: "Recherche"
+
+- id: "Search Input"
+  translation: "Appuyez sur `/` pour rechercher"
 
 - id: "Search Results"
   translation: "Résultats de recherche"

@@ -52,11 +52,17 @@
 - id: "Tags"
   translation: "Etiketter"
 
-- id: "Tags List"
-  translation: "Etiketteliste"
+- id: "Hide"
+  translation: "Skjul"
+
+- id: "Show"
+  translation: "Vis liste"
 
 - id: "Search"
   translation: "Søk"
+
+- id: "Search Input"
+  translation: "Trykk `/` for å søke"
 
 - id: "Search Results"
   translation: "Søkeresultater"

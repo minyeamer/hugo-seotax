@@ -1,25 +1,10 @@
 {{ if default true .Site.Params.search.enabled }}
-<div class="site-search hidden">
-  <div class="search-input-container">
-    <input type="text" id="search-input"
-      placeholder="{{ i18n `Search` | default `Search` }}" aria-label="{{ i18n `Search` | default `Search` }}"
-      maxlength="64" data-hotkeys="s/" onkeydown="if(event.key==='Enter') goToSearchPage()" />
-    <button type="button" id="search-button" class="search-button" onclick="goToSearchPage()">
-      <i class="fa-solid fa-magnifying-glass"></i>
-    </button>
-  </div>
-  <div class="search-spinner hidden"></div>
-  <ul class="search-input-results" id="search-input-results"></ul>
+<div class="menu-search" id="search-input" data-hotkeys="s/" role="button" tabindex="0"
+  aria-label="{{ i18n `Search` | default `Search` }}">
+  <i class="fa-solid fa-magnifying-glass search-icon"></i>
+  <span class="search-placeholder">
+    {{ $searchText := i18n "Search Input" | default "Press `/` to search" }}
+    {{ (replace $searchText "`/`" "<code>/</code>") | safeHTML }}
+  </span>
 </div>
-<script>
-document.querySelector(".site-search").classList.remove("hidden");
-
-function goToSearchPage() {
-  const searchInput = document.getElementById("search-input");
-  const query = searchInput.value.trim();
-  if (query) {
-    window.location.href = "/search/?query=" + encodeURIComponent(query);
-  }
-}
-</script>
 {{ end }}

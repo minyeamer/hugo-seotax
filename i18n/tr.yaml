@@ -52,11 +52,17 @@
 - id: "Tags"
   translation: "Etiketler"
 
-- id: "Tags List"
-  translation: "Etiket listesi"
+- id: "Hide"
+  translation: "Gizle"
+
+- id: "Show"
+  translation: "Listeyi göster"
 
 - id: "Search"
   translation: "Arama"
+
+- id: "Search Input"
+  translation: "Aramak için `/` tuşuna basın"
 
 - id: "Search Results"
   translation: "Arama sonuçları"

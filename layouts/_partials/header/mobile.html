@@ -6,9 +6,18 @@
     <i class="fa-solid fa-bars menu-icon" id="menu-icon"></i>
   </label>
 
+  {{ if default true .Site.Params.search.enabled }}
+  <div class="mobile-search" id="mobile-search-input" role="button" tabindex="0"
+    aria-label="{{ i18n `Search` | default `Search` }}">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <span class="mobile-title">{{ .Site.Title }}</span>
+    <i class="mobile-title-pad"></i>
+  </div>
+  {{ else }}
   <h3>
     <a href="{{ .Site.BaseURL }}" class="mobile-title">{{ .Site.Title }}</a>
   </h3>
+  {{ end }}
 
   <label for="toc-control"
     aria-label="{{ i18n `Toggle ToC` | default `Toggle ToC` }}"

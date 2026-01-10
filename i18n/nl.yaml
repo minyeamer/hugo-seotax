@@ -52,11 +52,17 @@
 - id: "Tags"
   translation: "Tags"
 
-- id: "Tags List"
-  translation: "Taglijst"
+- id: "Hide"
+  translation: "Verbergen"
+
+- id: "Show"
+  translation: "Lijst tonen"
 
 - id: "Search"
   translation: "Zoeken"
+
+- id: "Search Input"
+  translation: "Druk op `/` om te zoeken"
 
 - id: "Search Results"
   translation: "Zoekresultaten"

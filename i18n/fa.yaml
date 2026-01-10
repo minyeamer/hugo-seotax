@@ -52,11 +52,17 @@
 - id: "Tags"
   translation: "برچسب‌ها"
 
-- id: "Tags List"
-  translation: "فهرست برچسب‌ها"
+- id: "Hide"
+  translation: "پنهان کردن"
+
+- id: "Show"
+  translation: "نمایش لیست"
 
 - id: "Search"
   translation: "جستجو"
+
+- id: "Search Input"
+  translation: "برای جستجو `/` را فشار دهید"
 
 - id: "Search Results"
   translation: "نتایج جستجو"

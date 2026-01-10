@@ -52,8 +52,17 @@
 - id: "Tags"
   translation: "태그"
 
+- id: "Hide"
+  translation: "숨기기"
+
+- id: "Show"
+  translation: "목록 보기"
+
 - id: "Search"
   translation: "검색"
+
+- id: "Search Input"
+  translation: "`/` 를 눌러 검색하세요"
 
 - id: "Search Results"
   translation: "검색 결과"
@@ -65,7 +74,7 @@
   translation: "전체 글 %s"
 
 - id: "More Label"
-  translation: "더 보기 (총 %d개)"
+  translation: "전체 %d개 결과 보기"
 
 - id: "Search Label"
   translation: "\"%q\" 검색 결과 %s"

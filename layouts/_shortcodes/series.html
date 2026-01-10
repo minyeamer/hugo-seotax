@@ -39,8 +39,8 @@
     <div class="series-footer">
       <label for="series-toggle" class="series-toggle-label">
         <span class="series-toggle-icon"><i class="fas fa-caret-up"></i></span>
-        <span class="series-toggle-text-hide">숨기기</span>
-        <span class="series-toggle-text-show">목록 보기</span>
+        <span class="series-toggle-text-hide">{{ i18n "Hide" | default "Hide" }}</span>
+        <span class="series-toggle-text-show">{{ i18n "Show" | default "Show" }}</span>
       </label>
       <div class="series-nav">
         {{- $count := len $pages -}}

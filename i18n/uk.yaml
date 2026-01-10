@@ -52,11 +52,17 @@
 - id: "Tags"
   translation: "Теги"
 
-- id: "Tags List"
-  translation: "Список тегів"
+- id: "Hide"
+  translation: "Приховати"
+
+- id: "Show"
+  translation: "Показати список"
 
 - id: "Search"
   translation: "Пошук"
+
+- id: "Search Input"
+  translation: "Натисніть `/` для пошуку"
 
 - id: "Search Results"
   translation: "Результати пошуку"

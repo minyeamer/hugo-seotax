@@ -52,11 +52,17 @@
 - id: "Tags"
   translation: "Štítky"
 
-- id: "Tags List"
-  translation: "Seznam štítků"
+- id: "Hide"
+  translation: "Skrýt"
+
+- id: "Show"
+  translation: "Zobrazit seznam"
 
 - id: "Search"
   translation: "Vyhledávat"
+
+- id: "Search Input"
+  translation: "Stiskněte `/` pro vyhledávání"
 
 - id: "Search Results"
   translation: "Výsledky vyhledávání"

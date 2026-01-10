@@ -52,11 +52,17 @@
 - id: "Tags"
   translation: "Етикети"
 
-- id: "Tags List"
-  translation: "Списък на етикети"
+- id: "Hide"
+  translation: "Скриване"
+
+- id: "Show"
+  translation: "Показване на списък"
 
 - id: "Search"
   translation: "Търсене"
+
+- id: "Search Input"
+  translation: "Натиснете `/` за търсене"
 
 - id: "Search Results"
   translation: "Резултати от търсенето"

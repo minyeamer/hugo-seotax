@@ -52,11 +52,17 @@
 - id: "Tags"
   translation: "Taggar"
 
-- id: "Tags List"
-  translation: "Tagglista"
+- id: "Hide"
+  translation: "Dölj"
+
+- id: "Show"
+  translation: "Visa lista"
 
 - id: "Search"
   translation: "Sök"
+
+- id: "Search Input"
+  translation: "Tryck `/` för att söka"
 
 - id: "Search Results"
   translation: "Sökresultat"

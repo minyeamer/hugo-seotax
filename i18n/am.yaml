@@ -52,11 +52,17 @@
 - id: "Tags"
   translation: "መለያዎች"
 
-- id: "Tags List"
-  translation: "የመለያዎች ዝርዝር"
+- id: "Hide"
+  translation: "ደብቅ"
+
+- id: "Show"
+  translation: "ዝርዝር አሳይ"
 
 - id: "Search"
   translation: "ፈልግ"
+
+- id: "Search Input"
+  translation: "ልማፍሌግ `/` ይጫኑ"
 
 - id: "Search Results"
   translation: "የፍለጋ ውጤቶች"

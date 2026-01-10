@@ -52,11 +52,17 @@
 - id: "Tags"
   translation: "タグ"
 
-- id: "Tags List"
-  translation: "タグ一覧"
+- id: "Hide"
+  translation: "非表示"
+
+- id: "Show"
+  translation: "リストを表示"
 
 - id: "Search"
   translation: "検索"
+
+- id: "Search Input"
+  translation: "`/` を押して検索"
 
 - id: "Search Results"
   translation: "検索結果"

@@ -52,11 +52,17 @@
 - id: "Tags"
   translation: "Lebo"
 
-- id: "Tags List"
-  translation: "Orodha ya lebo"
+- id: "Hide"
+  translation: "Ficha"
+
+- id: "Show"
+  translation: "Onyesha orodha"
 
 - id: "Search"
   translation: "Tafuta"
+
+- id: "Search Input"
+  translation: "Bonyeza `/` kutafuta"
 
 - id: "Search Results"
   translation: "Matokeo ya utafutaji"

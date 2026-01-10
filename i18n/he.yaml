@@ -52,11 +52,17 @@
 - id: "Tags"
   translation: "תגיות"
 
-- id: "Tags List"
-  translation: "רשימת תגיות"
+- id: "Hide"
+  translation: "הסתר"
+
+- id: "Show"
+  translation: "הצג רשימה"
 
 - id: "Search"
   translation: "חיפוש"
+
+- id: "Search Input"
+  translation: "לחץ על `/` לחיפוש"
 
 - id: "Search Results"
   translation: "תוצאות חיפוש"

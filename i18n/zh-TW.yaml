@@ -52,11 +52,17 @@
 - id: "Tags"
   translation: "標籤"
 
-- id: "Tags List"
-  translation: "標籤列表"
+- id: "Hide"
+  translation: "隱藏"
+
+- id: "Show"
+  translation: "顯示列表"
 
 - id: "Search"
-  translation: "搜索"
+  translation: "搜尋"
+
+- id: "Search Input"
+  translation: "按 `/` 搜尋"
 
 - id: "Search Results"
   translation: "搜尋結果"
