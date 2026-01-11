@@ -673,7 +673,7 @@
     .search-query-input,
     .search-query-button {
       padding: $padding-8 $padding-16;
-      font-size: $font-size-14;
+      font-size: $font-size-16;
     }
 
     .search-filter-toggle {
@@ -685,7 +685,11 @@
   .search-taxonomies-row {
     flex-direction: column;
     align-items: center;
-    gap: $padding-16;
+    gap: $padding-4;
+
+    .search-filter-input {
+      font-size: $font-size-16;
+    }
   }
 }
 
