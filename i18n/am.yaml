@@ -58,14 +58,23 @@
 - id: "Show"
   translation: "ዝርዝር አሳይ"
 
+- id: "Close"
+  translation: "ዝጋ"
+
 - id: "Search"
   translation: "ፈልግ"
 
 - id: "Search Input"
   translation: "ልማፍሌግ `/` ይጫኑ"
 
+- id: "Search Placeholder"
+  translation: "ለመፈለግ እዚህ ይተይቡ"
+
 - id: "Search Results"
   translation: "የፍለጋ ውጤቶች"
+
+- id: "Search Tags"
+  translation: "መለያዎችን ፈልግ"
 
 - id: "List Label"
   translation: "%s ጽሁፎች"
@@ -81,6 +90,12 @@
 
 - id: "Tags Label"
   translation: "%s መለያዎች"
+
+- id: "Tags All"
+  translation: "ሁሉንም አማሳስል"
+
+- id: "Advanced Filters"
+  translation: "ላቀ ማጣሪያዎች"
 
 - id: "No Results"
   translation: "ምንም ውጤት አልተጋኘም።"

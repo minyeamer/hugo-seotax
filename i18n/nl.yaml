@@ -56,7 +56,10 @@
   translation: "Verbergen"
 
 - id: "Show"
-  translation: "Lijst tonen"
+  translation: "Lijst weergeven"
+
+- id: "Close"
+  translation: "Sluiten"
 
 - id: "Search"
   translation: "Zoeken"
@@ -64,8 +67,14 @@
 - id: "Search Input"
   translation: "Druk op `/` om te zoeken"
 
+- id: "Search Placeholder"
+  translation: "Typ hier om te zoeken"
+
 - id: "Search Results"
   translation: "Zoekresultaten"
+
+- id: "Search Tags"
+  translation: "Tags zoeken"
 
 - id: "List Label"
   translation: "%s berichten"
@@ -81,6 +90,12 @@
 
 - id: "Tags Label"
   translation: "%s tags"
+
+- id: "Tags All"
+  translation: "Alle matchen"
+
+- id: "Advanced Filters"
+  translation: "Geavanceerde filters"
 
 - id: "No Results"
   translation: "Geen resultaten gevonden."

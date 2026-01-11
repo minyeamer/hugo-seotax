@@ -58,14 +58,23 @@
 - id: "Show"
   translation: "Visa lista"
 
+- id: "Close"
+  translation: "Stäng"
+
 - id: "Search"
   translation: "Sök"
 
 - id: "Search Input"
   translation: "Tryck `/` för att söka"
 
+- id: "Search Placeholder"
+  translation: "Skriv här för att söka"
+
 - id: "Search Results"
   translation: "Sökresultat"
+
+- id: "Search Tags"
+  translation: "Sök taggar"
 
 - id: "List Label"
   translation: "%s inlägg"
@@ -81,6 +90,12 @@
 
 - id: "Tags Label"
   translation: "%s taggar"
+
+- id: "Tags All"
+  translation: "Matcha alla"
+
+- id: "Advanced Filters"
+  translation: "Avancerade filter"
 
 - id: "No Results"
   translation: "Inga resultat hittades."

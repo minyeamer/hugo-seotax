@@ -58,14 +58,23 @@
 - id: "Show"
   translation: "نمایش لیست"
 
+- id: "Close"
+  translation: "بستن"
+
 - id: "Search"
   translation: "جستجو"
 
 - id: "Search Input"
   translation: "برای جستجو `/` را فشار دهید"
 
+- id: "Search Placeholder"
+  translation: "برای جستجو اینجا تایپ کنید"
+
 - id: "Search Results"
   translation: "نتایج جستجو"
+
+- id: "Search Tags"
+  translation: "جستجوی برچسب‌ها"
 
 - id: "List Label"
   translation: "%s نوشته"
@@ -81,6 +90,12 @@
 
 - id: "Tags Label"
   translation: "%s برچسب"
+
+- id: "Tags All"
+  translation: "تطابق همه"
+
+- id: "Advanced Filters"
+  translation: "فیلترهای پیشرفته"
 
 - id: "No Results"
   translation: "نتیجه‌ای یافت نشد."

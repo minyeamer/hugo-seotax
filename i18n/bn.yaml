@@ -58,14 +58,23 @@
 - id: "Show"
   translation: "তালিকা দেখান"
 
+- id: "Close"
+  translation: "বন্ধ করুন"
+
 - id: "Search"
   translation: "অনুসন্ধান"
 
 - id: "Search Input"
   translation: "অনুসন্ধানের জন্য `/` চাপুন"
 
+- id: "Search Placeholder"
+  translation: "অনুসন্ধান করতে এখানে টাইপ করুন"
+
 - id: "Search Results"
   translation: "অনুসন্ধান ফলাফল"
+
+- id: "Search Tags"
+  translation: "ট্যাগ অনুসন্ধান করুন"
 
 - id: "List Label"
   translation: "%sটি পোস্ট"
@@ -82,8 +91,14 @@
 - id: "Tags Label"
   translation: "%s ট্যাগ"
 
+- id: "Tags All"
+  translation: "সব মেলান"
+
+- id: "Advanced Filters"
+  translation: "উন্নত ফিল্টার"
+
 - id: "No Results"
-  translation: "কোনো ফলাফল পাওয়া যায়নি।"
+  translation: "কোনো ফলাফল পাওয়া যায়নি."
 
 - id: "Date Format"
   translation: "02-01-2006"

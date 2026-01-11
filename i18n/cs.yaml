@@ -58,14 +58,23 @@
 - id: "Show"
   translation: "Zobrazit seznam"
 
+- id: "Close"
+  translation: "Zavřít"
+
 - id: "Search"
   translation: "Vyhledávat"
 
 - id: "Search Input"
   translation: "Stiskněte `/` pro vyhledávání"
 
+- id: "Search Placeholder"
+  translation: "Zadejte text k vyhledání"
+
 - id: "Search Results"
   translation: "Výsledky vyhledávání"
+
+- id: "Search Tags"
+  translation: "Hledat značky"
 
 - id: "List Label"
   translation: "%s příspěvků"
@@ -81,6 +90,12 @@
 
 - id: "Tags Label"
   translation: "%s štítků"
+
+- id: "Tags All"
+  translation: "Vyhledat všechny"
+
+- id: "Advanced Filters"
+  translation: "Pokročilé filtry"
 
 - id: "No Results"
   translation: "Nebyly nalezeny žádné výsledky."

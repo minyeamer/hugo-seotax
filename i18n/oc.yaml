@@ -58,14 +58,23 @@
 - id: "Show"
   translation: "Afichar la lista"
 
+- id: "Close"
+  translation: "Tampar"
+
 - id: "Search"
   translation: "Recercar"
 
 - id: "Search Input"
   translation: "Quichar `/` per cercar"
 
+- id: "Search Placeholder"
+  translation: "Picatz aquí per cercar"
+
 - id: "Search Results"
   translation: "Resultats de recèrca"
+
+- id: "Search Tags"
+  translation: "Cercar etiquetas"
 
 - id: "List Label"
   translation: "%s publicacions"
@@ -81,6 +90,12 @@
 
 - id: "Tags Label"
   translation: "%s etiquetas"
+
+- id: "Tags All"
+  translation: "Corresponder a totas"
+
+- id: "Advanced Filters"
+  translation: "Filtres avançats"
 
 - id: "No Results"
   translation: "Cap de resultat trobat."

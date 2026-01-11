@@ -58,14 +58,23 @@
 - id: "Show"
   translation: "Показать список"
 
+- id: "Close"
+  translation: "Закрыть"
+
 - id: "Search"
   translation: "Поиск"
 
 - id: "Search Input"
   translation: "Нажмите `/` для поиска"
 
+- id: "Search Placeholder"
+  translation: "Введите текст для поиска"
+
 - id: "Search Results"
   translation: "Результаты поиска"
+
+- id: "Search Tags"
+  translation: "Поиск меток"
 
 - id: "List Label"
   translation: "%s публикаций"
@@ -81,6 +90,12 @@
 
 - id: "Tags Label"
   translation: "%s меток"
+
+- id: "Tags All"
+  translation: "Совпадение со всеми"
+
+- id: "Advanced Filters"
+  translation: "Расширенные фильтры"
 
 - id: "No Results"
   translation: "Результатов не найдено."

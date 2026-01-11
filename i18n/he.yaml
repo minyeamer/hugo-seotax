@@ -58,14 +58,23 @@
 - id: "Show"
   translation: "הצג רשימה"
 
+- id: "Close"
+  translation: "סגור"
+
 - id: "Search"
   translation: "חיפוש"
 
 - id: "Search Input"
   translation: "לחץ על `/` לחיפוש"
 
+- id: "Search Placeholder"
+  translation: "הקלד כאן כדי לחפש"
+
 - id: "Search Results"
   translation: "תוצאות חיפוש"
+
+- id: "Search Tags"
+  translation: "חפש תגיות"
 
 - id: "List Label"
   translation: "%s פוסטים"
@@ -81,6 +90,12 @@
 
 - id: "Tags Label"
   translation: "%s תגיות"
+
+- id: "Tags All"
+  translation: "התאמה לכולם"
+
+- id: "Advanced Filters"
+  translation: "מסננים מתקדמים"
 
 - id: "No Results"
   translation: "לא נמצאו תוצאות."

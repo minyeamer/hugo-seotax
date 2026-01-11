@@ -58,14 +58,23 @@
 - id: "Show"
   translation: "显示列表"
 
+- id: "Close"
+  translation: "关闭"
+
 - id: "Search"
   translation: "搜索"
 
 - id: "Search Input"
   translation: "按 `/` 搜索"
 
+- id: "Search Placeholder"
+  translation: "在此输入搜索内容"
+
 - id: "Search Results"
   translation: "搜索结果"
+
+- id: "Search Tags"
+  translation: "搜索标签"
 
 - id: "List Label"
   translation: "%s篇文章"
@@ -81,6 +90,12 @@
 
 - id: "Tags Label"
   translation: "全部 %s 个标签"
+
+- id: "Tags All"
+  translation: "匹配所有"
+
+- id: "Advanced Filters"
+  translation: "高级筛选"
 
 - id: "No Results"
   translation: "未找到结果。"

@@ -56,7 +56,10 @@
   translation: "Nascondi"
 
 - id: "Show"
-  translation: "Mostra elenco"
+  translation: "Mostra lista"
+
+- id: "Close"
+  translation: "Chiudi"
 
 - id: "Search"
   translation: "Cerca"
@@ -64,8 +67,14 @@
 - id: "Search Input"
   translation: "Premi `/` per cercare"
 
+- id: "Search Placeholder"
+  translation: "Digita qui per cercare"
+
 - id: "Search Results"
   translation: "Risultati della ricerca"
+
+- id: "Search Tags"
+  translation: "Cerca tag"
 
 - id: "List Label"
   translation: "%s articoli"
@@ -81,6 +90,12 @@
 
 - id: "Tags Label"
   translation: "%s etichette"
+
+- id: "Tags All"
+  translation: "Trova tutti"
+
+- id: "Advanced Filters"
+  translation: "Filtri avanzati"
 
 - id: "No Results"
   translation: "Nessun risultato trovato."

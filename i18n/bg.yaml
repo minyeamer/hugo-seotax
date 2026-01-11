@@ -58,14 +58,23 @@
 - id: "Show"
   translation: "Показване на списък"
 
+- id: "Close"
+  translation: "Затвори"
+
 - id: "Search"
   translation: "Търсене"
 
 - id: "Search Input"
   translation: "Натиснете `/` за търсене"
 
+- id: "Search Placeholder"
+  translation: "Въведете текст за търсене"
+
 - id: "Search Results"
   translation: "Резултати от търсенето"
+
+- id: "Search Tags"
+  translation: "Търсене на тагове"
 
 - id: "List Label"
   translation: "%s публикации"
@@ -82,8 +91,14 @@
 - id: "Tags Label"
   translation: "%s етикета"
 
+- id: "Tags All"
+  translation: "Съвпадение с всички"
+
+- id: "Advanced Filters"
+  translation: "Разширени филтри"
+
 - id: "No Results"
-  translation: "Не са намерени резултати."
+  translation: "Няма намерени резултати"
 
 - id: "Date Format"
   translation: "02.01.2006"

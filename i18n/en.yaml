@@ -58,14 +58,23 @@
 - id: "Show"
   translation: "Show"
 
+- id: "Close"
+  translation: "Close"
+
 - id: "Search"
   translation: "Search"
 
 - id: "Search Input"
   translation: "Press `/` to search"
 
+- id: "Search Placeholder"
+  translation: "Type here to search"
+
 - id: "Search Results"
   translation: "Search Results"
+
+- id: "Search Tags"
+  translation: "Search Tags"
 
 - id: "List Label"
   translation: "%s posts"
@@ -81,6 +90,12 @@
 
 - id: "Tags Label"
   translation: "%s Tags"
+
+- id: "Tags All"
+  translation: "Match all"
+
+- id: "Advanced Filters"
+  translation: "Advanced Filters"
 
 - id: "No Results"
   translation: "No results found."

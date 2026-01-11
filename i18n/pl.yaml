@@ -58,14 +58,23 @@
 - id: "Show"
   translation: "Pokaż listę"
 
+- id: "Close"
+  translation: "Zamknij"
+
 - id: "Search"
   translation: "Szukaj"
 
 - id: "Search Input"
   translation: "Naciśnij `/` aby wyszukać"
 
+- id: "Search Placeholder"
+  translation: "Wpisz tutaj, aby wyszukać"
+
 - id: "Search Results"
   translation: "Wyniki wyszukiwania"
+
+- id: "Search Tags"
+  translation: "Szukaj tagów"
 
 - id: "List Label"
   translation: "%s wpisów"
@@ -81,6 +90,12 @@
 
 - id: "Tags Label"
   translation: "%s tagów"
+
+- id: "Tags All"
+  translation: "Dopasuj wszystkie"
+
+- id: "Advanced Filters"
+  translation: "Zaawansowane filtry"
 
 - id: "No Results"
   translation: "Nie znaleziono wyników."

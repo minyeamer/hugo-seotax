@@ -58,14 +58,23 @@
 - id: "Show"
   translation: "Показати список"
 
+- id: "Close"
+  translation: "Закрити"
+
 - id: "Search"
   translation: "Пошук"
 
 - id: "Search Input"
   translation: "Натисніть `/` для пошуку"
 
+- id: "Search Placeholder"
+  translation: "Введіть текст для пошуку"
+
 - id: "Search Results"
   translation: "Результати пошуку"
+
+- id: "Search Tags"
+  translation: "Пошук міток"
 
 - id: "List Label"
   translation: "%s публікацій"
@@ -81,6 +90,12 @@
 
 - id: "Tags Label"
   translation: "%s міток"
+
+- id: "Tags All"
+  translation: "Збіг з усіма"
+
+- id: "Advanced Filters"
+  translation: "Розширені фільтри"
 
 - id: "No Results"
   translation: "Результатів не знайдено."

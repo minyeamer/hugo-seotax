@@ -96,7 +96,7 @@
     const closeButton = document.createElement('button');
     closeButton.className = 'search-modal-close';
     closeButton.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-    closeButton.setAttribute('aria-label', 'Close');
+    closeButton.setAttribute('aria-label', '{{ i18n "Close" | default "Close" }}');
     closeButton.addEventListener('click', closeSearchModal);
     modalHeader.appendChild(closeButton);
 
@@ -109,8 +109,8 @@
     modalSearchInput = document.createElement('input');
     modalSearchInput.type = 'text';
     modalSearchInput.id = 'search-modal-input';
-    modalSearchInput.placeholder = searchInput.getAttribute('placeholder') || 'Search';
-    modalSearchInput.setAttribute('aria-label', 'Search');
+    modalSearchInput.placeholder = '{{ i18n "Search Placeholder" | default "Type here to search" }}';
+    modalSearchInput.setAttribute('aria-label', '{{ i18n "Search" | default "Search" }}');
     modalSearchInput.maxLength = 64;
 
     modalSearchInput.addEventListener('keyup', displayPreview);
@@ -129,7 +129,7 @@
     modalSearchButton.type = 'button';
     modalSearchButton.className = 'search-modal-button';
     modalSearchButton.innerHTML = '<i class="fa-solid fa-magnifying-glass"></i>';
-    modalSearchButton.setAttribute('aria-label', 'Search');
+    modalSearchButton.setAttribute('aria-label', '{{ i18n "Search" | default "Search" }}');
     modalSearchButton.addEventListener('click', () => {
       if (modalSearchInput.value.trim()) {
         window.location.href = "/search/?query=" + encodeURIComponent(modalSearchInput.value.trim());

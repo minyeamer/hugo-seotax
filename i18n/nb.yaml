@@ -58,14 +58,23 @@
 - id: "Show"
   translation: "Vis liste"
 
+- id: "Close"
+  translation: "Lukk"
+
 - id: "Search"
   translation: "Søk"
 
 - id: "Search Input"
   translation: "Trykk `/` for å søke"
 
+- id: "Search Placeholder"
+  translation: "Skriv her for å søke"
+
 - id: "Search Results"
   translation: "Søkeresultater"
+
+- id: "Search Tags"
+  translation: "Søk merker"
 
 - id: "List Label"
   translation: "%s innlegg"
@@ -81,6 +90,12 @@
 
 - id: "Tags Label"
   translation: "%s etiketter"
+
+- id: "Tags All"
+  translation: "Finn alle"
+
+- id: "Advanced Filters"
+  translation: "Avanserte filtre"
 
 - id: "No Results"
   translation: "Ingen resultater funnet."

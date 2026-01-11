@@ -58,14 +58,23 @@
 - id: "Show"
   translation: "Listeyi göster"
 
+- id: "Close"
+  translation: "Kapat"
+
 - id: "Search"
   translation: "Arama"
 
 - id: "Search Input"
   translation: "Aramak için `/` tuşuna basın"
 
+- id: "Search Placeholder"
+  translation: "Aramak için buraya yazın"
+
 - id: "Search Results"
   translation: "Arama sonuçları"
+
+- id: "Search Tags"
+  translation: "Etiket ara"
 
 - id: "List Label"
   translation: "%s yazı"
@@ -81,6 +90,12 @@
 
 - id: "Tags Label"
   translation: "%s etiket"
+
+- id: "Tags All"
+  translation: "Tümünü eşleştir"
+
+- id: "Advanced Filters"
+  translation: "Gelişmiş filtreler"
 
 - id: "No Results"
   translation: "Sonuç bulunamadı."

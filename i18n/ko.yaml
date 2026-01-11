@@ -58,11 +58,17 @@
 - id: "Show"
   translation: "목록 보기"
 
+- id: "Close"
+  translation: "닫기"
+
 - id: "Search"
   translation: "검색"
 
 - id: "Search Input"
   translation: "`/` 를 눌러 검색하세요"
+
+- id: "Search Placeholder"
+  translation: "검색어를 입력해주세요"
 
 - id: "Search Results"
   translation: "검색 결과"
@@ -84,6 +90,12 @@
 
 - id: "Tags Label"
   translation: "전체 태그 %s"
+
+- id: "Tags All"
+  translation: "모두 일치"
+
+- id: "Advanced Filters"
+  translation: "고급 필터"
 
 - id: "No Results"
   translation: "결과가 없습니다."

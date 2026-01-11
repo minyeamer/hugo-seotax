@@ -58,14 +58,23 @@
 - id: "Show"
   translation: "Onyesha orodha"
 
+- id: "Close"
+  translation: "Funga"
+
 - id: "Search"
   translation: "Tafuta"
 
 - id: "Search Input"
   translation: "Bonyeza `/` kutafuta"
 
+- id: "Search Placeholder"
+  translation: "Andika hapa ili kutafuta"
+
 - id: "Search Results"
   translation: "Matokeo ya utafutaji"
+
+- id: "Search Tags"
+  translation: "Tafuta lebo"
 
 - id: "List Label"
   translation: "Machapisho %s"
@@ -81,6 +90,12 @@
 
 - id: "Tags Label"
   translation: "Lebo %s"
+
+- id: "Tags All"
+  translation: "Linganisha yote"
+
+- id: "Advanced Filters"
+  translation: "Vichujio vya hali ya juu"
 
 - id: "No Results"
   translation: "Hakuna matokeo yaliyopatikana."
