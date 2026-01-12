@@ -9,12 +9,34 @@
     this.page.identifier = '{{ .Permalink }}';
   };
 
+  window.relocateDisqus = () => {
+    let attempts = 0;
+    const maxAttempts = 20;
+    const intervalId = setInterval(() => {
+      attempts++;
+      const container = document.getElementById(atob(atob('WkdsemNYVnpYM1JvY21WaFpBPT0=')));
+      var success = false;
+      if (container) {
+        const adframe = container.querySelector(atob(atob('VzNOeVl5bzlKMkZrY3lkZA==')));
+        if (adframe) {
+            container.appendChild(adframe);
+            success = true;
+        }
+      }
+      if (success || (attempts > maxAttempts)) {
+        clearInterval(intervalId);
+      }
+    }, 1000)
+  };
+
   (function() {
     var d = document, s = d.createElement('script');
     s.src = 'https://{{ .Site.Params.comments.disqusShortname }}.disqus.com/embed.js';
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
   })();
+
+  window.relocateDisqus();
 
   function reloadDisqus() {
     if (window.DISQUS) {
@@ -25,21 +47,7 @@
           this.page.identifier = '{{ .Permalink }}';
         }
       });
-
-      const intervalId = setInterval(() => {
-        const container = document.getElementById(atob(atob('WkdsemNYVnpYM1JvY21WaFpBPT0=')));
-        var success = false;
-        if (container) {
-          const adframe = container.querySelector(atob(atob('VzNOeVl5bzlKMkZrY3lkZA==')));
-          if (adframe) {
-              container.appendChild(adframe);
-              success = true;
-          }
-        }
-        if (success) {
-          clearInterval(intervalId);
-        }
-      }, 1000);
+      window.relocateDisqus();
     }
   }
 </script>
