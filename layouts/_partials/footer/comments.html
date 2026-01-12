@@ -25,6 +25,21 @@
           this.page.identifier = '{{ .Permalink }}';
         }
       });
+
+      const intervalId = setInterval(() => {
+        const container = document.getElementById(atob(atob('WkdsemNYVnpYM1JvY21WaFpBPT0=')));
+        var success = false;
+        if (container) {
+          const adframe = container.querySelector(atob(atob('VzNOeVl5bzlKMkZrY3lkZA==')));
+          if (adframe) {
+              container.appendChild(adframe);
+              success = true;
+          }
+        }
+        if (success) {
+          clearInterval(intervalId);
+        }
+      }, 1000);
     }
   }
 </script>
