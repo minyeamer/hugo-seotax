@@ -148,6 +148,10 @@ https://github.com/minyeamer/hugo-miny
 {{- $imageZoomJS := resources.Get "js/image-zoom.js" | resources.ExecuteAsTemplate "js/image-zoom.js" . | resources.Minify | resources.Fingerprint }}
 <script defer src="{{ partial `links/resource-precache` $imageZoomJS }}" {{ template `integrity` $imageZoomJS }}></script>
 
+<!-- Data Table -->
+{{- $dataTableJS := resources.Get "js/data-table.js" | resources.ExecuteAsTemplate "js/data-table.js" . | resources.Minify | resources.Fingerprint }}
+<script defer src="{{ partial `links/resource-precache` $dataTableJS }}" {{ template `integrity` $dataTableJS }}></script>
+
 <!-- Search -->
 {{- if default true .Site.Params.search.enabled -}}
   <script>

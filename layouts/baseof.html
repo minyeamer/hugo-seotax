@@ -49,7 +49,7 @@
 {{ end }}
 
 {{ define "content" }}
-<article class="content-wrap markdown">
+<article class="content-wrap markdown" id="content-wrap">
   {{ template "content-header" . }}
   {{ partial "content/cover" . }}
   {{- .Content -}}
