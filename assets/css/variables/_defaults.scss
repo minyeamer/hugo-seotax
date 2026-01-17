@@ -1,0 +1,137 @@
+// margin, padding, gap
+
+$space-n: (
+  1: 1px,
+  4: 0.25rem,
+  8: 0.5rem,
+  12: 0.75rem,
+  16: 1rem,
+  20: 1.25rem,
+  24: 1.5rem,
+  32: 2rem,
+  36: 2.25rem,
+  40: 2.5rem,
+  48: 3rem,
+  64: 4rem,
+) !default;
+
+@function space($n) {
+  @if map-has-key($space-n, $n) {
+    @return map-get($space-n, $n);
+  }
+  @error "Missing spacing #{$n}";
+}
+
+// font-size
+
+$font-size-base: 16px !default;
+$body-font-weight: normal !default;
+
+$font-size-n: (
+  12: 0.75rem,
+  14: 0.875rem,
+  16: 1rem,
+  18: 1.125rem,
+  20: 1.25rem,
+  24: 1.5rem,
+  32: 2rem,
+  40: 2.5rem,
+  48: 3rem
+) !default;
+
+@function font-size($n) {
+  @if map-has-key($font-size-n, $n) {
+    @return map-get($font-size-n, $n);
+  }
+  @error "Missing font size #{$n}";
+}
+
+$radius: (
+  block: 0.25rem,
+  bookmark: 0.5rem,
+  button: 50%,
+  chip: 0.25rem,
+  codeblock: 0.625rem,
+  cover: 0.5rem,
+  search-aside: 0.5rem,
+  search-input: 0.25rem,
+  overlay: 0.5rem,
+  page-link: 0.25rem,
+  post-item: 0.5rem,
+  prev-next: 0.5rem,
+  profile: 50%,
+  series: 0.5rem
+) !default;
+
+@function radius($key) {
+  @if map-has-key($radius, $key) {
+    @return map-get($radius, $key);
+  }
+  @error "Missing border radius #{$key}";
+}
+
+// width - body, aside
+
+$body-min-width: 20rem !default;
+$body-max-width: 48rem !default;
+$body-wide-width: 56rem !default;
+$container-max-width: 80rem !default;
+
+$menu-width: 16rem !default;
+$toc-width: 16rem !default;
+$toc-margin-right: 3rem !default;
+
+// breakpoint - desktop, mobile
+
+$breakpoint: (
+  wide: $menu-width + $body-wide-width * 1.1 + $toc-width + $toc-margin-right, // 1546px
+  toc: $menu-width + $body-max-width * 1.1 + $toc-width, // 1357px
+  menu: $menu-width + $body-max-width * 1.3, // 1254px
+  body: $body-max-width + 1rem, // 784px
+  narrow: ($body-min-width + $body-max-width) / 2 // 544px
+) !default;
+
+@function breakpoint($key) {
+  @if map-has-key($breakpoint, $key) {
+    @return map-get($breakpoint, $key);
+  }
+  @error "Missing breakpoint #{$key}";
+}
+
+// width - partials
+
+$toc-overlay-width: 32rem !default;
+$toc-overlay-height: 80vh !default;
+
+$search-overlay-width: 44rem !default;
+$search-overlay-height: 80vh !default;
+$search-input-width: 32rem !default;
+
+$preview-width: 200px !default;
+$preview-height: 170px !default;
+$preview-mobile-height: 200px !default;
+
+// z-index
+
+$z-index: (
+  scroll-progress: 9999,
+  modal: 1001,
+  modal-overlay: 1000,
+  dropdown: 900,
+  menu: 210,
+  menu-overlay: 209,
+  menu-button: 200,
+  header: 150,
+  toolbar: 101,
+  toc: 100,
+  menu-search: 11,
+  content: 10,
+  base: 1,
+) !default;
+
+@function z-index($key) {
+  @if map-has-key($z-index, $key) {
+    @return map-get($z-index, $key);
+  }
+  @error "Missing z-index #{$key}";
+}

@@ -2,7 +2,7 @@
   display: flex;
 
   &.gap {
-    gap: $padding-16;
+    gap: space(16);
   }
 }
 

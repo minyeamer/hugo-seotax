@@ -27,7 +27,7 @@ h6 {
 a {
   flex: auto;
   align-items: center;
-  gap: $padding-8;
+  gap: space(8);
 
   text-decoration: none;
   cursor: default;
@@ -76,14 +76,14 @@ nav ul {
   max-width: 100%;
 
   // Descktop: flexible layout
-  @media screen and (min-width: $menu-breakpoint) {
+  @media screen and (min-width: breakpoint(menu)) {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
   }
 
   // Mobile: fixed layout for overlay
-  @media screen and (max-width: $menu-breakpoint) {
+  @media screen and (max-width: breakpoint(menu)) {
     display: block;
   }
 }
@@ -92,13 +92,13 @@ nav ul {
   width: 100%;
   max-width: $body-wide-width;
   flex: 1 1 0;
-  margin: $padding-16 auto;
+  margin: space(16) auto;
 
   // Mobile: fixed layout for overlay
-  @media screen and (max-width: $menu-breakpoint) {
+  @media screen and (max-width: breakpoint(menu)) {
     display: block;
     max-width: 100%;
-    padding: 0 $padding-16;
+    padding: 0 space(16);
   }
 
   i {
@@ -124,7 +124,7 @@ nav ul {
   left: 0;
   width: 100vw;
   height: 3px;
-  z-index: $z-index-scroll-progress;
+  z-index: z-index(scroll-progress);
   pointer-events: none;
 }
 
@@ -165,7 +165,7 @@ nav ul {
 .site-menu {
   width: $menu-width;
   flex-shrink: 0;
-  font-size: $font-size-14;
+  font-size: font-size(14);
   transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
   -ms-overflow-style: none;  /* IE and Edge */
@@ -175,7 +175,7 @@ nav ul {
   }
 
   // Desktop: sticky positioning
-  @media screen and (min-width: $menu-breakpoint) {
+  @media screen and (min-width: breakpoint(menu)) {
     position: sticky;
     top: 0;
     height: 100vh;
@@ -184,57 +184,57 @@ nav ul {
   }
 
   // Mobile: fixed positioning
-  @media screen and (max-width: $menu-breakpoint) {
+  @media screen and (max-width: breakpoint(menu)) {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: $z-index-menu;
+    z-index: z-index(menu);
     visibility: hidden;
     margin-inline-start: -$menu-width;
   }
 
   &.menu-hidden {
-    @media screen and (min-width: $menu-breakpoint) {
+    @media screen and (min-width: breakpoint(menu)) {
       width: 0;
       opacity: 0;
       overflow: hidden;
     }
 
-    @media screen and (max-width: $menu-breakpoint) {
+    @media screen and (max-width: breakpoint(menu)) {
       transform: translateX(-$menu-width);
     }
   }
 
   .menu-content {
     width: $menu-width;
-    padding: $padding-32 $padding-16;
+    padding: space(32) space(16);
     background: var(--gray-200);
     min-height: 100%;
 
     // Desktop: no fixed height needed
-    @media screen and (min-width: $menu-breakpoint) {
+    @media screen and (min-width: breakpoint(menu)) {
       height: auto;
     }
 
     // Mobile: use fixed mixin
-    @media screen and (max-width: $menu-breakpoint) {
+    @media screen and (max-width: breakpoint(menu)) {
       @include fixed;
     }
   }
 
   .menu-toggle-button {
     position: absolute;
-    top: $padding-16;
-    right: $padding-16;
+    top: space(16);
+    right: space(16);
     background: transparent;
     border: none;
-    padding: $padding-8;
+    padding: space(8);
     cursor: pointer;
-    z-index: $z-index-content;
+    z-index: z-index(content);
     display: block;
 
     i {
-      font-size: $font-size-16;
+      font-size: font-size(16);
     }
   }
 
@@ -270,13 +270,13 @@ nav ul {
 
 .menu-display-button {
   position: fixed;
-  top: $padding-16;
-  left: $padding-16;
+  top: space(16);
+  left: space(16);
   background: transparent;
   border: none;
-  margin: $padding-12;
+  margin: space(12);
   cursor: pointer;
-  z-index: $z-index-menu-button;
+  z-index: z-index(menu-button);
   width: 2.5rem;
   height: 2.5rem;
   display: none;
@@ -288,17 +288,17 @@ nav ul {
   }
 
   i {
-    font-size: $font-size-20;
+    font-size: font-size(20);
   }
 
   // Hide on mobile
-  @media screen and (max-width: $menu-breakpoint) {
+  @media screen and (max-width: breakpoint(menu)) {
     display: none;
   }
 }
 
 // Show button on desktop when menu is hidden
-@media screen and (min-width: $menu-breakpoint) {
+@media screen and (min-width: breakpoint(menu)) {
   .site-menu.menu-hidden ~ .menu-display-button {
     display: block;
   }
@@ -311,7 +311,7 @@ nav ul {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: $z-index-menu-overlay;
+  z-index: z-index(menu-overlay);
   display: none;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -329,7 +329,7 @@ body[dir="rtl"] .site-menu {
 }
 
 .profile-image-wrap {
-  border-radius: 50%;
+  border-radius: radius(profile);
   overflow: hidden;
   margin-bottom: 1rem;
 
@@ -337,14 +337,14 @@ body[dir="rtl"] .site-menu {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    border-radius: 50%;
+    border-radius: radius(profile);
     display: block;
   }
 }
 
 .profile-title {
   margin-top: 0;
-  margin-bottom: $padding-16;
+  margin-bottom: space(16);
 
   a {
     display: block;
@@ -361,7 +361,7 @@ body[dir="rtl"] .site-menu {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: space(8);
   font-size: 1.5rem;
   width: 100%;
   margin-bottom: 1rem;
@@ -404,16 +404,16 @@ body[dir="rtl"] .site-menu {
 }
 
 .menu-categories {
-  margin: $padding-16 0;
-  padding-bottom: $padding-16;
+  margin: space(16) 0;
+  padding-bottom: space(16);
   border-bottom: 1px solid var(--gray-500);
   position: relative;
-  z-index: $z-index-base;
+  z-index: z-index(base);
 
   i.fa-file, i.fa-folder, i.fa-chevron-down, i.fa-chevron-up {
-    font-size: $font-size-14;
+    font-size: font-size(14);
     transition: transform 0.2s ease;
-    max-width: $font-size-18;
+    max-width: font-size(18);
   }
 
   .categories-root, .categories-leaf {
@@ -425,7 +425,7 @@ body[dir="rtl"] .site-menu {
   .categories-toggle {
     display: flex;
     align-items: center;
-    padding: $padding-4 $padding-8;
+    padding: space(4) space(8);
     min-height: 2.381rem;
     font-weight: 500;
     cursor: pointer;
@@ -437,7 +437,7 @@ body[dir="rtl"] .site-menu {
   }
 
   .category-count {
-    font-size: $font-size-12;
+    font-size: font-size(12);
     color: var(--gray-500);
     white-space: nowrap;
     text-align: left;
@@ -460,18 +460,18 @@ body[dir="rtl"] .site-menu {
 }
 
 .recent-posts {
-  margin: $padding-16 0;
-  padding-bottom: $padding-16;
+  margin: space(16) 0;
+  padding-bottom: space(16);
   border-bottom: 1px solid var(--gray-500);
 
   .recent-post-label {
-    margin-bottom: $padding-8;
-    padding: $padding-4 $padding-8;
+    margin-bottom: space(8);
+    padding: space(4) space(8);
     font-weight: 500;
     color: var(--body-font-color);
 
     .fa-clock {
-      font-size: $font-size-14;
+      font-size: font-size(14);
       color: var(--color-link);
     }
   }
@@ -486,9 +486,9 @@ body[dir="rtl"] .site-menu {
 .recent-post-item {
   a {
     display: block;
-    padding: $padding-8;
+    padding: space(8);
     color: var(--body-font-color);
-    border-radius: $border-radius;
+    border-radius: radius(block);
     text-decoration: none;
 
     &:hover {
@@ -498,16 +498,16 @@ body[dir="rtl"] .site-menu {
   }
 
   .recent-post-title {
-    font-size: $font-size-14;
+    font-size: font-size(14);
     font-weight: 400;
-    margin-bottom: $padding-4;
+    margin-bottom: space(4);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
 
   .recent-post-date {
-    font-size: $font-size-12;
+    font-size: font-size(12);
     color: var(--gray-500);
 
     time {
@@ -522,10 +522,10 @@ body[dir="rtl"] .site-menu {
   display: none;
 
   // Show on mobile
-  @media screen and (max-width: $toc-breakpoint) {
+  @media screen and (max-width: breakpoint(toc)) {
     display: block;
     position: sticky;
-    z-index: $z-index-header;
+    z-index: z-index(header);
     opacity: 0.9;
     top: 0;
     background-color: var(--body-background);
@@ -539,7 +539,7 @@ body[dir="rtl"] .site-menu {
   h3 {
     overflow: hidden;
     text-overflow: ellipsis;
-    margin: 0 $padding-16;
+    margin: 0 space(16);
   }
 }
 
@@ -561,40 +561,40 @@ body[dir="rtl"] .site-menu {
 /* Content */
 
 .content-wrap {
-  margin-bottom: $padding-48;
+  margin-bottom: space(48);
 
-  @media screen and (max-width: $toc-breakpoint) {
-    margin-top: $padding-16;
+  @media screen and (max-width: breakpoint(toc)) {
+    margin-top: space(16);
   }
 }
 
 .content-header {
   text-align: center;
-  padding-bottom: $padding-24;
+  padding-bottom: space(24);
   border-bottom: 1px solid var(--gray-200);
 }
 
 .content-category {
-  margin-bottom: $padding-8;
-  font-size: $font-size-16;
+  margin-bottom: space(8);
+  font-size: font-size(16);
   font-weight: 400;
 }
 
 .content-title {
-  font-size: $font-size-40;
+  font-size: font-size(40);
   font-weight: 700;
   color: var(--body-font-color);
 
   @media screen and (max-width: $body-max-width) {
-    font-size: $font-size-32;
+    font-size: font-size(32);
   }
 }
 
 .content-datetime {
   color: var(--gray-500);
-  font-size: $font-size-14;
+  font-size: font-size(14);
   font-weight: 400;
-  margin-top: $padding-8;
+  margin-top: space(8);
 }
 
 .markdown .content-category-link {
@@ -616,7 +616,7 @@ body[dir="rtl"] .site-menu {
 }
 
 .content-cover-wrap {
-  margin: $padding-32 0;
+  margin: space(32) 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -625,19 +625,19 @@ body[dir="rtl"] .site-menu {
   .content-cover {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: radius(cover);
   }
 }
 
 /* Footer */
 
 .site-footer {
-  padding-top: $padding-16;
-  font-size: $font-size-14;
+  padding-top: space(16);
+  font-size: font-size(14);
 
   a {
-    margin: $padding-4 0;
-    padding: $padding-4 0;
+    margin: space(4) 0;
+    padding: space(4) 0;
   }
 }
 
@@ -645,19 +645,19 @@ body[dir="rtl"] .site-menu {
   display: flex;
   justify-content: space-between;
   gap: 0;
-  margin-top: $padding-24;
-  padding-top: $padding-24;
+  margin-top: space(24);
+  padding-top: space(24);
   border-top: 1px solid var(--gray-200);
   overflow: hidden;
 
-  @media screen and (max-width: $narrow-breakpoint) {
+  @media screen and (max-width: breakpoint(narrow)) {
     flex-direction: column;
   }
 
   .prev-link, .next-link {
     display: block;
     background: var(--gray-100);
-    padding: $padding-12;
+    padding: space(12);
     text-decoration: none;
     transition: background-color 0.2s ease;
     flex: 1;
@@ -667,26 +667,26 @@ body[dir="rtl"] .site-menu {
       background: var(--link-background);
     }
 
-    @media screen and (max-width: $narrow-breakpoint) {
+    @media screen and (max-width: breakpoint(narrow)) {
       max-width: 100%;
     }
   }
 
   .prev-link {
     text-align: left;
-    border-radius: 8px 0 0 8px;
+    border-radius: radius(prev-next) 0 0 radius(prev-next);
 
-    @media screen and (max-width: $narrow-breakpoint) {
-      border-radius: 8px;
+    @media screen and (max-width: breakpoint(narrow)) {
+      border-radius: radius(prev-next);
     }
   }
 
   .next-link {
     text-align: right;
-    border-radius: 0 8px 8px 0;
+    border-radius: 0 radius(prev-next) radius(prev-next) 0;
 
-    @media screen and (max-width: $narrow-breakpoint) {
-      border-radius: 8px;
+    @media screen and (max-width: breakpoint(narrow)) {
+      border-radius: radius(prev-next);
     }
   }
 
@@ -699,19 +699,19 @@ body[dir="rtl"] .site-menu {
   .prev-next-label {
     display: block;
     color: var(--gray-500);
-    font-size: $font-size-14;
+    font-size: font-size(14);
     font-weight: 600;
-    margin-bottom: $padding-8;
+    margin-bottom: space(8);
 
     .fa-backward, .fa-forward {
-      font-size: $font-size-14;
+      font-size: font-size(14);
     }
   }
 
   .prev-next-title {
     display: block;
     color: var(--body-font-color);
-    font-size: $font-size-16;
+    font-size: font-size(16);
     font-weight: 400;
     line-height: 1.5;
 
@@ -722,116 +722,16 @@ body[dir="rtl"] .site-menu {
 }
 
 .comments-wrap {
-  margin-top: $padding-16;
+  margin-top: space(16);
 }
 
 #disqus_thread {
   color-scheme: none;
-  margin-top: $padding-40;
+  margin-top: space(40);
 }
 
 .copyright-wrap {
-  margin-top: $padding-16;
-}
-
-/* Pagination */
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: $padding-4;
-
-  padding: 2rem 0;
-  margin-top: 2rem;
-  border-top: 1px solid var(--gray-200);
-  max-width: 100%;
-
-  .pagination-nav, .pagination-page {
-    padding: $padding-8;
-    border: 1px solid var(--gray-200);
-    border-radius: 4px;
-    width: auto;
-
-    flex-grow: 0;
-    flex-shrink: 0;
-    text-align: center;
-    white-space: nowrap;
-
-    &:hover {
-      background: var(--gray-200);
-      border-color: var(--color-link);
-    }
-  }
-}
-
-.markdown {
-  a[href].pagination-link {
-    color: var(--body-font-color);
-    text-decoration: none;
-  }
-
-  a[href]:hover.pagination-link {
-    color: var(--body-font-color);
-    text-decoration: none;
-  }
-
-  a[href]:visited.pagination-link {
-    color: var(--body-font-color);
-    text-decoration: none;
-  }
-}
-
-.pagination-nav {
-  width: 4rem;
-
-  &.disabled {
-    border: 1px solid var(--gray-200);
-    color: var(--gray-500);
-    cursor: not-allowed;
-  }
-
-  i {
-    font-size: $font-size-12;
-  }
-}
-
-.pagination-pages {
-  display: flex;
-  gap: $padding-4;
-
-  .pagination-page {
-    min-width: 2.5rem;
-
-    &.current {
-      background: var(--color-page-link);
-      border-color: var(--color-link);
-      cursor: default;
-    }
-  }
-}
-
-#pagination-anchor {
-  position: relative;
-  top: -100px;
-  visibility: hidden;
-}
-
-@media screen and (max-width: $body-max-width) {
-  .pagination {
-    flex-wrap: wrap;
-    gap: $padding-8;
-  }
-
-  .pagination-pages {
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .pagination-nav {
-    order: 2;
-  }
+  margin-top: space(16);
 }
 
 /* ToC */
@@ -839,7 +739,7 @@ body[dir="rtl"] .site-menu {
 .site-toc {
   width: $toc-width;
   flex-shrink: 0;
-  font-size: $font-size-14;
+  font-size: font-size(14);
   transition: opacity 0.3s ease-in-out;
 
   -ms-overflow-style: none;  /* IE and Edge */
@@ -849,7 +749,7 @@ body[dir="rtl"] .site-menu {
   }
 
   // Desktop: sticky positioning
-  @media screen and (min-width: $toc-breakpoint) {
+  @media screen and (min-width: breakpoint(toc)) {
     position: sticky;
     top: 0;
     height: 100vh;
@@ -858,12 +758,12 @@ body[dir="rtl"] .site-menu {
   }
 
   // Mobile: hidden by default, overlay when active
-  @media screen and (max-width: $toc-breakpoint) {
+  @media screen and (max-width: breakpoint(toc)) {
     display: none;
     position: fixed;
     top: 0;
     right: 0;
-    z-index: $z-index-toc;
+    z-index: z-index(toc);
     overflow-x: hidden;
 
     // Overlay: show ToC as modal
@@ -882,14 +782,14 @@ body[dir="rtl"] .site-menu {
       transform: translateX(-50%);
       background: var(--body-background);
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-      z-index: $z-index-modal;
+      z-index: z-index(modal);
       overflow-y: auto;
-      border-radius: $border-radius;
+      border-radius: radius(overlay);
 
       .toc-content {
         width: 100%;
         height: auto;
-        padding: $padding-24;
+        padding: space(24);
       }
 
       .toc-toggle-button {
@@ -897,14 +797,14 @@ body[dir="rtl"] .site-menu {
       }
 
       #TableOfContents > ul {
-        margin-left: $padding-16;
+        margin-left: space(16);
       }
     }
   }
 
   @media screen and (min-width: $container-max-width) {
     .toc-content {
-      padding: $padding-32 $padding-16;
+      padding: space(32) space(16);
     }
   }
 
@@ -918,27 +818,27 @@ body[dir="rtl"] .site-menu {
   .toc-content {
     width: 100%;
     min-height: 100%;
-    padding: $padding-32 $padding-16;
+    padding: space(32) space(16);
 
     // Desktop: no fixed height needed
-    @media screen and (min-width: $toc-breakpoint) {
+    @media screen and (min-width: breakpoint(toc)) {
       height: auto;
     }
   }
 
   .toc-toggle-button {
     position: absolute;
-    top: $padding-16;
-    right: $padding-16;
+    top: space(16);
+    right: space(16);
     background: transparent;
     border: none;
-    padding: $padding-8;
+    padding: space(8);
     cursor: pointer;
-    z-index: $z-index-content;
+    z-index: z-index(content);
     display: none;
 
     i {
-      font-size: $font-size-16;
+      font-size: font-size(16);
     }
   }
 
@@ -978,7 +878,7 @@ body[dir="rtl"] .site-menu {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: $z-index-modal-overlay;
+  z-index: z-index(modal-overlay);
   display: none;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -997,44 +897,44 @@ body[dir="rtl"] .site-menu {
   position: fixed;
   bottom: 0;
   right: 0;
-  z-index: $z-index-toolbar;
-  margin-bottom: $padding-16;
-  margin-right: $padding-64;
+  z-index: z-index(toolbar);
+  margin-bottom: space(16);
+  margin-right: space(64);
 
   display: flex;
   align-items: flex-end;
   flex-direction: column;
 
-  @media screen and (max-width: $toc-breakpoint) {
-    margin-right: $padding-32;
+  @media screen and (max-width: breakpoint(toc)) {
+    margin-right: space(32);
   }
 
-  @media screen and (max-width: $menu-breakpoint) {
-    margin-right: $padding-16;
+  @media screen and (max-width: breakpoint(menu)) {
+    margin-right: space(16);
   }
 
   .toolbar-button {
-    margin: $padding-4;
+    margin: space(4);
     border: 0px;
-    border-radius: 50%;
+    border-radius: radius(button);
     background: var(--gray-200);
     color: var(--body-font-color);
 
-    width: $font-size-40;
-    height: $font-size-40;
+    width: font-size(40);
+    height: font-size(40);
     box-shadow: none;
 
     i {
-      font-size: $font-size-20;
+      font-size: font-size(20);
     }
 
-    @media screen and (max-width: $menu-breakpoint) {
-      width: $font-size-32;
-      height: $font-size-32;
+    @media screen and (max-width: breakpoint(menu)) {
+      width: font-size(32);
+      height: font-size(32);
       box-shadow: 0 0 4px var(--body-font-color);
 
       i {
-        font-size: $font-size-16;
+        font-size: font-size(16);
       }
     }
 
@@ -1074,7 +974,7 @@ body[dir="rtl"] .site-menu {
   }
 
   // Desktop: default expanded
-  @media screen and (min-width: $menu-breakpoint) {
+  @media screen and (min-width: breakpoint(menu)) {
     #toolbar-toggle:checked ~ .toolbar-items {
       display: none;
     }
@@ -1108,7 +1008,7 @@ body[dir="rtl"] .site-menu {
   }
 
   // Mobile: default collapsed
-  @media screen and (max-width: $menu-breakpoint) {
+  @media screen and (max-width: breakpoint(menu)) {
     #toolbar-toggle:not(:checked) ~ .toolbar-items {
       display: none;
     }
@@ -1153,7 +1053,7 @@ body[dir="rtl"] .site-menu {
 
   .category-count {
     color: var(--gray-500);
-    font-size: $font-size-14;
+    font-size: font-size(14);
     white-space: nowrap;
   }
 }
@@ -1224,7 +1124,7 @@ body[dir="rtl"] .site-menu {
 .container:has(.site-toc) {
 
   // Apply full ToC margin right on screens larger than wide breakpoint
-  @media screen and (min-width: $wide-breakpoint) {
+  @media screen and (min-width: breakpoint(wide)) {
     .site-menu {
       margin-right: $toc-margin-right;
     }
@@ -1235,7 +1135,7 @@ body[dir="rtl"] .site-menu {
   }
 
   // Halve ToC margin right on screens smaller than wide breakpoint
-  @media screen and (max-width: $wide-breakpoint) {
+  @media screen and (max-width: breakpoint(wide)) {
     .main-wrap {
       max-width: $body-max-width;
     }
@@ -1250,7 +1150,7 @@ body[dir="rtl"] .site-menu {
   }
 
   // Restore content width when side ToC disappears
-  @media screen and (max-width: $toc-breakpoint) {
+  @media screen and (max-width: breakpoint(toc)) {
     .main-wrap {
       max-width: $body-wide-width;
     }
@@ -1262,7 +1162,7 @@ body[dir="rtl"] .site-menu {
 }
 
 // Enable ToC control in mobile header when side ToC disappears
-@media screen and (max-width: $toc-breakpoint) {
+@media screen and (max-width: breakpoint(toc)) {
   #menu-control,
   #toc-control {
     display: inline;
@@ -1278,7 +1178,7 @@ body[dir="rtl"] .site-menu {
 }
 
 // Enable menu control in mobile header when side menu disappears
-@media screen and (max-width: $menu-breakpoint) {
+@media screen and (max-width: breakpoint(menu)) {
   #menu-control {
     display: inline;
   }
@@ -1301,7 +1201,7 @@ body[dir="rtl"] .site-menu {
 
     .site-menu .menu-content {
       transform: translateX($menu-width);
-      box-shadow: 0 0 $padding-8 rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 space(8) rgba(0, 0, 0, 0.1);
     }
 
     .menu-overlay {

@@ -3,17 +3,17 @@
   // {{< badge >}}
   .sc-badge {
     display: inline-block;
-    font-size: $font-size-14;
+    font-size: font-size(14);
     font-weight: $body-font-weight;
     vertical-align: middle;
-    border-radius: $border-radius;
+    border-radius: radius(block);
     overflow: hidden;
     text-wrap: nowrap;
     color: var(--body-font-color);
 
     span {
       display: inline-block;
-      padding: 0 $padding-8;
+      padding: 0 space(8);
     }
 
     span.sc-badge-title {
@@ -37,9 +37,9 @@
     display: flex;
     width: 100%;
     max-height: 150px;
-    margin: $padding-20 0;
+    margin: space(20) 0;
     border: 1px solid var(--gray-300);
-    border-radius: 8px;
+    border-radius: radius(bookmark);
     overflow: hidden;
     background: var(--body-background);
     transition: box-shadow 0.2s ease, border-color 0.2s ease;
@@ -66,7 +66,7 @@
 
     .sc-bookmark-content {
       flex: 1;
-      padding: $padding-16;
+      padding: space(16);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -74,8 +74,8 @@
     }
 
     .sc-bookmark-title {
-      margin: 0 0 $padding-8 0;
-      font-size: $font-size-18;
+      margin: 0 0 space(8) 0;
+      font-size: font-size(18);
       font-weight: 600;
       line-height: 1.4;
       color: var(--body-font-color);
@@ -86,8 +86,8 @@
     }
 
     .sc-bookmark-description {
-      margin: 0 0 $padding-8 0;
-      font-size: $font-size-14;
+      margin: 0 0 space(8) 0;
+      font-size: font-size(14);
       line-height: 1.4;
       color: var(--gray-500);
 
@@ -97,14 +97,14 @@
     }
 
     .sc-bookmark-url {
-      font-size: $font-size-12;
+      font-size: font-size(12);
       color: var(--gray-500);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
-    @media screen and (max-width: $menu-breakpoint) {
+    @media screen and (max-width: breakpoint(menu)) {
       max-height: 120px;
 
       .sc-bookmark-image {
@@ -113,18 +113,18 @@
       }
 
       .sc-bookmark-content {
-        padding: $padding-12;
+        padding: space(12);
       }
 
       .sc-bookmark-title {
-        font-size: $font-size-16;
-        margin-bottom: $padding-4;
+        font-size: font-size(16);
+        margin-bottom: space(4);
         line-clamp: 1;
       }
 
       .sc-bookmark-description {
-        font-size: $font-size-12;
-        margin-bottom: $padding-4;
+        font-size: font-size(12);
+        margin-bottom: space(4);
         line-clamp: 2;
       }
     }
@@ -133,12 +133,12 @@
   // {{< button >}}
   .sc-button[href] {
     display: inline-block;
-    font-size: $font-size-14;
+    font-size: font-size(14);
     color: var(--color-link);
-    line-height: $padding-16 * 2;
-    padding: 0 $padding-16;
-    border: $padding-1 solid var(--color-link);
-    border-radius: $border-radius;
+    line-height: space(16) * 2;
+    padding: 0 space(16);
+    border: space(1) solid var(--color-link);
+    border-radius: radius(block);
     cursor: pointer;
 
     &:hover {
@@ -151,8 +151,8 @@
     display: block;
     overflow: hidden;
     height: 100%;
-    border-radius: $border-radius;
-    border: $padding-1 solid var(--gray-200);
+    border-radius: radius(block);
+    border: space(1) solid var(--gray-200);
     
     &[href], &[href]:visited {
       color: var(--body-font-color);
@@ -170,16 +170,167 @@
     }
 
     .markdown-inner {
-      padding: $padding-16;
+      padding: space(16);
+    }
+  }
+
+  // {{< codeblock >}}
+  .sc-codeblock-filename {
+    background: var(--gray-200);
+    font-size: font-size(14);
+    margin-top: space(16);
+    padding: space(4) space(16);
+    border-start-start-radius: 4px;
+    border-start-end-radius: 4px;
+
+    a {
+      color: var(--body-font-color);
+    }
+
+    + .highlight pre {
+      margin-top: 0;
+      border-start-start-radius: 0;
+      border-start-end-radius: 0;
+    }
+  }
+
+  /* https://highlightjs.org/ */
+  /* https://carbon.now.sh/ */
+
+  .sc-codeblock {
+    position: relative;
+    margin: 1.25rem 0;
+
+    pre {
+      border-radius: radius(codeblock);
+      padding: 0;
+      margin: 0;
+      position: relative;
+      overflow: scroll;
+
+      // Single-line
+      &:not(:has(.hljs-ln)) {
+        padding-top: 2rem;
+      }
+
+      // Multi-lines
+      &:has(.hljs-ln) {
+        padding-top: 1rem;
+      }
+
+      // Mac window controls
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0.9375rem;
+        left: 1.25rem;
+        width: 0.75rem;
+        height: 0.75rem;
+        background: #ff5f57;
+        border-radius: radius(button);
+        box-shadow: 1.375rem 0 0 #ffbd2e, 2.75rem 0 0 #28ca42;
+      }
+    }
+
+    .code-actions {
+      position: absolute;
+      top: 0.75rem;
+      right: 1rem;
+      display: flex;
+      gap: space(8);
+      align-items: center;
+      z-index: z-index(content);
+    }
+
+    .code-action {
+      background: rgba(0, 0, 0, 0.6);
+      color: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+
+      border: none;
+      border-radius: radius(chip);
+
+      font-size: font-size(12);
+      text-transform: uppercase;
+
+      height: 1.5rem;
+      min-width: 4.5rem;
+    }
+
+    .code-copy-button {
+      cursor: pointer;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.9);
+      }
+
+      &.copied {
+        background: rgba(76, 175, 80, 0.8);
+      }
+
+      i {
+        margin-right: space(4);
+        font-size: font-size(12);
+      }
+    }
+
+    .code-language {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+    }
+
+    /* highlight.js line numbers */
+
+    .hljs-ln {
+      border-spacing: 0;
+      border-collapse: collapse;
+      width: 100%;
+      display: table;
+
+      tbody {
+        display: table-row-group;
+      }
+
+      tr {
+        display: table-row;
+      }
+
+      td {
+        display: table-cell;
+        border: none !important;
+        vertical-align: top;
+        margin: 0;
+        padding: 0 0.625rem 0;
+        white-space: pre;
+      }
+    }
+
+    .hljs-ln-numbers {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+
+      display: table-cell;
+      text-align: right;
+      white-space: nowrap;
+
+      width: 2rem;
+      min-width: 2rem;
+      color: var(--lineno-font-color);
     }
   }
 
   // {{< columns >}}
   .sc-columns {
-    gap: $padding-16;
+    gap: space(16);
 
     >div {
-      margin: $padding-16 0;
+      margin: space(16) 0;
       min-width: $body-min-width * 0.66;
     }
 
@@ -188,7 +339,7 @@
       display: flex;
       padding: 0;
       flex-wrap: wrap;
-      gap: $padding-16;
+      gap: space(16);
 
       >li {
         flex: 1 1;
@@ -212,7 +363,7 @@
     }
 
     .data-table {
-      margin-top: $padding-8;
+      margin-top: space(8);
     }
   }
 
@@ -228,7 +379,7 @@
       font-weight: 700;
       position: sticky;
       top: 0;
-      z-index: $z-index-content;
+      z-index: z-index(content);
     }
 
     th,
@@ -261,19 +412,19 @@
 
   .data-table-caption {
     text-align: right;
-    margin-bottom: $padding-8;
+    margin-bottom: space(8);
   }
 
   .data-download-button {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: space(8);
     padding: 0.32rem 0.5rem;
     background: rgba(0, 0, 0, 0.6);
     color: rgba(255, 255, 255, 0.9);
     border: none;
-    border-radius: 4px;
-    font-size: $font-size-12;
+    border-radius: radius(chip);
+    font-size: font-size(12);
     cursor: pointer;
     transition: opacity 0.2s;
 
@@ -282,13 +433,13 @@
     }
 
     i {
-      font-size: $font-size-12;
+      font-size: font-size(12);
     }
   }
 
   // {{< hint >}}
   .sc-hint {
-    padding: $padding-12 $padding-20;
+    padding: space(12) space(20);
     line-height: 1.8;
 
     @each $name, $color in $hint-colors {
@@ -331,9 +482,9 @@
       max-width: 100% !important;
       max-height: 100% !important;
       
-      z-index: $z-index-modal-overlay;
+      z-index: z-index(modal-overlay);
       cursor: zoom-out;
-      padding: $padding-16;
+      padding: space(16);
     }
   }
 
@@ -344,8 +495,8 @@
     >ol {
       counter-reset: steps;
       list-style: none;
-      padding-inline-start: $padding-16 + $padding-4;
-      margin-top: $padding-16 * 2;
+      padding-inline-start: space(16) + space(4);
+      margin-top: space(16) * 2;
 
       >li::before {
         content: counter(steps);
@@ -354,27 +505,27 @@
         position: absolute;
         display: flex;
         justify-content: center;
-        left: $padding-8;
+        left: space(8);
 
-        height: $padding-16 * 1.5;
-        width: $padding-16 * 1.5;
-        padding: $padding-4;
-        border-radius: $padding-8;
+        height: space(16) * 1.5;
+        width: space(16) * 1.5;
+        padding: space(4);
+        border-radius: space(8);
 
         white-space: nowrap;
-        line-height: $padding-16;
+        line-height: space(16);
 
         color: var(--body-background);
         background: var(--gray-500);
-        outline: $padding-4 solid var(--body-background);
+        outline: space(4) solid var(--body-background);
       }
 
       >li {
         @extend .markdown-inner;
-        border-inline-start: $padding-1 solid var(--gray-500);
-        padding-inline-start: $padding-16 * 3;
+        border-inline-start: space(1) solid var(--gray-500);
+        padding-inline-start: space(16) * 3;
         
-        padding-bottom: $padding-16 * 2;
+        padding-bottom: space(16) * 2;
       }
 
       >li:last-child {
@@ -385,11 +536,11 @@
 
   // {{< tabs >}}
   .sc-tabs {
-    margin-top: $padding-16;
-    margin-bottom: $padding-16;
+    margin-top: space(16);
+    margin-bottom: space(16);
 
-    border: $padding-1 solid var(--gray-200);
-    border-radius: $border-radius;
+    border: space(1) solid var(--gray-200);
+    border-radius: radius(block);
 
     overflow: hidden;
 
@@ -398,21 +549,21 @@
 
     label {
       display: inline-block;
-      padding: $padding-8 $padding-16;
-      border-bottom: $padding-1 transparent;
+      padding: space(8) space(16);
+      border-bottom: space(1) transparent;
       cursor: pointer;
     }
 
     .sc-tabs-content {
       order: 999; //Move content blocks to the end
       width: 100%;
-      border-top: $padding-1 solid var(--gray-100);
-      padding: $padding-16;
+      border-top: space(1) solid var(--gray-100);
+      padding: space(16);
       display: none;
     }
 
     input[type="radio"]:checked+label {
-      border-bottom: $padding-1 solid var(--color-link);
+      border-bottom: space(1) solid var(--color-link);
     }
 
     input[type="radio"]:checked+label+.sc-tabs-content {
@@ -427,15 +578,15 @@
   // {{< series >}}
   .sc-series {
     position: relative;
-    margin: 0 0 $padding-32 0;
-    padding: $padding-24 $padding-24 $padding-12 $padding-24;
+    margin: 0 0 space(32) 0;
+    padding: space(24) space(24) space(12) space(24);
     background: var(--gray-100);
-    border-radius: 8px;
+    border-radius: radius(series);
 
     .series-bookmark {
       position: absolute;
       top: 0;
-      right: $padding-32;
+      right: space(32);
       width: 2.5rem;
       height: 3.8rem;
       margin: 0;
@@ -453,7 +604,7 @@
     }
 
     .series-header {
-      margin-bottom: $padding-16;
+      margin-bottom: space(16);
     }
 
     .series-title {
@@ -470,7 +621,7 @@
     }
 
     .series-content {
-      margin-top: $padding-16;
+      margin-top: space(16);
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease-in-out;
@@ -488,9 +639,9 @@
 
     .series-item {
       display: flex;
-      gap: $padding-8;
-      margin-bottom: $padding-8;
-      font-size: $font-size-16;
+      gap: space(8);
+      margin-bottom: space(8);
+      font-size: font-size(16);
 
       .series-item-index {
         font-style: italic;
@@ -519,15 +670,15 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: $padding-12;
+      margin-top: space(12);
     }
 
     .series-toggle-label {
       display: flex;
       align-items: center;
-      gap: $padding-4;
+      gap: space(4);
       color: var(--body-font-color);
-      font-size: $font-size-14;
+      font-size: font-size(14);
       user-select: none;
       cursor: pointer;
 
@@ -558,9 +709,9 @@
     .series-nav {
       display: flex;
       align-items: center;
-      gap: $padding-16;
+      gap: space(16);
       color: var(--gray-500);
-      font-size: $font-size-14;
+      font-size: font-size(14);
 
       .series-nav-info {
         font-family: monospace;
@@ -568,7 +719,7 @@
 
       .series-nav-buttons {
         display: flex;
-        gap: $padding-8;
+        gap: space(8);
 
         .series-nav-button {
           display: flex;
@@ -577,7 +728,7 @@
           width: 24px;
           height: 24px;
           border: 1px solid var(--color-link);
-          border-radius: 50%;
+          border-radius: radius(button);
           color: var(--color-link);
           transition: all 0.2s;
           cursor: pointer;
@@ -604,7 +755,7 @@
   }
 
   #series-anchor {
-    height: $padding-32;
-    margin-top: -$padding-32;
+    height: space(32);
+    margin-top: -space(32);
   }
 }

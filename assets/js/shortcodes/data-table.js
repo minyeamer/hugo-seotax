@@ -3,13 +3,13 @@
  * @param {HTMLButtonElement} button - Download button element
  */
 function downloadCSV(button) {
-  const fileName = button.getAttribute('data-filename');
+  const fileName = button.dataset.filename;
 
   if (!fileName) return;
   const table = document.querySelector(`.data-table[data-filename="${fileName}"]`);
   if (!table) return;
 
-  const delimiter = button.getAttribute('data-delimiter');
+  const delimiter = button.dataset.delimiter;
   const rows = table2rows(table);
   const csvContent = rows.map(row => {
     return row.map(value => escapeCSValue(value, delimiter)).join(',');

@@ -1,18 +1,17 @@
-@import "css/defaults";
-@import "css/variables";
+@import "css/variables/colors";
+@import "css/variables/defaults";
+@import "css/variables/fonts";
+
 @import "css/themes/auto";
 
-@import "css/normalize";
-@import "css/utils";
-@import "css/fonts";
-@import "css/print";
+@import "css/main/normalize";
+@import "css/main/utils";
+@import "css/main/print";
+@import "css/main/markdown";
 
 @import "css/layouts";
 @import "css/search";
-
-@import "css/markdown";
 @import "css/shortcodes";
-@import "css/codeblock";
 
 // Custom defined styles
 @import "css/custom";

@@ -117,42 +117,42 @@ https://github.com/minyeamer/hugo-miny
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.9.0/highlightjs-line-numbers.min.js" crossorigin="anonymous"></script>
 
 <!-- Scroll Progress Bar -->
-{{- $scrollProgressJS := resources.Get "js/scroll-progress.js" | resources.ExecuteAsTemplate "js/scroll-progress.js" . | resources.Minify | resources.Fingerprint }}
+{{- $scrollProgressJS := resources.Get "js/partials/scroll-progress.js" | resources.ExecuteAsTemplate "js/partials/scroll-progress.js" . | resources.Minify | resources.Fingerprint }}
 <script defer src="{{ partial `links/resource-precache` $scrollProgressJS }}" {{ template `integrity` $scrollProgressJS }}></script>
 
 <!-- Menu Toggle -->
-{{- $menuToggleJS := resources.Get "js/menu-toggle.js" | resources.ExecuteAsTemplate "js/menu-toggle.js" . | resources.Minify | resources.Fingerprint }}
+{{- $menuToggleJS := resources.Get "js/partials/menu-toggle.js" | resources.ExecuteAsTemplate "js/partials/menu-toggle.js" . | resources.Minify | resources.Fingerprint }}
 <script defer src="{{ partial `links/resource-precache` $menuToggleJS }}" {{ template `integrity` $menuToggleJS }}></script>
 
 <!-- ToC Toggle -->
-{{- $tocToggleJS := resources.Get "js/toc-toggle.js" | resources.ExecuteAsTemplate "js/toc-toggle.js" . | resources.Minify | resources.Fingerprint }}
+{{- $tocToggleJS := resources.Get "js/partials/toc-toggle.js" | resources.ExecuteAsTemplate "js/partials/toc-toggle.js" . | resources.Minify | resources.Fingerprint }}
 <script defer src="{{ partial `links/resource-precache` $tocToggleJS }}" {{ template `integrity` $tocToggleJS }}></script>
 
 <!-- Set color scheme - toggle dark/light theme -->
-{{- $setThemeJS := resources.Get "js/set-theme.js" | resources.ExecuteAsTemplate "js/set-theme.js" . | resources.Minify | resources.Fingerprint }}
+{{- $setThemeJS := resources.Get "js/core/set-theme.js" | resources.ExecuteAsTemplate "js/core/set-theme.js" . | resources.Minify | resources.Fingerprint }}
 <script defer src="{{ partial `links/resource-precache` $setThemeJS }}" {{ template `integrity` $setThemeJS }}></script>
 
 <!-- Code Copy -->
-{{- $copyCodeJS := resources.Get "js/copy-code.js" | resources.ExecuteAsTemplate "js/copy-code.js" . | resources.Minify | resources.Fingerprint }}
+{{- $copyCodeJS := resources.Get "js/shortcodes/copy-code.js" | resources.ExecuteAsTemplate "js/shortcodes/copy-code.js" . | resources.Minify | resources.Fingerprint }}
 <script defer src="{{ partial `links/resource-precache` $copyCodeJS }}" {{ template `integrity` $copyCodeJS }}></script>
 
 <!-- ToC Highlight -->
-{{- $tocHighlightJS := resources.Get "js/toc-highlight.js" | resources.ExecuteAsTemplate "js/toc-highlight.js" . | resources.Minify | resources.Fingerprint }}
+{{- $tocHighlightJS := resources.Get "js/partials/toc-highlight.js" | resources.ExecuteAsTemplate "js/partials/toc-highlight.js" . | resources.Minify | resources.Fingerprint }}
 <script defer src="{{ partial `links/resource-precache` $tocHighlightJS }}" {{ template `integrity` $tocHighlightJS }}></script>
 
 <!-- Reading Time -->
-{{- $readingTimeJS := resources.Get "js/reading-time.js" | resources.ExecuteAsTemplate "js/reading-time.js" . | resources.Minify | resources.Fingerprint }}
+{{- $readingTimeJS := resources.Get "js/partials/reading-time.js" | resources.ExecuteAsTemplate "js/partials/reading-time.js" . | resources.Minify | resources.Fingerprint }}
 <script defer src="{{ partial `links/resource-precache` $readingTimeJS }}" {{ template `integrity` $readingTimeJS }}></script>
 
 <!-- Image Zoom -->
-{{- $imageZoomJS := resources.Get "js/image-zoom.js" | resources.ExecuteAsTemplate "js/image-zoom.js" . | resources.Minify | resources.Fingerprint }}
+{{- $imageZoomJS := resources.Get "js/shortcodes/image-zoom.js" | resources.ExecuteAsTemplate "js/shortcodes/image-zoom.js" . | resources.Minify | resources.Fingerprint }}
 <script defer src="{{ partial `links/resource-precache` $imageZoomJS }}" {{ template `integrity` $imageZoomJS }}></script>
 
 <!-- Data Table -->
-{{- $dataTableJS := resources.Get "js/data-table.js" | resources.ExecuteAsTemplate "js/data-table.js" . | resources.Minify | resources.Fingerprint }}
+{{- $dataTableJS := resources.Get "js/shortcodes/data-table.js" | resources.ExecuteAsTemplate "js/shortcodes/data-table.js" . | resources.Minify | resources.Fingerprint }}
 <script defer src="{{ partial `links/resource-precache` $dataTableJS }}" {{ template `integrity` $dataTableJS }}></script>
 
-<!-- Search -->
+<!-- Search: Start -->
 {{- if default true .Site.Params.search.enabled -}}
   <script>
     window.siteSearch = window.siteSearch || {};
@@ -190,3 +190,4 @@ https://github.com/minyeamer/hugo-miny
   {{- $searchListJS := resources.Get "js/search/list.js" | resources.ExecuteAsTemplate "js/search/list.js" . | resources.Minify | resources.Fingerprint }}
   <script defer src="{{ partial `links/resource-precache` $searchListJS }}" {{ template `integrity` $searchListJS }}></script>
 {{- end -}}
+<!-- Search: End -->

@@ -15,7 +15,7 @@
     font-weight: $body-font-weight;
     line-height: 1;
     margin-top: 1.5em;
-    margin-bottom: $padding-16;
+    margin-bottom: space(16);
 
     a.anchor {
       opacity: 0;
@@ -30,12 +30,12 @@
     }
   }
 
-  h1 { font-size: $font-size-16 * 2; }
-  h2 { font-size: $font-size-16 * 1.5; }
-  h3 { font-size: $font-size-16 * 1.25; }
-  h4 { font-size: $font-size-16 * 1.125; }
-  h5 { font-size: $font-size-16 * 1; }
-  h6 { font-size: $font-size-16 * 0.875; }
+  h1 { font-size: font-size(16) * 2; }
+  h2 { font-size: font-size(16) * 1.5; }
+  h3 { font-size: font-size(16) * 1.25; }
+  h4 { font-size: font-size(16) * 1.125; }
+  h5 { font-size: font-size(16) * 1; }
+  h6 { font-size: font-size(16) * 0.875; }
 
   b,
   optgroup,
@@ -62,16 +62,16 @@
   code {
     direction: ltr;
     unicode-bidi: embed;
-    padding: 0 $padding-4;
+    padding: 0 space(4);
     background: var(--gray-200);
-    border-radius: $border-radius;
+    border-radius: radius(block);
     font-size: 0.875em;
   }
 
   pre {
-    padding: $padding-16;
+    padding: space(16);
     background: var(--gray-100);
-    border-radius: $border-radius;
+    border-radius: radius(block);
     overflow-x: auto;
 
     code {
@@ -85,11 +85,11 @@
   }
 
   blockquote {
-    margin: $padding-16 0;
-    padding: $padding-8 $padding-16 $padding-8 ($padding-16 - $padding-4); //to keep total left space 16dp
+    margin: space(16) 0;
+    padding: space(8) space(16) space(8) (space(16) - space(4)); //to keep total left space 16dp
 
-    border-inline-start: $padding-4 solid var(--gray-200);
-    border-radius: $border-radius;
+    border-inline-start: space(4) solid var(--gray-200);
+    border-radius: radius(block);
 
     :first-child {
       margin-top: 0;
@@ -104,13 +104,13 @@
     display: block;
     border-spacing: 0;
     border-collapse: collapse;
-    margin-top: $padding-16;
-    margin-bottom: $padding-16;
+    margin-top: space(16);
+    margin-bottom: space(16);
 
     tr th,
     tr td {
-      padding: $padding-8 $padding-16;
-      border: $padding-1 solid var(--gray-200);
+      padding: space(8) space(16);
+      border: space(1) solid var(--gray-200);
       text-align: start;
     }
 
@@ -120,26 +120,26 @@
   }
 
   hr {
-    height: $padding-1;
+    height: space(1);
     border: none;
     background: var(--gray-200);
   }
 
   ul,
   ol {
-    padding-inline-start: $padding-16;
+    padding-inline-start: space(16);
     word-wrap: break-word;
   }
 
   dl {
     dt {
       font-weight: bolder;
-      margin-top: $padding-16;
+      margin-top: space(16);
     }
 
     dd {
       margin-inline-start: 0;
-      margin-bottom: $padding-16;
+      margin-bottom: space(16);
     }
   }
 
@@ -147,7 +147,7 @@
   .highlight {
     direction: ltr;
     unicode-bidi: embed;
-    border-radius: $border-radius;
+    border-radius: radius(block);
 
     table tr {
       td pre code > span {
@@ -165,27 +165,27 @@
     }
 
   pre > code:not(:has(table)) {
-    margin: $padding-16;
+    margin: space(16);
   }
 
   }
 
   details {
-    padding: $padding-16;
-    border: $padding-1 solid var(--gray-200);
-    border-radius: $border-radius;
+    padding: space(16);
+    border: space(1) solid var(--gray-200);
+    border-radius: radius(block);
 
     summary {
       line-height: 1;
-      padding: $padding-16;
-      margin: -$padding-16;
+      padding: space(16);
+      margin: -space(16);
       cursor: pointer;
       list-style: none;
 
       &::before {
         content: "›";
         display: inline-block;
-        margin-inline-end: $padding-8;
+        margin-inline-end: space(8);
         transition: transform 0.1s ease-in-out;
       }
     }
@@ -200,11 +200,11 @@
   }
 
   figure {
-    margin: $padding-16 0;
+    margin: space(16) 0;
 
     figcaption {
       @extend .markdown-inner;
-      margin-top: $padding-16;
+      margin-top: space(16);
     }
   }
 
