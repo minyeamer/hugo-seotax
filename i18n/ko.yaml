@@ -1,118 +1,124 @@
-- id: "Site Menu"
+- id: "menu.aside.tooltip"
   translation: "메뉴"
 
-- id: "Toggle Menu"
+- id: "menu.toggle.tooltip"
   translation: "메뉴 접기/펼치기"
 
-- id: "Open Menu"
+- id: "menu.open.tooltip"
   translation: "메뉴 펼치기"
 
-- id: "Site ToC"
+- id: "toc.aside.tooltip"
   translation: "목차"
 
-- id: "Toggle ToC"
+- id: "toc.toggle.tooltip"
   translation: "목차 접기/펼치기"
 
-- id: "Previous Page"
+- id: "post.prev.link"
   translation: "이전"
 
-- id: "Previous Post"
-  translation: "PREV"
-
-- id: "No Previous Post"
+- id: "post.prev.empty"
   translation: "이전 게시글이 없습니다"
 
-- id: "Next Page"
+- id: "post.next.link"
   translation: "다음"
 
-- id: "Next Post"
-  translation: "NEXT"
-
-- id: "No Next Post"
+- id: "post.next.empty"
   translation: "다음 게시글이 없습니다"
 
-- id: "Recent Posts"
+- id: "menu.recent.posts"
   translation: "최신글"
 
-- id: "Toolbar"
+- id: "toolbar.wrap.tooltip"
   translation: "툴바"
 
-- id: "Categories"
+- id: "toolbar.i18n.tooltip"
+  translation: "언어 선택"
+
+- id: "toolbar.top.tooltip"
+  translation: "맨 위로 이동"
+
+- id: "toolbar.bottom.tooltip"
+  translation: "맨 아래로 이동"
+
+- id: "toolbar.back.tooltip"
+  translation: "뒤로 이동"
+
+- id: "categories.terms.title"
   translation: "카테고리"
 
-- id: "Category Parent"
+- id: "categories.parent.subtutle"
   translation: "상위 카테고리"
 
-- id: "Category Child"
+- id: "categories.child.subtutle"
   translation: "하위 카테고리"
 
-- id: "Categories Root"
+- id: "categories.root.label"
   translation: "전체"
 
-- id: "Tags"
+- id: "tags.terms.title"
   translation: "태그"
 
-- id: "Hide"
+- id: "series.hide.label"
   translation: "숨기기"
 
-- id: "Show"
+- id: "series.show.label"
   translation: "목록 보기"
 
-- id: "Close"
+- id: "search.close.tooltip"
   translation: "닫기"
 
-- id: "Search"
+- id: "search.action.label"
   translation: "검색"
 
-- id: "Search Input"
+- id: "search.input.label"
   translation: "`/` 를 눌러 검색하세요"
 
-- id: "Search Placeholder"
+- id: "search.input.placeholder"
   translation: "검색어를 입력해주세요"
 
-- id: "Search Results"
+- id: "search.results.title"
   translation: "검색 결과"
 
-- id: "Search Tags"
+- id: "search.tags.title"
   translation: "검색 태그"
 
-- id: "List Label"
+- id: "list.count.label"
   translation: "전체 글 %s"
 
-- id: "More Label"
+- id: "search.more.label"
   translation: "전체 %d개 결과 보기"
 
-- id: "Search Label"
+- id: "search.count.label"
   translation: "\"%q\" 검색 결과 %s"
 
-- id: "Categories Label"
+- id: "categories.count.label"
   translation: "전체 카테고리 %s"
 
-- id: "Tags Label"
+- id: "tags.count.label"
   translation: "전체 태그 %s"
 
-- id: "Tags All"
+- id: "tags.op.checkbox"
   translation: "모두 일치"
 
-- id: "Advanced Filters"
+- id: "search.filters.toggle"
   translation: "고급 필터"
 
-- id: "No Results"
+- id: "search.results.empty"
   translation: "결과가 없습니다."
 
-- id: "Date Format"
+- id: "post.date.format"
   translation: "2006년 01월 02일"
 
-- id: "Read Format Hour"
+- id: "reading.time.hour"
   translation: "읽는데 %h시간 %m분"
 
-- id: "Read Format Min"
+- id: "reading.time.min"
   translation: "읽는데 %m분"
 
-- id: "Read Format Sec"
+- id: "reading.time.sec"
   translation: "읽는데 %s초"
 
-- id: "searchConfig"
+- id: "search.index.config"
   translation: |
     {
       encode: false,

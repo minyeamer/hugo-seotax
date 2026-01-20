@@ -1,116 +1,122 @@
-- id: "Site Menu"
+- id: "menu.aside.tooltip"
   translation: "菜单"
 
-- id: "Toggle Menu"
+- id: "menu.toggle.tooltip"
   translation: "展开/收起菜单"
 
-- id: "Open Menu"
+- id: "menu.open.tooltip"
   translation: "打开菜单"
 
-- id: "Site ToC"
+- id: "toc.aside.tooltip"
   translation: "目录"
 
-- id: "Toggle ToC"
+- id: "toc.toggle.tooltip"
   translation: "展开/收起目录"
 
-- id: "Previous Page"
+- id: "post.prev.link"
   translation: "上一页"
 
-- id: "Previous Post"
-  translation: "上一篇"
-
-- id: "No Previous Post"
+- id: "post.prev.empty"
   translation: "没有上一篇文章"
 
-- id: "Next Page"
+- id: "post.next.link"
   translation: "下一页"
 
-- id: "Next Post"
-  translation: "下一篇"
-
-- id: "No Next Post"
+- id: "post.next.empty"
   translation: "没有下一篇文章"
 
-- id: "Recent Posts"
+- id: "menu.recent.posts"
   translation: "最新文章"
 
-- id: "Toolbar"
+- id: "toolbar.wrap.tooltip"
   translation: "工具栏"
 
-- id: "Categories"
+- id: "toolbar.i18n.tooltip"
+  translation: "选择语言"
+
+- id: "toolbar.top.tooltip"
+  translation: "回到顶部"
+
+- id: "toolbar.bottom.tooltip"
+  translation: "前往底部"
+
+- id: "toolbar.back.tooltip"
+  translation: "返回"
+
+- id: "categories.terms.title"
   translation: "分类"
 
-- id: "Category Parent"
+- id: "categories.parent.subtutle"
   translation: "父分类"
 
-- id: "Category Child"
+- id: "categories.child.subtutle"
   translation: "子分类"
 
-- id: "Categories Root"
+- id: "categories.root.label"
   translation: "全部"
 
-- id: "Tags"
+- id: "tags.terms.title"
   translation: "标签"
 
-- id: "Hide"
+- id: "series.hide.label"
   translation: "隐藏"
 
-- id: "Show"
+- id: "series.show.label"
   translation: "显示列表"
 
-- id: "Close"
+- id: "search.close.tooltip"
   translation: "关闭"
 
-- id: "Search"
+- id: "search.action.label"
   translation: "搜索"
 
-- id: "Search Input"
+- id: "search.input.label"
   translation: "按 `/` 搜索"
 
-- id: "Search Placeholder"
+- id: "search.input.placeholder"
   translation: "在此输入搜索内容"
 
-- id: "Search Results"
+- id: "search.results.title"
   translation: "搜索结果"
 
-- id: "Search Tags"
+- id: "search.tags.title"
   translation: "搜索标签"
 
-- id: "List Label"
+- id: "list.count.label"
   translation: "%s篇文章"
 
-- id: "More Label"
+- id: "search.more.label"
   translation: "查看全部%d个结果"
 
-- id: "Search Label"
+- id: "search.count.label"
   translation: "\"%q\"的%s个搜索结果"
 
-- id: "Categories Label"
+- id: "categories.count.label"
   translation: "全部 %s 个分类"
 
-- id: "Tags Label"
+- id: "tags.count.label"
   translation: "全部 %s 个标签"
 
-- id: "Tags All"
+- id: "tags.op.checkbox"
   translation: "匹配所有"
 
-- id: "Advanced Filters"
+- id: "search.filters.toggle"
   translation: "高级筛选"
 
-- id: "No Results"
+- id: "search.results.empty"
   translation: "未找到结果。"
 
-- id: "Date Format"
+- id: "post.date.format"
   translation: "2006年01月02日"
 
-- id: "Read Format Hour"
+- id: "reading.time.hour"
   translation: "%h小时%m分钟阅读"
 
-- id: "Read Format Min"
+- id: "reading.time.min"
   translation: "%m分钟阅读"
 
-- id: "Read Format Sec"
+- id: "reading.time.sec"
   translation: "%s秒阅读"
 
-- id: "searchConfig"
-  translation: "searchConfig"
+- id: "search.index.config"
+  translation: '{ cache: true }'

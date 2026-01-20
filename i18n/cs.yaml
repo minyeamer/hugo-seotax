@@ -1,116 +1,122 @@
-- id: "Site Menu"
+- id: "menu.aside.tooltip"
   translation: "Nabídka"
 
-- id: "Toggle Menu"
+- id: "menu.toggle.tooltip"
   translation: "Přepnout nabídku"
 
-- id: "Open Menu"
+- id: "menu.open.tooltip"
   translation: "Otevřít nabídku"
 
-- id: "Site ToC"
+- id: "toc.aside.tooltip"
   translation: "Obsah"
 
-- id: "Toggle ToC"
+- id: "toc.toggle.tooltip"
   translation: "Přepnout obsah"
 
-- id: "Previous Page"
+- id: "post.prev.link"
   translation: "PŘEDCHOZÍ"
 
-- id: "Previous Post"
-  translation: "PŘEDCHOZÍ"
-
-- id: "No Previous Post"
+- id: "post.prev.empty"
   translation: "Žádný předchozí příspěvek"
 
-- id: "Next Page"
+- id: "post.next.link"
   translation: "DALŠÍ"
 
-- id: "Next Post"
-  translation: "DALŠÍ"
-
-- id: "No Next Post"
+- id: "post.next.empty"
   translation: "Žádný další příspěvek"
 
-- id: "Recent Posts"
+- id: "menu.recent.posts"
   translation: "Nejnovější příspěvky"
 
-- id: "Toolbar"
+- id: "toolbar.wrap.tooltip"
   translation: "Panel nástrojů"
 
-- id: "Categories"
+- id: "toolbar.i18n.tooltip"
+  translation: "Vybrat jazyk"
+
+- id: "toolbar.top.tooltip"
+  translation: "Přejít nahoru"
+
+- id: "toolbar.bottom.tooltip"
+  translation: "Přejít dolů"
+
+- id: "toolbar.back.tooltip"
+  translation: "Zpět"
+
+- id: "categories.terms.title"
   translation: "Kategorie"
 
-- id: "Category Parent"
+- id: "categories.parent.subtutle"
   translation: "Nadřazená kategorie"
 
-- id: "Category Child"
+- id: "categories.child.subtutle"
   translation: "Podřízená kategorie"
 
-- id: "Categories Root"
+- id: "categories.root.label"
   translation: "Vše"
 
-- id: "Tags"
+- id: "tags.terms.title"
   translation: "Štítky"
 
-- id: "Hide"
+- id: "series.hide.label"
   translation: "Skrýt"
 
-- id: "Show"
+- id: "series.show.label"
   translation: "Zobrazit seznam"
 
-- id: "Close"
+- id: "search.close.tooltip"
   translation: "Zavřít"
 
-- id: "Search"
+- id: "search.action.label"
   translation: "Vyhledávat"
 
-- id: "Search Input"
+- id: "search.input.label"
   translation: "Stiskněte `/` pro vyhledávání"
 
-- id: "Search Placeholder"
+- id: "search.input.placeholder"
   translation: "Zadejte text k vyhledání"
 
-- id: "Search Results"
+- id: "search.results.title"
   translation: "Výsledky vyhledávání"
 
-- id: "Search Tags"
+- id: "search.tags.title"
   translation: "Hledat značky"
 
-- id: "List Label"
+- id: "list.count.label"
   translation: "%s příspěvků"
 
-- id: "More Label"
+- id: "search.more.label"
   translation: "Zobrazit všechny %d výsledky"
 
-- id: "Search Label"
+- id: "search.count.label"
   translation: "%s výsledků pro \"%q\""
 
-- id: "Categories Label"
+- id: "categories.count.label"
   translation: "%s kategorií"
 
-- id: "Tags Label"
+- id: "tags.count.label"
   translation: "%s štítků"
 
-- id: "Tags All"
+- id: "tags.op.checkbox"
   translation: "Vyhledat všechny"
 
-- id: "Advanced Filters"
+- id: "search.filters.toggle"
   translation: "Pokročilé filtry"
 
-- id: "No Results"
+- id: "search.results.empty"
   translation: "Nebyly nalezeny žádné výsledky."
 
-- id: "Date Format"
+- id: "post.date.format"
   translation: "02.01.2006"
 
-- id: "Read Format Hour"
+- id: "reading.time.hour"
   translation: "%h h %m min čtení"
 
-- id: "Read Format Min"
+- id: "reading.time.min"
   translation: "%m min čtení"
 
-- id: "Read Format Sec"
+- id: "reading.time.sec"
   translation: "%s s čtení"
 
-- id: "searchConfig"
-  translation: "searchConfig"
+- id: "search.index.config"
+  translation: '{ cache: true }'

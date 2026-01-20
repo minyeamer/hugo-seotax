@@ -1,116 +1,122 @@
-- id: "Site Menu"
+- id: "menu.aside.tooltip"
   translation: "Menu"
 
-- id: "Toggle Menu"
+- id: "menu.toggle.tooltip"
   translation: "Menu in-/uitklappen"
 
-- id: "Open Menu"
+- id: "menu.open.tooltip"
   translation: "Menu openen"
 
-- id: "Site ToC"
+- id: "toc.aside.tooltip"
   translation: "Inhoudsopgave"
 
-- id: "Toggle ToC"
+- id: "toc.toggle.tooltip"
   translation: "Inhoudsopgave in-/uitklappen"
 
-- id: "Previous Page"
+- id: "post.prev.link"
   translation: "VORIGE"
 
-- id: "Previous Post"
-  translation: "VORIGE"
-
-- id: "No Previous Post"
+- id: "post.prev.empty"
   translation: "Geen vorig bericht"
 
-- id: "Next Page"
+- id: "post.next.link"
   translation: "VOLGENDE"
 
-- id: "Next Post"
-  translation: "VOLGENDE"
-
-- id: "No Next Post"
+- id: "post.next.empty"
   translation: "Geen volgend bericht"
 
-- id: "Recent Posts"
+- id: "menu.recent.posts"
   translation: "Recente berichten"
 
-- id: "Toolbar"
+- id: "toolbar.wrap.tooltip"
   translation: "Werkbalk"
 
-- id: "Categories"
+- id: "toolbar.i18n.tooltip"
+  translation: "Selecteer taal"
+
+- id: "toolbar.top.tooltip"
+  translation: "Naar boven"
+
+- id: "toolbar.bottom.tooltip"
+  translation: "Naar beneden"
+
+- id: "toolbar.back.tooltip"
+  translation: "Terug"
+
+- id: "categories.terms.title"
   translation: "Categorieën"
 
-- id: "Category Parent"
+- id: "categories.parent.subtutle"
   translation: "Bovenliggende categorie"
 
-- id: "Category Child"
+- id: "categories.child.subtutle"
   translation: "Subcategorie"
 
-- id: "Categories Root"
+- id: "categories.root.label"
   translation: "Alle"
 
-- id: "Tags"
+- id: "tags.terms.title"
   translation: "Tags"
 
-- id: "Hide"
+- id: "series.hide.label"
   translation: "Verbergen"
 
-- id: "Show"
+- id: "series.show.label"
   translation: "Lijst weergeven"
 
-- id: "Close"
+- id: "search.close.tooltip"
   translation: "Sluiten"
 
-- id: "Search"
+- id: "search.action.label"
   translation: "Zoeken"
 
-- id: "Search Input"
+- id: "search.input.label"
   translation: "Druk op `/` om te zoeken"
 
-- id: "Search Placeholder"
+- id: "search.input.placeholder"
   translation: "Typ hier om te zoeken"
 
-- id: "Search Results"
+- id: "search.results.title"
   translation: "Zoekresultaten"
 
-- id: "Search Tags"
+- id: "search.tags.title"
   translation: "Tags zoeken"
 
-- id: "List Label"
+- id: "list.count.label"
   translation: "%s berichten"
 
-- id: "More Label"
+- id: "search.more.label"
   translation: "Bekijk alle %d resultaten"
 
-- id: "Search Label"
+- id: "search.count.label"
   translation: "%s resultaten voor \"%q\""
 
-- id: "Categories Label"
+- id: "categories.count.label"
   translation: "%s categorieën"
 
-- id: "Tags Label"
+- id: "tags.count.label"
   translation: "%s tags"
 
-- id: "Tags All"
+- id: "tags.op.checkbox"
   translation: "Alle matchen"
 
-- id: "Advanced Filters"
+- id: "search.filters.toggle"
   translation: "Geavanceerde filters"
 
-- id: "No Results"
+- id: "search.results.empty"
   translation: "Geen resultaten gevonden."
 
-- id: "Date Format"
+- id: "post.date.format"
   translation: "02-01-2006"
 
-- id: "Read Format Hour"
+- id: "reading.time.hour"
   translation: "%h u %m min leestijd"
 
-- id: "Read Format Min"
+- id: "reading.time.min"
   translation: "%m min leestijd"
 
-- id: "Read Format Sec"
+- id: "reading.time.sec"
   translation: "%s sec leestijd"
 
-- id: "searchConfig"
-  translation: "searchConfig"
+- id: "search.index.config"
+  translation: '{ cache: true }'

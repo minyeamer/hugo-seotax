@@ -1,116 +1,122 @@
-- id: "Site Menu"
+- id: "menu.aside.tooltip"
   translation: "Meny"
 
-- id: "Toggle Menu"
+- id: "menu.toggle.tooltip"
   translation: "Visa/dölj meny"
 
-- id: "Open Menu"
+- id: "menu.open.tooltip"
   translation: "Öppna meny"
 
-- id: "Site ToC"
+- id: "toc.aside.tooltip"
   translation: "Innehållsförteckning"
 
-- id: "Toggle ToC"
+- id: "toc.toggle.tooltip"
   translation: "Visa/dölj innehållsförteckning"
 
-- id: "Previous Page"
+- id: "post.prev.link"
   translation: "FÖREGÅENDE"
 
-- id: "Previous Post"
-  translation: "FÖREGÅENDE"
-
-- id: "No Previous Post"
+- id: "post.prev.empty"
   translation: "Inget föregående inlägg"
 
-- id: "Next Page"
+- id: "post.next.link"
   translation: "NÄSTA"
 
-- id: "Next Post"
-  translation: "NÄSTA"
-
-- id: "No Next Post"
+- id: "post.next.empty"
   translation: "Inget nästa inlägg"
 
-- id: "Recent Posts"
+- id: "menu.recent.posts"
   translation: "Senaste inlägg"
 
-- id: "Toolbar"
+- id: "toolbar.wrap.tooltip"
   translation: "Verktygsfält"
 
-- id: "Categories"
+- id: "toolbar.i18n.tooltip"
+  translation: "Välj språk"
+
+- id: "toolbar.top.tooltip"
+  translation: "Gå till toppen"
+
+- id: "toolbar.bottom.tooltip"
+  translation: "Gå till botten"
+
+- id: "toolbar.back.tooltip"
+  translation: "Gå tillbaka"
+
+- id: "categories.terms.title"
   translation: "Kategorier"
 
-- id: "Category Parent"
+- id: "categories.parent.subtutle"
   translation: "Överordnad kategori"
 
-- id: "Category Child"
+- id: "categories.child.subtutle"
   translation: "Underkategori"
 
-- id: "Categories Root"
+- id: "categories.root.label"
   translation: "Alla"
 
-- id: "Tags"
+- id: "tags.terms.title"
   translation: "Taggar"
 
-- id: "Hide"
+- id: "series.hide.label"
   translation: "Dölj"
 
-- id: "Show"
+- id: "series.show.label"
   translation: "Visa lista"
 
-- id: "Close"
+- id: "search.close.tooltip"
   translation: "Stäng"
 
-- id: "Search"
+- id: "search.action.label"
   translation: "Sök"
 
-- id: "Search Input"
+- id: "search.input.label"
   translation: "Tryck `/` för att söka"
 
-- id: "Search Placeholder"
+- id: "search.input.placeholder"
   translation: "Skriv här för att söka"
 
-- id: "Search Results"
+- id: "search.results.title"
   translation: "Sökresultat"
 
-- id: "Search Tags"
+- id: "search.tags.title"
   translation: "Sök taggar"
 
-- id: "List Label"
+- id: "list.count.label"
   translation: "%s inlägg"
 
-- id: "More Label"
+- id: "search.more.label"
   translation: "Se alla %d resultat"
 
-- id: "Search Label"
+- id: "search.count.label"
   translation: "%s resultat för \"%q\""
 
-- id: "Categories Label"
+- id: "categories.count.label"
   translation: "%s kategorier"
 
-- id: "Tags Label"
+- id: "tags.count.label"
   translation: "%s taggar"
 
-- id: "Tags All"
+- id: "tags.op.checkbox"
   translation: "Matcha alla"
 
-- id: "Advanced Filters"
+- id: "search.filters.toggle"
   translation: "Avancerade filter"
 
-- id: "No Results"
+- id: "search.results.empty"
   translation: "Inga resultat hittades."
 
-- id: "Date Format"
+- id: "post.date.format"
   translation: "2006-01-02"
 
-- id: "Read Format Hour"
+- id: "reading.time.hour"
   translation: "%h t %m min lästid"
 
-- id: "Read Format Min"
+- id: "reading.time.min"
   translation: "%m min lästid"
 
-- id: "Read Format Sec"
+- id: "reading.time.sec"
   translation: "%s sek lästid"
 
-- id: "searchConfig"
-  translation: "searchConfig"
+- id: "search.index.config"
+  translation: '{ cache: true }'

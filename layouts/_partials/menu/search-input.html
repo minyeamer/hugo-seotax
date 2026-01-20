@@ -1,9 +1,15 @@
 {{ if default true .Site.Params.search.enabled }}
-<div class="menu-search" id="search-input" data-hotkeys="s/" role="button" tabindex="0"
-  aria-label="{{ i18n `Search` | default `Search` }}">
+<div class="menu-search"
+      id="search-input"
+      data-hotkeys="s/"
+      role="button"
+      tabindex="0"
+      aria-label="{{ i18n `search.action.label` | default `Search` }}"
+      data-i18n-id="search.action.label"
+      data-i18n-attrs="aira-label">
   <i class="fa-solid fa-magnifying-glass search-icon"></i>
-  <span class="search-placeholder">
-    {{ $searchText := i18n "Search Input" | default "Press `/` to search" }}
+  <span class="search-placeholder" data-i18n-id="search.input.label" data-i18n-text='{"`/`": "$code"}'>
+    {{ $searchText := i18n "search.input.label" | default "Press `/` to search" }}
     {{ (replace $searchText "`/`" "<code>/</code>") | safeHTML }}
   </span>
 </div>

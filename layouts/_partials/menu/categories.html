@@ -5,7 +5,9 @@
   <label for="categories-control" class="categories-label categories-toggle">
     <a href="/categories/" class="categories-root">
       <i class="fa-solid fa-folder"></i>
-      {{ i18n "Categories Root" | default "Categories Root" }}
+      <span data-i18n-id="categories.root.label" data-i18n-text>
+        {{ i18n "categories.root.label" | default "Categories Root" }}
+      </span>
       <span class="category-count">({{- $pages | len -}})</span>
     </a>
     <i class="fa-solid fa-chevron-down categories-arrow"></i>

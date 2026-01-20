@@ -3,7 +3,8 @@
 <head>
   {{ partial "head" . }}
 </head>
-<body dir="{{ default `ltr` .Site.Language.LanguageDirection }}" class="site-kind-{{ .Kind }} site-type-{{ .Type }} site-layout-{{ .Layout }}">
+<body class="site-kind-{{ .Kind }} site-type-{{ .Type }} site-layout-{{ .Layout }}"
+      dir="{{ default `ltr` .Site.Language.LanguageDirection }}">
 
   <div class="scroll-progress">
     <div class="scroll-progress-bar"></div>
@@ -31,7 +32,10 @@
 </html>
 
 {{ define "menu-container" }}
-<aside class="site-menu" aria-label="{{ i18n `Site Menu` | default `Menu` }}">
+<aside class="site-menu"
+      aria-label="{{ i18n `menu.aside.tooltip` | default `Menu` }}"
+      data-i18n-id="menu.aside.tooltip"
+      data-i18n-attrs="aira-label">
   <div class="menu-content">
     {{ template "menu" . }}
   </div>
@@ -105,7 +109,9 @@
 
 {{ define "toc-container" }}
 {{ if partial "toc-show" . }}
-<aside class="site-toc" aria-label="{{ i18n `Site ToC` | default `Table of Contents` }}">
+<aside class="site-toc"
+      aria-label="{{ i18n `toc.aside.tooltip` | default `Table of Contents` }}"
+      data-i18n-id="toc.aside.tooltip" data-i18n-attrs="aira-label">
   <div class="toc-content">
     {{ template "toc" . }}
   </div>
@@ -122,7 +128,8 @@
 {{ end }}
 
 {{ define "toolbar" }}
-<div class="site-toolbar" role="toolbar" aria-label="{{ i18n `Toolbar` | default `Toolbar` }}'">
+<div class="site-toolbar" role="toolbar" aria-label="{{ i18n `toolbar.wrap.tooltip` | default `Toolbar` }}'"
+    data-i18n-id="toolbar.wrap.tooltip" data-i18n-attrs="aira-label">
   {{ partial "toolbar" . }}
 </div>
 {{ end }}

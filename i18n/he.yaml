@@ -1,116 +1,122 @@
-- id: "Site Menu"
+- id: "menu.aside.tooltip"
   translation: "תפריט"
 
-- id: "Toggle Menu"
+- id: "menu.toggle.tooltip"
   translation: "הצג/הסתר תפריט"
 
-- id: "Open Menu"
+- id: "menu.open.tooltip"
   translation: "פתח תפריט"
 
-- id: "Site ToC"
+- id: "toc.aside.tooltip"
   translation: "תוכן העניינים"
 
-- id: "Toggle ToC"
+- id: "toc.toggle.tooltip"
   translation: "הצג/הסתר תוכן העניינים"
 
-- id: "Previous Page"
+- id: "post.prev.link"
   translation: "הקודם"
 
-- id: "Previous Post"
-  translation: "הקודם"
-
-- id: "No Previous Post"
+- id: "post.prev.empty"
   translation: "אין פוסט קודם"
 
-- id: "Next Page"
+- id: "post.next.link"
   translation: "הבא"
 
-- id: "Next Post"
-  translation: "הבא"
-
-- id: "No Next Post"
+- id: "post.next.empty"
   translation: "אין פוסט הבא"
 
-- id: "Recent Posts"
+- id: "menu.recent.posts"
   translation: "פוסטים אחרונים"
 
-- id: "Toolbar"
+- id: "toolbar.wrap.tooltip"
   translation: "סרגל כלים"
 
-- id: "Categories"
+- id: "toolbar.i18n.tooltip"
+  translation: "בחר שפה"
+
+- id: "toolbar.top.tooltip"
+  translation: "עבור למעלה"
+
+- id: "toolbar.bottom.tooltip"
+  translation: "עבור למטה"
+
+- id: "toolbar.back.tooltip"
+  translation: "חזור אחורה"
+
+- id: "categories.terms.title"
   translation: "קטגוריות"
 
-- id: "Category Parent"
+- id: "categories.parent.subtutle"
   translation: "קטגוריה עליונה"
 
-- id: "Category Child"
+- id: "categories.child.subtutle"
   translation: "תת-קטגוריה"
 
-- id: "Categories Root"
+- id: "categories.root.label"
   translation: "הכל"
 
-- id: "Tags"
+- id: "tags.terms.title"
   translation: "תגיות"
 
-- id: "Hide"
+- id: "series.hide.label"
   translation: "הסתר"
 
-- id: "Show"
+- id: "series.show.label"
   translation: "הצג רשימה"
 
-- id: "Close"
+- id: "search.close.tooltip"
   translation: "סגור"
 
-- id: "Search"
+- id: "search.action.label"
   translation: "חיפוש"
 
-- id: "Search Input"
+- id: "search.input.label"
   translation: "לחץ על `/` לחיפוש"
 
-- id: "Search Placeholder"
+- id: "search.input.placeholder"
   translation: "הקלד כאן כדי לחפש"
 
-- id: "Search Results"
+- id: "search.results.title"
   translation: "תוצאות חיפוש"
 
-- id: "Search Tags"
+- id: "search.tags.title"
   translation: "חפש תגיות"
 
-- id: "List Label"
+- id: "list.count.label"
   translation: "%s פוסטים"
 
-- id: "More Label"
+- id: "search.more.label"
   translation: "צפה בכל %d התוצאות"
 
-- id: "Search Label"
+- id: "search.count.label"
   translation: "%s תוצאות עבור \"%q\""
 
-- id: "Categories Label"
+- id: "categories.count.label"
   translation: "%s קטגוריות"
 
-- id: "Tags Label"
+- id: "tags.count.label"
   translation: "%s תגיות"
 
-- id: "Tags All"
+- id: "tags.op.checkbox"
   translation: "התאמה לכולם"
 
-- id: "Advanced Filters"
+- id: "search.filters.toggle"
   translation: "מסננים מתקדמים"
 
-- id: "No Results"
+- id: "search.results.empty"
   translation: "לא נמצאו תוצאות."
 
-- id: "Date Format"
+- id: "post.date.format"
   translation: "02.01.2006"
 
-- id: "Read Format Hour"
+- id: "reading.time.hour"
   translation: "%h שעות %m דקות קריאה"
 
-- id: "Read Format Min"
+- id: "reading.time.min"
   translation: "%m דקות קריאה"
 
-- id: "Read Format Sec"
+- id: "reading.time.sec"
   translation: "%s שניות קריאה"
 
-- id: "searchConfig"
-  translation: "searchConfig"
+- id: "search.index.config"
+  translation: '{ cache: true }'

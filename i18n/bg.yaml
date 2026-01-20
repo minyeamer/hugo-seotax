@@ -1,116 +1,122 @@
-- id: "Site Menu"
+- id: "menu.aside.tooltip"
   translation: "Меню"
 
-- id: "Toggle Menu"
+- id: "menu.toggle.tooltip"
   translation: "Превключване на менюто"
 
-- id: "Open Menu"
+- id: "menu.open.tooltip"
   translation: "Отваряне на менюто"
 
-- id: "Site ToC"
+- id: "toc.aside.tooltip"
   translation: "Съдържание"
 
-- id: "Toggle ToC"
+- id: "toc.toggle.tooltip"
   translation: "Превключване на съдържанието"
 
-- id: "Previous Page"
+- id: "post.prev.link"
   translation: "ПРЕДИШНА"
 
-- id: "Previous Post"
-  translation: "ПРЕДИШНА"
-
-- id: "No Previous Post"
+- id: "post.prev.empty"
   translation: "Няма предишна публикация"
 
-- id: "Next Page"
+- id: "post.next.link"
   translation: "СЛЕДВАЩА"
 
-- id: "Next Post"
-  translation: "СЛЕДВАЩА"
-
-- id: "No Next Post"
+- id: "post.next.empty"
   translation: "Няма следваща публикация"
 
-- id: "Recent Posts"
+- id: "menu.recent.posts"
   translation: "Последни публикации"
 
-- id: "Toolbar"
+- id: "toolbar.wrap.tooltip"
   translation: "Лента с инструменти"
 
-- id: "Categories"
+- id: "toolbar.i18n.tooltip"
+  translation: "Избор на език"
+
+- id: "toolbar.top.tooltip"
+  translation: "Отиди горе"
+
+- id: "toolbar.bottom.tooltip"
+  translation: "Отиди долу"
+
+- id: "toolbar.back.tooltip"
+  translation: "Назад"
+
+- id: "categories.terms.title"
   translation: "Категории"
 
-- id: "Category Parent"
+- id: "categories.parent.subtutle"
   translation: "Родителска категория"
 
-- id: "Category Child"
+- id: "categories.child.subtutle"
   translation: "Дъщерна категория"
 
-- id: "Categories Root"
+- id: "categories.root.label"
   translation: "Всички"
 
-- id: "Tags"
+- id: "tags.terms.title"
   translation: "Етикети"
 
-- id: "Hide"
+- id: "series.hide.label"
   translation: "Скриване"
 
-- id: "Show"
+- id: "series.show.label"
   translation: "Показване на списък"
 
-- id: "Close"
+- id: "search.close.tooltip"
   translation: "Затвори"
 
-- id: "Search"
+- id: "search.action.label"
   translation: "Търсене"
 
-- id: "Search Input"
+- id: "search.input.label"
   translation: "Натиснете `/` за търсене"
 
-- id: "Search Placeholder"
+- id: "search.input.placeholder"
   translation: "Въведете текст за търсене"
 
-- id: "Search Results"
+- id: "search.results.title"
   translation: "Резултати от търсенето"
 
-- id: "Search Tags"
+- id: "search.tags.title"
   translation: "Търсене на тагове"
 
-- id: "List Label"
+- id: "list.count.label"
   translation: "%s публикации"
 
-- id: "More Label"
+- id: "search.more.label"
   translation: "Виж всички %d резултата"
 
-- id: "Search Label"
+- id: "search.count.label"
   translation: "%s резултата за \"%q\""
 
-- id: "Categories Label"
+- id: "categories.count.label"
   translation: "%s категории"
 
-- id: "Tags Label"
+- id: "tags.count.label"
   translation: "%s етикета"
 
-- id: "Tags All"
+- id: "tags.op.checkbox"
   translation: "Съвпадение с всички"
 
-- id: "Advanced Filters"
+- id: "search.filters.toggle"
   translation: "Разширени филтри"
 
-- id: "No Results"
+- id: "search.results.empty"
   translation: "Няма намерени резултати"
 
-- id: "Date Format"
+- id: "post.date.format"
   translation: "02.01.2006"
 
-- id: "Read Format Hour"
+- id: "reading.time.hour"
   translation: "%h ч. %m мин. четене"
 
-- id: "Read Format Min"
+- id: "reading.time.min"
   translation: "%m мин. четене"
 
-- id: "Read Format Sec"
+- id: "reading.time.sec"
   translation: "%s сек. четене"
 
-- id: "searchConfig"
+- id: "search.index.config"
   translation: "{ cache: true }"

@@ -1,116 +1,122 @@
-- id: "Site Menu"
+- id: "menu.aside.tooltip"
   translation: "Menu"
 
-- id: "Toggle Menu"
+- id: "menu.toggle.tooltip"
   translation: "Rozwiń/zwiń menu"
 
-- id: "Open Menu"
+- id: "menu.open.tooltip"
   translation: "Otwórz menu"
 
-- id: "Site ToC"
+- id: "toc.aside.tooltip"
   translation: "Spis treści"
 
-- id: "Toggle ToC"
+- id: "toc.toggle.tooltip"
   translation: "Rozwiń/zwiń spis treści"
 
-- id: "Previous Page"
+- id: "post.prev.link"
   translation: "POPRZEDNI"
 
-- id: "Previous Post"
-  translation: "POPRZEDNI"
-
-- id: "No Previous Post"
+- id: "post.prev.empty"
   translation: "Brak poprzedniego wpisu"
 
-- id: "Next Page"
+- id: "post.next.link"
   translation: "NASTĘPNY"
 
-- id: "Next Post"
-  translation: "NASTĘPNY"
-
-- id: "No Next Post"
+- id: "post.next.empty"
   translation: "Brak następnego wpisu"
 
-- id: "Recent Posts"
+- id: "menu.recent.posts"
   translation: "Najnowsze wpisy"
 
-- id: "Toolbar"
+- id: "toolbar.wrap.tooltip"
   translation: "Pasek narzędzi"
 
-- id: "Categories"
+- id: "toolbar.i18n.tooltip"
+  translation: "Wybierz język"
+
+- id: "toolbar.top.tooltip"
+  translation: "Idź do góry"
+
+- id: "toolbar.bottom.tooltip"
+  translation: "Idź do dołu"
+
+- id: "toolbar.back.tooltip"
+  translation: "Wróć"
+
+- id: "categories.terms.title"
   translation: "Kategorie"
 
-- id: "Category Parent"
+- id: "categories.parent.subtutle"
   translation: "Kategoria nadrzędna"
 
-- id: "Category Child"
+- id: "categories.child.subtutle"
   translation: "Podkategoria"
 
-- id: "Categories Root"
+- id: "categories.root.label"
   translation: "Wszystkie"
 
-- id: "Tags"
+- id: "tags.terms.title"
   translation: "Tagi"
 
-- id: "Hide"
+- id: "series.hide.label"
   translation: "Ukryj"
 
-- id: "Show"
+- id: "series.show.label"
   translation: "Pokaż listę"
 
-- id: "Close"
+- id: "search.close.tooltip"
   translation: "Zamknij"
 
-- id: "Search"
+- id: "search.action.label"
   translation: "Szukaj"
 
-- id: "Search Input"
+- id: "search.input.label"
   translation: "Naciśnij `/` aby wyszukać"
 
-- id: "Search Placeholder"
+- id: "search.input.placeholder"
   translation: "Wpisz tutaj, aby wyszukać"
 
-- id: "Search Results"
+- id: "search.results.title"
   translation: "Wyniki wyszukiwania"
 
-- id: "Search Tags"
+- id: "search.tags.title"
   translation: "Szukaj tagów"
 
-- id: "List Label"
+- id: "list.count.label"
   translation: "%s wpisów"
 
-- id: "More Label"
+- id: "search.more.label"
   translation: "Zobacz wszystkie %d wyniki"
 
-- id: "Search Label"
+- id: "search.count.label"
   translation: "%s wyników dla \"%q\""
 
-- id: "Categories Label"
+- id: "categories.count.label"
   translation: "%s kategorii"
 
-- id: "Tags Label"
+- id: "tags.count.label"
   translation: "%s tagów"
 
-- id: "Tags All"
+- id: "tags.op.checkbox"
   translation: "Dopasuj wszystkie"
 
-- id: "Advanced Filters"
+- id: "search.filters.toggle"
   translation: "Zaawansowane filtry"
 
-- id: "No Results"
+- id: "search.results.empty"
   translation: "Nie znaleziono wyników."
 
-- id: "Date Format"
+- id: "post.date.format"
   translation: "02.01.2006"
 
-- id: "Read Format Hour"
+- id: "reading.time.hour"
   translation: "%h godz. %m min czytania"
 
-- id: "Read Format Min"
+- id: "reading.time.min"
   translation: "%m min czytania"
 
-- id: "Read Format Sec"
+- id: "reading.time.sec"
   translation: "%s sek. czytania"
 
-- id: "searchConfig"
-  translation: "searchConfig"
+- id: "search.index.config"
+  translation: '{ cache: true }'

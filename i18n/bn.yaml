@@ -1,116 +1,122 @@
-- id: "Site Menu"
+- id: "menu.aside.tooltip"
   translation: "মেনু"
 
-- id: "Toggle Menu"
+- id: "menu.toggle.tooltip"
   translation: "মেনু খোলা/বন্ধ করুন"
 
-- id: "Open Menu"
+- id: "menu.open.tooltip"
   translation: "মেনু খুলুন"
 
-- id: "Site ToC"
+- id: "toc.aside.tooltip"
   translation: "সূচীপত্র"
 
-- id: "Toggle ToC"
+- id: "toc.toggle.tooltip"
   translation: "সূচীপত্র খোলা/বন্ধ করুন"
 
-- id: "Previous Page"
+- id: "post.prev.link"
   translation: "পূর্ববর্তী"
 
-- id: "Previous Post"
-  translation: "পূর্ববর্তী"
-
-- id: "No Previous Post"
+- id: "post.prev.empty"
   translation: "কোনো পূর্ববর্তী পোস্ট নেই"
 
-- id: "Next Page"
+- id: "post.next.link"
   translation: "পরবর্তী"
 
-- id: "Next Post"
-  translation: "পরবর্তী"
-
-- id: "No Next Post"
+- id: "post.next.empty"
   translation: "কোনো পরবর্তী পোস্ট নেই"
 
-- id: "Recent Posts"
+- id: "menu.recent.posts"
   translation: "সাম্প্রতিক পোস্ট"
 
-- id: "Toolbar"
+- id: "toolbar.wrap.tooltip"
   translation: "টুলবার"
 
-- id: "Categories"
+- id: "toolbar.i18n.tooltip"
+  translation: "ভাষা নির্বাচন করুন"
+
+- id: "toolbar.top.tooltip"
+  translation: "উপরে যান"
+
+- id: "toolbar.bottom.tooltip"
+  translation: "নীচে যান"
+
+- id: "toolbar.back.tooltip"
+  translation: "ফিরে যান"
+
+- id: "categories.terms.title"
   translation: "বিভাগ"
 
-- id: "Category Parent"
+- id: "categories.parent.subtutle"
   translation: "প্যারেন্ট বিভাগ"
 
-- id: "Category Child"
+- id: "categories.child.subtutle"
   translation: "চাইল্ড বিভাগ"
 
-- id: "Categories Root"
+- id: "categories.root.label"
   translation: "সব"
 
-- id: "Tags"
+- id: "tags.terms.title"
   translation: "ট্যাগ"
 
-- id: "Hide"
+- id: "series.hide.label"
   translation: "লুকান"
 
-- id: "Show"
+- id: "series.show.label"
   translation: "তালিকা দেখান"
 
-- id: "Close"
+- id: "search.close.tooltip"
   translation: "বন্ধ করুন"
 
-- id: "Search"
+- id: "search.action.label"
   translation: "অনুসন্ধান"
 
-- id: "Search Input"
+- id: "search.input.label"
   translation: "অনুসন্ধানের জন্য `/` চাপুন"
 
-- id: "Search Placeholder"
+- id: "search.input.placeholder"
   translation: "অনুসন্ধান করতে এখানে টাইপ করুন"
 
-- id: "Search Results"
+- id: "search.results.title"
   translation: "অনুসন্ধান ফলাফল"
 
-- id: "Search Tags"
+- id: "search.tags.title"
   translation: "ট্যাগ অনুসন্ধান করুন"
 
-- id: "List Label"
+- id: "list.count.label"
   translation: "%sটি পোস্ট"
 
-- id: "More Label"
+- id: "search.more.label"
   translation: "সব %dটি ফলাফল দেখুন"
 
-- id: "Search Label"
+- id: "search.count.label"
   translation: "\"%q\" এর জন্য %sটি ফলাফল"
 
-- id: "Categories Label"
+- id: "categories.count.label"
   translation: "%s বিভাগ"
 
-- id: "Tags Label"
+- id: "tags.count.label"
   translation: "%s ট্যাগ"
 
-- id: "Tags All"
+- id: "tags.op.checkbox"
   translation: "সব মেলান"
 
-- id: "Advanced Filters"
+- id: "search.filters.toggle"
   translation: "উন্নত ফিল্টার"
 
-- id: "No Results"
+- id: "search.results.empty"
   translation: "কোনো ফলাফল পাওয়া যায়নি."
 
-- id: "Date Format"
+- id: "post.date.format"
   translation: "02-01-2006"
 
-- id: "Read Format Hour"
+- id: "reading.time.hour"
   translation: "%h ঘণ্টা %m মিনিট পাঠ"
 
-- id: "Read Format Min"
+- id: "reading.time.min"
   translation: "%m মিনিট পাঠ"
 
-- id: "Read Format Sec"
+- id: "reading.time.sec"
   translation: "%s সেকেন্ড পাঠ"
 
-- id: "searchConfig"
-  translation: "searchConfig"
+- id: "search.index.config"
+  translation: '{ cache: true }'

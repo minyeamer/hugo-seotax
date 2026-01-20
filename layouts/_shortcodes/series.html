@@ -39,8 +39,12 @@
     <div class="series-footer">
       <label for="series-toggle" class="series-toggle-label">
         <span class="series-toggle-icon"><i class="fas fa-caret-up"></i></span>
-        <span class="series-toggle-text-hide">{{ i18n "Hide" | default "Hide" }}</span>
-        <span class="series-toggle-text-show">{{ i18n "Show" | default "Show" }}</span>
+        <span class="series-toggle-text-hide" data-i18n-id="series.hide.label" data-i18n-text>
+          {{- i18n "series.hide.label" | default "Hide" -}}
+        </span>
+        <span class="series-toggle-text-show" data-i18n-id="series.show.label" data-i18n-text>
+          {{- i18n "series.show.label" | default "Show" -}}
+        </span>
       </label>
       <div class="series-nav">
         {{- $count := len $pages -}}

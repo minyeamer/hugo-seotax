@@ -1,14 +1,20 @@
 <div class="flex align-center justify-between">
   <label for="menu-control"
-    aria-label="{{ i18n `Toggle Menu` | default `Toggle Menu` }}"
-    title="{{ i18n `Toggle Menu` | default `Toggle Menu` }}">
-
+        aria-label="{{ i18n `menu.toggle.tooltip` | default `Toggle Menu` }}"
+        title="{{ i18n `menu.toggle.tooltip` | default `Toggle Menu` }}"
+        data-i18n-id="menu.toggle.tooltip"
+        data-i18n-attrs="aria-label,title">
     <i class="fa-solid fa-bars menu-icon" id="menu-icon"></i>
   </label>
 
   {{ if default true .Site.Params.search.enabled }}
-  <div class="mobile-search" id="mobile-search-input" role="button" tabindex="0"
-    aria-label="{{ i18n `Search` | default `Search` }}">
+  <div class="mobile-search"
+        id="mobile-search-input"
+        role="button"
+        tabindex="0"
+        aria-label="{{ i18n `search.action.label` | default `Search` }}"
+        data-i18n-id="search.action.label"
+        data-i18n-attrs="aria-label">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
     <span class="mobile-title">{{ .Site.Title }}</span>
     <i class="mobile-title-pad"></i>
@@ -20,9 +26,10 @@
   {{ end }}
 
   <label for="toc-control"
-    aria-label="{{ i18n `Toggle ToC` | default `Toggle ToC` }}"
-    title="{{ i18n `Toggle ToC` | default `Toggle ToC` }}">
-
+        aria-label="{{ i18n `toc.toggle.tooltip` | default `Toggle ToC` }}"
+        title="{{ i18n `toc.toggle.tooltip` | default `Toggle ToC` }}"
+        data-i18n-id="toc.toggle.tooltip"
+        data-i18n-attrs="aria-label,title">
     {{ if partial "toc-show" . }}
     <i class="fa-solid fa-list menu-icon" id="toc-icon"></i>
     {{ end }}

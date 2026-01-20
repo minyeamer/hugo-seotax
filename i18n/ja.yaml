@@ -1,116 +1,122 @@
-- id: "Site Menu"
+- id: "menu.aside.tooltip"
   translation: "メニュー"
 
-- id: "Toggle Menu"
+- id: "menu.toggle.tooltip"
   translation: "メニューを開く/閉じる"
 
-- id: "Open Menu"
+- id: "menu.open.tooltip"
   translation: "メニューを開く"
 
-- id: "Site ToC"
+- id: "toc.aside.tooltip"
   translation: "目次"
 
-- id: "Toggle ToC"
+- id: "toc.toggle.tooltip"
   translation: "目次を開く/閉じる"
 
-- id: "Previous Page"
+- id: "post.prev.link"
   translation: "前へ"
 
-- id: "Previous Post"
-  translation: "前へ"
-
-- id: "No Previous Post"
+- id: "post.prev.empty"
   translation: "前の投稿はありません"
 
-- id: "Next Page"
+- id: "post.next.link"
   translation: "次へ"
 
-- id: "Next Post"
-  translation: "次へ"
-
-- id: "No Next Post"
+- id: "post.next.empty"
   translation: "次の投稿はありません"
 
-- id: "Recent Posts"
+- id: "menu.recent.posts"
   translation: "最新の投稿"
 
-- id: "Toolbar"
+- id: "toolbar.wrap.tooltip"
   translation: "ツールバー"
 
-- id: "Categories"
+- id: "toolbar.i18n.tooltip"
+  translation: "言語を選択"
+
+- id: "toolbar.top.tooltip"
+  translation: "トップへ"
+
+- id: "toolbar.bottom.tooltip"
+  translation: "ボトムへ"
+
+- id: "toolbar.back.tooltip"
+  translation: "戻る"
+
+- id: "categories.terms.title"
   translation: "カテゴリー"
 
-- id: "Category Parent"
+- id: "categories.parent.subtutle"
   translation: "親カテゴリー"
 
-- id: "Category Child"
+- id: "categories.child.subtutle"
   translation: "子カテゴリー"
 
-- id: "Categories Root"
+- id: "categories.root.label"
   translation: "すべて"
 
-- id: "Tags"
+- id: "tags.terms.title"
   translation: "タグ"
 
-- id: "Hide"
+- id: "series.hide.label"
   translation: "非表示"
 
-- id: "Show"
+- id: "series.show.label"
   translation: "リストを表示"
 
-- id: "Close"
+- id: "search.close.tooltip"
   translation: "閉じる"
 
-- id: "Search"
+- id: "search.action.label"
   translation: "検索"
 
-- id: "Search Input"
+- id: "search.input.label"
   translation: "`/` を押して検索"
 
-- id: "Search Placeholder"
+- id: "search.input.placeholder"
   translation: "ここに入力して検索"
 
-- id: "Search Results"
+- id: "search.results.title"
   translation: "検索結果"
 
-- id: "Search Tags"
+- id: "search.tags.title"
   translation: "タグを検索"
 
-- id: "List Label"
+- id: "list.count.label"
   translation: "%s件の投稿"
 
-- id: "More Label"
+- id: "search.more.label"
   translation: "すべての%d件の結果を表示"
 
-- id: "Search Label"
+- id: "search.count.label"
   translation: "\"%q\"の検索結果%s件"
 
-- id: "Categories Label"
+- id: "categories.count.label"
   translation: "全%sカテゴリー"
 
-- id: "Tags Label"
+- id: "tags.count.label"
   translation: "全%sタグ"
 
-- id: "Tags All"
+- id: "tags.op.checkbox"
   translation: "すべて一致"
 
-- id: "Advanced Filters"
+- id: "search.filters.toggle"
   translation: "高度なフィルター"
 
-- id: "No Results"
-  translation: "結果が見つかりませんでした."
+- id: "search.results.empty"
+  translation: "結果が見つかりませんでした。"
 
-- id: "Date Format"
+- id: "post.date.format"
   translation: "2006年01月02日"
 
-- id: "Read Format Hour"
+- id: "reading.time.hour"
   translation: "読了約 %h時間 %m分"
 
-- id: "Read Format Min"
+- id: "reading.time.min"
   translation: "読了約 %m分"
 
-- id: "Read Format Sec"
+- id: "reading.time.sec"
   translation: "読了約 %s秒"
 
-- id: "searchConfig"
-  translation: "searchConfig"
+- id: "search.index.config"
+  translation: '{ cache: true }'

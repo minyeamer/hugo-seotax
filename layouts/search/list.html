@@ -12,7 +12,9 @@
   </div>
 
   <div class="search-no-results hidden" id="search-no-results">
-    <p>{{ i18n "No Results" | default "No results found." }}</p>
+    <p data-i18n-id="search.results.empty" data-i18n-text>
+      {{- i18n "search.results.empty" | default "No results found." -}}
+    </p>
   </div>
 
   <div class="post-list hidden" id="search-results"></div>

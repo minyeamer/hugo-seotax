@@ -1,116 +1,122 @@
-- id: "Site Menu"
+- id: "menu.aside.tooltip"
   translation: "Меню"
 
-- id: "Toggle Menu"
+- id: "menu.toggle.tooltip"
   translation: "Развернуть/свернуть меню"
 
-- id: "Open Menu"
+- id: "menu.open.tooltip"
   translation: "Открыть меню"
 
-- id: "Site ToC"
+- id: "toc.aside.tooltip"
   translation: "Оглавление"
 
-- id: "Toggle ToC"
+- id: "toc.toggle.tooltip"
   translation: "Развернуть/свернуть оглавление"
 
-- id: "Previous Page"
+- id: "post.prev.link"
   translation: "НАЗАД"
 
-- id: "Previous Post"
-  translation: "НАЗАД"
-
-- id: "No Previous Post"
+- id: "post.prev.empty"
   translation: "Нет предыдущей публикации"
 
-- id: "Next Page"
+- id: "post.next.link"
   translation: "ВПЕРЁД"
 
-- id: "Next Post"
-  translation: "ВПЕРЁД"
-
-- id: "No Next Post"
+- id: "post.next.empty"
   translation: "Нет следующей публикации"
 
-- id: "Recent Posts"
+- id: "menu.recent.posts"
   translation: "Последние публикации"
 
-- id: "Toolbar"
+- id: "toolbar.wrap.tooltip"
   translation: "Панель инструментов"
 
-- id: "Categories"
+- id: "toolbar.i18n.tooltip"
+  translation: "Выбрать язык"
+
+- id: "toolbar.top.tooltip"
+  translation: "Перейти наверх"
+
+- id: "toolbar.bottom.tooltip"
+  translation: "Перейти вниз"
+
+- id: "toolbar.back.tooltip"
+  translation: "Назад"
+
+- id: "categories.terms.title"
   translation: "Категории"
 
-- id: "Category Parent"
+- id: "categories.parent.subtutle"
   translation: "Родительская категория"
 
-- id: "Category Child"
+- id: "categories.child.subtutle"
   translation: "Подкатегория"
 
-- id: "Categories Root"
+- id: "categories.root.label"
   translation: "Все"
 
-- id: "Tags"
+- id: "tags.terms.title"
   translation: "Теги"
 
-- id: "Hide"
+- id: "series.hide.label"
   translation: "Скрыть"
 
-- id: "Show"
+- id: "series.show.label"
   translation: "Показать список"
 
-- id: "Close"
+- id: "search.close.tooltip"
   translation: "Закрыть"
 
-- id: "Search"
+- id: "search.action.label"
   translation: "Поиск"
 
-- id: "Search Input"
+- id: "search.input.label"
   translation: "Нажмите `/` для поиска"
 
-- id: "Search Placeholder"
+- id: "search.input.placeholder"
   translation: "Введите текст для поиска"
 
-- id: "Search Results"
+- id: "search.results.title"
   translation: "Результаты поиска"
 
-- id: "Search Tags"
+- id: "search.tags.title"
   translation: "Поиск меток"
 
-- id: "List Label"
+- id: "list.count.label"
   translation: "%s публикаций"
 
-- id: "More Label"
+- id: "search.more.label"
   translation: "Показать все %d результатов"
 
-- id: "Search Label"
+- id: "search.count.label"
   translation: "%s результатов для \"%q\""
 
-- id: "Categories Label"
+- id: "categories.count.label"
   translation: "%s категорий"
 
-- id: "Tags Label"
+- id: "tags.count.label"
   translation: "%s меток"
 
-- id: "Tags All"
+- id: "tags.op.checkbox"
   translation: "Совпадение со всеми"
 
-- id: "Advanced Filters"
+- id: "search.filters.toggle"
   translation: "Расширенные фильтры"
 
-- id: "No Results"
+- id: "search.results.empty"
   translation: "Результатов не найдено."
 
-- id: "Date Format"
+- id: "post.date.format"
   translation: "02.01.2006"
 
-- id: "Read Format Hour"
+- id: "reading.time.hour"
   translation: "%h ч %m мин чтения"
 
-- id: "Read Format Min"
+- id: "reading.time.min"
   translation: "%m мин чтения"
 
-- id: "Read Format Sec"
+- id: "reading.time.sec"
   translation: "%s сек чтения"
 
-- id: "searchConfig"
-  translation: "searchConfig"
+- id: "search.index.config"
+  translation: '{ cache: true }'

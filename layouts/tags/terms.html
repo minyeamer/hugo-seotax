@@ -17,9 +17,16 @@
 {{- /* ... */ -}}
 <article class="markdown content-wrap">
   <div class="list-header">
-    <h1><i class="fa-solid fa-tags"></i> {{ i18n "Tags" | default "Tags" }}</h1>
-    {{- $count := printf `<em class="list-count">%d</em>` (len $tree) -}}
-    <p>{{ printf (i18n "Tags Label" | default "%s tags") $count | safeHTML }}</p>
+    <h1>
+      <i class="fa-solid fa-tags"></i>
+      <span data-i18n-id="tags.terms.title" data-i18n-text>
+        {{- i18n "tags.terms.title" | default "Tags" -}}
+      </span>
+    </h1>
+    <p data-i18n-id="tags.count.label" data-i18n-text='{"%s": "$.list-count"}'>
+      {{- $count := printf `<em class="list-count">%d</em>` (len $tree) -}}
+      {{- printf (i18n "tags.count.label" | default "%s tags") $count | safeHTML -}}
+    </p>
   </div>
   <div class="taxonomy-chips">
     {{ range sort $tags "count" "desc" "name" "asc" }}

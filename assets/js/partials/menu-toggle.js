@@ -1,6 +1,18 @@
 (function() {
   'use strict';
 
+  /**
+   * Safely get translation for the given i18n id using the initial language.
+   * @param {string} id
+   * @param {string} [defaults='']
+   * @returns {string}
+   */
+  function translate(id, defaults = '') {
+    return (window.siteI18n && typeof window.siteI18n.translate === 'function')
+      ? window.siteI18n.translate(id, defaults)
+      : defaults;
+  }
+
   const menuBreakpoint = 256 + 768 * 1.3;
   const storageKey = 'menu-expanded';
   let scrollPosition = 0;
@@ -96,31 +108,37 @@
 
     // Create desktop menu toggle button (inside menu)
     if (menuContent) {
-      const menuToggleBtn = document.createElement('button');
-      menuToggleBtn.className = 'menu-toggle-button';
-      menuToggleBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
-      menuToggleBtn.setAttribute('aria-label', '{{ i18n "Toggle Menu" | default "Toggle Menu" }}');
-      menuToggleBtn.setAttribute('title', '{{ i18n "Toggle Menu" | default "Toggle Menu" }}');
-      menuToggleBtn.addEventListener('click', (e) => {
+      const menuToggleButton = document.createElement('button');
+      const menuToggleLabel = translate('menu.toggle.tooltip', 'Toggle Menu');
+      menuToggleButton.className = 'menu-toggle-button';
+      menuToggleButton.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      menuToggleButton.setAttribute('aria-label', menuToggleLabel);
+      menuToggleButton.setAttribute('title', menuToggleLabel);
+      menuToggleButton.dataset['i18nId'] = 'menu.toggle.tooltip';
+      menuToggleButton.dataset['i18nAttrs'] = 'aria-label,title';
+      menuToggleButton.addEventListener('click', (e) => {
         e.preventDefault();
         toggleMenu();
       });
-      menuContent.insertBefore(menuToggleBtn, menuContent.firstChild);
+      menuContent.insertBefore(menuToggleButton, menuContent.firstChild);
     }
 
     // Create menu display button (outside menu, for when collapsed)
     if (menuPanel) {
-      const menuDisplayBtn = document.createElement('button');
-      menuDisplayBtn.className = 'menu-display-button';
-      menuDisplayBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
-      menuDisplayBtn.setAttribute('aria-label', '{{ i18n "Open Menu" | default "Open Menu" }}');
-      menuDisplayBtn.setAttribute('title', '{{ i18n "Open Menu" | default "Open Menu" }}');
-      menuDisplayBtn.addEventListener('click', (e) => {
+      const menuDisplayButton = document.createElement('button');
+      const menuDisplayLabel = translate('menu.open.tooltip', 'Open Menu');
+      menuDisplayButton.className = 'menu-display-button';
+      menuDisplayButton.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      menuDisplayButton.setAttribute('aria-label', menuDisplayLabel);
+      menuDisplayButton.setAttribute('title', menuDisplayLabel);
+      menuDisplayButton.dataset['i18nId'] = 'menu.open.tooltip';
+      menuDisplayButton.dataset['i18nAttrs'] = 'aria-label,title';
+      menuDisplayButton.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
         toggleMenu(true); // Force open (animated)
       });
-      document.body.appendChild(menuDisplayBtn);
+      document.body.appendChild(menuDisplayButton);
 
       // Initial state application for Desktop (from localStorage, NO animation)
       if (window.innerWidth > menuBreakpoint) {
@@ -151,10 +169,10 @@
       }
 
       const isClickInsideMenu = menuPanel && menuPanel.contains(e.target);
-      const isMenuToggleBtn = e.target.closest('.menu-toggle-button, .menu-display-button, label[for="menu-control"]');
+      const isMenuToggleButton = e.target.closest('.menu-toggle-button, .menu-display-button, label[for="menu-control"]');
 
       // Only close on outside click in mobile mode
-      if (!isClickInsideMenu && !isMenuToggleBtn && !isDesktop) {
+      if (!isClickInsideMenu && !isMenuToggleButton && !isDesktop) {
         toggleMenu(false);
       }
     });

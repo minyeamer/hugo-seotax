@@ -1,4 +1,4 @@
-{{ $searchConfig := i18n "searchConfig" | default "{}" }}
+{{ $searchConfig := i18n "search.index.config" | default "{}" }}
 
 window.siteSearch.getIndexConfig = function() {
   return Object.assign({{ $searchConfig }}, {

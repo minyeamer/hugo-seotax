@@ -1,8 +1,8 @@
 <article class="post-item">
 
   <div class="post-meta">
-    <time datetime="{{ .Date.Format `2006-01-02` }}">
-      {{- .Date.Format (i18n "Date Format" | default "2006-01-02") -}}
+    <time datetime="{{ .Date.Format `2006-01-02` }}" data-i18n-id="post.date.format" data-i18n-datetime>
+      {{- .Date.Format (i18n "post.date.format" | default "2006-01-02") -}}
     </time>
     {{ if .Params.categories }}
     <div class="post-categories">

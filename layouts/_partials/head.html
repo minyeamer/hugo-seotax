@@ -116,6 +116,83 @@ https://github.com/minyeamer/hugo-miny
 <!-- https://github.com/wcoder/highlightjs-line-numbers.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.9.0/highlightjs-line-numbers.min.js" crossorigin="anonymous"></script>
 
+<!-- i18n: Start -->
+<script>
+  window.siteI18n = window.siteI18n || {};
+  window.siteI18n.defaultLang = '{{ default "en" .Site.Params.defaultContentLanguage }}';
+</script>
+
+<!-- i18n Data -->
+{{- $dataI18n := resources.Get "data/i18n.json" | resources.ExecuteAsTemplate "data/i18n.json" . | resources.Minify | resources.Fingerprint }}
+<script>
+  window.siteI18n.dataUrl = "{{ $dataI18n.RelPermalink }}";
+</script>
+
+<!-- i18n Core Functions (inline for immediate availability) -->
+<script>
+/**
+ * Initialize i18n translations.
+ * @returns {Promise<Map>}
+ */
+window.siteI18n.initData = function() {
+  if (window.siteI18n.data) {
+    return Promise.resolve(window.siteI18n.data);
+  }
+
+  return fetch(window.siteI18n.dataUrl)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      window.siteI18n.data = data;
+      return window.siteI18n.data;
+    });
+};
+
+/**
+ * @param {Object} [translations={}]
+ * @returns {string} One of: stored preference, browser language, or Hugo default
+ */
+window.siteI18n.getLanguage = function(translations = {}) {
+  const storageKey = 'site-language';
+  const stored = localStorage.getItem(storageKey);
+  if (stored) {
+    return stored;
+  }
+
+  const browserLang = (navigator.language || navigator.userLanguage).split('-')[0];
+  return (!translations || translations[browserLang]) ? browserLang : window.siteI18n.defaultLang;
+}
+
+/**
+ * Get translation for the given i18n id using the initial language.
+ * @param {string} id
+ * @param {string} [defaults='']
+ * @returns {string}
+ */
+window.siteI18n.translate = function(id, defaults = '') {
+  if (window.siteI18n.data) {
+    const lang = window.siteI18n.getLanguage();
+    const translations = window.siteI18n.data[lang];
+    if (translations && (id in translations)) {
+      return translations[id];
+    }
+  }
+  return defaults;
+}
+
+// Pre-load i18n data
+void window.siteI18n.initData().catch(() => {});
+</script>
+
+<!-- i18n DOM Handler -->
+{{- $i18nJS := resources.Get "js/core/i18n.js" | resources.ExecuteAsTemplate "js/core/i18n.js" . | resources.Minify | resources.Fingerprint }}
+<script defer src="{{ partial `links/resource-precache` $i18nJS }}" {{ template `integrity` $i18nJS }}></script>
+<!-- i18n: End -->
+
 <!-- Scroll Progress Bar -->
 {{- $scrollProgressJS := resources.Get "js/partials/scroll-progress.js" | resources.ExecuteAsTemplate "js/partials/scroll-progress.js" . | resources.Minify | resources.Fingerprint }}
 <script defer src="{{ partial `links/resource-precache` $scrollProgressJS }}" {{ template `integrity` $scrollProgressJS }}></script>

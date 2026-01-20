@@ -1,116 +1,122 @@
-- id: "Site Menu"
+- id: "menu.aside.tooltip"
   translation: "ምናሌ"
 
-- id: "Toggle Menu"
+- id: "menu.toggle.tooltip"
   translation: "ምናሌ መደበቅ/ማሳየት"
 
-- id: "Open Menu"
+- id: "menu.open.tooltip"
   translation: "ምናሌ ክፈት"
 
-- id: "Site ToC"
+- id: "toc.aside.tooltip"
   translation: "የዝርዝራዎች ሰንጠሬዥ"
 
-- id: "Toggle ToC"
+- id: "toc.toggle.tooltip"
   translation: "ሰንጠሬዥ መደበቅ/ማሳየት"
 
-- id: "Previous Page"
+- id: "post.prev.link"
   translation: "የቀደመው"
 
-- id: "Previous Post"
-  translation: "የቀደመው"
-
-- id: "No Previous Post"
+- id: "post.prev.empty"
   translation: "የቀደመ ጽሁፍ የለም"
 
-- id: "Next Page"
+- id: "post.next.link"
   translation: "የሚቀጥልው"
 
-- id: "Next Post"
-  translation: "የሚቀጥልው"
-
-- id: "No Next Post"
+- id: "post.next.empty"
   translation: "የሚቀጥል ጽሁፍ የለም"
 
-- id: "Recent Posts"
+- id: "menu.recent.posts"
   translation: "የቅርብ ጊዜ ጽሁፎች"
 
-- id: "Toolbar"
+- id: "toolbar.wrap.tooltip"
   translation: "የመሳሪያ መጣጠን"
 
-- id: "Categories"
+- id: "toolbar.i18n.tooltip"
+  translation: "ቋንቋ ይምረጡ"
+
+- id: "toolbar.top.tooltip"
+  translation: "ወደ ላይ ይሂዱ"
+
+- id: "toolbar.bottom.tooltip"
+  translation: "ወደ ታች ይሂዱ"
+
+- id: "toolbar.back.tooltip"
+  translation: "ወደ ኋላ ይመለሱ"
+
+- id: "categories.terms.title"
   translation: "ምድቦች"
 
-- id: "Category Parent"
+- id: "categories.parent.subtutle"
   translation: "የወላጅ ምድብ"
 
-- id: "Category Child"
+- id: "categories.child.subtutle"
   translation: "የልጅ ምድብ"
 
-- id: "Categories Root"
+- id: "categories.root.label"
   translation: "ሁሉም"
 
-- id: "Tags"
+- id: "tags.terms.title"
   translation: "መለያዎች"
 
-- id: "Hide"
+- id: "series.hide.label"
   translation: "ደብቅ"
 
-- id: "Show"
+- id: "series.show.label"
   translation: "ዝርዝር አሳይ"
 
-- id: "Close"
+- id: "search.close.tooltip"
   translation: "ዝጋ"
 
-- id: "Search"
+- id: "search.action.label"
   translation: "ፈልግ"
 
-- id: "Search Input"
+- id: "search.input.label"
   translation: "ልማፍሌግ `/` ይጫኑ"
 
-- id: "Search Placeholder"
+- id: "search.input.placeholder"
   translation: "ለመፈለግ እዚህ ይተይቡ"
 
-- id: "Search Results"
+- id: "search.results.title"
   translation: "የፍለጋ ውጤቶች"
 
-- id: "Search Tags"
+- id: "search.tags.title"
   translation: "መለያዎችን ፈልግ"
 
-- id: "List Label"
+- id: "list.count.label"
   translation: "%s ጽሁፎች"
 
-- id: "More Label"
+- id: "search.more.label"
   translation: "ሁሉንም %d ውጤቶች ያዩ"
 
-- id: "Search Label"
+- id: "search.count.label"
   translation: "%s ውጤቶች ለ\"%q\""
 
-- id: "Categories Label"
+- id: "categories.count.label"
   translation: "%s ምድቦች"
 
-- id: "Tags Label"
+- id: "tags.count.label"
   translation: "%s መለያዎች"
 
-- id: "Tags All"
+- id: "tags.op.checkbox"
   translation: "ሁሉንም አማሳስል"
 
-- id: "Advanced Filters"
+- id: "search.filters.toggle"
   translation: "ላቀ ማጣሪያዎች"
 
-- id: "No Results"
+- id: "search.results.empty"
   translation: "ምንም ውጤት አልተጋኘም።"
 
-- id: "Date Format"
+- id: "post.date.format"
   translation: "02/01/2006"
 
-- id: "Read Format Hour"
+- id: "reading.time.hour"
   translation: "%h ሰዓት %m ደቂቃ ንባብ"
 
-- id: "Read Format Min"
+- id: "reading.time.min"
   translation: "%m ደቂቃ ንባብ"
 
-- id: "Read Format Sec"
+- id: "reading.time.sec"
   translation: "%s ሰከንድ ንባብ"
 
-- id: "searchConfig"
+- id: "search.index.config"
   translation: "{ cache: true }"

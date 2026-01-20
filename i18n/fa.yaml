@@ -1,116 +1,122 @@
-- id: "Site Menu"
+- id: "menu.aside.tooltip"
   translation: "منو"
 
-- id: "Toggle Menu"
+- id: "menu.toggle.tooltip"
   translation: "باز/بسته کردن منو"
 
-- id: "Open Menu"
+- id: "menu.open.tooltip"
   translation: "باز کردن منو"
 
-- id: "Site ToC"
+- id: "toc.aside.tooltip"
   translation: "فهرست مطالب"
 
-- id: "Toggle ToC"
+- id: "toc.toggle.tooltip"
   translation: "باز/بسته کردن فهرست مطالب"
 
-- id: "Previous Page"
+- id: "post.prev.link"
   translation: "قبلی"
 
-- id: "Previous Post"
-  translation: "قبلی"
-
-- id: "No Previous Post"
+- id: "post.prev.empty"
   translation: "نوشته قبلی وجود ندارد"
 
-- id: "Next Page"
+- id: "post.next.link"
   translation: "بعدی"
 
-- id: "Next Post"
-  translation: "بعدی"
-
-- id: "No Next Post"
+- id: "post.next.empty"
   translation: "نوشته بعدی وجود ندارد"
 
-- id: "Recent Posts"
+- id: "menu.recent.posts"
   translation: "نوشته‌های اخیر"
 
-- id: "Toolbar"
+- id: "toolbar.wrap.tooltip"
   translation: "نوار ابزار"
 
-- id: "Categories"
+- id: "toolbar.i18n.tooltip"
+  translation: "انتخاب زبان"
+
+- id: "toolbar.top.tooltip"
+  translation: "برو به بالا"
+
+- id: "toolbar.bottom.tooltip"
+  translation: "برو به پایین"
+
+- id: "toolbar.back.tooltip"
+  translation: "بازگشت"
+
+- id: "categories.terms.title"
   translation: "دسته بندی ها"
 
-- id: "Category Parent"
+- id: "categories.parent.subtutle"
   translation: "دسته‌بندی والد"
 
-- id: "Category Child"
+- id: "categories.child.subtutle"
   translation: "دسته‌بندی فرزند"
 
-- id: "Categories Root"
+- id: "categories.root.label"
   translation: "همه"
 
-- id: "Tags"
+- id: "tags.terms.title"
   translation: "برچسب‌ها"
 
-- id: "Hide"
+- id: "series.hide.label"
   translation: "پنهان کردن"
 
-- id: "Show"
+- id: "series.show.label"
   translation: "نمایش لیست"
 
-- id: "Close"
+- id: "search.close.tooltip"
   translation: "بستن"
 
-- id: "Search"
+- id: "search.action.label"
   translation: "جستجو"
 
-- id: "Search Input"
+- id: "search.input.label"
   translation: "برای جستجو `/` را فشار دهید"
 
-- id: "Search Placeholder"
+- id: "search.input.placeholder"
   translation: "برای جستجو اینجا تایپ کنید"
 
-- id: "Search Results"
+- id: "search.results.title"
   translation: "نتایج جستجو"
 
-- id: "Search Tags"
+- id: "search.tags.title"
   translation: "جستجوی برچسب‌ها"
 
-- id: "List Label"
+- id: "list.count.label"
   translation: "%s نوشته"
 
-- id: "More Label"
+- id: "search.more.label"
   translation: "مشاهده همه %d نتیجه"
 
-- id: "Search Label"
+- id: "search.count.label"
   translation: "%s نتیجه برای \"%q\""
 
-- id: "Categories Label"
+- id: "categories.count.label"
   translation: "%s دسته‌بندی"
 
-- id: "Tags Label"
+- id: "tags.count.label"
   translation: "%s برچسب"
 
-- id: "Tags All"
+- id: "tags.op.checkbox"
   translation: "تطابق همه"
 
-- id: "Advanced Filters"
+- id: "search.filters.toggle"
   translation: "فیلترهای پیشرفته"
 
-- id: "No Results"
+- id: "search.results.empty"
   translation: "نتیجه‌ای یافت نشد."
 
-- id: "Date Format"
+- id: "post.date.format"
   translation: "1385/01/01"
 
-- id: "Read Format Hour"
+- id: "reading.time.hour"
   translation: "%h ساعت %m دقیقه مطالعه"
 
-- id: "Read Format Min"
+- id: "reading.time.min"
   translation: "%m دقیقه مطالعه"
 
-- id: "Read Format Sec"
+- id: "reading.time.sec"
   translation: "%s ثانیه مطالعه"
 
-- id: "searchConfig"
-  translation: "searchConfig"
+- id: "search.index.config"
+  translation: '{ cache: true }'

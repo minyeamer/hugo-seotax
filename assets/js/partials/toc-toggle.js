@@ -1,6 +1,18 @@
 (function() {
   'use strict';
 
+  /**
+   * Safely get translation for the given i18n id using the initial language.
+   * @param {string} id
+   * @param {string} [defaults='']
+   * @returns {string}
+   */
+  function translate(id, defaults = '') {
+    return (window.siteI18n && typeof window.siteI18n.translate === 'function')
+      ? window.siteI18n.translate(id, defaults)
+      : defaults;
+  }
+
   const tocBreakpoint = 256 + 768 * 1.1 + 256;
   let scrollPosition = 0;
 
@@ -47,16 +59,19 @@
     // Create desktop ToC toggle button
     const tocContent = document.querySelector('.site-toc .toc-content');
     if (tocContent) {
-      const tocToggleBtn = document.createElement('button');
-      tocToggleBtn.className = 'toc-toggle-button';
-      tocToggleBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-      tocToggleBtn.setAttribute('aria-label', '{{ i18n "Toggle ToC" | default "Toggle ToC" }}');
-      tocToggleBtn.setAttribute('title', '{{ i18n "Toggle ToC" | default "Toggle ToC" }}');
-      tocToggleBtn.addEventListener('click', (e) => {
+      const tocToggleButton = document.createElement('button');
+      const tocToggleLabel = translate('toc.toggle.tooltip', 'Toggle ToC');
+      tocToggleButton.className = 'toc-toggle-button';
+      tocToggleButton.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+      tocToggleButton.setAttribute('aria-label', tocToggleLabel);
+      tocToggleButton.setAttribute('title', tocToggleLabel);
+      tocToggleButton.dataset['i18nId'] = 'toc.toggle.tooltip';
+      tocToggleButton.dataset['i18nAttrs'] = 'aria-label,title';
+      tocToggleButton.addEventListener('click', (e) => {
         e.preventDefault();
         toggleToC();
       });
-      tocContent.insertBefore(tocToggleBtn, tocContent.firstChild);
+      tocContent.insertBefore(tocToggleButton, tocContent.firstChild);
     }
 
     // Create ToC overlay

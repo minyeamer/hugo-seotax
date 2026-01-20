@@ -16,23 +16,34 @@ document.addEventListener('DOMContentLoaded', function() {
     pageSize: Math.max(1, parseInt(params.get('pageSize')) || 10)
   };
   const searchType = getSearchType(state);
-
   const STORAGE_KEY = 'search-filter-expanded';
+
   const I18N = {
-    SEARCH: '{{ i18n "Search" | default "Search" }}',
-    SEARCH_PLACEHOLDER: '{{ i18n "Search Placeholder" | default "Type here to search" }}',
-    SEARCH_RESULTS: '{{ i18n "Search Results" | default "Search results" }}',
-    SEARCH_LABEL: '{{ i18n "Search Label" | default `%s results for "%q"` }}',
-    SEARCH_TAGS: '{{ i18n "Search Tags" | default `Search Tags` }}',
-    LIST_LABEL: '{{ i18n "List Label" | default "%s posts" }}',
-    CATEGORY_PARENT: '{{ i18n "Category Parent" | default "Parent Category" }}',
-    CATEGORY_CHILD: '{{ i18n "Category Child" | default "Child Category" }}',
-    TAGS: '{{ i18n "Tags" | default "Tags" }}',
-    TAGS_OP_ALL: '{{ i18n "Tags All" | default "Match all" }}',
-    ADVANCED_FILTERS: '{{ i18n "Advanced Filters" | default "Advanced Filters" }}',
-    PREV_PAGE: '{{ i18n "Previous Page" | default "PREV" }}',
-    NEXT_PAGE: '{{ i18n "Next Page" | default "NEXT" }}'
+    'search.action.label': '{{ i18n "search.action.label" | default "Search" }}',
+    'search.input.placeholder': '{{ i18n "search.input.placeholder" | default "Type here to search" }}',
+    'search.results.title': '{{ i18n "search.results.title" | default "Search results" }}',
+    'search.count.label': '{{ i18n "search.count.label" | default `%s results for "%q"` }}',
+    'search.tags.title': '{{ i18n "search.tags.title" | default `Search Tags` }}',
+    'list.count.label': '{{ i18n "list.count.label" | default "%s posts" }}',
+    'categories.parent.subtutle': '{{ i18n "categories.parent.subtutle" | default "Parent Category" }}',
+    'categories.child.subtutle': '{{ i18n "categories.child.subtutle" | default "Child Category" }}',
+    'tags.terms.title': '{{ i18n "tags.terms.title" | default "Tags" }}',
+    'tags.op.checkbox': '{{ i18n "tags.op.checkbox" | default "Match all" }}',
+    'search.filters.toggle': '{{ i18n "search.filters.toggle" | default "Advanced Filters" }}',
+    'post.prev.link': '{{ i18n "post.prev.link" | default "PREV" }}',
+    'post.next.link': '{{ i18n "post.next.link" | default "NEXT" }}'
   };
+
+  /**
+   * Safely get translation for the given i18n id using the initial language.
+   * @param {string} id
+   * @returns {string}
+   */
+  function translate(id) {
+    return (window.siteI18n && typeof window.siteI18n.translate === 'function')
+      ? window.siteI18n.translate(id, I18N[id])
+      : I18N[id];
+  }
 
   /**
    * Create a DOM element with specified properties.
@@ -45,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
    * @param {Object} [options.attrs] - HTML attributes as key-value pairs
    * @param {Object} [options.dataset] - Data attributes as key-value pairs
    * @param {Object} [options.styles] - Inline styles as key-value pairs
-   * @returns {HTMLElement} The created element
+   * @returns {HTMLElement} Created element
    */
   function createElement(tag, options = {}) {
     const element = document.createElement(tag);
@@ -133,16 +144,16 @@ document.addEventListener('DOMContentLoaded', function() {
         window.siteSearch.initTags()
       ]).then(() => {
         clearHeader();
-        createListHeader(I18N.SEARCH_RESULTS, 'fa-file-lines', 0, '');
+        createListHeader({i18nId: 'search.results.title', icon: 'fa-file-lines'}, 0, '');
         displayResults(new Set());
       });
       break;
   }
 
   /**
-   * Determine the type of search based on the current state.
-   * @param {Object} state - The current search state
-   * @returns {'search'|'category1'|'category2'|'tags'|'combined'|'none'} - The search type
+   * Determine type of search based on current state.
+   * @param {Object} state - Current search state
+   * @returns {'search'|'category1'|'category2'|'tags'|'combined'|'none'} - Search type
    */
   function getSearchType(state) {
     const hasQuery = (state.query.length > 0);
@@ -161,9 +172,9 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   /**
-   * Capitalize the first letter of each word in a string.
-   * @param {string} value - The string to capitalize
-   * @returns {string} The capitalized string
+   * Capitalize first letter of each word in a string.
+   * @param {string} value - String to capitalize
+   * @returns {string} Capitalized string
    */
   function capitalize(value) {
     return value ? value.split(' ').map(v => v ? v.charAt(0).toUpperCase() + v.slice(1) : '').join(' ') : '';
@@ -172,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
   /**
    * Build search URL from current filter state.
    * @param {boolean} [preserveTaxonomy=false] - Preserve current taxonomy params (for simple search)
-   * @returns {string} The search URL with parameters
+   * @returns {string} Search URL with parameters
    */
   function buildSearchUrl(preserveTaxonomy = false) {
     const params = new URLSearchParams();
@@ -219,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   /**
-   * Clear the list header and taxonomy section.
+   * Clear list header and taxonomy section.
    */
   function clearHeader() {
     listHeader.replaceChildren();
@@ -233,43 +244,56 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /**
    * Create header contents (title, icon, and result count)
-   * and append to the list header.
-   * @param {string} titleText - The title text to display
-   * @param {string} titleIcon - The Font Awesome icon class
+   * and append to list header.
+   * @param {Object} titleInfo - {i18nId?:string, icon?:string, text?:string}
    * @param {number} pageCount - The number of results
-   * @param {string} [query=''] - The search query (optional)
+   * @param {string} [query=''] - Search query (optional)
    */
-  function createListHeader(titleText, titleIcon, pageCount, query = '') {
+  function createListHeader(titleInfo, pageCount, query = '') {
     const fragment = document.createDocumentFragment();
 
-    const title = createElement('h1', {html: `<i class="fa-solid ${titleIcon}"></i> ${titleText}`})
-    const countLabel = `<em class="list-count">${pageCount}</em>`;
-
-    let subtitleHtml;
-    if (query) {
-      const searchLabel = I18N.SEARCH_LABEL.replace('%q', query)
-      subtitleHtml = searchLabel.replace('%s', countLabel);
-    } else {
-      subtitleHtml = I18N.LIST_LABEL.replace('%s', countLabel);
+    const title = createElement('h1');
+    if (titleInfo.icon) {
+      title.appendChild(createElement('i', {className: `fa-solid ${titleInfo.icon}`}))
+      title.appendChild(document.createTextNode(' '));
     }
-
+    if (titleInfo.i18nId) {
+      title.appendChild(createElement('span', {
+        text: translate(titleInfo.i18nId),
+        dataset: {i18nId: titleInfo.i18nId, i18nText: ''}
+      }));
+    } else {
+      title.appendChild(createElement('span', {text: titleInfo.text || ''}));
+    }
     fragment.appendChild(title);
-    fragment.appendChild(createElement('p', {html: subtitleHtml}));
+
+    const subtitleI18nId = query ? 'search.count.label' : 'list.count.label';
+    const subtitleI18nParams = query ? `{"%q": "${query}", "%s": "$.list-count"}` : '{"%s": "$.list-count"}';
+    const countLabel = translate(subtitleI18nId);
+    const listCount = `<em class="list-count">${pageCount}</em>`;
+    fragment.appendChild(createElement('p', {
+      html: (query ? countLabel.replace('%q', query) : countLabel).replace('%s', listCount),
+      dataset: {i18nId: subtitleI18nId, i18nText: subtitleI18nParams}
+    }));
+
     listHeader.appendChild(fragment);
   }
 
   /**
    * Create a taxonomy section with category or tag chips
-   * and append to the list header.
-   * @param {string} labelText - The section label text
+   * and append to list header.
+   * @param {string} i18nId - i18n Id for section label text
    * @param {Object[]} taxonomies - Array of taxonomy objects to display
    */
-  function createTaxonomySection(labelText, taxonomies) {
+  function createTaxonomySection(i18nId, taxonomies) {
     const fragment = document.createDocumentFragment();
     const section = document.querySelector('#taxonomy-section');
     section.classList.remove('hidden');
 
-    const label = createElement('h2', {text: labelText});
+    const label = createElement('h2', {
+      text: translate(i18nId),
+      dataset: {i18nId: i18nId, i18nText: ''}
+    });
     const chips = createElement('div', {className: 'taxonomy-chips'});
     taxonomies.forEach(taxonomy => {
       chips.appendChild(createTaxonomyChip(taxonomy));
@@ -282,12 +306,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /**
    * Create a single taxonomy chip element with link and count.
-   * @param {Object} options - The chip configuration
-   * @param {string} options.text - The chip text
-   * @param {string} options.icon - The Font Awesome icon class
-   * @param {string} options.href - The link URL
+   * @param {Object} options - Chip configuration
+   * @param {string} options.text - Chip text
+   * @param {string} options.icon - Font Awesome icon class
+   * @param {string} options.href - Link URL
    * @param {number} options.pageCount - The number of pages in this taxonomy
-   * @returns {HTMLElement} The created chip element
+   * @returns {HTMLElement} Created chip element
    */
   function createTaxonomyChip({text, icon, href, pageCount}) {
     const chip = createElement('div', {className: 'taxonomy-chip'});
@@ -308,7 +332,7 @@ document.addEventListener('DOMContentLoaded', function() {
    * @param {Object} options - Search bar configuration
    * @param {boolean} [options.hasAdvancedFilter=false] - Include advanced filter toggle button
    * @param {string} [options.queryValue=''] - Initial query value
-   * @returns {DocumentFragment} The query filter element
+   * @returns {DocumentFragment} Query filter element
    */
   function createQueryFilter({hasAdvancedFilter = false, queryValue = ''} = {}) {
     const queryRow = createElement('div', {className: 'search-query-row'});
@@ -317,40 +341,40 @@ document.addEventListener('DOMContentLoaded', function() {
     const queryIcon = createElement('i', {className: 'fa-solid fa-magnifying-glass search-query-icon'});
     inputWrapper.appendChild(queryIcon);
 
+    const placeholder = translate('search.input.placeholder');
     const queryInput = createElement('input', {
       id: 'search-query-input',
       className: 'search-query-input',
-      attrs: {
-        type: 'text',
-        placeholder: I18N.SEARCH_PLACEHOLDER,
-        autocomplete: 'off',
-        value: queryValue
-      }
+      attrs: {type: 'text', maxLength: 64, placeholder: placeholder, value: queryValue},
+      dataset: {i18nId: 'search.input.placeholder', i18nAttrs: 'placeholder'}
     });
     inputWrapper.appendChild(queryInput);
 
     const queryButton = createElement('button', {
       className: 'search-query-button',
-      text: I18N.SEARCH,
-      attrs: {type: 'button'}
+      text: translate('search.action.label'),
+      attrs: {type: 'button'},
+      dataset: {i18nId: 'search.action.label', i18nText: ''}
     });
     inputWrapper.appendChild(queryButton);
     queryRow.appendChild(inputWrapper);
 
     if (hasAdvancedFilter) {
-      const expandButton = createElement('button', {
-        className: 'search-filter-toggle',
-        html: `<i class="fa-solid fa-caret-up"></i> ${I18N.ADVANCED_FILTERS}`,
-        attrs: {type: 'button'}
-      });
-      queryRow.appendChild(expandButton);
+      const toggleButton = createElement('button', {className: 'search-filter-toggle', attrs: {type: 'button'}});
+      toggleButton.appendChild(createElement('i', {className: 'fa-solid fa-caret-up'}))
+      toggleButton.appendChild(document.createTextNode(' '));
+      toggleButton.appendChild(createElement('span', {
+        text: translate('search.filters.toggle'),
+        dataset: {i18nId: 'search.filters.toggle', i18nText: ''}
+      }))
+      queryRow.appendChild(toggleButton);
     }
 
     return queryRow;
   }
 
   /**
-   * Setup event listeners for query row in the search filter.
+   * Setup event listeners for query row in search filter.
    * @param {boolean} [preserveTaxonomy=false] - Preserve taxonomy params when searching
    */
   function setupQueryFilterEvents(preserveTaxonomy = false) {
@@ -378,16 +402,18 @@ document.addEventListener('DOMContentLoaded', function() {
    * Create a category filter.
    * @param {string} type - Filter type ('category1' or 'category2')
    * @param {boolean} [disabled=false] - Whether input should be disabled
-   * @returns {HTMLElement} The taxonomy filter element
+   * @returns {HTMLElement} Taxonomy filter element
    */
   function createCategoryFilter(type, disabled = false) {
     const isCategory2 = (type === 'category2');
-    const label = isCategory2 ? I18N.CATEGORY_CHILD : I18N.CATEGORY_PARENT;
+    const i18nId = isCategory2 ? 'categories.child.subtutle' : 'categories.parent.subtutle';
+    const filterLabel = translate(i18nId);
 
     const taxonomyFilter = createElement('div', {className: 'taxonomy-filter'});
     taxonomyFilter.appendChild(createElement('label', {
-      text: label,
-      attrs: {for: `filter-${type}`}
+      text: filterLabel,
+      attrs: {for: `filter-${type}`},
+      dataset: {i18nId: i18nId, i18nText: ''}
     }));
 
     const inputWrapper = createElement('div', {className: 'taxonomy-input-wrapper'});
@@ -395,11 +421,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const input = createElement('input', {
       id: `filter-${type}`,
       className: 'search-filter-input',
-      attrs: {
-        type: 'text',
-        placeholder: label,
-        autocomplete: 'off'
-      }
+      attrs: {type: 'text', placeholder: filterLabel, autocomplete: 'off'},
+      dataset: {i18nId: i18nId, i18nAttrs: 'placeholder'}
     });
     if (disabled) input.disabled = true;
     inputWrapper.appendChild(input);
@@ -423,13 +446,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /**
    * Create a tags filter.
-   * @returns {HTMLElement} The taxonomy filter element
+   * @returns {HTMLElement} Taxonomy filter element
    */
   function createTagsFilter() {
     const taxonomyFilter = createElement('div', {className: 'taxonomy-filter taxonomy-filter-wide'});
+
+    const filterLabel = translate('tags.terms.title');
     taxonomyFilter.appendChild(createElement('label', {
-      text: I18N.TAGS,
-      attrs: {for: 'filter-tags'}
+      text: filterLabel,
+      attrs: {for: 'filter-tags'},
+      dataset: {i18nId: 'tags.terms.title', i18nText: ''}
     }));
 
     const inputWrapper = createElement('div', {className: 'taxonomy-input-wrapper'});
@@ -437,11 +463,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const input = createElement('input', {
       id: 'filter-tags',
       className: 'search-filter-input',
-      attrs: {
-        type: 'text',
-        placeholder: I18N.TAGS,
-        autocomplete: 'off'
-      }
+      attrs: {type: 'text', placeholder: filterLabel, autocomplete: 'off'},
+      dataset: {i18nId: 'tags.terms.title', i18nAttrs: 'placeholder'}
     });
     inputWrapper.appendChild(input);
 
@@ -464,7 +487,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /**
    * Create tags operation checkbox.
-   * @returns {HTMLElement} The taxonomy filter element
+   * @returns {HTMLElement} Taxonomy filter element
    */
   function createTagsOpCheckbox() {
     const taxonomyFilter = createElement('div', {className: 'taxonomy-filter tags-op-checkbox'});
@@ -477,14 +500,17 @@ document.addEventListener('DOMContentLoaded', function() {
     checkbox.checked = (state.tagsOp === 'and');
     label.appendChild(checkbox);
 
-    label.appendChild(createElement('span', {text: I18N.TAGS_OP_ALL}));
+    label.appendChild(createElement('span', {
+      text: translate('tags.op.checkbox'),
+      dataset: {i18nId: 'tags.op.checkbox', i18nText: ''}
+    }));
 
     taxonomyFilter.appendChild(label);
     return taxonomyFilter;
   }
 
   /**
-   * Create a search filter without taxonomy filters and append to the list header.
+   * Create a search filter without taxonomy filters and append to list header.
    */
   function createSimpleSearchBar() {
     const fragment = document.createDocumentFragment();
@@ -499,7 +525,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   /**
-   * Create a search filter with taxonomy filters and append to the list header.
+   * Create a search filter with taxonomy filters and append to list header.
    * @param {Set.<number>} ids - Set of post IDs from search results
    */
   function createSearchFilter(ids) {
@@ -903,7 +929,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /**
    * Render dropdown items for autocomplete.
-   * @param {HTMLElement} dropdown - The dropdown container
+   * @param {HTMLElement} dropdown - Dropdown container
    * @param {Array} items - Array of items to display
    * @param {string} type - Type of filter ('category1', 'category2', 'tags')
    */
@@ -988,7 +1014,7 @@ document.addEventListener('DOMContentLoaded', function() {
    * @param {string} name - Display name
    * @param {string} key - Data key
    * @param {string} type - Filter type
-   * @returns {HTMLElement} The chip element
+   * @returns {HTMLElement} Chip element
    */
   function createFilterChip(name, key, type) {
     const chip = createElement('div', {
@@ -1017,7 +1043,7 @@ document.addEventListener('DOMContentLoaded', function() {
   /**
    * Handle chip removal.
    * @param {string} type - Filter type
-   * @param {HTMLElement} chip - The chip element to remove
+   * @param {HTMLElement} chip - Chip element to remove
    */
   function handleChipRemove(type, chip) {
     chip.remove();
@@ -1040,8 +1066,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   /**
-   * Search for posts matching the query string.
-   * @param {Object} state - The current search state
+   * Search for posts matching query string.
+   * @param {Object} state - Current search state
    * @param {boolean} [appendHeader=false] - Whether to append the header
    * @returns {number[]} Array of matching post IDs
    */
@@ -1051,7 +1077,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (appendHeader) {
       clearHeader();
-      createListHeader(I18N.SEARCH_RESULTS, 'fa-file-lines', searchPosts.size, state.query);
+      createListHeader({i18nId: 'search.results.title', icon: 'fa-file-lines'}, searchPosts.size, state.query);
       createSearchFilter(searchPosts);
     }
 
@@ -1060,7 +1086,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /**
    * Search for posts in a specific parent category.
-   * @param {Object} state - The current search state
+   * @param {Object} state - Current search state
    * @param {boolean} [appendHeader=false] - Whether to append the header
    * @returns {Set.<number>} Set of matching post IDs
    */
@@ -1072,7 +1098,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (appendHeader) {
       clearHeader();
-      createListHeader(category1Name, "fa-folder", category1Posts.length);
+      createListHeader({text: category1Name, icon: 'fa-folder'}, category1Posts.length);
       createSimpleSearchBar();
 
       const taxonomies = Object.keys(category1).toSorted()
@@ -1084,7 +1110,7 @@ document.addEventListener('DOMContentLoaded', function() {
           pageCount: category1[key]['ids'].length,
         }));
       if (taxonomies.length > 0) {
-        createTaxonomySection(I18N.CATEGORY_CHILD, taxonomies);
+        createTaxonomySection('categories.child.subtutle', taxonomies);
       }
     }
 
@@ -1093,7 +1119,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /**
    * Search for posts in a specific child category.
-   * @param {Object} state - The current search state
+   * @param {Object} state - Current search state
    * @param {boolean} [appendHeader=false] - Whether to append the header
    * @returns {Set.<number>} Set of matching post IDs
    */
@@ -1109,7 +1135,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (appendHeader) {
       clearHeader();
-      createListHeader(category2Name, "fa-file", category2Posts.length);
+      createListHeader({text: category2Name, icon: 'fa-file'}, category2Posts.length);
       createSimpleSearchBar();
 
       if (category1Name) {
@@ -1119,7 +1145,7 @@ document.addEventListener('DOMContentLoaded', function() {
           href: `/search/?category1=${category1Name}`,
           pageCount: category1['A']['ids'].length,
         };
-        createTaxonomySection(I18N.CATEGORY_PARENT, [taxonomy]);
+        createTaxonomySection('categories.parent.subtutle', [taxonomy]);
       }
     }
 
@@ -1128,7 +1154,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /**
    * Search for posts matching specific tags (AND/OR operation).
-   * @param {Object} state - The current search state
+   * @param {Object} state - Current search state
    * @param {boolean} [appendHeader=false] - Whether to append the header
    * @returns {Set.<number>} Set of matching post IDs
    */
@@ -1157,10 +1183,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (appendHeader) {
       clearHeader();
-      const hasSingleTag = (tagNames.length === 1);
-      const title = hasSingleTag ? tagNames[0] : I18N.SEARCH_RESULTS;
-      const icon = hasSingleTag ? 'fa-tag' : 'fa-tags';
-      createListHeader(title, icon, tagPosts.size);
+      if (tagNames.length === 1) {
+        createListHeader({text: tagNames[0], icon: 'fa-tag'}, tagPosts.size);
+      } else {
+        createListHeader({i18nId: 'search.results.title', icon: 'fa-tags'}, tagPosts.size);
+      }
       createSimpleSearchBar();
 
       if (!hasSingleTag) {
@@ -1172,7 +1199,7 @@ document.addEventListener('DOMContentLoaded', function() {
             pageCount: tags[tag.toLowerCase()]['ids'].length,
           }));
         if (taxonomies.length > 0) {
-          createTaxonomySection(I18N.SEARCH_TAGS, taxonomies);
+          createTaxonomySection('search.tags.title', taxonomies);
         }
       }
     }
@@ -1182,7 +1209,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /**
    * Perform a combined search with query, categories, and tags.
-   * @param {Object} state - The current search state
+   * @param {Object} state - Current search state
    * @param {boolean} [appendHeader=false] - Whether to append the header
    * @returns {Set.<number>} Set of matching post IDs
    */
@@ -1207,7 +1234,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (appendHeader) {
       clearHeader();
-      createListHeader(I18N.SEARCH_RESULTS, 'fa-file-lines', searchPosts.size, state.query);
+      createListHeader({i18nId: 'search.results.title', icon: 'fa-file-lines'}, searchPosts.size, state.query);
       createSearchFilter(searchPosts);
     }
 
@@ -1215,7 +1242,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   /**
-   * Clear all search results from the results container.
+   * Clear all search results from results container.
    */
   function clearResults() {
     searchResults.replaceChildren();
@@ -1224,9 +1251,9 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   /**
-   * Display search results for the current page with pagination.
+   * Display search results for current page with pagination.
    * @param {Set.<number>} ids - Set of post IDs to display
-   * @param {Object} state - The current search state with page and pageSize
+   * @param {Object} state - Current search state with page and pageSize
    */
   function displayResults(ids, state) {
     clearResults();
@@ -1290,8 +1317,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /**
    * Display pagination controls with page numbers and prev/next links.
-   * @param {Object} options - The pagination configuration
-   * @param {number} options.cur - The current page number
+   * @param {Object} options - Pagination configuration
+   * @param {number} options.cur - Current page number
    * @param {number[]} options.pages - Array of page numbers to display
    * @param {number|null} [options.prev=null] - Previous group page number (null if none)
    * @param {number|null} [options.next=null] - Next group page number (null if none)
@@ -1312,23 +1339,23 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     (function appendPrevLink() {
+      let nav;
       if (prev !== null) {
-        fragment.appendChild(createElement('a', {
-          className: 'pagination-nav pagination-link',
-          html: `<i class="fa-solid fa-backward"></i> ${I18N.PREV_PAGE}`,
-          attrs: {href: createPageUrl(prev)}
-        }));
+        nav = createElement('a', {className: 'pagination-nav pagination-link', attrs: {href: createPageUrl(prev)}});
       } else {
-        fragment.appendChild(createElement('span', {
-          className: 'pagination-nav disabled',
-          html: `<i class="fa-solid fa-backward"></i> ${I18N.PREV_PAGE}`
-        }));
+        nav = createElement('span', {className: 'pagination-nav disabled'});
       }
+      nav.appendChild(createElement('i', {className: 'fa-solid fa-backward'}));
+      nav.appendChild(document.createTextNode(' '));
+      nav.appendChild(createElement('span', {
+        text: translate('post.prev.link'),
+        dataset: {i18nId: 'post.prev.link', i18nText: ''}
+      }));
+      fragment.appendChild(nav);
     })();
 
     (function appendPageLinks() {
       const pagesDiv = createElement('div', {className: 'pagination-pages'});
-
       pages.forEach(page => {
         if (page === cur) {
           pagesDiv.appendChild(createElement('span', {
@@ -1344,23 +1371,23 @@ document.addEventListener('DOMContentLoaded', function() {
           }));
         }
       });
-
       fragment.appendChild(pagesDiv);
     })();
 
     (function appendNextLink() {
+      let nav;
       if (next !== null) {
-        fragment.appendChild(createElement('a', {
-          className: 'pagination-nav pagination-link',
-          html: `${I18N.NEXT_PAGE} <i class="fa-solid fa-forward"></i>`,
-          attrs: {href: createPageUrl(next)}
-        }));
+        nav = createElement('a', {className: 'pagination-nav pagination-link', attrs: {href: createPageUrl(next)}});
       } else {
-        fragment.appendChild(createElement('span', {
-          className: 'pagination-nav disabled',
-          html: `${I18N.NEXT_PAGE} <i class="fa-solid fa-forward"></i>`
-        }));
+        nav = createElement('span', {className: 'pagination-nav disabled'});
       }
+      nav.appendChild(createElement('span', {
+        text: translate('post.next.link'),
+        dataset: {i18nId: 'post.next.link', i18nText: ''}
+      }));
+      nav.appendChild(document.createTextNode(' '));
+      nav.appendChild(createElement('i', {className: 'fa-solid fa-forward'}));
+      fragment.appendChild(nav);
     })();
 
     paginationNav.replaceChildren(fragment);

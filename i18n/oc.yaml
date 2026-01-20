@@ -1,116 +1,122 @@
-- id: "Site Menu"
+- id: "menu.aside.tooltip"
   translation: "Menú"
 
-- id: "Toggle Menu"
+- id: "menu.toggle.tooltip"
   translation: "Desplegar/replegar lo menú"
 
-- id: "Open Menu"
+- id: "menu.open.tooltip"
   translation: "Dobrir lo menú"
 
-- id: "Site ToC"
+- id: "toc.aside.tooltip"
   translation: "Taùla de las matièras"
 
-- id: "Toggle ToC"
+- id: "toc.toggle.tooltip"
   translation: "Desplegar/replegar la taùla"
 
-- id: "Previous Page"
+- id: "post.prev.link"
   translation: "PRECEDENT"
 
-- id: "Previous Post"
-  translation: "PRECEDENT"
-
-- id: "No Previous Post"
+- id: "post.prev.empty"
   translation: "Pas cap de publicacion precedenta"
 
-- id: "Next Page"
+- id: "post.next.link"
   translation: "SEGUENT"
 
-- id: "Next Post"
-  translation: "SEGUENT"
-
-- id: "No Next Post"
+- id: "post.next.empty"
   translation: "Pas cap de publicacion seguenta"
 
-- id: "Recent Posts"
+- id: "menu.recent.posts"
   translation: "Publicacions recentas"
 
-- id: "Toolbar"
+- id: "toolbar.wrap.tooltip"
   translation: "Barra d'aisinas"
 
-- id: "Categories"
+- id: "toolbar.i18n.tooltip"
+  translation: "Seleccionar la lenga"
+
+- id: "toolbar.top.tooltip"
+  translation: "Anar amont"
+
+- id: "toolbar.bottom.tooltip"
+  translation: "Anar aval"
+
+- id: "toolbar.back.tooltip"
+  translation: "Tornar"
+
+- id: "categories.terms.title"
   translation: "Categorias"
 
-- id: "Category Parent"
+- id: "categories.parent.subtutle"
   translation: "Categoria parenta"
 
-- id: "Category Child"
+- id: "categories.child.subtutle"
   translation: "Soscategoria"
 
-- id: "Categories Root"
+- id: "categories.root.label"
   translation: "Totas"
 
-- id: "Tags"
+- id: "tags.terms.title"
   translation: "Etiquetas"
 
-- id: "Hide"
+- id: "series.hide.label"
   translation: "Amagar"
 
-- id: "Show"
+- id: "series.show.label"
   translation: "Afichar la lista"
 
-- id: "Close"
+- id: "search.close.tooltip"
   translation: "Tampar"
 
-- id: "Search"
+- id: "search.action.label"
   translation: "Recercar"
 
-- id: "Search Input"
+- id: "search.input.label"
   translation: "Quichar `/` per cercar"
 
-- id: "Search Placeholder"
+- id: "search.input.placeholder"
   translation: "Picatz aquí per cercar"
 
-- id: "Search Results"
+- id: "search.results.title"
   translation: "Resultats de recèrca"
 
-- id: "Search Tags"
+- id: "search.tags.title"
   translation: "Cercar etiquetas"
 
-- id: "List Label"
+- id: "list.count.label"
   translation: "%s publicacions"
 
-- id: "More Label"
+- id: "search.more.label"
   translation: "Veire totes los %d resultats"
 
-- id: "Search Label"
+- id: "search.count.label"
   translation: "%s resultats per \"%q\""
 
-- id: "Categories Label"
+- id: "categories.count.label"
   translation: "%s categorias"
 
-- id: "Tags Label"
+- id: "tags.count.label"
   translation: "%s etiquetas"
 
-- id: "Tags All"
+- id: "tags.op.checkbox"
   translation: "Corresponder a totas"
 
-- id: "Advanced Filters"
+- id: "search.filters.toggle"
   translation: "Filtres avançats"
 
-- id: "No Results"
+- id: "search.results.empty"
   translation: "Cap de resultat trobat."
 
-- id: "Date Format"
+- id: "post.date.format"
   translation: "02/01/2006"
 
-- id: "Read Format Hour"
+- id: "reading.time.hour"
   translation: "%h h %m min de lectura"
 
-- id: "Read Format Min"
+- id: "reading.time.min"
   translation: "%m min de lectura"
 
-- id: "Read Format Sec"
+- id: "reading.time.sec"
   translation: "%s s de lectura"
 
-- id: "searchConfig"
-  translation: "searchConfig"
+- id: "search.index.config"
+  translation: '{ cache: true }'

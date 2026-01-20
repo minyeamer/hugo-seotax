@@ -1,116 +1,122 @@
-- id: "Site Menu"
+- id: "menu.aside.tooltip"
   translation: "Menu"
 
-- id: "Toggle Menu"
+- id: "menu.toggle.tooltip"
   translation: "Toggle Menu"
 
-- id: "Open Menu"
+- id: "menu.open.tooltip"
   translation: "Open Menu"
 
-- id: "Site ToC"
+- id: "toc.aside.tooltip"
   translation: "Table of Contents"
 
-- id: "Toggle ToC"
+- id: "toc.toggle.tooltip"
   translation: "Toggle ToC"
 
-- id: "Previous Page"
+- id: "post.prev.link"
   translation: "PREV"
 
-- id: "Previous Post"
-  translation: "PREV"
-
-- id: "No Previous Post"
+- id: "post.prev.empty"
   translation: "No previous post"
 
-- id: "Next Page"
+- id: "post.next.link"
   translation: "NEXT"
 
-- id: "Next Post"
-  translation: "NEXT"
-
-- id: "No Next Post"
+- id: "post.next.empty"
   translation: "No next post"
 
-- id: "Recent Posts"
+- id: "menu.recent.posts"
   translation: "Recent posts"
 
-- id: "Toolbar"
+- id: "toolbar.wrap.tooltip"
   translation: "Toolbar"
 
-- id: "Categories"
+- id: "toolbar.i18n.tooltip"
+  translation: "Select language"
+
+- id: "toolbar.top.tooltip"
+  translation: "Go to top"
+
+- id: "toolbar.bottom.tooltip"
+  translation: "Go to bottom"
+
+- id: "toolbar.back.tooltip"
+  translation: "Go back"
+
+- id: "categories.terms.title"
   translation: "Categories"
 
-- id: "Category Parent"
+- id: "categories.parent.subtutle"
   translation: "Parent Category"
 
-- id: "Category Child"
+- id: "categories.child.subtutle"
   translation: "Child Category"
 
-- id: "Categories Root"
+- id: "categories.root.label"
   translation: "All"
 
-- id: "Tags"
+- id: "tags.terms.title"
   translation: "Tags"
 
-- id: "Hide"
+- id: "series.hide.label"
   translation: "Hide"
 
-- id: "Show"
+- id: "series.show.label"
   translation: "Show"
 
-- id: "Close"
+- id: "search.close.tooltip"
   translation: "Close"
 
-- id: "Search"
+- id: "search.action.label"
   translation: "Search"
 
-- id: "Search Input"
+- id: "search.input.label"
   translation: "Press `/` to search"
 
-- id: "Search Placeholder"
+- id: "search.input.placeholder"
   translation: "Type here to search"
 
-- id: "Search Results"
+- id: "search.results.title"
   translation: "Search Results"
 
-- id: "Search Tags"
+- id: "search.tags.title"
   translation: "Search Tags"
 
-- id: "List Label"
+- id: "list.count.label"
   translation: "%s posts"
 
-- id: "More Label"
+- id: "search.more.label"
   translation: "See all %d results"
 
-- id: "Search Label"
+- id: "search.count.label"
   translation: "%s results for \"%q\""
 
-- id: "Categories Label"
+- id: "categories.count.label"
   translation: "%s Categories"
 
-- id: "Tags Label"
+- id: "tags.count.label"
   translation: "%s Tags"
 
-- id: "Tags All"
+- id: "tags.op.checkbox"
   translation: "Match all"
 
-- id: "Advanced Filters"
+- id: "search.filters.toggle"
   translation: "Advanced Filters"
 
-- id: "No Results"
+- id: "search.results.empty"
   translation: "No results found."
 
-- id: "Date Format"
+- id: "post.date.format"
   translation: "2006-01-02"
 
-- id: "Read Format Hour"
+- id: "reading.time.hour"
   translation: "%h hr %m min read"
 
-- id: "Read Format Min"
+- id: "reading.time.min"
   translation: "%m min read"
 
-- id: "Read Format Sec"
+- id: "reading.time.sec"
   translation: "%s sec read"
 
-- id: "searchConfig"
+- id: "search.index.config"
   translation: '{ cache: true }'

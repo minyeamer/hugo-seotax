@@ -1,116 +1,122 @@
-- id: "Site Menu"
+- id: "menu.aside.tooltip"
   translation: "Meny"
 
-- id: "Toggle Menu"
+- id: "menu.toggle.tooltip"
   translation: "Vis/skjul meny"
 
-- id: "Open Menu"
+- id: "menu.open.tooltip"
   translation: "Åpne meny"
 
-- id: "Site ToC"
+- id: "toc.aside.tooltip"
   translation: "Innholdsfortegnelse"
 
-- id: "Toggle ToC"
+- id: "toc.toggle.tooltip"
   translation: "Vis/skjul innholdsfortegnelse"
 
-- id: "Previous Page"
+- id: "post.prev.link"
   translation: "FORRIGE"
 
-- id: "Previous Post"
-  translation: "FORRIGE"
-
-- id: "No Previous Post"
+- id: "post.prev.empty"
   translation: "Ingen forrige innlegg"
 
-- id: "Next Page"
+- id: "post.next.link"
   translation: "NESTE"
 
-- id: "Next Post"
-  translation: "NESTE"
-
-- id: "No Next Post"
+- id: "post.next.empty"
   translation: "Ingen neste innlegg"
 
-- id: "Recent Posts"
+- id: "menu.recent.posts"
   translation: "Nyeste innlegg"
 
-- id: "Toolbar"
+- id: "toolbar.wrap.tooltip"
   translation: "Verktøylinje"
 
-- id: "Categories"
+- id: "toolbar.i18n.tooltip"
+  translation: "Velg språk"
+
+- id: "toolbar.top.tooltip"
+  translation: "Gå til toppen"
+
+- id: "toolbar.bottom.tooltip"
+  translation: "Gå til bunnen"
+
+- id: "toolbar.back.tooltip"
+  translation: "Gå tilbake"
+
+- id: "categories.terms.title"
   translation: "Kategorier"
 
-- id: "Category Parent"
+- id: "categories.parent.subtutle"
   translation: "Overordnet kategori"
 
-- id: "Category Child"
+- id: "categories.child.subtutle"
   translation: "Underkategori"
 
-- id: "Categories Root"
+- id: "categories.root.label"
   translation: "Alle"
 
-- id: "Tags"
+- id: "tags.terms.title"
   translation: "Etiketter"
 
-- id: "Hide"
+- id: "series.hide.label"
   translation: "Skjul"
 
-- id: "Show"
+- id: "series.show.label"
   translation: "Vis liste"
 
-- id: "Close"
+- id: "search.close.tooltip"
   translation: "Lukk"
 
-- id: "Search"
+- id: "search.action.label"
   translation: "Søk"
 
-- id: "Search Input"
+- id: "search.input.label"
   translation: "Trykk `/` for å søke"
 
-- id: "Search Placeholder"
+- id: "search.input.placeholder"
   translation: "Skriv her for å søke"
 
-- id: "Search Results"
+- id: "search.results.title"
   translation: "Søkeresultater"
 
-- id: "Search Tags"
+- id: "search.tags.title"
   translation: "Søk merker"
 
-- id: "List Label"
+- id: "list.count.label"
   translation: "%s innlegg"
 
-- id: "More Label"
+- id: "search.more.label"
   translation: "Se alle %d resultater"
 
-- id: "Search Label"
+- id: "search.count.label"
   translation: "%s resultater for \"%q\""
 
-- id: "Categories Label"
+- id: "categories.count.label"
   translation: "%s kategorier"
 
-- id: "Tags Label"
+- id: "tags.count.label"
   translation: "%s etiketter"
 
-- id: "Tags All"
+- id: "tags.op.checkbox"
   translation: "Finn alle"
 
-- id: "Advanced Filters"
+- id: "search.filters.toggle"
   translation: "Avanserte filtre"
 
-- id: "No Results"
+- id: "search.results.empty"
   translation: "Ingen resultater funnet."
 
-- id: "Date Format"
+- id: "post.date.format"
   translation: "02.01.2006"
 
-- id: "Read Format Hour"
+- id: "reading.time.hour"
   translation: "%h t %m min lesetid"
 
-- id: "Read Format Min"
+- id: "reading.time.min"
   translation: "%m min lesetid"
 
-- id: "Read Format Sec"
+- id: "reading.time.sec"
   translation: "%s sek lesetid"
 
-- id: "searchConfig"
-  translation: "searchConfig"
+- id: "search.index.config"
+  translation: '{ cache: true }'

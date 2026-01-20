@@ -1,116 +1,122 @@
-- id: "Site Menu"
+- id: "menu.aside.tooltip"
   translation: "Меню"
 
-- id: "Toggle Menu"
+- id: "menu.toggle.tooltip"
   translation: "Розгорнути/згорнути меню"
 
-- id: "Open Menu"
+- id: "menu.open.tooltip"
   translation: "Відкрити меню"
 
-- id: "Site ToC"
+- id: "toc.aside.tooltip"
   translation: "Зміст"
 
-- id: "Toggle ToC"
+- id: "toc.toggle.tooltip"
   translation: "Розгорнути/згорнути зміст"
 
-- id: "Previous Page"
+- id: "post.prev.link"
   translation: "НАЗАД"
 
-- id: "Previous Post"
-  translation: "НАЗАД"
-
-- id: "No Previous Post"
+- id: "post.prev.empty"
   translation: "Немає попередньої публікації"
 
-- id: "Next Page"
+- id: "post.next.link"
   translation: "ВПЕРЕД"
 
-- id: "Next Post"
-  translation: "ВПЕРЕД"
-
-- id: "No Next Post"
+- id: "post.next.empty"
   translation: "Немає наступної публікації"
 
-- id: "Recent Posts"
+- id: "menu.recent.posts"
   translation: "Останні публікації"
 
-- id: "Toolbar"
+- id: "toolbar.wrap.tooltip"
   translation: "Панель інструментів"
 
-- id: "Categories"
+- id: "toolbar.i18n.tooltip"
+  translation: "Вибрати мову"
+
+- id: "toolbar.top.tooltip"
+  translation: "Перейти вгору"
+
+- id: "toolbar.bottom.tooltip"
+  translation: "Перейти вниз"
+
+- id: "toolbar.back.tooltip"
+  translation: "Назад"
+
+- id: "categories.terms.title"
   translation: "Категорії"
 
-- id: "Category Parent"
+- id: "categories.parent.subtutle"
   translation: "Батьківська категорія"
 
-- id: "Category Child"
+- id: "categories.child.subtutle"
   translation: "Підкатегорія"
 
-- id: "Categories Root"
+- id: "categories.root.label"
   translation: "Всі"
 
-- id: "Tags"
+- id: "tags.terms.title"
   translation: "Теги"
 
-- id: "Hide"
+- id: "series.hide.label"
   translation: "Приховати"
 
-- id: "Show"
+- id: "series.show.label"
   translation: "Показати список"
 
-- id: "Close"
+- id: "search.close.tooltip"
   translation: "Закрити"
 
-- id: "Search"
+- id: "search.action.label"
   translation: "Пошук"
 
-- id: "Search Input"
+- id: "search.input.label"
   translation: "Натисніть `/` для пошуку"
 
-- id: "Search Placeholder"
+- id: "search.input.placeholder"
   translation: "Введіть текст для пошуку"
 
-- id: "Search Results"
+- id: "search.results.title"
   translation: "Результати пошуку"
 
-- id: "Search Tags"
+- id: "search.tags.title"
   translation: "Пошук міток"
 
-- id: "List Label"
+- id: "list.count.label"
   translation: "%s публікацій"
 
-- id: "More Label"
+- id: "search.more.label"
   translation: "Показати всі %d результатів"
 
-- id: "Search Label"
+- id: "search.count.label"
   translation: "%s результатів для \"%q\""
 
-- id: "Categories Label"
+- id: "categories.count.label"
   translation: "%s категорій"
 
-- id: "Tags Label"
+- id: "tags.count.label"
   translation: "%s міток"
 
-- id: "Tags All"
+- id: "tags.op.checkbox"
   translation: "Збіг з усіма"
 
-- id: "Advanced Filters"
+- id: "search.filters.toggle"
   translation: "Розширені фільтри"
 
-- id: "No Results"
+- id: "search.results.empty"
   translation: "Результатів не знайдено."
 
-- id: "Date Format"
+- id: "post.date.format"
   translation: "02.01.2006"
 
-- id: "Read Format Hour"
+- id: "reading.time.hour"
   translation: "%h год %m хв читання"
 
-- id: "Read Format Min"
+- id: "reading.time.min"
   translation: "%m хв читання"
 
-- id: "Read Format Sec"
+- id: "reading.time.sec"
   translation: "%s сек читання"
 
-- id: "searchConfig"
-  translation: "searchConfig"
+- id: "search.index.config"
+  translation: '{ cache: true }'

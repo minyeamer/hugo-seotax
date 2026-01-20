@@ -1,0 +1,16 @@
+{{- $i18nData := dict -}}
+{{- $i18nDir := default "themes/seotax/i18n" .Site.Params.i18nDir -}}
+{{- range os.ReadDir $i18nDir -}}
+  {{- if strings.HasSuffix .Name ".yaml" -}}
+    {{- $langCode := strings.TrimSuffix ".yaml" .Name -}}
+    {{- $filePath := printf "%s/%s" $i18nDir .Name -}}
+    {{- $fileContent := os.ReadFile $filePath -}}
+    {{- $translations := unmarshal $fileContent -}}
+    {{- $langDict := dict -}}
+    {{- range $translations -}}
+      {{- $langDict = merge $langDict (dict .id .translation) -}}
+    {{- end -}}
+    {{- $i18nData = merge $i18nData (dict $langCode $langDict) -}}
+  {{- end -}}
+{{- end -}}
+{{- $i18nData | jsonify -}}

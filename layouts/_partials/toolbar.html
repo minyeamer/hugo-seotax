@@ -1,15 +1,68 @@
 <input type="checkbox" id="toolbar-toggle" class="hidden toggle" />
 
 <div class="toolbar-items">
-  <button class="toolbar-button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Go to top">
+  <div class="toolbar-button i18n-button">
+    <i class="fa-solid fa-globe"></i>
+    <select class="i18n-selector"
+            id="i18n-selector"
+            aria-label="i18n `toolbar.i18n.tooltip` | default `Select language`"
+            title="i18n `toolbar.i18n.tooltip` | default `Select language`"
+            data-i18n-id="toolbar.i18n.tooltip"
+            data-i18n-attrs="aria-label,title">
+      <option value="ko">한국어</option>
+      <option value="en">English</option>
+      <option value="ja">日本語</option>
+      <option value="zh">中文</option>
+      <option value="es">Español</option>
+      <option value="fr">Français</option>
+      <option value="de">Deutsch</option>
+      <option value="it">Italiano</option>
+      <option value="pt">Português</option>
+      <option value="ru">Русский</option>
+      <option value="am">አማርኛ</option>
+      <option value="bg">Български</option>
+      <option value="bn">বাংলা</option>
+      <option value="cn">简体中文</option>
+      <option value="cs">Čeština</option>
+      <option value="fa">فارسی</option>
+      <option value="he">עברית</option>
+      <option value="nb">Norsk</option>
+      <option value="nl">Nederlands</option>
+      <option value="oc">Occitan</option>
+      <option value="pl">Polski</option>
+      <option value="pt-BR">Português (BR)</option>
+      <option value="sv">Svenska</option>
+      <option value="sw">Kiswahili</option>
+      <option value="tr">Türkçe</option>
+      <option value="uk">Українська</option>
+      <option value="zh-TW">繁體中文</option>
+    </select>
+  </div>
+
+  <button class="toolbar-button"
+          onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+          aria-label="i18n `toolbar.top.tooltip` | default `Go to top`"
+          title="i18n `toolbar.top.tooltip` | default `Go to top`"
+          data-i18n-id="toolbar.top.tooltip"
+          data-i18n-attrs="aria-label,title">
     <i class="fa fa-chevron-up"></i>
   </button>
 
-  <button class="toolbar-button" onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})" title="Go to bottom">
+  <button class="toolbar-button"
+          onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})"
+          aria-label="i18n `toolbar.bottom.tooltip` | default `Go to bottom`"
+          title="i18n `toolbar.bottom.tooltip` | default `Go to bottom`"
+          data-i18n-id="toolbar.bottom.tooltip"
+          data-i18n-attrs="aria-label,title">
     <i class="fa fa-chevron-down"></i>
   </button>
 
-  <button class="toolbar-button" onclick="history.back()" title="Go back">
+  <button class="toolbar-button"
+          onclick="history.back()"
+          aria-label="i18n `toolbar.back.tooltip` | default `Go back`"
+          title="i18n `toolbar.back.tooltip` | default `Go back`"
+          data-i18n-id="toolbar.back.tooltip"
+          data-i18n-attrs="aria-label,title">
     <i class="fa-solid fa-arrow-left"></i>
   </button>
 </div>

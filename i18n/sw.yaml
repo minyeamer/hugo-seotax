@@ -1,116 +1,122 @@
-- id: "Site Menu"
+- id: "menu.aside.tooltip"
   translation: "Menyu"
 
-- id: "Toggle Menu"
+- id: "menu.toggle.tooltip"
   translation: "Fungua/Funga menyu"
 
-- id: "Open Menu"
+- id: "menu.open.tooltip"
   translation: "Fungua menyu"
 
-- id: "Site ToC"
+- id: "toc.aside.tooltip"
   translation: "Yaliyomo"
 
-- id: "Toggle ToC"
+- id: "toc.toggle.tooltip"
   translation: "Fungua/Funga yaliyomo"
 
-- id: "Previous Page"
+- id: "post.prev.link"
   translation: "ILIYOTANGULIA"
 
-- id: "Previous Post"
-  translation: "ILIYOTANGULIA"
-
-- id: "No Previous Post"
+- id: "post.prev.empty"
   translation: "Hakuna chapisho lililotangulia"
 
-- id: "Next Page"
+- id: "post.next.link"
   translation: "IFUATAYO"
 
-- id: "Next Post"
-  translation: "IFUATAYO"
-
-- id: "No Next Post"
+- id: "post.next.empty"
   translation: "Hakuna chapisho lifuatalo"
 
-- id: "Recent Posts"
+- id: "menu.recent.posts"
   translation: "Machapisho ya hivi karibuni"
 
-- id: "Toolbar"
+- id: "toolbar.wrap.tooltip"
   translation: "Upau wa Zana"
 
-- id: "Categories"
+- id: "toolbar.i18n.tooltip"
+  translation: "Chagua lugha"
+
+- id: "toolbar.top.tooltip"
+  translation: "Nenda juu"
+
+- id: "toolbar.bottom.tooltip"
+  translation: "Nenda chini"
+
+- id: "toolbar.back.tooltip"
+  translation: "Rudi nyuma"
+
+- id: "categories.terms.title"
   translation: "Kategoria"
 
-- id: "Category Parent"
+- id: "categories.parent.subtutle"
   translation: "Kategoria ya mzazi"
 
-- id: "Category Child"
+- id: "categories.child.subtutle"
   translation: "Kategoria ndogo"
 
-- id: "Categories Root"
+- id: "categories.root.label"
   translation: "Zote"
 
-- id: "Tags"
+- id: "tags.terms.title"
   translation: "Lebo"
 
-- id: "Hide"
+- id: "series.hide.label"
   translation: "Ficha"
 
-- id: "Show"
+- id: "series.show.label"
   translation: "Onyesha orodha"
 
-- id: "Close"
+- id: "search.close.tooltip"
   translation: "Funga"
 
-- id: "Search"
+- id: "search.action.label"
   translation: "Tafuta"
 
-- id: "Search Input"
+- id: "search.input.label"
   translation: "Bonyeza `/` kutafuta"
 
-- id: "Search Placeholder"
+- id: "search.input.placeholder"
   translation: "Andika hapa ili kutafuta"
 
-- id: "Search Results"
+- id: "search.results.title"
   translation: "Matokeo ya utafutaji"
 
-- id: "Search Tags"
+- id: "search.tags.title"
   translation: "Tafuta lebo"
 
-- id: "List Label"
+- id: "list.count.label"
   translation: "Machapisho %s"
 
-- id: "More Label"
+- id: "search.more.label"
   translation: "Angalia matokeo yote %d"
 
-- id: "Search Label"
+- id: "search.count.label"
   translation: "Matokeo %s ya \"%q\""
 
-- id: "Categories Label"
+- id: "categories.count.label"
   translation: "Kategoria %s"
 
-- id: "Tags Label"
+- id: "tags.count.label"
   translation: "Lebo %s"
 
-- id: "Tags All"
+- id: "tags.op.checkbox"
   translation: "Linganisha yote"
 
-- id: "Advanced Filters"
+- id: "search.filters.toggle"
   translation: "Vichujio vya hali ya juu"
 
-- id: "No Results"
+- id: "search.results.empty"
   translation: "Hakuna matokeo yaliyopatikana."
 
-- id: "Date Format"
+- id: "post.date.format"
   translation: "02/01/2006"
 
-- id: "Read Format Hour"
+- id: "reading.time.hour"
   translation: "%h saa %m dk kusoma"
 
-- id: "Read Format Min"
+- id: "reading.time.min"
   translation: "%m dk kusoma"
 
-- id: "Read Format Sec"
+- id: "reading.time.sec"
   translation: "%s sek kusoma"
 
-- id: "searchConfig"
-  translation: "searchConfig"
+- id: "search.index.config"
+  translation: '{ cache: true }'

@@ -57,24 +57,48 @@
 
 {{ with $prev }}
 <a href="{{ .RelPermalink }}" class="prev-link">
-  <span class="prev-next-label"><i class="fa-solid fa-backward"></i> {{ i18n "Previous Post" | default "PREV" }}</span>
+  <span class="prev-next-label">
+    <i class="fa-solid fa-backward"></i>
+    <span data-i18n-id="post.prev.link" data-i18n-text>
+      {{- i18n "post.prev.link" | default "PREV" -}}
+    </span>
+  </span>
   <span class="prev-next-title">{{ partial "title" . }}</span>
 </a>
 {{ else }}
 <a href="" class="prev-link prev-link-disabled">
-  <span class="prev-next-label"><i class="fa-solid fa-backward"></i> {{ i18n "Previous Post" | default "PREV" }}</span>
-  <span class="prev-next-title">{{ i18n "No Previous Post" | default "No previous post" }}</span>
+  <span class="prev-next-label">
+    <i class="fa-solid fa-backward"></i>
+    <span data-i18n-id="post.prev.link" data-i18n-text>
+      {{- i18n "post.prev.link" | default "PREV" -}}
+    </span>
+  </span>
+  <span class="prev-next-title">
+    {{- i18n "post.prev.empty" | default "No previous post" -}}
+  </span>
 </a>
 {{ end }}
 
 {{ with $next }}
 <a href="{{ .RelPermalink }}" class="next-link">
-  <span class="prev-next-label">{{ i18n "Next Post" | default "NEXT" }} <i class="fa-solid fa-forward"></i></span>
+  <span class="prev-next-label">
+    <span data-i18n-id="post.next.link" data-i18n-text>
+      {{- i18n "post.next.link" | default "NEXT" -}}
+    </span>
+    <i class="fa-solid fa-forward"></i>
+  </span>
   <span class="prev-next-title">{{ partial "title" . }}</span>
 </a>
 {{ else }}
 <a href="" class="next-link next-link-disabled">
-  <span class="prev-next-label">{{ i18n "Next Post" | default "NEXT" }} <i class="fa-solid fa-forward"></i></span>
-  <span class="prev-next-title">{{ i18n "No Next Post" | default "No next post" }}</span>
+  <span class="prev-next-label">
+    <span data-i18n-id="post.next.link" data-i18n-text>
+      {{- i18n "post.next.link" | default "NEXT" -}}
+    </span>
+    <i class="fa-solid fa-forward"></i>
+  </span>
+  <span class="prev-next-title">
+    {{- i18n "No next post" | default "No next post" -}}
+  </span>
 </a>
 {{ end }}

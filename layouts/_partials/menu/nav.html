@@ -15,7 +15,12 @@
 </nav>
 
 <!-- Restore menu position as soon as possible to avoid flickering -->
-{{ $script := resources.Get "js/menu-reset.js" | resources.Minify }}
-{{ with $script.Content }}
-  <script>{{ . | safeJS }}</script>
-{{ end }}
+<script>
+(function() {
+  var menu = document.querySelector("aside .menu-content");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>

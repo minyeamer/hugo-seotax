@@ -1,116 +1,120 @@
-- id: "Site Menu"
+- id: "menu.aside.tooltip"
   translation: "Menü"
 
-- id: "Toggle Menu"
+- id: "menu.toggle.tooltip"
   translation: "Menüyü aç/kapat"
 
-- id: "Open Menu"
+- id: "menu.open.tooltip"
   translation: "Menüyü aç"
 
-- id: "Site ToC"
+- id: "toc.aside.tooltip"
   translation: "İçindekiler"
 
-- id: "Toggle ToC"
+- id: "toc.toggle.tooltip"
   translation: "İçindekileri aç/kapat"
 
-- id: "Previous Page"
+- id: "post.prev.link"
   translation: "ÖNCEKİ"
 
-- id: "Previous Post"
-  translation: "ÖNCEKİ"
-
-- id: "No Previous Post"
+- id: "post.prev.empty"
   translation: "Önceki yazı yok"
 
-- id: "Next Page"
+- id: "post.next.link"
   translation: "SONRAKİ"
 
-- id: "Next Post"
-  translation: "SONRAKİ"
-
-- id: "No Next Post"
+- id: "post.next.empty"
   translation: "Sonraki yazı yok"
 
-- id: "Recent Posts"
+- id: "menu.recent.posts"
   translation: "Son yazılar"
 
-- id: "Toolbar"
+- id: "toolbar.wrap.tooltip"
   translation: "Araç Çubuğu"
+- id: "toolbar.i18n.tooltip"
+  translation: "Dil seçin"
 
-- id: "Categories"
+- id: "toolbar.top.tooltip"
+  translation: "Yukarı git"
+
+- id: "toolbar.bottom.tooltip"
+  translation: "Aşağı git"
+
+- id: "toolbar.back.tooltip"
+  translation: "Geri git"
+- id: "categories.terms.title"
   translation: "Kategoriler"
 
-- id: "Category Parent"
+- id: "categories.parent.subtutle"
   translation: "Üst kategori"
 
-- id: "Category Child"
+- id: "categories.child.subtutle"
   translation: "Alt kategori"
 
-- id: "Categories Root"
+- id: "categories.root.label"
   translation: "Tümü"
 
-- id: "Tags"
+- id: "tags.terms.title"
   translation: "Etiketler"
 
-- id: "Hide"
+- id: "series.hide.label"
   translation: "Gizle"
 
-- id: "Show"
+- id: "series.show.label"
   translation: "Listeyi göster"
 
-- id: "Close"
+- id: "search.close.tooltip"
   translation: "Kapat"
 
-- id: "Search"
+- id: "search.action.label"
   translation: "Arama"
 
-- id: "Search Input"
+- id: "search.input.label"
   translation: "Aramak için `/` tuşuna basın"
 
-- id: "Search Placeholder"
+- id: "search.input.placeholder"
   translation: "Aramak için buraya yazın"
 
-- id: "Search Results"
+- id: "search.results.title"
   translation: "Arama sonuçları"
 
-- id: "Search Tags"
+- id: "search.tags.title"
   translation: "Etiket ara"
 
-- id: "List Label"
+- id: "list.count.label"
   translation: "%s yazı"
 
-- id: "More Label"
+- id: "search.more.label"
   translation: "Tüm %d sonuçları gör"
 
-- id: "Search Label"
+- id: "search.count.label"
   translation: "\"%q\" için %s sonuç"
 
-- id: "Categories Label"
+- id: "categories.count.label"
   translation: "%s kategori"
 
-- id: "Tags Label"
+- id: "tags.count.label"
   translation: "%s etiket"
 
-- id: "Tags All"
+- id: "tags.op.checkbox"
   translation: "Tümünü eşleştir"
 
-- id: "Advanced Filters"
+- id: "search.filters.toggle"
   translation: "Gelişmiş filtreler"
 
-- id: "No Results"
+- id: "search.results.empty"
   translation: "Sonuç bulunamadı."
 
-- id: "Date Format"
+- id: "post.date.format"
   translation: "02.01.2006"
 
-- id: "Read Format Hour"
+- id: "reading.time.hour"
   translation: "%h sa %m dk okuma"
 
-- id: "Read Format Min"
+- id: "reading.time.min"
   translation: "%m dk okuma"
 
-- id: "Read Format Sec"
+- id: "reading.time.sec"
   translation: "%s sn okuma"
 
-- id: "searchConfig"
-  translation: "searchConfig"
+- id: "search.index.config"
+  translation: '{ cache: true }'

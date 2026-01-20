@@ -6,8 +6,10 @@
     <h1>
       <a href="{{ .Site.BaseURL }}" class="site-title">{{ .Site.Title }}</a>
     </h1>
-    {{- $count := printf `<em class="list-count">%d</em>` (len $pages) -}}
-    <p>{{ printf (i18n "List Label" | default "%s posts") $count | safeHTML }}</p>
+    <p data-i18n-id="list.count.label" data-i18n-text='{"%s": "$.list-count"}'>
+      {{- $count := printf `<em class="list-count">%d</em>` (len $pages) -}}
+      {{- printf (i18n "list.count.label" | default "%s posts") $count | safeHTML -}}
+    </p>
   </div>
 
   {{ $paginate := .Paginate $pages 10 }}

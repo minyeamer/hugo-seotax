@@ -2,6 +2,18 @@
   'use strict';
 
   /**
+   * Safely get translation for the given i18n id using the initial language.
+   * @param {string} id
+   * @param {string} [defaults='']
+   * @returns {string}
+   */
+  function translate(id, defaults = '') {
+    return (window.siteI18n && typeof window.siteI18n.translate === 'function')
+      ? window.siteI18n.translate(id, defaults)
+      : defaults;
+  }
+
+  /**
    * Estimates the reading time of a given element based on its content.
    * @param {HTMLElement} element - The content element to analyze
    * @returns {number} Estimated reading time in seconds
@@ -124,23 +136,31 @@
   /**
    * Formats the reading time in seconds into a localized string.
    * @param {number} seconds - Total reading time in seconds
-   * @returns {string} Formatted reading time string
+   * @returns {HTMLSpanElement} Span element containing the formatted reading time
    */
-  function formatReadingTime(seconds) {
+  function createReadingTime(seconds) {
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
     const remainingSeconds = seconds % 60;
 
+    const span = document.createElement('span');
+    let i18nData;
     if (hours > 0) {
-      const readFormat = '{{ i18n "Read Format Hour" | default "%h hr %m min read" }}';
-      return readFormat.replace('%h', hours).replace('%m', minutes);
+      i18nData = {id: 'reading.time.hour', params: `{"%h": ${hours}, "%m": ${minutes}}`};
+      const readFormat = translate(i18nData.id, '%h hr %m min read');
+      span.textContent = readFormat.replace('%h', hours).replace('%m', minutes);
     } else if (minutes > 0) {
-      const readFormat = '{{ i18n "Read Format Min" | default "%m min read" }}';
-      return readFormat.replace('%m', minutes);
+      i18nData = {id: 'reading.time.min', params: `{"%m": ${minutes}}`};
+      const readFormat = translate(i18nData.id, '%m min read');
+      span.textContent = readFormat.replace('%m', minutes);
     } else {
-      const readFormat = '{{ i18n "Read Format Sec" | default "%s sec read" }}';
-      return readFormat.replace('%s', remainingSeconds);
+      i18nData = {id: 'reading.time.sec', params: `{"%s": ${remainingSeconds}}`};
+      const readFormat = translate(i18nData.id, '%s sec read');
+      span.textContent = readFormat.replace('%s', remainingSeconds);
     }
+    span.dataset['i18nId'] = i18nData.id;
+    span.dataset['i18nText'] = i18nData.params;
+    return span;
   }
 
   /**
@@ -152,7 +172,8 @@
 
     if (content && target) {
       const seconds = estimateReadingTime(content);
-      target.textContent = ' • ' + formatReadingTime(seconds);
+      target.textContent = ' • ';
+      target.appendChild(createReadingTime(seconds));
     }
   };
 
