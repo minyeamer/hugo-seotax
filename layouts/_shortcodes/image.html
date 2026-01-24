@@ -1,6 +1,7 @@
 {{- /* --- Parameters: Image --- */ -}}
 {{- $src := partial "links/portable-image" (dict "Page" .Page "Destination" (.Get "src")) -}}
 {{- $alt := .Get "alt" -}}
+{{- $caption := .Get "caption" -}}
 {{- $class := .Get "class" -}}
 {{- $title := .Get "title" -}}
 {{- $loading := .Get "loading" -}}
@@ -18,6 +19,7 @@
 {{- with .Get "max-height" -}}{{- $size = $size | append (print "max-height: " .) -}}{{- end -}}
 {{- /* --- Render --- */ -}}
 <label class="sc-image" for="sc-image-toggle-{{ .Ordinal }}" {{- with $align }}style="text-align: {{ . }};"{{ end -}}>
+  {{- with $caption -}}<figure>{{- end -}}
   {{- if $href -}}
   <a href="{{ $href }}" target="{{ $target }}">
   {{- else -}}
@@ -27,8 +29,10 @@
     {{- with $alt }}alt="{{ . }}"{{ end -}}
     {{- with $class }}class="{{ . }}"{{ end -}}
     {{- with $title }}title="{{ . }}"{{ end -}}
-    loading="{{ $loading | default "lazy" }}"
+    loading="{{ $loading | default `lazy` }}"
     decoding="async"
     {{- with $size }}style="{{ delimit . `; ` }}"{{ end -}}>
-  {{- with $href }}</a>{{- end }}
+  {{- with $href -}}</a>{{- end }}
+  {{- with $caption -}}<figcaption>{{ . }}</figcaption></figure>
+  {{- end -}}
 </label>

@@ -486,6 +486,17 @@
       cursor: zoom-out;
       padding: space(16);
     }
+
+    figure {
+      margin: 0;
+      text-align: right;
+
+      figcaption {
+        margin: 0;
+        font-size: font-size(14);
+        font-family: "Noto Sans KR", sans-serif;
+      }
+    }
   }
 
   // {{< steps >}}
