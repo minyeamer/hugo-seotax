@@ -228,6 +228,7 @@ nav ul {
     right: space(16);
     background: transparent;
     border: none;
+    color: var(--body-font-color);
     padding: space(8);
     cursor: pointer;
     z-index: z-index(content);
@@ -367,7 +368,6 @@ body[dir="rtl"] .site-menu {
   margin-bottom: 1rem;
 
   a, i {
-    color: --color-social-link;
     font-size: 2rem;
     flex: 1 1 0;
     text-align: center;
@@ -375,6 +375,7 @@ body[dir="rtl"] .site-menu {
   }
 
   a.disabled {
+    color: var(--color-disabled-link);
     pointer-events: none;
     opacity: 0.5;
     cursor: default;
