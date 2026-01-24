@@ -24,7 +24,7 @@ window.siteSearch.getIndexConfig = function() {
  * Initialize Fuse search index
  * @returns {Promise<Fuse>}
  */
-window.siteSearch.initIndex = function() {
+window.siteSearch.initIndex = async function() {
   if (window.siteSearch.index) {
     return Promise.resolve(window.siteSearch.index);
   }
@@ -40,6 +40,7 @@ window.siteSearch.initIndex = function() {
     })
     .then(pages => {
       window.siteSearch.index = new Fuse(pages, indexConfig);
+      window.siteSearch.total = pages.length;
       return window.siteSearch.index;
     });
 };
@@ -48,7 +49,7 @@ window.siteSearch.initIndex = function() {
  * Initialize categories data
  * @returns {Map}
  */
-window.siteSearch.initCategories = function() {
+window.siteSearch.initCategories = async function() {
   if (window.siteSearch.categories) {
     return Promise.resolve(window.siteSearch.categories);
   }
@@ -70,7 +71,7 @@ window.siteSearch.initCategories = function() {
  * Initialize tags data
  * @returns {Map}
  */
-window.siteSearch.initTags = function() {
+window.siteSearch.initTags = async function() {
   if (window.siteSearch.tags) {
     return Promise.resolve(window.siteSearch.tags);
   }

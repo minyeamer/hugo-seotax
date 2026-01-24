@@ -178,7 +178,7 @@
     modalSearchInput.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeSearchModal();
-      } else if (e.key === 'Enter' && modalSearchInput.value.trim()) {
+      } else if (e.key === 'Enter') {
         window.location.href = '/search/?query=' + encodeURIComponent(modalSearchInput.value.trim());
       }
     });
@@ -193,9 +193,7 @@
       dataset: {i18nId: 'search.action.label', i18nAttrs: 'aria-label'}
     });
     modalSearchButton.addEventListener('click', () => {
-      if (modalSearchInput.value.trim()) {
-        window.location.href = '/search/?query=' + encodeURIComponent(modalSearchInput.value.trim());
-      }
+      window.location.href = '/search/?query=' + encodeURIComponent(modalSearchInput.value.trim());
     });
 
     modalInputContainer.appendChild(modalSearchButton);

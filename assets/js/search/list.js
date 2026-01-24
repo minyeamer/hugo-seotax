@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       if (hasCategory1) return hasCategory2 ? 'category2' : 'category1';
       else if (hasTags) return 'tags';
-      else return 'none';
+      else return 'search';
     }
   }
 
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const params = new URLSearchParams();
 
     const queryInput = document.querySelector('#search-query-input');
-    if (queryInput && queryInput.value.trim()) {
+    if (queryInput !== null) {
       params.set('query', queryInput.value.trim());
     }
 
@@ -329,12 +329,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /**
    * Create a query filter with input and button.
-   * @param {Object} options - Search bar configuration
-   * @param {boolean} [options.hasAdvancedFilter=false] - Include advanced filter toggle button
    * @param {string} [options.queryValue=''] - Initial query value
    * @returns {DocumentFragment} Query filter element
    */
-  function createQueryFilter({hasAdvancedFilter = false, queryValue = ''} = {}) {
+  function createQueryFilter(queryValue = '') {
     const queryRow = createElement('div', {className: 'search-query-row'});
     const inputWrapper = createElement('div', {className: 'query-input-wrapper'});
 
@@ -359,16 +357,14 @@ document.addEventListener('DOMContentLoaded', function() {
     inputWrapper.appendChild(queryButton);
     queryRow.appendChild(inputWrapper);
 
-    if (hasAdvancedFilter) {
-      const toggleButton = createElement('button', {className: 'search-filter-toggle', attrs: {type: 'button'}});
-      toggleButton.appendChild(createElement('i', {className: 'fa-solid fa-caret-up'}))
-      toggleButton.appendChild(document.createTextNode(' '));
-      toggleButton.appendChild(createElement('span', {
-        text: translate('search.filters.toggle'),
-        dataset: {i18nId: 'search.filters.toggle', i18nText: ''}
-      }))
-      queryRow.appendChild(toggleButton);
-    }
+    const toggleButton = createElement('button', {className: 'search-filter-toggle', attrs: {type: 'button'}});
+    toggleButton.appendChild(createElement('i', {className: 'fa-solid fa-caret-up'}))
+    toggleButton.appendChild(document.createTextNode(' '));
+    toggleButton.appendChild(createElement('span', {
+      text: translate('search.filters.toggle'),
+      dataset: {i18nId: 'search.filters.toggle', i18nText: ''}
+    }))
+    queryRow.appendChild(toggleButton);
 
     return queryRow;
   }
@@ -383,9 +379,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const performSearch = () => {
       const url = buildSearchUrl(preserveTaxonomy);
-      if (url.includes('query=')) {
-        window.location.href = url;
-      }
+      window.location.href = url;
     };
 
     queryInput.addEventListener('keydown', function(e) {
@@ -510,12 +504,12 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   /**
-   * Create a search filter without taxonomy filters and append to list header.
+   * Create a search filter without taxonomy filters and append to list header. (deprecated)
    */
   function createSimpleSearchBar() {
     const fragment = document.createDocumentFragment();
     const searchFilter = createElement('div', {className: 'search-filter'});
-    const queryFilter = createQueryFilter({hasAdvancedFilter: false, queryValue: ''});
+    const queryFilter = createQueryFilter();
 
     searchFilter.appendChild(queryFilter);
     fragment.appendChild(searchFilter);
@@ -527,15 +521,13 @@ document.addEventListener('DOMContentLoaded', function() {
   /**
    * Create a search filter with taxonomy filters and append to list header.
    * @param {Set.<number>} ids - Set of post IDs from search results
+   * @param {'ture'|'false'|null} [isExpanded=null] - Initial expanded state
    */
-  function createSearchFilter(ids) {
+  function createSearchFilter(ids, isExpanded=null) {
     const fragment = document.createDocumentFragment();
     const searchFilter = createElement('div', {className: 'search-filter'});
 
-    const queryFilter = createQueryFilter({
-      hasAdvancedFilter: true,
-      queryValue: state.query
-    });
+    const queryFilter = createQueryFilter(state.query);
     searchFilter.appendChild(queryFilter);
 
     const taxonomiesRow = createElement('div', {className: 'search-taxonomies-row'});
@@ -558,24 +550,28 @@ document.addEventListener('DOMContentLoaded', function() {
     listHeader.appendChild(fragment);
 
     setupQueryFilterEvents(false);
-    setupFilterToggle();
+    setupFilterToggle(isExpanded);
     setupTaxonomyFilterEvents(ids);
     initFiltersFromState();
   }
 
   /**
    * Setup event listener for advanced filter toggle button.
+   * @param {'ture'|'false'|null} [isExpanded=null] - Initial expanded state
    */
-  function setupFilterToggle() {
+  function setupFilterToggle(isExpanded=null) {
     const filterToggle = document.querySelector('.search-filter-toggle');
     const taxonomiesRow = document.querySelector('.search-taxonomies-row');
     const isCombinedSearch = (searchType === 'combined');
 
-    const isExpanded = localStorage.getItem(STORAGE_KEY);
+    isExpanded = isExpanded ?? localStorage.getItem(STORAGE_KEY);
     if (isCombinedSearch || (isExpanded === 'true')) {
       taxonomiesRow.classList.remove('hidden');
       filterToggle.classList.add('expanded');
       localStorage.setItem(STORAGE_KEY, 'true');
+    } else {
+      taxonomiesRow.classList.add('hidden');
+      filterToggle.classList.remove('expanded');
     }
 
     filterToggle.addEventListener('click', function() {
@@ -1072,8 +1068,14 @@ document.addEventListener('DOMContentLoaded', function() {
    * @returns {number[]} Array of matching post IDs
    */
   function searchQuery(state, appendHeader = false) {
-    const searchHits = window.siteSearch.index.search(state.query);
-    const searchPosts = new Set(searchHits.map(result => result.item.id));
+    let searchPosts = new Set();
+    if (state.query) {
+      const searchHits = window.siteSearch.index.search(state.query);
+      searchPosts = new Set(searchHits.map(result => result.item.id));
+    } else {
+      const total = window.siteSearch.total;
+      searchPosts = new Set(Array.from({length: total}, (_, i) => i));
+    }
 
     if (appendHeader) {
       clearHeader();
@@ -1099,7 +1101,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (appendHeader) {
       clearHeader();
       createListHeader({text: category1Name, icon: 'fa-folder'}, category1Posts.length);
-      createSimpleSearchBar();
+      createSearchFilter(category1Posts, 'false');
 
       const taxonomies = Object.keys(category1).toSorted()
         .filter(key => (key !== 'A') && (category1[key] instanceof Object))
@@ -1136,7 +1138,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (appendHeader) {
       clearHeader();
       createListHeader({text: category2Name, icon: 'fa-file'}, category2Posts.length);
-      createSimpleSearchBar();
+      createSearchFilter(category2Posts, 'false');
 
       if (category1Name) {
         taxonomy = {
@@ -1162,6 +1164,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const tags = window.siteSearch.tags;
     const union = (state.tagsOp === 'or');
     const tagNames = new Array();
+    const hasSingleTag = (tagNames.length === 1);
     let tagPosts = new Set();
 
     state.tags.forEach((t, index) => {
@@ -1183,12 +1186,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (appendHeader) {
       clearHeader();
-      if (tagNames.length === 1) {
+      if (hasSingleTag) {
         createListHeader({text: tagNames[0], icon: 'fa-tag'}, tagPosts.size);
       } else {
         createListHeader({i18nId: 'search.results.title', icon: 'fa-tags'}, tagPosts.size);
       }
-      createSimpleSearchBar();
+      createSearchFilter(tagPosts, 'false');
 
       if (!hasSingleTag) {
         const taxonomies = tagNames.toSorted()
