@@ -1164,7 +1164,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const tags = window.siteSearch.tags;
     const union = (state.tagsOp === 'or');
     const tagNames = new Array();
-    const hasSingleTag = (tagNames.length === 1);
+    const hasSingleTag = (state.tags.length === 1);
     let tagPosts = new Set();
 
     state.tags.forEach((t, index) => {
