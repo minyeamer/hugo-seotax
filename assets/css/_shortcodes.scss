@@ -466,27 +466,6 @@
       transition: transform 0.2s ease-in-out;
     }
 
-    input:checked ~ img,
-    input:checked ~ a img {
-      position: fixed;
-
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      
-      background: var(--body-background);
-      object-fit: contain;
-      width: 100% !important;
-      height: 100% !important;
-      max-width: 100% !important;
-      max-height: 100% !important;
-      
-      z-index: z-index(modal-overlay);
-      cursor: zoom-out;
-      padding: space(16);
-    }
-
     figure {
       margin: 0;
       text-align: right;
