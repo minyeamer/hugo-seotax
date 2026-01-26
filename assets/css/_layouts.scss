@@ -355,6 +355,12 @@ nav ul {
   display: none;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
+
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
 }
 
 // for RTL support

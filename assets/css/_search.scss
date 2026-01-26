@@ -713,6 +713,7 @@
 .post-item {
   border: 1px solid var(--gray-200);
   border-radius: radius(post-item);
+  width: 100%;
   max-width: $body-wide-width;
   margin: auto;
   padding: space(24);
@@ -819,6 +820,7 @@
   gap: space(8);
   overflow: hidden;
   position: relative;
+  align-items: center;
 
   .tag {
     display: inline-block;
