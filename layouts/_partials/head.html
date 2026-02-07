@@ -48,7 +48,6 @@ https://github.com/minyeamer/hugo-miny
 </script>
 
 <title>{{- partial "title" . -}}</title>
-<link rel="icon" href="{{ .Site.Params.favicon | default `favicon.png` | relURL }}" >
 
 {{- $manifest := resources.Get "data/manifest.json" | resources.ExecuteAsTemplate "data/manifest.json" . }}
 <link rel="manifest" href="{{ $manifest.RelPermalink }}">

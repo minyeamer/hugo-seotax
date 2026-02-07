@@ -11,12 +11,21 @@
 {{- $target := .Get "target" | default "_blank" -}}
 {{- /* --- Parameters: Size --- */ -}}
 {{- $size := slice -}}
-{{- with .Get "width" -}}{{- $size = $size | append (print "width: " .) -}}{{- end -}}
+{{- $width := .Get "width" | default "" -}}
 {{- with .Get "min-width" -}}{{- $size = $size | append (print "min-width: " .) -}}{{- end -}}
 {{- with .Get "max-width" -}}{{- $size = $size | append (print "max-width: " .) -}}{{- end -}}
-{{- with .Get "height" -}}{{- $size = $size | append (print "height: " .) -}}{{- end -}}
+{{- $height := .Get "height" | default "" -}}
 {{- with .Get "min-height" -}}{{- $size = $size | append (print "min-height: " .) -}}{{- end -}}
 {{- with .Get "max-height" -}}{{- $size = $size | append (print "max-height: " .) -}}{{- end -}}
+{{- /* --- Auto-detect dimensions if not provided --- */ -}}
+{{- if not (or $width $height) -}}
+  {{- $resolution := partial "content/img-size" (dict "Page" .Page "Url" $src) -}}
+  {{- if $resolution -}}
+    {{- $dims := split $resolution "x" -}}
+    {{- $width = index $dims 0 -}}
+    {{- $height = index $dims 1 -}}
+  {{- end -}}
+{{- end -}}
 {{- /* --- Id: global ordinal counter for images --- */ -}}
 {{- $imgOrdinal := .Page.Scratch.Get "sc-image-ordinal" -}}
 {{- if not $imgOrdinal -}}
@@ -25,10 +34,14 @@
 {{- $imgOrdinal = add $imgOrdinal 1 -}}
 {{- .Page.Scratch.Set "sc-image-ordinal" $imgOrdinal -}}
 {{- /* --- Render --- */ -}}
+{{- if $href -}}
+<div class="sc-image" {{- with $align }}style="text-align: {{ . }};"{{ end -}}>
+{{- else -}}
 <label class="sc-image" for="sc-image-toggle-{{ $imgOrdinal }}" {{- with $align }}style="text-align: {{ . }};"{{ end -}}>
+{{- end -}}
   {{- with $caption -}}<figure>{{- end -}}
   {{- if $href -}}
-  <a href="{{ $href }}" target="{{ $target }}">
+  <a href="{{ $href }}" target="{{ $target }}" id="sc-image-link-{{ $imgOrdinal }}">
   {{- else -}}
   <input class="hidden toggle" type="checkbox" id="sc-image-toggle-{{ $imgOrdinal }}" />
   {{- end -}}
@@ -37,10 +50,16 @@
     {{- with $class }}class="{{ . }}"{{ end -}}
     id="sc-image-{{ $imgOrdinal }}"
     {{- with $title }}title="{{ . }}"{{ end -}}
+    {{- with $width }}width="{{ . }}"{{ end -}}
+    {{- with $height }}height="{{ . }}"{{ end -}}
     loading="{{ $loading | default `lazy` }}"
     decoding="async"
     {{- with $size }}style="{{ delimit . `; ` }}"{{ end -}}>
   {{- with $href -}}</a>{{- end }}
   {{- with $caption -}}<figcaption>{{ . }}</figcaption></figure>
   {{- end -}}
+{{- if $href -}}
+</div>
+{{- else -}}
 </label>
+{{- end -}}

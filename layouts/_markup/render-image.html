@@ -2,8 +2,9 @@
 {{- if .Page.Site.Params.portableLinks -}}
   {{- $destination = partial "links/portable-image" . -}}
 {{- end -}}
+{{- $attrs := partial "content/img-attr" (dict "Page" .Page "Url" $destination) -}}
 <label class="md-image" for="md-image-toggle-{{ .Ordinal }}">
   <input class="hidden toggle" type="checkbox" id="md-image-toggle-{{ .Ordinal }}" />
-  <img src="{{ $destination | safeURL }}" alt="{{ .Text }}" {{ with .Title }}title="{{ . }}"{{ end }} loading="lazy" decoding="async" />
+  <img src="{{ $destination | safeURL }}" alt="{{ .Text }}" {{ with .Title }}title="{{ . }}"{{ end }} {{ $attrs | safeHTMLAttr }} loading="lazy" decoding="async" />
 </label>
 {{- /**/ -}}

@@ -1,0 +1,11 @@
+{{/* Usage: {{ partial "content/img-size" (dict "Page" .Page "Url" $src) }} */}}
+{{- $resolution := partial "content/img-size" . -}}
+{{/* Returns: `width="{width}" height="{height}"` or "" */}}
+{{- $attrs := "" -}}
+{{- if $resolution -}}
+  {{- $dims := split $resolution "x" -}}
+  {{- $width := index $dims 0 -}}
+  {{- $height := index $dims 1 -}}
+  {{- $attrs = printf `width="%s" height="%s"` $width $height -}}
+{{- end -}}
+{{- return $attrs -}}

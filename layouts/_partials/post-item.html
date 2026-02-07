@@ -28,7 +28,8 @@
   <div class="post-content-area{{ if $coverImage }} has-cover{{ end }}">
     {{ with cond .Params.cover .Params.cover .Params.thumbnail }}
     <div class="post-cover-mobile">
-      <img src="{{ . | absURL }}" alt="Cover Image" class="post-cover-mobile-img" loading="lazy" decoding="async">
+      {{- $thumbAttrs := partial "content/img-attr" (dict "Page" $ "Url" .) -}}
+      <img src="{{ . | absURL }}" alt="Cover Image" class="post-cover-mobile-img" {{ $thumbAttrs | safeHTMLAttr }} loading="lazy" decoding="async">
     </div>
     {{ end }}
 
@@ -54,7 +55,8 @@
 
     {{ with $coverImage }}
     <div class="post-cover">
-      <img src="{{ . | absURL }}" alt="Cover Image" class="post-cover-img" loading="lazy" decoding="async">
+      {{- $coverAttrs := partial "content/img-attr" (dict "Page" $ "Url" .) -}}
+      <img src="{{ . | absURL }}" alt="Cover Image" class="post-cover-img" {{ $coverAttrs | safeHTMLAttr }} loading="lazy" decoding="async">
     </div>
     {{ end }}
   </div>

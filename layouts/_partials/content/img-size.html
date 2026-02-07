@@ -1,0 +1,41 @@
+{{/* Usage: {{ partial "content/img-size" (dict "Page" .Page "Url" $src) }} */}}
+{{- $page := .Page -}}
+{{- $imageUrl := .Url -}}
+{{/* Returns: "{width}x{height}" or "" */}}
+{{- $width := 0 -}}
+{{- $height := 0 -}}
+{{- $resolution := "" -}}
+{{- if and $page $imageUrl -}}
+  {{- $pageDir := cond $page.File $page.File.Dir "" -}}
+  {{- $relPath := strings.TrimPrefix (default site.Params.posts.section "posts/") $pageDir -}}
+  {{- $rootPath := default site.Params.imageDir "_images" -}}
+  {{- $imagePath := printf "%s/%s" $rootPath $relPath -}}
+  {{- /* Get filename from image URL */ -}}
+  {{- $urlParts := split (index (split $imageUrl "?") 0) "/" -}}
+  {{- $fileName := index $urlParts (sub (len $urlParts) 1) -}}
+  {{- /* Try 1: Exact filename match */ -}}
+  {{- $fullPattern := printf "%s%s" $imagePath $fileName -}}
+  {{- with resources.Get $fullPattern -}}
+    {{- $width = .Width -}}
+    {{- $height = .Height -}}
+  {{- /* Try 2: Match by base name with any extension */ -}}
+  {{- else -}}
+    {{- $baseName := index (split $fileName ".") 0 -}}
+    {{- $namePattern := printf "%s%s.*" $imagePath $baseName -}}
+    {{- with resources.GetMatch $namePattern -}}
+      {{- $width = .Width -}}
+      {{- $height = .Height -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- /* Limit image size */ -}}
+{{- if and $width $height -}}
+  {{- $maxSize := default 0 site.Params.maxImageSize -}}
+  {{- $maxDim := cond (gt $width $height) $width $height -}}
+  {{- if and $maxSize (gt $maxDim $maxSize) -}}
+    {{- $width = div (mul $width $maxSize) $maxDim -}}
+    {{- $height = div (mul $height $maxSize) $maxDim -}}
+  {{- end -}}
+  {{- $resolution = printf "%dx%d" $width $height -}}
+{{- end -}}
+{{- return $resolution -}}
