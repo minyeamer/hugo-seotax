@@ -3,6 +3,16 @@
   <time datetime="{{ .Format `2006-01-02T15:04:05Z07:00` }}">
     {{ .Format "2006. 01. 02. 15:04" }}
   </time>
-  <span id="reading-time"></span>
+  <span> • </span>
+  <span id="reading-time">
+    {{- $textMinutes := div $.WordCount 200 -}}
+    {{- $numBlocks := div (len (findRE "```" $.RawContent)) 2 -}}
+    {{- $codeMinutes := div $numBlocks 2 -}}
+    {{- $numImages := len (findRE "!\\[.*?\\]\\(.*?\\)" $.RawContent) -}}
+    {{- $imageMinutes := div $numImages 6 -}}
+    {{- $totalMinutes := add $textMinutes (add $codeMinutes $imageMinutes) -}}
+    {{- if lt $totalMinutes 1 -}}{{ $totalMinutes = 1 }}{{- end -}}
+    {{ replace (i18n "reading.time.min" | default "%m min read") "%m" $totalMinutes }}
+  </span>
 </div>
 {{ end }}

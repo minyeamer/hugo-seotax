@@ -172,8 +172,7 @@
 
     if (content && target) {
       const seconds = estimateReadingTime(content);
-      target.textContent = ' • ';
-      target.appendChild(createReadingTime(seconds));
+      target.replaceChildren(createReadingTime(seconds));
     }
   };
 

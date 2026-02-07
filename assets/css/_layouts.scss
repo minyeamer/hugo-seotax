@@ -635,6 +635,10 @@ body[dir="rtl"] .site-menu {
   font-size: font-size(14);
   font-weight: 400;
   margin-top: space(8);
+
+  #reading-time {
+    display: inline-block;
+  }
 }
 
 .markdown .content-category-link {
