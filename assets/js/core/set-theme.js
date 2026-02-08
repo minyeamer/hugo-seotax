@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
       return 'light';
     } else {
       const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      return (isDark ? 'light' : 'dark');
+      return (isDark ? 'dark' : 'light');
     }
   }
 
