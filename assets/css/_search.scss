@@ -160,12 +160,8 @@
       height: 32px;
       border-radius: radius(search-input);
 
-      &:hover {
-        background: var(--gray-200);
-      }
-
       i {
-        font-size: font-size(24);
+        font-size: font-size(20);
       }
     }
   }
@@ -342,7 +338,7 @@
   .taxonomy-name {
     font-weight: 500;
 
-    .fa-file, .fa-folder, .fa-folder-open, .fa-tag {
+    .icon-file, .icon-folder, .icon-folder-open, .icon-tag {
       font-size: $font-size-base;
     }
   }
@@ -808,7 +804,7 @@
     border-radius: radius(chip);
     font-size: 0.8rem;
 
-    .fa-file, .fa-folder {
+    .icon-file, .icon-folder {
       font-size: 0.8rem;
     }
   }

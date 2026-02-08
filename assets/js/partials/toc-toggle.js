@@ -62,7 +62,7 @@
       const tocToggleButton = document.createElement('button');
       const tocToggleLabel = translate('toc.toggle.tooltip', 'Toggle ToC');
       tocToggleButton.className = 'toc-toggle-button';
-      tocToggleButton.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+      tocToggleButton.innerHTML = '<i class="icon-xmark"></i>';
       tocToggleButton.setAttribute('aria-label', tocToggleLabel);
       tocToggleButton.setAttribute('title', tocToggleLabel);
       tocToggleButton.dataset['i18nId'] = 'toc.toggle.tooltip';

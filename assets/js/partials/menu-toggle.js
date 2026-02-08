@@ -111,7 +111,7 @@
       const menuToggleButton = document.createElement('button');
       const menuToggleLabel = translate('menu.toggle.tooltip', 'Toggle Menu');
       menuToggleButton.className = 'menu-toggle-button';
-      menuToggleButton.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      menuToggleButton.innerHTML = '<i class="icon-bars"></i>';
       menuToggleButton.setAttribute('aria-label', menuToggleLabel);
       menuToggleButton.setAttribute('title', menuToggleLabel);
       menuToggleButton.dataset['i18nId'] = 'menu.toggle.tooltip';
@@ -128,7 +128,7 @@
       const menuDisplayButton = document.createElement('button');
       const menuDisplayLabel = translate('menu.open.tooltip', 'Open Menu');
       menuDisplayButton.className = 'menu-display-button';
-      menuDisplayButton.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      menuDisplayButton.innerHTML = '<i class="icon-bars"></i>';
       menuDisplayButton.setAttribute('aria-label', menuDisplayLabel);
       menuDisplayButton.setAttribute('title', menuDisplayLabel);
       menuDisplayButton.dataset['i18nId'] = 'menu.open.tooltip';

@@ -34,7 +34,7 @@
     });
 
     // Remove excluded elements
-    const EXCLUDE_SELECTORS = '.sc-bookmark-card, .data-table, .sc-button, .sc-badge, i.fa-solid, i.fa-regular';
+    const EXCLUDE_SELECTORS = '.sc-bookmark-card, .data-table, .sc-button, .sc-badge i';
     contentClone.querySelectorAll(EXCLUDE_SELECTORS).forEach(el => el.remove());
 
     const elements = contentClone.querySelectorAll('pre, img, table, iframe');

@@ -4,7 +4,7 @@
         title="{{ i18n `menu.toggle.tooltip` | default `Toggle Menu` }}"
         data-i18n-id="menu.toggle.tooltip"
         data-i18n-attrs="aria-label,title">
-    <i class="fa-solid fa-bars menu-icon" id="menu-icon"></i>
+    <i class="icon-bars menu-icon" id="menu-icon"></i>
   </label>
 
   {{ if default true .Site.Params.search.enabled }}
@@ -15,7 +15,7 @@
         aria-label="{{ i18n `search.action.label` | default `Search` }}"
         data-i18n-id="search.action.label"
         data-i18n-attrs="aria-label">
-    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <i class="icon-search search-icon"></i>
     <span class="mobile-title">{{ .Site.Title }}</span>
     <i class="mobile-title-pad"></i>
   </div>
@@ -31,7 +31,7 @@
         data-i18n-id="toc.toggle.tooltip"
         data-i18n-attrs="aria-label,title">
     {{ if partial "toc-show" . }}
-    <i class="fa-solid fa-list menu-icon" id="toc-icon"></i>
+    <i class="icon-list menu-icon" id="toc-icon"></i>
     {{ end }}
   </label>
 </div>

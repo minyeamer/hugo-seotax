@@ -4,13 +4,13 @@
   <input type="checkbox" class="hidden toggle" id="categories-control" checked />
   <label for="categories-control" class="categories-label categories-toggle">
     <a href="/categories/" class="categories-root">
-      <i class="fa-solid fa-folder"></i>
+      <i class="icon-folder"></i>
       <span data-i18n-id="categories.root.label" data-i18n-text>
         {{ i18n "categories.root.label" | default "Categories Root" }}
       </span>
       <span class="category-count">({{- $pages | len -}})</span>
     </a>
-    <i class="fa-solid fa-chevron-down categories-arrow"></i>
+    <i class="icon-chevron-down categories-arrow"></i>
   </label>
   {{/* Categories list for parent category */}}
   <ul>
@@ -34,11 +34,11 @@
       <input type="checkbox" class="hidden toggle" id="cat-{{ $category1 | urlize }}" />
       <label for="cat-{{ $category1 | urlize }}" class="categories-label categories-toggle">
         <a href="/search/?category1={{ $category1 }}">
-          <i class="fa-solid fa-folder"></i>
+          <i class="icon-folder"></i>
           {{- $category1 -}}
           <span class="category-count">({{- $category1Count -}})</span>
         </a>
-        <i class="fa-solid fa-chevron-down categories-arrow"></i>
+        <i class="icon-chevron-down categories-arrow"></i>
       </label>
       {{/* Categories list for child category */}}
       <ul>
@@ -55,7 +55,7 @@
         {{/* Categories label for child category */}}
         <li class="categories-label">
           <a href="/search/?category1={{ $category1 }}&category2={{ $category2 }}">
-            <i class="fa-solid fa-file"></i>
+            <i class="icon-file"></i>
             {{- $category2 -}}
             <span class="category-count">({{- $category2Count -}})</span>
           </a>
@@ -67,7 +67,7 @@
       <li>
         <label for="cat-{{ $category1 | urlize }}" class="categories-label categories-toggle">
           <a href="/search/?category1={{ $category1 }}" class="categories-leaf">
-            <i class="fa-solid fa-file"></i>
+            <i class="icon-file"></i>
             {{- $category1 -}}
             <span class="category-count">({{- $category1Count -}})</span>
           </a>

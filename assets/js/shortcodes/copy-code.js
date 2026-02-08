@@ -22,7 +22,7 @@ function copyCode(button) {
     const originalClass = icon.className;
     const originalText = textNode.textContent;
 
-    icon.className = 'fa-solid fa-check';
+    icon.className = 'icon-check';
     textNode.textContent = 'COPIED';
     button.classList.add('copied');
 

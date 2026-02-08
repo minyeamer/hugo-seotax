@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.siteSearch.initTags()
       ]).then(() => {
         clearHeader();
-        createListHeader({i18nId: 'search.results.title', icon: 'fa-file-lines'}, 0, '');
+        createListHeader({i18nId: 'search.results.title', icon: 'icon-file-lines'}, 0, '');
         displayResults(new Set());
       });
       break;
@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const title = createElement('h1');
     if (titleInfo.icon) {
-      title.appendChild(createElement('i', {className: `fa-solid ${titleInfo.icon}`}))
+      title.appendChild(createElement('i', {className: `${titleInfo.icon}`}))
       title.appendChild(document.createTextNode(' '));
     }
     if (titleInfo.i18nId) {
@@ -320,7 +320,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const countLabel = `<span class="taxonomy-count">(${pageCount})</span>`;
     a.appendChild(createElement('span', {
       className: 'taxonomy-name',
-      html: `<i class="fa-solid ${icon}"></i> ${text} ${countLabel}`
+      html: `<i class="${icon}"></i> ${text} ${countLabel}`
     }));
 
     chip.appendChild(a);
@@ -336,7 +336,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const queryRow = createElement('div', {className: 'search-query-row'});
     const inputWrapper = createElement('div', {className: 'query-input-wrapper'});
 
-    const queryIcon = createElement('i', {className: 'fa-solid fa-magnifying-glass search-query-icon'});
+    const queryIcon = createElement('i', {className: 'icon-search search-query-icon'});
     inputWrapper.appendChild(queryIcon);
 
     const placeholder = translate('search.input.placeholder');
@@ -358,7 +358,7 @@ document.addEventListener('DOMContentLoaded', function() {
     queryRow.appendChild(inputWrapper);
 
     const toggleButton = createElement('button', {className: 'search-filter-toggle', attrs: {type: 'button'}});
-    toggleButton.appendChild(createElement('i', {className: 'fa-solid fa-caret-up'}))
+    toggleButton.appendChild(createElement('i', {className: 'icon-caret-up'}))
     toggleButton.appendChild(document.createTextNode(' '));
     toggleButton.appendChild(createElement('span', {
       text: translate('search.filters.toggle'),
@@ -1079,7 +1079,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (appendHeader) {
       clearHeader();
-      createListHeader({i18nId: 'search.results.title', icon: 'fa-file-lines'}, searchPosts.size, state.query);
+      createListHeader({i18nId: 'search.results.title', icon: 'icon-file-text'}, searchPosts.size, state.query);
       createSearchFilter(searchPosts);
     }
 
@@ -1100,14 +1100,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (appendHeader) {
       clearHeader();
-      createListHeader({text: category1Name, icon: 'fa-folder'}, category1Posts.length);
+      createListHeader({text: category1Name, icon: 'icon-folder'}, category1Posts.length);
       createSearchFilter(category1Posts, 'false');
 
       const taxonomies = Object.keys(category1).toSorted()
         .filter(key => (key !== 'A') && (category1[key] instanceof Object))
         .map(key => ({
           text: category1[key]['name'],
-          icon: 'fa-file',
+          icon: 'icon-file',
           href: `/search/?category1=${category1Name}&category2=${category1[key]['name']}`,
           pageCount: category1[key]['ids'].length,
         }));
@@ -1137,13 +1137,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (appendHeader) {
       clearHeader();
-      createListHeader({text: category2Name, icon: 'fa-file'}, category2Posts.length);
+      createListHeader({text: category2Name, icon: 'icon-file'}, category2Posts.length);
       createSearchFilter(category2Posts, 'false');
 
       if (category1Name) {
         taxonomy = {
           text: category1Name,
-          icon: 'fa-folder-open',
+          icon: 'icon-folder-open',
           href: `/search/?category1=${category1Name}`,
           pageCount: category1['A']['ids'].length,
         };
@@ -1187,9 +1187,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (appendHeader) {
       clearHeader();
       if (hasSingleTag) {
-        createListHeader({text: tagNames[0], icon: 'fa-tag'}, tagPosts.size);
+        createListHeader({text: tagNames[0], icon: 'icon-tag'}, tagPosts.size);
       } else {
-        createListHeader({i18nId: 'search.results.title', icon: 'fa-tags'}, tagPosts.size);
+        createListHeader({i18nId: 'search.results.title', icon: 'icon-tags'}, tagPosts.size);
       }
       createSearchFilter(tagPosts, 'false');
 
@@ -1197,7 +1197,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const taxonomies = tagNames.toSorted()
           .map(tag => ({
             text: tag,
-            icon: 'fa-tag',
+            icon: 'icon-tag',
             href: `/search/?tags=${tag}`,
             pageCount: tags[tag.toLowerCase()]['ids'].length,
           }));
@@ -1237,7 +1237,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (appendHeader) {
       clearHeader();
-      createListHeader({i18nId: 'search.results.title', icon: 'fa-file-lines'}, searchPosts.size, state.query);
+      createListHeader({i18nId: 'search.results.title', icon: 'icon-file-lines'}, searchPosts.size, state.query);
       createSearchFilter(searchPosts);
     }
 
@@ -1348,7 +1348,7 @@ document.addEventListener('DOMContentLoaded', function() {
       } else {
         nav = createElement('span', {className: 'pagination-nav disabled'});
       }
-      nav.appendChild(createElement('i', {className: 'fa-solid fa-backward'}));
+      nav.appendChild(createElement('i', {className: 'icon-backward'}));
       nav.appendChild(document.createTextNode(' '));
       nav.appendChild(createElement('span', {
         text: translate('post.prev.link'),
@@ -1389,7 +1389,7 @@ document.addEventListener('DOMContentLoaded', function() {
         dataset: {i18nId: 'post.next.link', i18nText: ''}
       }));
       nav.appendChild(document.createTextNode(' '));
-      nav.appendChild(createElement('i', {className: 'fa-solid fa-forward'}));
+      nav.appendChild(createElement('i', {className: 'icon-forward'}));
       fragment.appendChild(nav);
     })();
 

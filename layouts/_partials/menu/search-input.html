@@ -7,7 +7,7 @@
       aria-label="{{ i18n `search.action.label` | default `Search` }}"
       data-i18n-id="search.action.label"
       data-i18n-attrs="aira-label">
-  <i class="fa-solid fa-magnifying-glass search-icon"></i>
+  <i class="icon-search search-icon"></i>
   <span class="search-placeholder" data-i18n-id="search.input.label" data-i18n-text='{"`/`": "$code"}'>
     {{ $searchText := i18n "search.input.label" | default "Press `/` to search" }}
     {{ (replace $searchText "`/`" "<code>/</code>") | safeHTML }}

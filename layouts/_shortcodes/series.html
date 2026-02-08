@@ -38,7 +38,7 @@
     </div>
     <div class="series-footer">
       <label for="series-toggle" class="series-toggle-label">
-        <span class="series-toggle-icon"><i class="fas fa-caret-up"></i></span>
+        <span class="series-toggle-icon"><i class="icon-caret-up"></i></span>
         <span class="series-toggle-text-hide" data-i18n-id="series.hide.label" data-i18n-text>
           {{- i18n "series.hide.label" | default "Hide" -}}
         </span>
@@ -52,14 +52,14 @@
         {{/* Navigation buttons for adjacent pages in the series */}}
         <div class="series-nav-buttons">
           {{ if gt $activeIndex 0 -}}
-          <a href="{{ (index $pages (sub $activeIndex 1)).RelPermalink }}#series-anchor" class="series-nav-button"><i class="fas fa-chevron-left"></i></a>
+          <a href="{{ (index $pages (sub $activeIndex 1)).RelPermalink }}#series-anchor" class="series-nav-button"><i class="icon-chevron-left"></i></a>
           {{- else -}}
-          <span class="series-nav-button disabled"><i class="fas fa-chevron-left"></i></span>
+          <span class="series-nav-button disabled"><i class="icon-chevron-left"></i></span>
           {{- end }}
           {{ if lt (add $activeIndex 1) $count -}}
-          <a href="{{ (index $pages (add $activeIndex 1)).RelPermalink }}#series-anchor" class="series-nav-button"><i class="fas fa-chevron-right"></i></a>
+          <a href="{{ (index $pages (add $activeIndex 1)).RelPermalink }}#series-anchor" class="series-nav-button"><i class="icon-chevron-right"></i></a>
           {{- else -}}
-          <span class="series-nav-button disabled"><i class="fas fa-chevron-right"></i></span>
+          <span class="series-nav-button disabled"><i class="icon-chevron-right"></i></span>
           {{- end }}
         </div>
       </div>

@@ -1,7 +1,7 @@
 {{ with first 5 (partialCached "pages/posts" . "posts") }}
 <div class="recent-posts">
   <div class="recent-post-label">
-    <i class="fa-solid fa-clock"></i>
+    <i class="icon-clock"></i>
     <span data-i18n-id="menu.recent.posts" data-i18n-text>
       {{- i18n "menu.recent.posts" | default "Recent posts" -}}
     </span>

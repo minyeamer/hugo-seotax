@@ -9,13 +9,13 @@
       {{ $category1 := partial "categories/level1" .Params.categories }}
       {{ if $category1 }}
         <a href="/search/?category1={{ $category1 }}" class="category">
-          <i class="fa-solid fa-folder"></i> {{- $category1 -}}
+          <i class="icon-folder"></i> {{ $category1 -}}
         </a>
 
         {{ $category2 := partial "categories/level2" .Params.categories }}
         {{ if $category2 }}
         <a href="/search/?category1={{ $category1 }}&category2={{ $category2 }}" class="category">
-        <i class="fa-solid fa-file"></i> {{- $category2 -}}
+        <i class="icon-file"></i> {{ $category2 -}}
         </a>
         {{ end }}
       {{ end }}
@@ -47,7 +47,7 @@
       {{ if .Params.tags }}
       <div class="post-tags">
         {{ range first 5 .Params.tags }}
-        <a href="/search/?tags={{ . }}" class="tag">#{{- . -}}</a>
+        <a href="/search/?tags={{ . }}" class="tag"><i class="icon-tag"></i> {{ . -}}</a>
         {{ end }}
       </div>
       {{ end }}

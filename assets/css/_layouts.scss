@@ -450,8 +450,8 @@ body[dir="rtl"] .site-menu {
   position: relative;
   z-index: z-index(base);
 
-  i.fa-file, i.fa-folder, i.fa-chevron-down, i.fa-chevron-up {
-    font-size: font-size(14);
+  i.icon-file, i.icon-folder, i.icon-chevron-down, i.icon-chevron-up {
+    font-size: font-size(16);
     transition: transform 0.2s ease;
     max-width: font-size(18);
   }
@@ -510,7 +510,7 @@ body[dir="rtl"] .site-menu {
     font-weight: 500;
     color: var(--body-font-color);
 
-    .fa-clock {
+    .icon-clock {
       font-size: font-size(14);
       color: var(--color-link);
     }
@@ -747,7 +747,7 @@ body[dir="rtl"] .site-menu {
     font-weight: 600;
     margin-bottom: space(8);
 
-    .fa-backward, .fa-forward {
+    .icon-backward, .icon-forward {
       font-size: font-size(14);
     }
   }
@@ -1147,7 +1147,7 @@ body[dir="rtl"] .site-menu {
     padding: 0.2em 0;
     display: block;
 
-    .fa-file, .fa-folder {
+    .icon-file, .icon-folder {
       font-size: 1.2em;
     }
   }
@@ -1167,7 +1167,7 @@ body[dir="rtl"] .site-menu {
     padding: 0.1em 0;
     display: block;
 
-    .fa-newspaper {
+    .icon-file-text {
       font-size: 1em;
     }
   }

@@ -58,7 +58,7 @@
 {{ with $prev }}
 <a href="{{ .RelPermalink }}" class="prev-link">
   <span class="prev-next-label">
-    <i class="fa-solid fa-backward"></i>
+    <i class="icon-backward"></i>
     <span data-i18n-id="post.prev.link" data-i18n-text>
       {{- i18n "post.prev.link" | default "PREV" -}}
     </span>
@@ -68,7 +68,7 @@
 {{ else }}
 <a href="" class="prev-link prev-link-disabled">
   <span class="prev-next-label">
-    <i class="fa-solid fa-backward"></i>
+    <i class="icon-backward"></i>
     <span data-i18n-id="post.prev.link" data-i18n-text>
       {{- i18n "post.prev.link" | default "PREV" -}}
     </span>
@@ -85,7 +85,7 @@
     <span data-i18n-id="post.next.link" data-i18n-text>
       {{- i18n "post.next.link" | default "NEXT" -}}
     </span>
-    <i class="fa-solid fa-forward"></i>
+    <i class="icon-forward"></i>
   </span>
   <span class="prev-next-title">{{ partial "title" . }}</span>
 </a>
@@ -95,7 +95,7 @@
     <span data-i18n-id="post.next.link" data-i18n-text>
       {{- i18n "post.next.link" | default "NEXT" -}}
     </span>
-    <i class="fa-solid fa-forward"></i>
+    <i class="icon-forward"></i>
   </span>
   <span class="prev-next-title">
     {{- i18n "No next post" | default "No next post" -}}

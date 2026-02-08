@@ -155,7 +155,7 @@
 
     const closeButton = createElement('button', {
       className: 'search-modal-close',
-      html: '<i class="fa-solid fa-xmark"></i>',
+      html: '<i class="icon-xmark"></i>',
       attrs: {'aria-label': translate('search.close.tooltip')},
       dataset: {i18nId: 'search.close.tooltip', i18nAttrs: 'aria-label'}
     });
@@ -188,7 +188,7 @@
     // Add search button
     const modalSearchButton = createElement('button', {
       className: 'search-modal-button',
-      html: '<i class="fa-solid fa-magnifying-glass"></i>',
+      html: '<i class="icon-search"></i>',
       attrs: {'aria-label': translate('search.action.label')},
       dataset: {i18nId: 'search.action.label', i18nAttrs: 'aria-label'}
     });

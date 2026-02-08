@@ -23,14 +23,14 @@
   {{/* Previous group button */}}
   {{ if gt $groupStart 1 }}
   <a href="{{ $paginate.First.URL }}{{ if gt $prevGroupPage 1 }}page/{{ $prevGroupPage }}/{{ end }}#pagination-anchor" class="pagination-nav pagination-link">
-    <i class="fa-solid fa-backward"></i>
+    <i class="icon-backward"></i>
     <span data-i18n-id="post.prev.link" data-i18n-text>
       {{- i18n "post.prev.link" | default "PREV" -}}
     </span>
   </a>
   {{ else }}
   <span class="pagination-nav disabled">
-    <i class="fa-solid fa-backward"></i>
+    <i class="icon-backward"></i>
     <span data-i18n-id="post.prev.link" data-i18n-text>
       {{- i18n "post.prev.link" | default "PREV" -}}
     </span>
@@ -56,14 +56,14 @@
     <span data-i18n-id="post.next.link" data-i18n-text>
       {{- i18n "post.next.link" | default "NEXT" -}}
     </span>
-    <i class="fa-solid fa-forward"></i>
+    <i class="icon-forward"></i>
   </a>
   {{ else }}
   <span class="pagination-nav disabled">
     <span data-i18n-id="post.next.link" data-i18n-text>
       {{- i18n "post.next.link" | default "NEXT" -}}
     </span>
-    <i class="fa-solid fa-forward"></i>
+    <i class="icon-forward"></i>
   </span>
   {{ end }}
 

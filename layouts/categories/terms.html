@@ -8,7 +8,7 @@
 {{ end }}
 <header class="list-header">
   <h1>
-    <i class="fa-solid fa-folder"></i>
+    <i class="icon-folder"></i>
     <span data-i18n-id="categories.terms.title" data-i18n-text>
       {{- i18n "categories.terms.title" | default "Categories" -}}
     </span>
@@ -39,7 +39,7 @@
       {{ $treeL2 := index $treeL1 $category1 }}
       {{ if $treeL2 }}
       <a href="/search/?category1={{ $category1 }}" class="categories-item">
-        <i class="fa-solid fa-folder"></i> {{ $category1 -}}
+        <i class="icon-folder"></i> {{ $category1 -}}
         <span class="category-count"> ({{- $category1Count -}})</span>
       </a>
       {{/* Categories list for child category */}}
@@ -59,7 +59,7 @@
           {{/* Categories item for child category */}}
           <li>
             <a href="/search/?category1={{ $category1 }}&category2={{ $category2 }}" class="categories-item">
-              <i class="fa-solid fa-file"></i> {{ $category2 -}}
+              <i class="icon-file"></i> {{ $category2 -}}
               <span class="category-count"> ({{- $category2Count -}})</span>
             </a>
             {{ if $pagesL2 }}
@@ -68,7 +68,7 @@
               {{ range $pagesL2 | first 3 }}
               <li>
                 <a href="{{ .RelPermalink }}" class="category-post">
-                  <i class="fa-solid fa-newspaper"></i> {{ .LinkTitle -}}
+                  <i class="icon-file-text"></i> {{ .LinkTitle -}}
                 </a>
               </li>
               {{ end }}
@@ -76,7 +76,7 @@
               {{ if gt (len $pagesL2) 3 }}
                 <li>
                   <a href="/search/?category1={{ $category1 }}&category2={{ $category2 }}" class="category-post more">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="icon-search"></i>
                     <span data-i18n-id="search.more.label" data-i18n-text='{{ jsonify (dict "%d" (len $pagesL2)) }}'>
                       {{- printf (i18n "search.more.label" | default "See all %d results") (len $pagesL2) -}}
                     </span>
@@ -91,7 +91,7 @@
       {{ else }}
       {{/* Categories item for parent category if child categories not exist */}}
       <a href="/search/?category1={{ $category1 }}" class="categories-item">
-        <i class="fa-solid fa-file"></i> {{ $category1 -}}
+        <i class="icon-file"></i> {{ $category1 -}}
         <span class="category-count"> ({{- $category1Count -}})</span>
       </a>
       {{ if $pagesL1 }}
@@ -100,14 +100,14 @@
         {{ range $pagesL1 | first 3 }}
         <li>
           <a href="{{ .RelPermalink }}" class="category-post">
-            <i class="fa-solid fa-newspaper"></i> {{ .LinkTitle -}}
+            <i class="icon-file-text"></i> {{ .LinkTitle -}}
           </a>
         </li>
         {{/* Show more link if there are additional posts beyond the limit */}}
         {{ if gt (len $pagesL1) 3 }}
           <li>
             <a href="/search/?category1={{ $category1 }}" class="category-post more">
-              <i class="fa-solid fa-magnifying-glass"></i>
+              <i class="icon-search"></i>
               <span data-i18n-id="search.more.label" data-i18n-text='{{ jsonify (dict "%d" (len $pagesL1)) }}'>
                 {{- printf (i18n "search.more.label" | default "See all %d results") (len $pagesL1) -}}
               </span>
