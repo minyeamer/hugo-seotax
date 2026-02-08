@@ -1,0 +1,236 @@
+/**
+ * Highlight.js Theme - CSS Variables
+ * xcode (Light) + vs2015 (Dark)
+ */
+
+/* Light Theme (xcode) */
+/* https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/xcode.min.css */
+[data-theme="light"] {
+  --hljs-background: #fff;
+  --hljs-color: #000;
+  --hljs-comment: #007400;
+  --hljs-quote: #007400;
+  --hljs-keyword: #aa0d91;
+  --hljs-literal: #aa0d91;
+  --hljs-name: #aa0d91;
+  --hljs-selector-tag: #aa0d91;
+  --hljs-tag: #aa0d91;
+  --hljs-string: #c41a16;
+  --hljs-code: #c41a16;
+  --hljs-meta-string: #c41a16;
+  --hljs-number: #1c00cf;
+  --hljs-bullet: #1c00cf;
+  --hljs-symbol: #1c00cf;
+  --hljs-title: #1c00cf;
+  --hljs-meta: #643820;
+  --hljs-section: #643820;
+  --hljs-built_in: #5c2699;
+  --hljs-class-title: #5c2699;
+  --hljs-params: #5c2699;
+  --hljs-type: #5c2699;
+  --hljs-attr: #836c28;
+  --hljs-attribute: #aa0d91;
+  --hljs-variable: #3f6e74;
+  --hljs-template-variable: #3f6e74;
+  --hljs-link: #0e0eff;
+  --hljs-regexp: #0e0eff;
+  --hljs-selector-class: #9b703f;
+  --hljs-selector-id: #9b703f;
+  --hljs-subst: #000;
+  --hljs-formula-bg: #eee;
+  --hljs-addition-bg: #baeeba;
+  --hljs-deletion-bg: #ffc8bd;
+  --hljs-xml-meta: silver;
+}
+
+/* Dark Theme (vs2015) */
+/* https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/vs2015.min.css */
+[data-theme="dark"] {
+  --hljs-background: #1e1e1e;
+  --hljs-color: #dcdcdc;
+  --hljs-comment: #57a64a;
+  --hljs-quote: #57a64a;
+  --hljs-keyword: #569cd6;
+  --hljs-literal: #569cd6;
+  --hljs-name: #569cd6;
+  --hljs-selector-tag: #d7ba7d;
+  --hljs-tag: #9b9b9b;
+  --hljs-string: #d69d85;
+  --hljs-code: #d69d85;
+  --hljs-meta-string: #d69d85;
+  --hljs-number: #b8d7a3;
+  --hljs-bullet: #d7ba7d;
+  --hljs-symbol: #569cd6;
+  --hljs-title: #dcdcdc;
+  --hljs-meta: #9b9b9b;
+  --hljs-section: gold;
+  --hljs-built_in: #4ec9b0;
+  --hljs-class-title: #b8d7a3;
+  --hljs-params: #dcdcdc;
+  --hljs-type: #4ec9b0;
+  --hljs-attr: #9cdcfe;
+  --hljs-attribute: #9cdcfe;
+  --hljs-variable: #bd63c5;
+  --hljs-template-variable: #bd63c5;
+  --hljs-link: #569cd6;
+  --hljs-regexp: #9a5334;
+  --hljs-selector-class: #d7ba7d;
+  --hljs-selector-id: #d7ba7d;
+  --hljs-subst: #dcdcdc;
+  --hljs-formula-bg: transparent;
+  --hljs-addition-bg: #144212;
+  --hljs-deletion-bg: #600;
+  --hljs-xml-meta: #9b9b9b;
+}
+
+/* Base Styles */
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+code.hljs {
+  padding: 3px 5px;
+}
+
+.hljs {
+  background: var(--hljs-background);
+  color: var(--hljs-color);
+}
+
+/* Syntax Highlighting Classes */
+.hljs-comment,
+.hljs-quote {
+  color: var(--hljs-comment);
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-literal,
+.hljs-name,
+.hljs-symbol {
+  color: var(--hljs-keyword);
+}
+
+.hljs-selector-tag {
+  color: var(--hljs-selector-tag);
+}
+
+.hljs-tag {
+  color: var(--hljs-tag);
+}
+
+.hljs-string,
+.hljs-code {
+  color: var(--hljs-string);
+}
+
+.hljs-meta .hljs-string {
+  color: var(--hljs-meta-string);
+}
+
+.hljs-number,
+.hljs-class {
+  color: var(--hljs-number);
+}
+
+.hljs-bullet {
+  color: var(--hljs-bullet);
+}
+
+.hljs-title {
+  color: var(--hljs-title);
+}
+
+.hljs-section {
+  color: var(--hljs-section);
+}
+
+.hljs-meta {
+  color: var(--hljs-meta);
+}
+
+.hljs-built_in,
+.hljs-type {
+  color: var(--hljs-built_in);
+}
+
+.hljs-class .hljs-title,
+.hljs-title.class_ {
+  color: var(--hljs-class-title);
+}
+
+.hljs-params {
+  color: var(--hljs-params);
+}
+
+.hljs-attr {
+  color: var(--hljs-attr);
+}
+
+.hljs-attribute {
+  color: var(--hljs-attribute);
+}
+
+.hljs-variable,
+.hljs-template-variable {
+  color: var(--hljs-variable);
+}
+
+.hljs-link {
+  color: var(--hljs-link);
+  text-decoration: underline;
+}
+
+.hljs-regexp,
+.hljs-template-tag {
+  color: var(--hljs-regexp);
+}
+
+.hljs-selector-class,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: var(--hljs-selector-class);
+}
+
+.hljs-subst,
+.hljs-function,
+.hljs-formula {
+  color: var(--hljs-subst);
+}
+
+.hljs-formula {
+  background-color: var(--hljs-formula-bg);
+  font-style: italic;
+}
+
+.hljs-addition {
+  background-color: var(--hljs-addition-bg);
+  display: inline-block;
+  width: 100%;
+}
+
+.hljs-deletion {
+  background-color: var(--hljs-deletion-bg);
+  display: inline-block;
+  width: 100%;
+}
+
+.hljs-doctag {
+  color: var(--hljs-comment);
+}
+
+.hljs-strong {
+  font-weight: 700;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+/* XML specific */
+.xml .hljs-meta {
+  color: var(--hljs-xml-meta);
+}

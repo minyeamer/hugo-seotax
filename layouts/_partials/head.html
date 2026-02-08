@@ -89,10 +89,7 @@ https://github.com/minyeamer/hugo-miny
   {{- end -}}
 {{- end -}}
 
-<!-- Highlight.js -->
-<!-- https://highlightjs.org/ -->
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/xcode.min.css"> // [data-theme="light"] -->
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/vs2015.min.css"> // [data-theme="dark"] -->
+<!-- highlight.js: Start -->
 <script>
 (function() {
   const originalWarn = console.warn;
@@ -108,9 +105,24 @@ https://github.com/minyeamer/hugo-miny
   };
 })();
 </script>
+
+<!-- https://highlightjs.org/ -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js" crossorigin="anonymous"></script>
 <!-- https://github.com/wcoder/highlightjs-line-numbers.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.9.0/highlightjs-line-numbers.min.js" crossorigin="anonymous"></script>
+
+<!-- Initialize highlight.js -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof hljs !== 'undefined') {
+    hljs.highlightAll();
+    if (typeof hljs.initLineNumbersOnLoad === 'function') {
+      hljs.initLineNumbersOnLoad();
+    }
+  }
+});
+</script>
+<!-- highlight.js: End -->
 
 <!-- i18n: Start -->
 <script>
