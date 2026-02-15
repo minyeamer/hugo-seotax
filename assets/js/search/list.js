@@ -1237,7 +1237,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (appendHeader) {
       clearHeader();
-      createListHeader({i18nId: 'search.results.title', icon: 'icon-file-lines'}, searchPosts.size, state.query);
+      createListHeader({i18nId: 'search.results.title', icon: 'icon-file-text'}, searchPosts.size, state.query);
       createSearchFilter(searchPosts);
     }
 
