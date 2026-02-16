@@ -749,3 +749,17 @@
     margin-top: -space(32);
   }
 }
+
+.mermaid {
+  [data-theme="dark"] & {
+    .edgePath .path,
+    .flowchart-link {
+      stroke: #e0e0e0 !important;
+    }
+
+    marker path {
+      fill: #e0e0e0 !important;
+      stroke: #e0e0e0 !important;
+    }
+  }
+}
