@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?nn8xzh');
-  src:  url('fonts/icomoon.eot?nn8xzh#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?nn8xzh') format('truetype'),
-    url('fonts/icomoon.woff?nn8xzh') format('woff'),
-    url('fonts/icomoon.svg?nn8xzh#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?jrhayr');
+  src:  url('fonts/icomoon.eot?jrhayr#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?jrhayr') format('truetype'),
+    url('fonts/icomoon.woff?jrhayr') format('woff'),
+    url('fonts/icomoon.svg?jrhayr#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -44,6 +44,9 @@
 }
 .icon-file-copy:before {
   content: "\e908";
+}
+.icon-exclamation-triangle:before {
+  content: "\e91b";
 }
 .icon-magic:before {
   content: "\e905";
