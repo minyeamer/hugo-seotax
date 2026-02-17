@@ -15,5 +15,12 @@
     </button>
     <span class="code-language code-action">{{ .Type | default "text" }}</span>
   </div>
-  {{- (transform.HighlightCodeBlock . .Options).Wrapped | safeHTML -}}
+  {{- $highlighted := transform.HighlightCodeBlock . .Options -}}
+  {{- if not (strings.Contains $highlighted.Wrapped "<div class=\"highlight\">") -}}
+  <div class="highlight">
+    {{- $highlighted.Wrapped | safeHTML -}}
+  </div>
+  {{- else -}}
+  {{- $highlighted.Wrapped | safeHTML -}}
+  {{- end -}}
 </div>

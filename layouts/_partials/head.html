@@ -107,18 +107,36 @@ https://github.com/minyeamer/hugo-miny
 </script>
 
 <!-- https://highlightjs.org/ -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js" crossorigin="anonymous"></script>
-<!-- https://github.com/wcoder/highlightjs-line-numbers.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.9.0/highlightjs-line-numbers.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js" crossorigin="anonymous"></script>
+<!-- Handlebars language support -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/handlebars.min.js" crossorigin="anonymous"></script>
+<!-- https://github.com/yauhenipakala/highlightjs-line-numbers.js -->
+<!-- https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.9.0/highlightjs-line-numbers.min.js -->
+<script defer src="{{ `highlightjs-line-numbers.min.js` | relURL }}"></script>
 
 <!-- Initialize highlight.js -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof hljs !== 'undefined') {
-    hljs.highlightAll();
-    if (typeof hljs.initLineNumbersOnLoad === 'function') {
-      hljs.initLineNumbersOnLoad();
-    }
+  if (typeof hljs === 'undefined') return;
+
+  // Register language aliases (go-html -> handlebars)
+  if (typeof hljs.registerAliases === 'function') {
+    hljs.registerAliases(['go-html', 'tpl', 'template'], { languageName: 'handlebars' });
+  }
+
+  // Highlight all code blocks
+  hljs.highlightAll();
+
+  // Add line numbers to all code blocks
+  if (typeof hljs.lineNumbersBlock === 'function') {
+    document.querySelectorAll('.sc-codeblock pre code').forEach(function(block) {
+      if (!block.classList.contains('hljs')) {
+        block.classList.add('hljs');
+      }
+      if (!block.querySelector('.hljs-ln')) {
+        hljs.lineNumbersBlock(block);
+      }
+    });
   }
 });
 </script>
