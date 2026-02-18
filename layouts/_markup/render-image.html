@@ -5,6 +5,6 @@
 {{- $attrs := partial "content/img-attr" (dict "Page" .Page "Url" $destination) -}}
 <label class="md-image" for="md-image-toggle-{{ .Ordinal }}">
   <input class="hidden toggle" type="checkbox" id="md-image-toggle-{{ .Ordinal }}" />
-  <img src="{{ $destination | safeURL }}" alt="{{ .Text }}" {{ with .Title }}title="{{ . }}"{{ end }} {{ $attrs | safeHTMLAttr }} loading="lazy" decoding="async" />
+  <img src="{{ $destination | safeURL }}" alt="{{ .Text }}" {{ with .Title }}title="{{ . }}"{{ end }} id="md-image-{{ .Ordinal }}" {{ $attrs | safeHTMLAttr }} loading="lazy" decoding="async" />
 </label>
 {{- /**/ -}}
