@@ -16,14 +16,19 @@ function downloadCSV(button) {
    */
   function table2rows(table) {
     const rows = [];
-    const headers = table.querySelectorAll('thead th');
+    const headerRows = table.querySelectorAll('thead tr');
     const valueRows = table.querySelectorAll('tbody tr');
 
-    const headerRow = Array.from(headers).map(cell =>
-      cell.getAttribute('title') || cell.textContent.trim()
-    );
-    rows.push(headerRow);
+    // Extract all header rows
+    headerRows.forEach(headerRow => {
+      const headers = headerRow.querySelectorAll('th');
+      const headerValues = Array.from(headers).map(cell =>
+        cell.getAttribute('title') || cell.textContent.trim()
+      );
+      rows.push(headerValues);
+    });
 
+    // Extract data rows
     valueRows.forEach(row => {
       const cells = row.querySelectorAll('td');
       const values = Array.from(cells).map(cell =>

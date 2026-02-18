@@ -4,6 +4,7 @@
 {{- $class := .Get "class" -}}
 {{- $fileName := .Get "file-name" | default "" -}}
 {{- $enableDownload := .Get "enable-download" | default "true" -}}
+{{- $numHeaders := .Get "headers" | default "1" | int -}}
 {{- /* --- CSV to Rows --- */ -}}
 {{- $csv := trim .Inner " \n\r\t" -}}
 {{- $lines := split $csv "\n" -}}
@@ -13,9 +14,8 @@
     {{- $allLines = $allLines | append . -}}
   {{- end -}}
 {{- end -}}
-{{- $headerLine := index $allLines 0 -}}
-{{- $header := split $headerLine $delimiter -}}
-{{- $dataRows := after 1 $allLines -}}
+{{- $headerLines := first $numHeaders $allLines -}}
+{{- $dataRows := after $numHeaders $allLines -}}
 {{- /* --- Align Center --- */ -}}
 {{- $centerColumns := slice -}}
 {{- if $alignCenter -}}
@@ -26,7 +26,7 @@
 {{- end -}}
 {{- /* --- Render --- */ -}}
 <div class="sc-data-table {{ with $class }}{{ . }}{{ end }}">
-  <table class="data-table" data-filename="{{ $fileName }}">
+  <table class="data-table" data-filename="{{ $fileName }}" data-headers="{{ $numHeaders }}">
   {{- if and $fileName (eq $enableDownload "true") -}}
   <caption class="data-table-caption">
     <button class="data-download-button" 
@@ -38,13 +38,16 @@
   </caption>
   {{- end -}}
   <thead>
-    <tr>
-      {{- range $index, $col := $header -}}
-        {{- $colNum := add $index 1 | string -}}
-        {{- $isCenter := in $centerColumns $colNum -}}
-        <th title="{{ $col }}" {{ if $isCenter }}style="text-align: center;"{{ end }}>{{ $col | markdownify }}</th>
-      {{- end -}}
-    </tr>
+    {{- range $headerLines -}}
+      {{- $headerCols := split . $delimiter -}}
+      <tr>
+        {{- range $index, $col := $headerCols -}}
+          {{- $colNum := add $index 1 | string -}}
+          {{- $isCenter := in $centerColumns $colNum -}}
+          <th title="{{ $col }}" {{ if $isCenter }}style="text-align: center;"{{ end }}>{{ $col | markdownify }}</th>
+        {{- end -}}
+      </tr>
+    {{- end -}}
   </thead>
   <tbody>
     {{- range $dataRows -}}
