@@ -1,7 +1,7 @@
-# GitHub Pages Deployment for Hugo SeoTax Example Site
+# GitHub Pages Deployment for Hugo SeoTax Theme
 #
-# This workflow builds the exampleSite using the theme from the repo root
-# and deploys it to GitHub Pages — no need to move files to the repo root.
+# Builds exampleSite/ using the theme from the repo root via --themesDir ../..
+# and deploys to GitHub Pages.
 #
 # Setup:
 #   1. Go to repository Settings > Pages
