@@ -1,7 +1,7 @@
 # GitHub Pages Deployment for Hugo SeoTax Theme
 #
-# Builds exampleSite/ using the theme from the repo root via --themesDir ../..
-# and deploys to GitHub Pages.
+# Builds exampleSite/ by symlinking the repo root as themes/seotax/
+# so Hugo resolves all theme paths correctly, then deploys to GitHub Pages.
 #
 # Setup:
 #   1. Go to repository Settings > Pages
@@ -42,7 +42,10 @@ jobs:
 
       - name: Build with Hugo
         working-directory: exampleSite
-        run: hugo --minify --themesDir ../.. --baseURL "https://minyeamer.github.io/hugo-seotax/"
+        run: |
+          mkdir -p themes
+          ln -sf ../.. themes/seotax
+          hugo --minify --baseURL "https://minyeamer.github.io/hugo-seotax/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

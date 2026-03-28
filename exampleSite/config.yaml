@@ -1,6 +1,5 @@
 # SeoTax Example Site
-# Local preview: cd exampleSite && hugo server --minify --themesDir ../.. --config config.yaml
-#   (requires the parent folder of exampleSite/ to be named "hugo-seotax")
+# Local preview: cd exampleSite && mkdir -p themes && ln -sf ../.. themes/seotax && hugo server --minify
 # GitHub Pages: push to main branch — .github/workflows/deploy.yml handles the build
 
 baseURL: "https://minyeamer.github.io/hugo-seotax/"
@@ -8,7 +7,7 @@ title: "SeoTax Demo"
 description: "Example site for the Hugo SeoTax theme"
 copyright: "[© CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)"
 
-theme: "hugo-seotax"
+theme: "seotax"
 defaultContentLanguage: "en"
 
 enableRobotsTXT: true
