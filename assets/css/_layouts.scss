@@ -442,6 +442,64 @@ body[dir="rtl"] .site-menu {
   color: #ffe066;
 }
 
+.menu-languages {
+  margin: space(16) 0;
+  padding-bottom: space(16);
+  border-bottom: 1px solid var(--gray-500);
+
+  i.icon-globe, i.icon-chevron-down {
+    font-size: font-size(16);
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .languages-root {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .languages-toggle {
+    display: flex;
+    align-items: center;
+    padding: space(4) space(6);
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: radius(block);
+
+    &:hover {
+      color: var(--color-link);
+      background-color: var(--link-background);
+    }
+  }
+
+  #languages-control:checked + .languages-toggle .languages-arrow {
+    transform: rotate(180deg);
+  }
+
+  ul {
+    list-style: none;
+    padding: space(6) 0 0 0;
+    margin: 0;
+  }
+
+  li {
+    border-radius: radius(block);
+
+    &:hover {
+      color: var(--color-link);
+      background-color: var(--link-background);
+    }
+  }
+
+  li a {
+    display: flex;
+    align-items: center;
+    padding: space(6) space(8) space(6) space(32);
+    color: var(--body-font-color);
+  }
+}
+
 .menu-categories {
   margin: space(16) 0;
   padding-bottom: space(16);

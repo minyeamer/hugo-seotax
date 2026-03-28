@@ -1,0 +1,29 @@
+{{ if gt (len .Site.Languages) 1 }}
+{{- $translations := dict -}}
+{{- range .Site.Home.Translations -}}
+  {{- $translations = merge $translations (dict .Language.Lang .) -}}
+{{- end -}}
+{{- range .Translations -}}
+  {{- $translations = merge $translations (dict .Language.Lang .) -}}
+{{- end -}}
+
+<div class="menu-languages">
+  <input type="checkbox" class="hidden toggle" id="languages-control" />
+  <label for="languages-control" class="languages-label languages-toggle">
+    <a role="button" class="languages-root">
+      <i class="icon-globe"></i>
+      <span>{{ .Site.Language.LanguageName }}</span>
+    </a>
+    <i class="icon-chevron-down languages-arrow"></i>
+  </label>
+  <ul>
+    {{ range .Site.Languages }}{{ with index $translations .Lang }}
+    <li class="languages-label">
+      <a href="{{ cond hugo.IsMultihost .Permalink .RelPermalink }}">
+        {{ .Language.LanguageName }}
+      </a>
+    </li>
+    {{ end }}{{ end }}
+  </ul>
+</div>
+{{ end }}

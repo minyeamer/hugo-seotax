@@ -5,6 +5,8 @@
 
 {{ partial "menu/search-input" . }}
 
+{{ partial "menu/languages" . }}
+
 {{ if default false .Site.Params.menu.categories }}
 {{ partial "menu/categories" . }}
 {{ end }}
