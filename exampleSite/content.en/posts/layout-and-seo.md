@@ -4,7 +4,8 @@ date: 2026-01-06
 summary: "Responsive design across desktop and mobile, collapsible sidebar, overlay ToC, and Core Web Vitals optimization."
 categories: ["Guide", "Features"]
 tags: ["Responsive", "Mobile", "SEO", "Performance", "CLS"]
-cover: "https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/fix-cls-00-score.webp?raw=true"
+cover: "https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/fix-cls-00-desktop.webp?raw=true"
+thumbnail: "https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/fix-cls-00-score.webp?raw=true"
 ---
 
 ## Responsive Design
@@ -23,11 +24,25 @@ The sidebar and ToC are sticky-positioned, scrolling independently of the main c
 
 ### Mobile Layout
 
-| Screen | Description |
-|--------|-------------|
-| ![Mobile Main](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-16-layout-mobile-main.webp?raw=true) | Post list adapts to a single column with landscape cover images |
-| ![Mobile Menu](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-18-layout-mobile-menu.webp?raw=true) | Sidebar opens as a full overlay with hamburger toggle |
-| ![Mobile ToC](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-19-layout-mobile-toc.webp?raw=true) | Table of Contents opens as an overlay from the header |
+{{< columns >}}
+
+{{< image src="https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-16-layout-mobile-main.webp?raw=true" alt="Mobile Main" max-width="300px" >}}
+
+**Post list** adapts to a single column with landscape cover images
+
+<--->
+
+{{< image src="https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-18-layout-mobile-menu.webp?raw=true" alt="Mobile Menu" max-width="300px" >}}
+
+**Sidebar** opens as a full overlay with hamburger toggle
+
+<--->
+
+{{< image src="https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-19-layout-mobile-toc.webp?raw=true" alt="Mobile ToC" max-width="300px" >}}
+
+**Table of Contents** opens as an overlay from the header
+
+{{< /columns >}}
 
 ### Collapsible Sidebar
 

@@ -1,6 +1,8 @@
 (async function () {
   'use strict';
 
+  const SEARCH_PATH = '{{ "search/" | relURL }}';
+
   const I18N = {
     'search.action.label': '{{ i18n "search.action.label" | default "Search" }}',
     'search.close.tooltip': '{{ i18n "search.close.tooltip" | default "Close" }}',
@@ -179,7 +181,7 @@
       if (e.key === 'Escape') {
         closeSearchModal();
       } else if (e.key === 'Enter') {
-        window.location.href = '/search/?query=' + encodeURIComponent(modalSearchInput.value.trim());
+        window.location.href = SEARCH_PATH + '?query=' + encodeURIComponent(modalSearchInput.value.trim());
       }
     });
 
@@ -193,7 +195,7 @@
       dataset: {i18nId: 'search.action.label', i18nAttrs: 'aria-label'}
     });
     modalSearchButton.addEventListener('click', () => {
-      window.location.href = '/search/?query=' + encodeURIComponent(modalSearchInput.value.trim());
+      window.location.href = SEARCH_PATH + '?query=' + encodeURIComponent(modalSearchInput.value.trim());
     });
 
     modalInputContainer.appendChild(modalSearchButton);
@@ -319,7 +321,7 @@
       const moreLabel = translate('search.more.label');
       const a = createElement('a', {
         text: moreLabel.replace('%d', searchHits.length),
-        attrs: {href: `/search/?query=${encodeURIComponent(modalSearchInput.value)}`},
+        attrs: {href: `${SEARCH_PATH}?query=${encodeURIComponent(modalSearchInput.value)}`},
         dataset: {i18nId: 'search.more.label', i18nText: `{"%d": ${searchHits.length}}`}
       });
 

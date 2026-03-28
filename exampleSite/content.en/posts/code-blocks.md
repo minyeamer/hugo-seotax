@@ -5,6 +5,7 @@ summary: "Mac-style code blocks with line numbers, copy button, language labels,
 categories: ["Guide", "Features"]
 tags: ["Code", "Syntax Highlighting", "highlight.js"]
 cover: "https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-40-codeblock-wide.webp?raw=true"
+thumbnail: "https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-41-codeblock-mobile.webp?raw=true"
 ---
 
 ## Overview

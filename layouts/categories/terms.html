@@ -38,7 +38,7 @@
     <li>
       {{ $treeL2 := index $treeL1 $category1 }}
       {{ if $treeL2 }}
-      <a href="/search/?category1={{ $category1 }}" class="categories-item">
+      <a href="{{ "search/" | relURL }}?category1={{ $category1 }}" class="categories-item">
         <i class="icon-folder"></i> {{ $category1 -}}
         <span class="category-count"> ({{- $category1Count -}})</span>
       </a>
@@ -58,7 +58,7 @@
           {{ end }}
           {{/* Categories item for child category */}}
           <li>
-            <a href="/search/?category1={{ $category1 }}&category2={{ $category2 }}" class="categories-item">
+            <a href="{{ "search/" | relURL }}?category1={{ $category1 }}&category2={{ $category2 }}" class="categories-item">
               <i class="icon-file"></i> {{ $category2 -}}
               <span class="category-count"> ({{- $category2Count -}})</span>
             </a>
@@ -75,7 +75,7 @@
               {{/* Show more link if there are additional posts beyond the limit */}}
               {{ if gt (len $pagesL2) 3 }}
                 <li>
-                  <a href="/search/?category1={{ $category1 }}&category2={{ $category2 }}" class="category-post more">
+                  <a href="{{ "search/" | relURL }}?category1={{ $category1 }}&category2={{ $category2 }}" class="category-post more">
                     <i class="icon-search"></i>
                     <span data-i18n-id="search.more.label" data-i18n-text='{{ jsonify (dict "%d" (len $pagesL2)) }}'>
                       {{- printf (i18n "search.more.label" | default "See all %d results") (len $pagesL2) -}}
@@ -90,7 +90,7 @@
       </ul>
       {{ else }}
       {{/* Categories item for parent category if child categories not exist */}}
-      <a href="/search/?category1={{ $category1 }}" class="categories-item">
+      <a href="{{ "search/" | relURL }}?category1={{ $category1 }}" class="categories-item">
         <i class="icon-file"></i> {{ $category1 -}}
         <span class="category-count"> ({{- $category1Count -}})</span>
       </a>
@@ -106,7 +106,7 @@
         {{/* Show more link if there are additional posts beyond the limit */}}
         {{ if gt (len $pagesL1) 3 }}
           <li>
-            <a href="/search/?category1={{ $category1 }}" class="category-post more">
+            <a href="{{ "search/" | relURL }}?category1={{ $category1 }}" class="category-post more">
               <i class="icon-search"></i>
               <span data-i18n-id="search.more.label" data-i18n-text='{{ jsonify (dict "%d" (len $pagesL1)) }}'>
                 {{- printf (i18n "search.more.label" | default "See all %d results") (len $pagesL1) -}}

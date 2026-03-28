@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-  if (!window.location.pathname.startsWith('/search/')) {
+  const SEARCH_PATH = '{{ "search/" | relURL }}';
+
+  if (!window.location.pathname.startsWith(SEARCH_PATH)) {
     return;
   }
 
@@ -226,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
 
-    return `/search/?${params.toString()}`;
+    return `${SEARCH_PATH}?${params.toString()}`;
   }
 
   /**
@@ -1108,7 +1110,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .map(key => ({
           text: category1[key]['name'],
           icon: 'icon-file',
-          href: `/search/?category1=${category1Name}&category2=${category1[key]['name']}`,
+          href: `${SEARCH_PATH}?category1=${category1Name}&category2=${category1[key]['name']}`,
           pageCount: category1[key]['ids'].length,
         }));
       if (taxonomies.length > 0) {
@@ -1144,7 +1146,7 @@ document.addEventListener('DOMContentLoaded', function() {
         taxonomy = {
           text: category1Name,
           icon: 'icon-folder-open',
-          href: `/search/?category1=${category1Name}`,
+          href: `${SEARCH_PATH}?category1=${category1Name}`,
           pageCount: category1['A']['ids'].length,
         };
         createTaxonomySection('categories.parent.subtutle', [taxonomy]);
@@ -1198,7 +1200,7 @@ document.addEventListener('DOMContentLoaded', function() {
           .map(tag => ({
             text: tag,
             icon: 'icon-tag',
-            href: `/search/?tags=${tag}`,
+            href: `${SEARCH_PATH}?tags=${tag}`,
             pageCount: tags[tag.toLowerCase()]['ids'].length,
           }));
         if (taxonomies.length > 0) {
@@ -1338,7 +1340,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const createPageUrl = (page) => {
       const newParams = new URLSearchParams(params);
       newParams.set('page', page);
-      return `/search/?${newParams.toString()}#pagination-anchor`;
+      return `${SEARCH_PATH}?${newParams.toString()}#pagination-anchor`;
     };
 
     (function appendPrevLink() {

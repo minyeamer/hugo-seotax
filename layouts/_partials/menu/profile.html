@@ -2,7 +2,7 @@
   {{- with site.Params.menu.profileImage -}}
   <div class="profile-image-wrap">
     <a href="{{ $.Site.BaseURL }}">
-      <img src="{{ . | relURL }}" alt="Profile" class="profile-image" decoding="async" />
+      <img src="{{ . | strings.TrimPrefix `/` | relURL }}" alt="Profile" class="profile-image" decoding="async" />
     </a>
   </div>
   {{- end -}}
@@ -10,7 +10,7 @@
   <h2 class="profile-title">
     <a class="flex align-center" href="{{ .Site.BaseURL }}">
       {{- with .Site.Params.menu.logoImage -}}
-        <img src="{{ . | relURL }}" alt="Logo" />
+        <img src="{{ . | strings.TrimPrefix `/` | relURL }}" alt="Logo" />
       {{- end -}}
       <span>{{ .Site.Title }}</span>
     </a>

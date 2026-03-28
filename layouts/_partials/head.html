@@ -50,7 +50,7 @@ https://github.com/minyeamer/hugo-miny
 <title>{{- partial "title" . -}}</title>
 
 <!-- Preload icon font for better CLS performance (placed early for faster loading) -->
-<link rel="preload" href="{{ `/fonts/icomoon.woff?jrhayr` | relURL }}" as="font" type="font/woff">
+<link rel="preload" href="{{ `fonts/icomoon.woff?jrhayr` | relURL }}" as="font" type="font/woff">
 
 {{- $manifest := resources.Get "data/manifest.json" | resources.ExecuteAsTemplate "data/manifest.json" . }}
 <link rel="manifest" href="{{ $manifest.RelPermalink }}">
