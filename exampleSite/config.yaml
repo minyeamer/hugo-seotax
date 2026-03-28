@@ -1,7 +1,7 @@
 # SeoTax Example Site
 # Run: hugo server --minify --themesDir ../..
 
-baseURL: "https://username.github.io/hugo-seotax/"
+baseURL: "https://minyeamer.github.io/hugo-seotax/"
 title: "SeoTax Demo"
 description: "Example site for the Hugo SeoTax theme"
 copyright: "[© CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)"
