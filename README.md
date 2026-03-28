@@ -7,7 +7,7 @@
 
 > **SeoTax** = **Sea**rch + **Tax**onomies — built around the idea that readers should discover content effortlessly.
 
-![Screenshot](https://dl.dropboxusercontent.com/scl/fi/4ypgz37ygay76807x2gpd/seotax-00-cover.webp?rlkey=vuon12lsgu8xk2ya2153wxvel&raw=1)
+![Screenshot](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-00-cover.webp?raw=true)
 
 - [Features](#features)
 - [Demo](#demo)
@@ -36,25 +36,25 @@
 
 ### Search
 
-![Search Demo](https://dl.dropboxusercontent.com/scl/fi/gqsgo2otrmou4qj77k8iz/seotax-01-search-demo.gif?rlkey=ti6ysbvm9906qe7ypdzejxag9&raw=1)
+![Search Demo](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-01-search-demo.gif?raw=true)
 
 A single dynamic search page replaces hundreds of per-tag/per-category static pages. Search is triggered via the `/` or `s` hotkey, or by clicking the search bar. Supports 5 query types: keyword search, parent category, child category, single tag, and multi-tag with AND/OR operators.
 
 ### Internationalization
 
-![i18n Demo](https://dl.dropboxusercontent.com/scl/fi/hxkxy1azs1zvtbdn143ak/seotax-02-i18n-demo.gif?rlkey=vdl5r9kllp0i3mptiyzcksek2&raw=1)
+![i18n Demo](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-02-i18n-demo.gif?raw=true)
 
 All 27 languages are served from a single HTML page. The language switcher in the toolbar translates UI text, dates, and ARIA labels instantly on the client side — no page navigation, no URL changes.
 
 ### Dark Mode
 
-![Dark Mode Demo](https://dl.dropboxusercontent.com/scl/fi/2jp9238k2g52fzxkvs66h/seotax-32-light-dark-demo.gif?rlkey=fmzl0wthhtghypmv0kxsriqjx&raw=1)
+![Dark Mode Demo](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-32-light-dark-demo.gif?raw=true)
 
 Switches between light and dark themes using CSS variables on a single `data-theme` attribute. Persisted in `localStorage`. Disqus comments are synchronized via iframe reload.
 
 ### Code Blocks
 
-![Code Block](https://dl.dropboxusercontent.com/scl/fi/x5nr8dn33t1k8n79skn28/seotax-40-codeblock-wide.webp?rlkey=f6gz3ysn8iq88f7665dy0vjwd&raw=1)
+![Code Block](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-40-codeblock-wide.webp?raw=true)
 
 Mac-style window dots, line numbers (with copy exclusion), one-click copy with visual feedback, and a language label chip. Light theme uses **Xcode** colors; dark theme uses **VS2015** colors.
 
@@ -62,9 +62,9 @@ Mac-style window dots, line numbers (with copy exclusion), one-click copy with v
 
 | Desktop | Mobile |
 |---------|--------|
-| ![Main Page](https://dl.dropboxusercontent.com/scl/fi/furcvh2rmo2s1eledk5zd/seotax-04-layout-main.webp?rlkey=8h10cxj6z7o1abupmnbvekvhi&raw=1) | ![Mobile Main](https://dl.dropboxusercontent.com/scl/fi/80anepeo1tm9xiqd2z6av/seotax-16-layout-mobile-main.webp?rlkey=vq94p5tgaaql3xb8k4lrqakb3&raw=1) |
-| ![Search Page](https://dl.dropboxusercontent.com/scl/fi/1zqe0fz7r1u3upcbn3yiy/seotax-09-layout-search-page.webp?rlkey=4f70xges6xm3mrfpofgmh4zit&raw=1) | ![Mobile Search](https://dl.dropboxusercontent.com/scl/fi/ps9eoehqob5xqcqgs5ydg/seotax-17-layout-mobile-search.webp?rlkey=jd28nckfeolgm8226lb8m5exd&raw=1) |
-| ![Content Page](https://dl.dropboxusercontent.com/scl/fi/f9win2bs897fo0kkca586/seotax-06-layout-content.webp?rlkey=k3dmdi6ij37eaqjjvmhsgx7nw&raw=1) | ![Mobile Menu](https://dl.dropboxusercontent.com/scl/fi/lz5kdvsrmmkgin85hd2u5/seotax-18-layout-mobile-menu.webp?rlkey=69a4sw0k5ifbbdzbaiw8vk6l0&raw=1) |
+| ![Main Page](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-04-layout-main.webp?raw=true) | ![Mobile Main](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-16-layout-mobile-main.webp?raw=true) |
+| ![Search Page](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-09-layout-search-page.webp?raw=true) | ![Mobile Search](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-17-layout-mobile-search.webp?raw=true) |
+| ![Content Page](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-06-layout-content.webp?raw=true) | ![Mobile Menu](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-18-layout-mobile-menu.webp?raw=true) |
 
 ## Requirements
 

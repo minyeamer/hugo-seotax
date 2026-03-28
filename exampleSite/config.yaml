@@ -1,0 +1,108 @@
+# SeoTax Example Site
+# Run: hugo server --minify --themesDir ../..
+
+baseURL: "https://username.github.io/hugo-seotax/"
+title: "SeoTax Demo"
+description: "Example site for the Hugo SeoTax theme"
+copyright: "[© CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)"
+
+theme: "seotax"
+defaultContentLanguage: "en"
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+
+# Recommended: disable per-tag static pages (SeoTax uses dynamic search instead)
+disableKinds: ["term"]
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+# SEO-friendly URL structure
+permalinks:
+  posts: "/blog/:slugorcontentbasename/"
+
+# Multi-lingual mode config
+# See https://gohugo.io/content-management/multilingual/#translation-by-content-directory
+languages:
+  en:
+    languageName: "English"
+    contentDir: "content.en"
+    weight: 1
+  ko:
+    languageName: "한국어"
+    contentDir: "content.ko"
+    weight: 2
+
+markup:
+  goldmark:
+    extensions:
+      typographer:
+        disable: true
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+    codeFences: true
+  tableOfContents:
+    startLevel: 2
+    endLevel: 3
+
+params:
+  author: "SeoTax"
+  keywords: ["blog", "Hugo", "SeoTax", "theme"]
+
+  posts:
+    section: "posts"
+
+  assets:
+    favicon: "/favicon.svg"
+
+  # Sidebar menu
+  menu:
+    profileImage: "/profile.svg"
+    categories: true
+    recentPosts: true
+
+  social:
+    github: "https://github.com/minyeamer/hugo-seotax"
+
+  # Search (powered by Fuse.js)
+  search:
+    enabled: true
+
+  # i18n: the theme ships its own i18n files under themes/seotax/i18n/
+  # When running standalone, Hugo auto-discovers them from the theme.
+  # Only set i18nDir if you need to override the translations.
+
+  # Table of Contents
+  tableOfContents:
+    startLevel: 2
+    endLevel: 3
+
+  # PWA Service Worker ("precache" to enable)
+  # serviceWorker: "precache"
+
+  # Comments (Disqus)
+  # comments:
+  #   enabled: true
+  #   disqusShortname: "your-shortname"
+
+  # Google Analytics
+  # GoogleAnalytics:
+  #   tagId: "G-XXXXXXXXXX"
+
+  # Search engine verification
+  # searchEngine:
+  #   google:
+  #     siteVerificationTag: "your-code"
+
+  # Schema.org structured data
+  schema:
+    publisherType: "Person"
+    sameAs:
+      - "https://github.com/minyeamer"
