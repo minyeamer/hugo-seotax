@@ -1,5 +1,6 @@
 # SeoTax Example Site
-# Run: hugo server --minify --themesDir ../..
+# Local preview (from repo root): cd exampleSite && hugo server --minify --themesDir ../..
+# GitHub Pages: push to main branch — .github/workflows/deploy.yml handles the build
 
 baseURL: "https://minyeamer.github.io/hugo-seotax/"
 title: "SeoTax Demo"
