@@ -242,6 +242,10 @@ void window.siteI18n.initData().catch(() => {});
 {{- $copyCodeJS := resources.Get "js/shortcodes/copy-code.js" | resources.ExecuteAsTemplate "js/shortcodes/copy-code.js" . | resources.Minify | resources.Fingerprint }}
 <script defer src="{{ partial `links/resource-precache` $copyCodeJS }}" {{ template `integrity` $copyCodeJS }}></script>
 
+<!-- Category Expand -->
+{{- $categoryExpandJS := resources.Get "js/partials/category-expand.js" | resources.ExecuteAsTemplate "js/partials/category-expand.js" . | resources.Minify | resources.Fingerprint }}
+<script defer src="{{ partial `links/resource-precache` $categoryExpandJS }}" {{ template `integrity` $categoryExpandJS }}></script>
+
 <!-- ToC Highlight -->
 {{- $tocHighlightJS := resources.Get "js/partials/toc-highlight.js" | resources.ExecuteAsTemplate "js/partials/toc-highlight.js" . | resources.Minify | resources.Fingerprint }}
 <script defer src="{{ partial `links/resource-precache` $tocHighlightJS }}" {{ template `integrity` $tocHighlightJS }}></script>

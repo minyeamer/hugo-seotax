@@ -3,7 +3,7 @@
   {{/* Categories label for root category */}}
   <input type="checkbox" class="hidden toggle" id="categories-control" checked />
   <label for="categories-control" class="categories-label categories-toggle">
-    <a href="{{ "categories/" | relURL }}" class="categories-root">
+    <a href="{{ `categories/` | relURL }}" class="categories-root">
       <i class="icon-folder"></i>
       <span data-i18n-id="categories.root.label" data-i18n-text>
         {{ i18n "categories.root.label" | default "Categories Root" }}
@@ -32,8 +32,8 @@
       {{ $treeL2 := index $treeL1 $category1 }}
       {{ if $treeL2 }}
       <input type="checkbox" class="hidden toggle" id="cat-{{ $category1 | urlize }}" />
-      <label for="cat-{{ $category1 | urlize }}" class="categories-label categories-toggle">
-        <a href="{{ "search/" | relURL }}?category1={{ $category1 }}">
+      <label for="cat-{{ $category1 | urlize }}" class="categories-label categories-toggle" data-category1="{{ $category1 }}">
+        <a href="{{ `search/` | relURL }}?category1={{ $category1 }}">
           <i class="icon-folder"></i>
           {{- $category1 -}}
           <span class="category-count">({{- $category1Count -}})</span>
@@ -53,8 +53,8 @@
           {{ end }}
         {{ end }}
         {{/* Categories label for child category */}}
-        <li class="categories-label">
-          <a href="{{ "search/" | relURL }}?category1={{ $category1 }}&category2={{ $category2 }}">
+        <li class="categories-label" data-category1="{{ $category1 }}" data-category2="{{ $category2 }}">
+          <a href="{{ `search/` | relURL }}?category1={{ $category1 }}&category2={{ $category2 }}">
             <i class="icon-file"></i>
             {{- $category2 -}}
             <span class="category-count">({{- $category2Count -}})</span>
@@ -66,7 +66,7 @@
       {{/* Categories label for parent category if child categories not exist */}}
       <li>
         <label for="cat-{{ $category1 | urlize }}" class="categories-label categories-toggle">
-          <a href="{{ "search/" | relURL }}?category1={{ $category1 }}" class="categories-leaf">
+          <a href="{{ `search/` | relURL }}?category1={{ $category1 }}" class="categories-leaf">
             <i class="icon-file"></i>
             {{- $category1 -}}
             <span class="category-count">({{- $category1Count -}})</span>

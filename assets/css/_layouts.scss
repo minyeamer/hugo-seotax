@@ -558,6 +558,12 @@ body[dir="rtl"] .site-menu {
   input[id^="cat-"]:checked + .categories-toggle .categories-arrow {
     transform: rotate(180deg);
   }
+
+  // Active category highlight
+  .category-active,
+  .category-active a {
+    color: var(--color-link);
+  }
 }
 
 .recent-posts {
