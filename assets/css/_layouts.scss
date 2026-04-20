@@ -169,6 +169,10 @@ nav ul {
       max-height: 100vw !important;
     }
   }
+
+  img.rounded {
+    border-radius: radius(image);
+  }
 }
 
 .markdown .site-title {

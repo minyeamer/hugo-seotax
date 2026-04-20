@@ -34,7 +34,7 @@
 {{- $imgOrdinal = add $imgOrdinal 1 -}}
 {{- .Page.Scratch.Set "sc-image-ordinal" $imgOrdinal -}}
 {{- /* --- Render --- */ -}}
-<div class="sc-image" {{- with $align }}style="text-align: {{ . }};"{{ end -}}>
+<div class="sc-image{{ if site.Params.image.roundedCorners }} rounded{{ end }}" {{- with $align }}style="text-align: {{ . }};"{{ end -}}>
   {{- with $caption -}}<figure>{{- end -}}
   {{- if $href -}}
   <a href="{{ $href }}" target="{{ $target }}" id="sc-image-link-{{ $imgOrdinal }}">

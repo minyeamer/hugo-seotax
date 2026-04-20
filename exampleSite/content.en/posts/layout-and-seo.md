@@ -83,8 +83,9 @@ The biggest CLS contributor in Hugo blogs is images without explicit `width`/`he
 
 ```yaml
 params:
-  imageDir: "_images"         # Local image directory for dimension extraction
-  maxImageSize: 1920          # Downscale images proportionally
+  images:
+    rootPath: "_images"         # Local image directory for dimension extraction
+    maxImageSize: 1920          # Downscale images proportionally
 ```
 
 ### IcoMoon Subset Font

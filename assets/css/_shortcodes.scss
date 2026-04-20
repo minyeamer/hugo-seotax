@@ -206,6 +206,7 @@
       padding: 0;
       margin: 0;
       position: relative;
+      overflow: hidden; // Prevent double scrollbar on Windows Chrome
 
       // Single-line
       &:not(:has(.hljs-ln)) {
@@ -457,6 +458,10 @@
     img {
       width: 100%;
       height: auto;
+    }
+
+    &.rounded img {
+      border-radius: radius(image);
     }
 
     input ~ img,

@@ -7,8 +7,8 @@
 {{- $resolution := "" -}}
 {{- if and $page $imageUrl -}}
   {{- $pageDir := cond $page.File $page.File.Dir "" -}}
-  {{- $relPath := strings.TrimPrefix (default site.Params.posts.section "posts/") $pageDir -}}
-  {{- $rootPath := default site.Params.imageDir "_images" -}}
+  {{- $relPath := strings.TrimPrefix (site.Params.posts.section | default "posts/") $pageDir -}}
+  {{- $rootPath := site.Params.image.rootPath | default "_images" -}}
   {{- $imagePath := printf "%s/%s" $rootPath $relPath -}}
   {{- /* Get filename from image URL */ -}}
   {{- $urlParts := split (index (split $imageUrl "?") 0) "/" -}}
@@ -30,7 +30,7 @@
 {{- end -}}
 {{- /* Limit image size */ -}}
 {{- if and $width $height -}}
-  {{- $maxSize := default 0 site.Params.maxImageSize -}}
+  {{- $maxSize := site.Params.image.maxImageSize | default 0 -}}
   {{- $maxDim := cond (gt $width $height) $width $height -}}
   {{- if and $maxSize (gt $maxDim $maxSize) -}}
     {{- $width = div (mul $width $maxSize) $maxDim -}}

@@ -194,8 +194,11 @@ params:
 
   # Image CLS prevention (optional)
   # Store copies of remote images locally in assets/_images/ for build-time dimension extraction
-  imageDir: "themes/seotax/assets/_images"
-  maxImageSize: 720
+  images:
+    rootPath: "themes/seotax/assets/_images"
+    maxImageSize: 720
+    roundedCorners: false
+    rotateLandscapeImages: true
 
   # Table of Contents
   tableOfContents:

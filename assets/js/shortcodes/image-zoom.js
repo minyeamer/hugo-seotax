@@ -1,6 +1,8 @@
 (function() {
   'use strict';
 
+  const rotateLandscapeImages = {{ site.Params.image.rotateLandscapeImages | default true }};
+
   /**
    * Set image's orientation by comparing width and height.
    * @param {HTMLImageElement} img
@@ -18,7 +20,7 @@
   /**
    * Initialize orientation for all images.
    */
-  function initImage() {
+  function initImageOrientation() {
     document.querySelectorAll('.md-image img, .sc-image img').forEach(img => {
       if (img.complete && img.naturalWidth && img.naturalHeight) {
         setImageOrientation(img);
@@ -42,6 +44,9 @@
         if (e.target.checked) {
           const selected = img.cloneNode(true);
           selected.id = 'image-selected';
+          if (img.closest('.sc-image.rounded, .md-image.rounded')) {
+            selected.classList.add('rounded');
+          }
           overlay.appendChild(selected);
           e.target.checked = false;
         }
@@ -65,10 +70,10 @@
 
   // Wait for DOM to be ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initImage);
+    if (rotateLandscapeImages) document.addEventListener('DOMContentLoaded', initImageOrientation);
     document.addEventListener('DOMContentLoaded', initImageZoom);
   } else {
-    initImage();
+    if (rotateLandscapeImages) initImageOrientation();
     initImageZoom();
   }
 })();
