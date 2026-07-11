@@ -1,11 +1,13 @@
 {{ if gt (len .Site.Languages) 1 }}
-{{- $translations := dict -}}
+{{- $homeTranslations := dict .Site.Language.Lang .Site.Home -}}
 {{- range .Site.Home.Translations -}}
-  {{- $translations = merge $translations (dict .Language.Lang .) -}}
+  {{- $homeTranslations = merge $homeTranslations (dict .Language.Lang .) -}}
 {{- end -}}
+{{- $pageTranslations := dict .Site.Language.Lang . -}}
 {{- range .Translations -}}
-  {{- $translations = merge $translations (dict .Language.Lang .) -}}
+  {{- $pageTranslations = merge $pageTranslations (dict .Language.Lang .) -}}
 {{- end -}}
+{{- $currentPath := strings.TrimPrefix .Site.Home.RelPermalink .RelPermalink -}}
 
 <div class="menu-languages">
   <input type="checkbox" class="hidden toggle" id="languages-control" />
@@ -17,11 +19,21 @@
     <i class="icon-chevron-down languages-arrow"></i>
   </label>
   <ul>
-    {{ range .Site.Languages }}{{ with index $translations .Lang }}
+    {{ range .Site.Languages }}{{ with index $homeTranslations .Lang }}
+    {{- $destination := .RelPermalink -}}
+    {{- $absoluteDestination := .Permalink -}}
+    {{- with index $pageTranslations .Language.Lang -}}
+      {{- $destination = .RelPermalink -}}
+      {{- $absoluteDestination = .Permalink -}}
+    {{- else -}}
+      {{- if not $.IsPage -}}
+        {{- $destination = printf "%s%s" .RelPermalink $currentPath -}}
+        {{- $absoluteDestination = printf "%s%s" .Permalink $currentPath -}}
+      {{- end -}}
+    {{- end -}}
     <li class="languages-label">
-      <a href="{{ cond hugo.IsMultihost .Permalink .RelPermalink }}"
-          data-content-language="{{ .Language.Lang }}"
-          onclick="localStorage.setItem('hugo-content-language', this.dataset.contentLanguage)">
+      <a href="{{ cond hugo.IsMultihost $absoluteDestination $destination }}"
+          onclick="this.href += window.location.search + window.location.hash">
         {{ .Language.LanguageName }}
       </a>
     </li>
