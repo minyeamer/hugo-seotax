@@ -1,6 +1,6 @@
 {{ define "content" }}
 <article class="content-wrap markdown">
-  {{ $pages := partialCached "pages/posts" . "posts" }}
+  {{ $pages := partialCached "pages/posts" . "posts" .Site.Language.Lang }}
 
   <div class="list-header">
     <h1>

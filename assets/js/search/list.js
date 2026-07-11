@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const SEARCH_PATH = '{{ "search/" | relURL }}';
+  const SEARCH_PATH = '{{ "search/" | relLangURL }}';
 
   if (!window.location.pathname.startsWith(SEARCH_PATH)) {
     return;

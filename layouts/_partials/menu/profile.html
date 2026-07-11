@@ -1,14 +1,14 @@
 <div class="menu-profile">
   {{- with site.Params.menu.profileImage -}}
   <div class="profile-image-wrap">
-    <a href="{{ $.Site.BaseURL }}">
+    <a href="{{ `` | relLangURL }}">
       <img src="{{ . | strings.TrimPrefix `/` | relURL }}" alt="Profile" class="profile-image" decoding="async" />
     </a>
   </div>
   {{- end -}}
 
   <h2 class="profile-title">
-    <a class="flex align-center" href="{{ .Site.BaseURL }}">
+    <a class="flex align-center" href="{{ `` | relLangURL }}">
       {{- with .Site.Params.menu.logoImage -}}
         <img src="{{ . | strings.TrimPrefix `/` | relURL }}" alt="Logo" />
       {{- end -}}

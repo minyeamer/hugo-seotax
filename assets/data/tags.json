@@ -1,5 +1,5 @@
 {{- $json := dict -}}
-{{- $pages := partialCached "pages/search" . "search" -}}
+{{- $pages := partialCached "pages/search" . "search" .Site.Language.Lang -}}
 {{- /* Get unique tags */ -}}
 {{- $tags := slice -}}
 {{- range $page := $pages -}}

@@ -4,7 +4,7 @@
   <div class="taxonomy-section hidden" id="taxonomy-section"></div>
 
   <div class="search-data hidden" id="search-data">
-    {{- range $index, $page := partialCached "pages/search" . "search" -}}
+    {{- range $index, $page := partialCached "pages/search" . "search" .Site.Language.Lang -}}
       <div class="search-item" data-id="{{ $index }}">
         {{ partial "post-item.html" . }}
       </div>

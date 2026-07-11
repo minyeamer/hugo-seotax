@@ -269,35 +269,41 @@ void window.siteI18n.initData().catch(() => {});
   </script>
 
   <!-- Search Data: Content -->
-  {{- $dataContent := resources.Get "data/content.json" | resources.ExecuteAsTemplate "data/content.json" . | resources.Minify | resources.Fingerprint }}
+  {{- $contentDataTarget := printf "data/content.%s.json" .Site.Language.Lang -}}
+  {{- $dataContent := resources.Get "data/content.json" | resources.ExecuteAsTemplate $contentDataTarget . | resources.Minify | resources.Fingerprint }}
   <script>
     window.siteSearch.contentUrl = "{{ $dataContent.RelPermalink }}";
   </script>
 
   <!-- Search Data: Categories -->
-  {{- $dataCategories := resources.Get "data/categories.json" | resources.ExecuteAsTemplate "data/categories.json" . | resources.Minify | resources.Fingerprint }}
+  {{- $categoriesDataTarget := printf "data/categories.%s.json" .Site.Language.Lang -}}
+  {{- $dataCategories := resources.Get "data/categories.json" | resources.ExecuteAsTemplate $categoriesDataTarget . | resources.Minify | resources.Fingerprint }}
   <script>
     window.siteSearch.categoriesUrl = "{{ $dataCategories.RelPermalink }}";
   </script>
 
   <!-- Search Data: Tags -->
-  {{- $dataTags := resources.Get "data/tags.json" | resources.ExecuteAsTemplate "data/tags.json" . | resources.Minify | resources.Fingerprint }}
+  {{- $tagsDataTarget := printf "data/tags.%s.json" .Site.Language.Lang -}}
+  {{- $dataTags := resources.Get "data/tags.json" | resources.ExecuteAsTemplate $tagsDataTarget . | resources.Minify | resources.Fingerprint }}
   <script>
     window.siteSearch.tagsUrl = "{{ $dataTags.RelPermalink }}";
   </script>
 
   <!-- Search Initialization -->
-  {{- $searchInitJS := resources.Get "js/search/init.js" | resources.ExecuteAsTemplate "js/search/init.js" . | resources.Minify | resources.Fingerprint }}
+  {{- $searchInitTarget := printf "js/search/init.%s.js" .Site.Language.Lang -}}
+  {{- $searchInitJS := resources.Get "js/search/init.js" | resources.ExecuteAsTemplate $searchInitTarget . | resources.Minify | resources.Fingerprint }}
   <!-- https://cdn.jsdelivr.net/npm/fuse.js@7.1.0 -->
   <script defer src="{{ `fuse.min.js` | relURL }}"></script>
   <script defer src="{{ partial `links/resource-precache` $searchInitJS }}" {{ template `integrity` $searchInitJS }}></script>
 
   <!-- Search Input -->
-  {{- $searchInputJS := resources.Get "js/search/input.js" | resources.ExecuteAsTemplate "js/search/input.js" . | resources.Minify | resources.Fingerprint }}
+  {{- $searchInputTarget := printf "js/search/input.%s.js" .Site.Language.Lang -}}
+  {{- $searchInputJS := resources.Get "js/search/input.js" | resources.ExecuteAsTemplate $searchInputTarget . | resources.Minify | resources.Fingerprint }}
   <script defer src="{{ partial `links/resource-precache` $searchInputJS }}" {{ template `integrity` $searchInputJS }}></script>
 
   <!-- Search List -->
-  {{- $searchListJS := resources.Get "js/search/list.js" | resources.ExecuteAsTemplate "js/search/list.js" . | resources.Minify | resources.Fingerprint }}
+  {{- $searchListTarget := printf "js/search/list.%s.js" .Site.Language.Lang -}}
+  {{- $searchListJS := resources.Get "js/search/list.js" | resources.ExecuteAsTemplate $searchListTarget . | resources.Minify | resources.Fingerprint }}
   <script defer src="{{ partial `links/resource-precache` $searchListJS }}" {{ template `integrity` $searchListJS }}></script>
 {{- end -}}
 <!-- Search: End -->

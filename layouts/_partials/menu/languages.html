@@ -19,7 +19,9 @@
   <ul>
     {{ range .Site.Languages }}{{ with index $translations .Lang }}
     <li class="languages-label">
-      <a href="{{ cond hugo.IsMultihost .Permalink .RelPermalink }}">
+      <a href="{{ cond hugo.IsMultihost .Permalink .RelPermalink }}"
+          data-content-language="{{ .Language.Lang }}"
+          onclick="localStorage.setItem('hugo-content-language', this.dataset.contentLanguage)">
         {{ .Language.LanguageName }}
       </a>
     </li>

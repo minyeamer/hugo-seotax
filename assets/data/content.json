@@ -1,5 +1,5 @@
 {{- $json := slice -}}
-{{- range $index, $page := partialCached "pages/search" . "search" -}}
+{{- range $index, $page := partialCached "pages/search" . "search" .Site.Language.Lang -}}
   {{- $title := partial "title" $page -}}
   {{- $content := $page.Plain -}}
   {{- $page := dict "id" $index "href" $page.RelPermalink "title" $title "content" $content -}}

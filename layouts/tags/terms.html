@@ -1,7 +1,7 @@
 {{ define "content" }}
 {{- /* ... */ -}}
 {{- $tree := dict -}}
-{{- range partialCached "pages/posts" . "posts" -}}
+{{- range partialCached "pages/posts" . "posts" .Site.Language.Lang -}}
   {{ if .Params.tags }}
     {{- range .Params.tags -}}
       {{- $count := default 0 (index $tree .) -}}
@@ -31,7 +31,7 @@
   <div class="taxonomy-chips">
     {{ range sort $tags "count" "desc" "name" "asc" }}
     <div class="taxonomy-item">
-      <a href="{{ `search/` | relURL }}?tags={{ .name }}" class="taxonomy-link">
+      <a href="{{ `search/` | relLangURL }}?tags={{ .name }}" class="taxonomy-link">
         <span class="taxonomy-name">{{ .name }}</span>
         <span class="taxonomy-count">({{ .count }})</span>
       </a>

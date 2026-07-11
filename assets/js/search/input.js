@@ -1,7 +1,7 @@
 (async function () {
   'use strict';
 
-  const SEARCH_PATH = '{{ "search/" | relURL }}';
+  const SEARCH_PATH = '{{ "search/" | relLangURL }}';
 
   const I18N = {
     'search.action.label': '{{ i18n "search.action.label" | default "Search" }}',
