@@ -64,6 +64,18 @@
 - id: "series.show.label"
   translation: "نمایش لیست"
 
+- id: "sort.aria.label"
+  translation: "مرتب‌سازی"
+
+- id: "sort.relevance.label"
+  translation: "ارتباط"
+
+- id: "sort.newest.label"
+  translation: "جدیدترین"
+
+- id: "sort.oldest.label"
+  translation: "قدیمی‌ترین"
+
 - id: "search.close.tooltip"
   translation: "بستن"
 

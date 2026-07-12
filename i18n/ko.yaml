@@ -64,6 +64,18 @@
 - id: "series.show.label"
   translation: "목록 보기"
 
+- id: "sort.aria.label"
+  translation: "정렬"
+
+- id: "sort.relevance.label"
+  translation: "정확도순"
+
+- id: "sort.newest.label"
+  translation: "최신순"
+
+- id: "sort.oldest.label"
+  translation: "오래된순"
+
 - id: "search.close.tooltip"
   translation: "닫기"
 

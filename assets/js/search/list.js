@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
     return;
   }
 
+  const SORT_OPTIONS = ['relevance', 'newest', 'oldest'];
+  const DEFAULT_SORT = '{{ lower (default "newest" .Site.Params.search.sort) }}';
+
   const params = new URLSearchParams(window.location.search);
   const state = {
     query: params.get('query') || '',
@@ -14,11 +17,16 @@ document.addEventListener('DOMContentLoaded', function() {
       ? [...new Set(params.get('tags').split(',').map(tag => tag.trim()).filter(tag => tag))]
       : []),
     tagsOp: params.get('tagsOp') || 'and',
+    sort: SORT_OPTIONS.includes(params.get('sort'))
+      ? params.get('sort')
+      : (SORT_OPTIONS.includes(DEFAULT_SORT) ? DEFAULT_SORT : 'newest'),
     page: Math.max(1, parseInt(params.get('page')) || 1),
     pageSize: Math.max(1, parseInt(params.get('pageSize')) || 10)
   };
   const searchType = getSearchType(state);
   const STORAGE_KEY = 'search-filter-expanded';
+  let resultScores = new Map();
+  let currentIds = null;
 
   const I18N = {
     'search.action.label': '{{ i18n "search.action.label" | default "Search" }}',
@@ -93,6 +101,55 @@ document.addEventListener('DOMContentLoaded', function() {
   const searchResults = document.querySelector('#search-results');
   const noResults = document.querySelector('#search-no-results');
   const listHeader = document.querySelector('#list-header');
+  const sortControl = document.querySelector('#search-sort');
+
+  if (sortControl) {
+    setupSortControl(sortControl, state.sort, function(sort) {
+      state.sort = sort;
+      state.page = 1;
+      if (sort === DEFAULT_SORT) {
+        params.delete('sort');
+      } else {
+        params.set('sort', sort);
+      }
+      params.delete('page');
+      window.history.replaceState({}, '', `${window.location.pathname}?${params.toString()}`);
+
+      if (currentIds !== null) {
+        displayResults(currentIds, state);
+      }
+    });
+  }
+
+  /**
+   * Keep the selected search sort button in sync with its result order.
+   * @param {HTMLElement} control
+   * @param {string} selected
+   * @param {Function} onChange
+   */
+  function setupSortControl(control, selected, onChange) {
+    const buttons = control.querySelectorAll('[data-sort]');
+
+    function setActive(sort) {
+      buttons.forEach(button => {
+        const isActive = button.dataset.sort === sort;
+        button.classList.toggle('active', isActive);
+        button.setAttribute('aria-pressed', isActive);
+      });
+    }
+
+    setActive(selected);
+    buttons.forEach(button => {
+      button.addEventListener('click', function() {
+        const sort = this.dataset.sort;
+        if (sort === selected) return;
+
+        selected = sort;
+        setActive(selected);
+        onChange(selected);
+      });
+    });
+  }
 
   switch (searchType) {
 
@@ -226,6 +283,10 @@ document.addEventListener('DOMContentLoaded', function() {
           params.set('tagsOp', tagsOpCheckbox.checked ? 'and' : 'or');
         }
       }
+    }
+
+    if (state.sort !== DEFAULT_SORT) {
+      params.set('sort', state.sort);
     }
 
     return `${SEARCH_PATH}?${params.toString()}`;
@@ -1074,9 +1135,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (state.query) {
       const searchHits = window.siteSearch.index.search(state.query);
       searchPosts = new Set(searchHits.map(result => result.item.id));
+      resultScores = new Map(searchHits.map(result => [result.item.id, result.score]));
     } else {
       const total = window.siteSearch.total;
       searchPosts = new Set(Array.from({length: total}, (_, i) => i));
+      resultScores = new Map();
     }
 
     if (appendHeader) {
@@ -1095,6 +1158,7 @@ document.addEventListener('DOMContentLoaded', function() {
    * @returns {Set.<number>} Set of matching post IDs
    */
   function searchCategory1(state, appendHeader = false) {
+    if (!state.query) resultScores = new Map();
     const category1 = window.siteSearch.categories[state.category1.toLowerCase()];
     const hasCategory1 = (category1 instanceof Object) && (Object.keys(category1).length > 0);
     const category1Name = hasCategory1 ? category1['A']['name'] : capitalize(state.category1);
@@ -1128,6 +1192,7 @@ document.addEventListener('DOMContentLoaded', function() {
    * @returns {Set.<number>} Set of matching post IDs
    */
   function searchCategory2(state, appendHeader = false) {
+    if (!state.query) resultScores = new Map();
     const category1 = window.siteSearch.categories[state.category1.toLowerCase()];
     const hasCategory1 = (category1 instanceof Object) && (Object.keys(category1).length > 0);
     const category1Name = hasCategory1 ? category1['A']['name'] : '';
@@ -1163,6 +1228,7 @@ document.addEventListener('DOMContentLoaded', function() {
    * @returns {Set.<number>} Set of matching post IDs
    */
   function searchTags(state, appendHeader = false) {
+    if (!state.query) resultScores = new Map();
     const tags = window.siteSearch.tags;
     const union = (state.tagsOp === 'or');
     const tagNames = new Array();
@@ -1221,6 +1287,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function searchCombined(state, appendHeader = false) {
     const searchHits = window.siteSearch.index.search(state.query);
     let searchPosts = new Set(searchHits.map(result => result.item.id));
+    resultScores = new Map(searchHits.map(result => [result.item.id, result.score]));
 
     if ((searchPosts.size > 0) && state.category1) {
       if (state.category2) {
@@ -1261,6 +1328,7 @@ document.addEventListener('DOMContentLoaded', function() {
    * @param {Object} state - Current search state with page and pageSize
    */
   function displayResults(ids, state) {
+    currentIds = ids;
     clearResults();
     const totalPosts = ids.size;
 
@@ -1269,8 +1337,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const fragment = document.createDocumentFragment();
-    const sortedIds = Array.from(ids).toSorted((a, b) => a - b);
     const searchItems = searchData.querySelectorAll('.search-item');
+    const sortedIds = Array.from(ids).toSorted((a, b) => {
+      if (state.sort === 'relevance' && resultScores.size > 0) {
+        return (resultScores.get(a) - resultScores.get(b)) || (a - b);
+      }
+
+      // Taxonomy-only results have no relevance score, so relevance uses newest first.
+      const aDate = Number(searchItems[a].dataset.date);
+      const bDate = Number(searchItems[b].dataset.date);
+      return state.sort === 'oldest' ? aDate - bDate : bDate - aDate;
+    });
 
     const totalPages = Math.ceil(totalPosts / state.pageSize);
 

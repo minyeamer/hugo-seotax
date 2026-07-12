@@ -64,6 +64,18 @@
 - id: "series.show.label"
   translation: "Показване на списък"
 
+- id: "sort.aria.label"
+  translation: "Подреждане"
+
+- id: "sort.relevance.label"
+  translation: "Уместност"
+
+- id: "sort.newest.label"
+  translation: "Най-нови"
+
+- id: "sort.oldest.label"
+  translation: "Най-стари"
+
 - id: "search.close.tooltip"
   translation: "Затвори"
 

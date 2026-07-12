@@ -1,12 +1,12 @@
 {{ define "content" }}
 <article class="content-wrap markdown">
-  {{ $sort := default "newest" .Site.Params.posts.sort }}
+  {{ $sort := default (default "newest" .Site.Params.posts.sort) .Params.sort }}
   {{ $pages := partialCached "pages/posts" (dict "Page" . "Sort" $sort) "posts" .Site.Language.Lang $sort }}
   {{ $paginate := .Paginate $pages 10 }}
 
   <div class="list-header">
     <h1>
-      <a href="{{ .Site.BaseURL }}" class="site-title">{{ .Site.Title }}</a>
+      <a href="{{ .Site.Home.RelPermalink }}" class="site-title">{{ .Site.Title }}</a>
     </h1>
     <p data-i18n-id="list.count.label" data-i18n-text='{"%s": "$.list-count"}'>
       {{- $count := printf `<em class="list-count">%d</em>` (len $pages) -}}

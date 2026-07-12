@@ -64,6 +64,18 @@
 - id: "series.show.label"
   translation: "Liste anzeigen"
 
+- id: "sort.aria.label"
+  translation: "Sortieren"
+
+- id: "sort.relevance.label"
+  translation: "Relevanz"
+
+- id: "sort.newest.label"
+  translation: "Neueste"
+
+- id: "sort.oldest.label"
+  translation: "Älteste"
+
 - id: "search.close.tooltip"
   translation: "Schließen"
 

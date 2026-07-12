@@ -64,6 +64,18 @@
 - id: "series.show.label"
   translation: "তালিকা দেখান"
 
+- id: "sort.aria.label"
+  translation: "সাজান"
+
+- id: "sort.relevance.label"
+  translation: "প্রাসঙ্গিকতা"
+
+- id: "sort.newest.label"
+  translation: "নতুনতম"
+
+- id: "sort.oldest.label"
+  translation: "পুরোনোতম"
+
 - id: "search.close.tooltip"
   translation: "বন্ধ করুন"
 

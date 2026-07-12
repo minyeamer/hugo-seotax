@@ -30,10 +30,10 @@ https://github.com/minyeamer/hugo-miny
 {{- partial "meta/seo/opengraph.html" . }}
 
 {{- /* SEO: Twitter Cards */ -}}
-{{- partial "meta/seo/twitter_cards.html" . }}
+{{- partial "meta/seo/twitter-cards.html" . }}
 
 {{- /* SEO: Schema.org JSON-LD */ -}}
-{{- partial "meta/seo/schema_json.html" . }}
+{{- partial "meta/seo/schema-json.html" . }}
 
 {{- /* Prevents menu flash by applying stored state before rendering */ -}}
 <script>
@@ -301,9 +301,11 @@ void window.siteI18n.initData().catch(() => {});
   {{- $searchInputJS := resources.Get "js/search/input.js" | resources.ExecuteAsTemplate $searchInputTarget . | resources.Minify | resources.Fingerprint }}
   <script defer src="{{ partial `links/resource-precache` $searchInputJS }}" {{ template `integrity` $searchInputJS }}></script>
 
-  <!-- Search List -->
-  {{- $searchListTarget := printf "js/search/list.%s.js" .Site.Language.Lang -}}
-  {{- $searchListJS := resources.Get "js/search/list.js" | resources.ExecuteAsTemplate $searchListTarget . | resources.Minify | resources.Fingerprint }}
-  <script defer src="{{ partial `links/resource-precache` $searchListJS }}" {{ template `integrity` $searchListJS }}></script>
+  {{- if eq .Type "search" -}}
+    <!-- Search List -->
+    {{- $searchListTarget := printf "js/search/list.%s.js" .Site.Language.Lang -}}
+    {{- $searchListJS := resources.Get "js/search/list.js" | resources.ExecuteAsTemplate $searchListTarget . | resources.Minify | resources.Fingerprint }}
+    <script defer src="{{ partial `links/resource-precache` $searchListJS }}" {{ template `integrity` $searchListJS }}></script>
+  {{- end -}}
 {{- end -}}
 <!-- Search: End -->

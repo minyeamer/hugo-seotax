@@ -64,6 +64,18 @@
 - id: "series.show.label"
   translation: "Vis liste"
 
+- id: "sort.aria.label"
+  translation: "Sorter"
+
+- id: "sort.relevance.label"
+  translation: "Relevans"
+
+- id: "sort.newest.label"
+  translation: "Nyeste"
+
+- id: "sort.oldest.label"
+  translation: "Eldste"
+
 - id: "search.close.tooltip"
   translation: "Lukk"
 

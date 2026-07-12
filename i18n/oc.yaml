@@ -64,6 +64,18 @@
 - id: "series.show.label"
   translation: "Afichar la lista"
 
+- id: "sort.aria.label"
+  translation: "Ordenar"
+
+- id: "sort.relevance.label"
+  translation: "Pertinéncia"
+
+- id: "sort.newest.label"
+  translation: "Los mai recents"
+
+- id: "sort.oldest.label"
+  translation: "Los mai ancians"
+
 - id: "search.close.tooltip"
   translation: "Tampar"
 

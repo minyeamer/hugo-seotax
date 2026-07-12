@@ -64,6 +64,18 @@
 - id: "series.show.label"
   translation: "ዝርዝር አሳይ"
 
+- id: "sort.aria.label"
+  translation: "መደርደር"
+
+- id: "sort.relevance.label"
+  translation: "ተዛማጅነት"
+
+- id: "sort.newest.label"
+  translation: "አዲስ ቀዳሚ"
+
+- id: "sort.oldest.label"
+  translation: "አሮጌ ቀዳሚ"
+
 - id: "search.close.tooltip"
   translation: "ዝጋ"
 

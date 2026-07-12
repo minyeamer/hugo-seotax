@@ -64,6 +64,18 @@
 - id: "series.show.label"
   translation: "顯示列表"
 
+- id: "sort.aria.label"
+  translation: "排序"
+
+- id: "sort.relevance.label"
+  translation: "相關度"
+
+- id: "sort.newest.label"
+  translation: "最新"
+
+- id: "sort.oldest.label"
+  translation: "最早"
+
 - id: "search.close.tooltip"
   translation: "關閉"
 

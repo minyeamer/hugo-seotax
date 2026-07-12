@@ -64,6 +64,18 @@
 - id: "series.show.label"
   translation: "リストを表示"
 
+- id: "sort.aria.label"
+  translation: "並び順"
+
+- id: "sort.relevance.label"
+  translation: "関連度順"
+
+- id: "sort.newest.label"
+  translation: "新しい順"
+
+- id: "sort.oldest.label"
+  translation: "古い順"
+
 - id: "search.close.tooltip"
   translation: "閉じる"
 

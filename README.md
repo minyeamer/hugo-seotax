@@ -5,7 +5,8 @@
 
 ### A Hugo blog theme with dynamic taxonomy search and reader-first experience
 
-> **SeoTax** = **Sea**rch + **Tax**onomies — built around the idea that readers should discover content effortlessly.
+> **SeoTax** = **Sea**rch + **Tax**onomies — built around the idea
+> that readers should discover content effortlessly.
 
 ![Screenshot](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-00-cover.webp?raw=true)
 
@@ -38,25 +39,34 @@
 
 ![Search Demo](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-01-search-demo.gif?raw=true)
 
-A single dynamic search page replaces hundreds of per-tag/per-category static pages. Search is triggered via the `/` or `s` hotkey, or by clicking the search bar. Supports 5 query types: keyword search, parent category, child category, single tag, and multi-tag with AND/OR operators.
+A single dynamic search page replaces hundreds of per-tag/per-category static pages.
+Search is triggered via the `/` or `s` hotkey, or by clicking the search bar.
+Supports 5 query types: keyword search, parent category, child category,
+single tag, and multi-tag with AND/OR operators.
 
 ### Internationalization
 
 ![i18n Demo](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-02-i18n-demo.gif?raw=true)
 
-All 27 languages are served from a single HTML page. The language switcher in the toolbar translates UI text, dates, and ARIA labels instantly on the client side — no page navigation, no URL changes.
+All 27 languages are served from a single HTML page. The language switcher
+in the toolbar translates UI text, dates, and ARIA labels instantly on
+the client side — no page navigation, no URL changes.
 
 ### Dark Mode
 
 ![Dark Mode Demo](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-32-light-dark-demo.gif?raw=true)
 
-Switches between light and dark themes using CSS variables on a single `data-theme` attribute. Persisted in `localStorage`. Disqus comments are synchronized via iframe reload.
+Switches between light and dark themes using CSS variables on a single
+`data-theme` attribute. Persisted in `localStorage`. Disqus comments are
+synchronized via iframe reload.
 
 ### Code Blocks
 
 ![Code Block](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-40-codeblock-wide.webp?raw=true)
 
-Mac-style window dots, line numbers (with copy exclusion), one-click copy with visual feedback, and a language label chip. Light theme uses **Xcode** colors; dark theme uses **VS2015** colors.
+Mac-style window dots, line numbers (with copy exclusion), one-click copy
+with visual feedback, and a language label chip. Light theme uses
+**Xcode** colors; dark theme uses **VS2015** colors.
 
 ## Demo
 
@@ -163,6 +173,12 @@ params:
 
   posts:
     section: "posts"             # Content section for blog posts
+    sort: "newest"               # ["newest" | "oldest"]
+
+  # Search
+  search:
+    enabled: true
+    sort: "newest"               # ["relevance" | "newest" | "oldest"]
 
   assets:
     favicon: "/images/favicon.ico"
@@ -170,7 +186,7 @@ params:
 
   # Sidebar menu
   menu:
-    profileImage: "/images/profile.jpg"   # Sidebar profile image
+    profileImage: "/images/profile.jpg"    # Sidebar profile image
     categories: true                       # Show category tree
     recentPosts: true                      # Show recent posts list
 
@@ -181,10 +197,6 @@ params:
   comments:
     enabled: true
     disqusShortname: "your-shortname"
-
-  # Search
-  search:
-    enabled: true
 
   # PWA Service Worker ("precache" to enable)
   serviceWorker: "precache"
@@ -223,9 +235,41 @@ params:
       - "https://github.com/username"
 ```
 
+### Static Post Lists
+
+`params.posts.sort` controls the sort order of the home page.
+The default sort uses `/` and `/page/2/`; the example site also provides
+static archive pages at `/list/newest/` and `/list/oldest/`, with additional
+pages under `/page/2/`.
+
+Create matching list index files for each content language to enable the
+archive routes in your site:
+
+```yaml
+# content/en/list/oldest/_index.md
+title: "Oldest posts"
+type: "post-list"
+params:
+  sort: "oldest"
+```
+
+Create the equivalent `newest` page and translated files for each additional language.
+If `params.sort` is omitted in a `post-list` page, it falls back to `params.posts.sort`.
+
+### Search Sort
+
+`params.search.sort` controls the default sort mode of `/search`.
+Supported values are `relevance`, `newest`, and `oldest`.
+
+- When the current sort matches `params.search.sort`, the search page omits
+  the `sort` query parameter.
+- When the user selects a different sort, SeoTax writes `?sort=...` into the
+  search URL and reorders the current results on the client.
+
 ### Multi-Language Support
 
-SeoTax supports Hugo's [multilingual mode](https://gohugo.io/content-management/multilingual/). When multiple languages are configured, a language selector appears in the sidebar menu.
+SeoTax supports Hugo's [multilingual mode](https://gohugo.io/content-management/multilingual/).
+When multiple languages are configured, a language selector appears in the sidebar menu.
 
 ```yaml
 languages:
@@ -237,7 +281,9 @@ languages:
     weight: 2
 ```
 
-In addition, the theme includes **client-side i18n** for UI elements (menus, labels, dates) across 27 languages — this works independently of Hugo's multilingual content system and requires no extra configuration.
+In addition, the theme includes **client-side i18n** for UI elements
+(menus, labels, dates) across 27 languages. This works independently of
+Hugo's multilingual content system and requires no extra configuration.
 
 ### Post Front Matter
 
@@ -254,16 +300,19 @@ cover:
 ---
 ```
 
-The theme uses a **two-level category hierarchy**. The first item in `categories` is the parent; the second is the child. Previous/next navigation prioritizes posts within the same child category, then parent category, then all posts.
+The theme uses a **two-level category hierarchy**.
+The first item in `categories` is the parent; the second is the child.
+Previous/next navigation prioritizes posts within the same child category,
+then parent category, then all posts.
 
 ## Page Layouts
 
 | Page | Description |
 |------|-------------|
 | **Home** | Post list with title, summary, date, categories, tags, and cover thumbnail. Pagination with 10 posts per page. |
-| **Single Post** | Header (category breadcrumb, title, date, reading time), cover image, content, tags, prev/next navigation, Disqus comments. |
-| **Search** | Dynamic search page with keyword, category, and tag filters. Accessed via search modal, category/tag chips, or sidebar. |
-| **Categories** | Two-level category tree with post counts. Up to 3 posts shown per category with "see more" link. |
+| **Single Post** | Header with category breadcrumb, title, date, reading time, cover image, content, tags, prev/next navigation, and Disqus comments. |
+| **Search** | Dynamic search page with keyword, category, and tag filters. Accessed via the search modal, category/tag chips, or the sidebar. |
+| **Categories** | Two-level category tree with post counts. Up to 3 posts are shown per category with a "see more" link. |
 | **Tags** | All tags displayed as clickable chips. |
 
 ## Shortcodes
@@ -313,7 +362,9 @@ Enhanced image shortcode with click-to-zoom, automatic CLS prevention, and full 
 {{</* image src="/images/photo.jpg" alt="Description" caption="Figure 1" max-width="600px" */>}}
 ```
 
-Parameters: `src`, `alt`, `caption`, `class`, `loading`, `align`, `href`, `target`, `width`, `min-width`, `max-width`, `height`, `min-height`, `max-height`.
+Parameters: `src`, `alt`, `caption`, `class`, `loading`, `align`, `href`,
+`target`, `width`, `min-width`, `max-width`, `height`, `min-height`,
+`max-height`.
 
 On mobile, landscape images rotate 90° when tapped for full-screen viewing.
 
@@ -325,7 +376,8 @@ Velog-style series navigation that groups posts sharing the same `series` front 
 {{</* series "My Tutorial Series" */>}}
 ```
 
-Optional second parameter: regex pattern to strip common prefixes from titles. Includes collapsible post list and prev/next links.
+Optional second parameter: regex pattern to strip common prefixes from titles.
+Includes collapsible post list and prev/next links.
 
 ## Customization
 
@@ -352,7 +404,10 @@ Key variables are defined in `assets/css/variables/`:
 
 ### Icons
 
-The theme uses an [IcoMoon](https://icomoon.io/) subset font with 26 icons. Icon classes follow the pattern `icon-*` (e.g., `icon-search`, `icon-folder`, `icon-moon`). To add more icons, regenerate the subset font and update `assets/css/main/icon.css`.
+The theme uses an [IcoMoon](https://icomoon.io/) subset font with 26 icons.
+Icon classes follow the pattern `icon-*`
+(e.g., `icon-search`, `icon-folder`, `icon-moon`). To add more icons,
+regenerate the subset font and update `assets/css/main/icon.css`.
 
 ### Directory Structure
 
@@ -395,7 +450,9 @@ The theme is optimized for Core Web Vitals:
 | TBT | 0 ms |
 | Performance | 82+ |
 
-Optimizations include: build-time image dimension extraction to prevent layout shifts, subset icon font to minimize font loading impact, hybrid server/client reading time calculation, and `font-display: swap` for zero FOIT.
+Optimizations include: build-time image dimension extraction to prevent
+layout shifts, subset icon font to minimize font loading impact, hybrid
+server/client reading time calculation, and `font-display: swap` for zero FOIT.
 
 ## Contributing
 

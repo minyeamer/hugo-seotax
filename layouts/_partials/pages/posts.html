@@ -1,5 +1,9 @@
 {{- $section := default "posts" site.Params.posts.section -}}
 {{- $pages := where site.RegularPages "Section" $section -}}
 {{- $pages = where $pages "Params.hidden" "!=" true -}}
-{{- $pages = $pages.ByDate.Reverse -}}
+{{- if and (reflect.IsMap .) (eq .Sort "oldest") -}}
+  {{- $pages = $pages.ByDate -}}
+{{- else -}}
+  {{- $pages = $pages.ByDate.Reverse -}}
+{{- end -}}
 {{- return $pages -}}

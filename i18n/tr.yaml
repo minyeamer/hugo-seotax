@@ -62,6 +62,18 @@
 - id: "series.show.label"
   translation: "Listeyi göster"
 
+- id: "sort.aria.label"
+  translation: "Sırala"
+
+- id: "sort.relevance.label"
+  translation: "Alaka düzeyi"
+
+- id: "sort.newest.label"
+  translation: "En yeni"
+
+- id: "sort.oldest.label"
+  translation: "En eski"
+
 - id: "search.close.tooltip"
   translation: "Kapat"
 

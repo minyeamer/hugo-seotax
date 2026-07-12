@@ -64,6 +64,18 @@
 - id: "series.show.label"
   translation: "Показати список"
 
+- id: "sort.aria.label"
+  translation: "Сортувати"
+
+- id: "sort.relevance.label"
+  translation: "Релевантність"
+
+- id: "sort.newest.label"
+  translation: "Найновіші"
+
+- id: "sort.oldest.label"
+  translation: "Найстаріші"
+
 - id: "search.close.tooltip"
   translation: "Закрити"
 

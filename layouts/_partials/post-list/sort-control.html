@@ -1,0 +1,26 @@
+{{- $defaultSort := default "newest" .Site.Params.posts.sort -}}
+{{- $sort := cond (eq .Type "post-list") (default $defaultSort .Params.sort) $defaultSort -}}
+<div class="sort-control">
+  <div class="sort-options"
+        role="group"
+        aria-label="{{ i18n `sort.aria.label` | default `Sort` }}"
+        data-i18n-id="sort.aria.label"
+        data-i18n-attrs="aria-label">
+    {{- range slice "newest" "oldest" -}}
+      {{- $targetSort := . -}}
+      {{- $href := $.Site.Home.RelPermalink -}}
+      {{- if ne $targetSort $defaultSort -}}
+        {{- with $.Site.GetPage (printf "/list/%s" $targetSort) -}}
+          {{- $href = .RelPermalink -}}
+        {{- end -}}
+      {{- end -}}
+      <a class="sort-option{{ if eq $targetSort $sort }} active{{ end }}"
+          href="{{ $href }}"
+          {{ if eq $targetSort $sort }}aria-current="page"{{ end }}
+          data-i18n-id="sort.{{ $targetSort }}.label"
+          data-i18n-text>
+        {{- i18n (printf "sort.%s.label" $targetSort) | default ($targetSort | title) -}}
+      </a>
+    {{- end -}}
+  </div>
+</div>

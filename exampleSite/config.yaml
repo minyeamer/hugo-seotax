@@ -59,6 +59,11 @@ params:
 
   posts:
     section: "posts"
+    sort: "oldest" # ["newest" | "oldest"]
+
+  search:
+    enabled: true
+    sort: "newest" # ["relevance" | "newest" | "oldest"]
 
   assets:
     favicon: "/favicon.svg"
@@ -72,9 +77,7 @@ params:
   social:
     github: "https://github.com/minyeamer/hugo-seotax"
 
-  # Search (powered by Fuse.js)
-  search:
-    enabled: true
+  serviceWorker: "precache"
 
   # i18n: the theme ships its own i18n files under themes/seotax/i18n/
   # When running standalone, Hugo auto-discovers them from the theme.

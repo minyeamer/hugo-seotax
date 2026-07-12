@@ -64,6 +64,18 @@
 - id: "series.show.label"
   translation: "הצג רשימה"
 
+- id: "sort.aria.label"
+  translation: "מיון"
+
+- id: "sort.relevance.label"
+  translation: "רלוונטיות"
+
+- id: "sort.newest.label"
+  translation: "החדש ביותר"
+
+- id: "sort.oldest.label"
+  translation: "הישן ביותר"
+
 - id: "search.close.tooltip"
   translation: "סגור"
 

@@ -64,6 +64,18 @@
 - id: "series.show.label"
   translation: "Zobrazit seznam"
 
+- id: "sort.aria.label"
+  translation: "Řazení"
+
+- id: "sort.relevance.label"
+  translation: "Relevantnost"
+
+- id: "sort.newest.label"
+  translation: "Nejnovější"
+
+- id: "sort.oldest.label"
+  translation: "Nejstarší"
+
 - id: "search.close.tooltip"
   translation: "Zavřít"
 

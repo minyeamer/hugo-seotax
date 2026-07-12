@@ -64,6 +64,18 @@
 - id: "series.show.label"
   translation: "Onyesha orodha"
 
+- id: "sort.aria.label"
+  translation: "Panga"
+
+- id: "sort.relevance.label"
+  translation: "Umuhimu"
+
+- id: "sort.newest.label"
+  translation: "Mpya zaidi"
+
+- id: "sort.oldest.label"
+  translation: "Kongwe zaidi"
+
 - id: "search.close.tooltip"
   translation: "Funga"
 
