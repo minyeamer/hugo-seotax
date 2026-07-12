@@ -157,12 +157,18 @@ minify:
 
 # SEO-friendly URL structure
 permalinks:
-  posts: "/blog/:slug/"
+  posts: "/blog/:slugorcontentbasename/"
 
 markup:
   goldmark:
+    extensions:
+      typographer:
+        disable: true
     renderer:
       unsafe: true
+  highlight:
+    noClasses: false
+    codeFences: true
   tableOfContents:
     startLevel: 2
     endLevel: 4
@@ -182,6 +188,10 @@ params:
 
   assets:
     favicon: "/images/favicon.ico"
+    favicon16x16: "/images/favicon-16x16.png"
+    favicon32x32: "/images/favicon-32x32.png"
+    apple_touch_icon: "/images/apple-touch-icon.png"
+    safari_pinned_tab: "/images/safari-pinned-tab.svg"
     opengraph: "/images/og.jpg"
 
   # Sidebar menu
@@ -192,14 +202,21 @@ params:
 
   social:
     github: "https://github.com/username"
+    twitter: "https://x.com/username"
 
   # Comments
   comments:
     enabled: true
-    disqusShortname: "your-shortname"
-
-  # PWA Service Worker ("precache" to enable)
-  serviceWorker: "precache"
+    provider: "giscus"                     # "giscus" | "disqus"
+    # disqus:
+    #   shortname: "your-shortname"
+    # giscus:
+    #   repo: "owner/repo"
+    #   repoId: "R_kgDO..."
+    #   category: "Comments"
+    #   categoryId: "DIC_kwDO..."
+    #   mapping: "pathname"
+    #   inputPosition: "bottom"
 
   # i18n translation directory
   i18nDir: "themes/seotax/i18n"
@@ -207,15 +224,25 @@ params:
   # Image CLS prevention (optional)
   # Store copies of remote images locally in assets/_images/ for build-time dimension extraction
   images:
-    rootPath: "themes/seotax/assets/_images"
-    maxImageSize: 720
+    rootPath: "_images"
+    maxImageSize: 1920
     roundedCorners: false
     rotateLandscapeImages: true
+
+  # Enable Hugo portable links for relative Markdown links and images
+  portableLinks: true
+
+  # PWA Service Worker ("precache" to enable)
+  serviceWorker: "precache"
 
   # Table of Contents
   tableOfContents:
     startLevel: 2
     endLevel: 4
+
+  # Optional per-page ToC toggle default
+  toc:
+    enabled: true
 
   # Analytics
   GoogleAnalytics:
@@ -227,6 +254,10 @@ params:
       siteVerificationTag: "google-site-verification-code"
     naver:
       siteVerificationTag: "naver-site-verification-code"
+    bing:
+      siteVerificationTag: "bing-site-verification-code"
+    yandex:
+      siteVerificationTag: "yandex-site-verification-code"
 
   # Schema.org structured data
   schema:
@@ -265,6 +296,15 @@ Supported values are `relevance`, `newest`, and `oldest`.
   the `sort` query parameter.
 - When the user selects a different sort, SeoTax writes `?sort=...` into the
   search URL and reorders the current results on the client.
+
+### Image Settings
+
+Use `params.images`, not `params.image`.
+
+- `rootPath` sets the asset directory used to resolve local image dimensions during the build.
+- `maxImageSize` limits the resized image width used for CLS prevention.
+- `roundedCorners` adds rounded styling to rendered Markdown images and the `image` shortcode.
+- `rotateLandscapeImages` rotates landscape images in the image zoom viewer on narrow screens.
 
 ### Multi-Language Support
 

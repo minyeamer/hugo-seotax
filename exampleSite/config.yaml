@@ -9,6 +9,7 @@ copyright: "[© CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode
 
 theme: "seotax"
 defaultContentLanguage: "en"
+languageCode: "en"
 
 enableRobotsTXT: true
 buildDrafts: false
@@ -67,6 +68,10 @@ params:
 
   assets:
     favicon: "/favicon.svg"
+    favicon16x16: "/favicon.png"
+    favicon32x32: "/favicon.png"
+    apple_touch_icon: "/favicon.png"
+    safari_pinned_tab: "/favicon.svg"
 
   # Sidebar menu
   menu:
@@ -76,20 +81,7 @@ params:
 
   social:
     github: "https://github.com/minyeamer/hugo-seotax"
-
-  serviceWorker: "precache"
-
-  # i18n: the theme ships its own i18n files under themes/seotax/i18n/
-  # When running standalone, Hugo auto-discovers them from the theme.
-  # Only set i18nDir if you need to override the translations.
-
-  # Table of Contents
-  tableOfContents:
-    startLevel: 2
-    endLevel: 3
-
-  # PWA Service Worker ("precache" to enable)
-  # serviceWorker: "precache"
+    # twitter: "https://x.com/your-account"
 
   # comments:
   #   enabled: true
@@ -104,6 +96,32 @@ params:
   #     mapping: "pathname"
   #     inputPosition: "bottom"
 
+  # i18n: the theme ships its own i18n files under themes/seotax/i18n/
+  # When running standalone, Hugo auto-discovers them from the theme.
+  # Only set i18nDir if you need to override the translations.
+  # i18nDir: "themes/seotax/i18n"
+
+  images:
+    rootPath: "_images"
+    maxImageSize: 1920
+    roundedCorners: false
+    rotateLandscapeImages: true
+
+  # Enable Hugo portable links for relative Markdown links and images
+  # portableLinks: true
+
+  # PWA Service Worker ("precache" to enable)
+  serviceWorker: "precache"
+
+  # Table of Contents
+  tableOfContents:
+    startLevel: 2
+    endLevel: 3
+
+  # Optional per-page ToC toggle default
+  # toc:
+  #   enabled: true
+
   # Google Analytics
   # GoogleAnalytics:
   #   tagId: "G-XXXXXXXXXX"
@@ -111,6 +129,12 @@ params:
   # Search engine verification
   # searchEngine:
   #   google:
+  #     siteVerificationTag: "your-code"
+  #   naver:
+  #     siteVerificationTag: "your-code"
+  #   bing:
+  #     siteVerificationTag: "your-code"
+  #   yandex:
   #     siteVerificationTag: "your-code"
 
   # Schema.org structured data

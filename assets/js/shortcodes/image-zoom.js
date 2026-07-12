@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  const rotateLandscapeImages = {{ site.Params.image.rotateLandscapeImages | default true }};
+  const rotateLandscapeImages = {{ site.Params.images.rotateLandscapeImages | default true }};
 
   /**
    * Set image's orientation by comparing width and height.
