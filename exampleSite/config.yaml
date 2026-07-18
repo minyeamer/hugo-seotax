@@ -35,10 +35,34 @@ languages:
     languageName: "English"
     contentDir: "content.en"
     weight: 1
+    params:
+      menu:
+        categoryOrder:
+          - name: "Guide"
+            weight: 10
+          - name: "Features"
+            weight: 20
+          - name: "Setup"
+            weight: 30
   ko:
     languageName: "한국어"
     contentDir: "content.ko"
     weight: 2
+    params:
+      menu:
+        categoryOrder:
+          - name: "시작하기"
+            weight: 10
+          - name: "콘텐츠 작성"
+            weight: 20
+          - name: "기능"
+            weight: 30
+          - name: "Shortcodes"
+            weight: 40
+          - name: "커스터마이징"
+            weight: 50
+          - name: "참고"
+            weight: 60
 
 markup:
   goldmark:
@@ -64,7 +88,7 @@ params:
 
   search:
     enabled: true
-    sort: "newest" # ["relevance" | "newest" | "oldest"]
+    sort: "oldest" # ["relevance" | "newest" | "oldest"]
 
   assets:
     favicon: "/favicon.svg"

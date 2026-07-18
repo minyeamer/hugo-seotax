@@ -15,7 +15,8 @@
   {{/* Categories list for parent category */}}
   <ul>
     {{ $treeL1 := partialCached "categories/tree" . "categories" .Site.Language.Lang }}
-    {{ range $category1 := (partial "keys" $treeL1) }}
+    {{ $category1List := partial "categories/sorted" (dict "items" (partial "keys" $treeL1) "site" .Site) }}
+    {{ range $category1 := $category1List }}
     {{/* Count pages including parent category */}}
     {{ $pagesL1 := slice }}
     {{ $category1Count := 0 }}
@@ -42,7 +43,8 @@
       </label>
       {{/* Categories list for child category */}}
       <ul>
-        {{ range $category2 := (partial "keys" $treeL2) }}
+        {{ $category2List := partial "categories/sorted" (dict "items" (partial "keys" $treeL2) "site" $.Site) }}
+        {{ range $category2 := $category2List }}
         {{/* Count pages including child category */}}
         {{ $category2Count := 0 }}
         {{ range $pagesL1 }}

@@ -1,0 +1,24 @@
+{{- $weights := dict -}}
+{{- $fallbackWeight := 2147483647 -}}
+{{- range $index, $entry := .site.Params.menu.categoryOrder | default (slice) -}}
+  {{- $name := $entry.name | default "" -}}
+  {{- if and $name (isset $entry "weight") -}}
+    {{- $weights = merge $weights (dict $name (int $entry.weight)) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $entries := slice -}}
+{{- range .items | default (slice) -}}
+  {{- $name := printf "%v" . -}}
+  {{- $weight := index $weights $name | default $fallbackWeight -}}
+  {{- $entries = $entries | append (dict
+    "name" $name
+    "sortKey" (printf "%010d|%s" $weight ($name | lower))
+  ) -}}
+{{- end -}}
+
+{{- $sorted := slice -}}
+{{- range sort $entries "sortKey" -}}
+  {{- $sorted = $sorted | append .name -}}
+{{- end -}}
+{{- return $sorted -}}
