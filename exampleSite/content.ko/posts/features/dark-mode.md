@@ -4,7 +4,7 @@ date: 2026-01-11
 summary: "SeoTax의 다크모드 우선순위와 커스터마이징 위치를 설명합니다."
 categories: ["기능"]
 tags: ["다크모드", "CSS Variables", "localStorage"]
-cover: "/hugo-seotax/images/light-dark-demo.gif"
+cover: "https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/light-dark-demo.gif?raw=true"
 ---
 
 ## 동작 방식

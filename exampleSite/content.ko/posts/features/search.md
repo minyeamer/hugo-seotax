@@ -4,7 +4,7 @@ date: 2026-01-10
 summary: "SeoTax의 핵심인 동적 검색과 카테고리/태그 필터 동작을 설명합니다."
 categories: ["기능"]
 tags: ["검색", "Fuse.js", "Taxonomies", "카테고리", "태그"]
-cover: "/hugo-seotax/images/search-demo.gif"
+cover: "https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/search-demo.gif?raw=true"
 ---
 
 ## 왜 동적 검색인가?

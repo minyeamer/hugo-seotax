@@ -8,7 +8,7 @@
 > **SeoTax** = **Sea**rch + **Tax**onomies — built around the idea
 > that readers should discover content effortlessly.
 
-![Screenshot](exampleSite/static/images/main.png)
+![Screenshot](https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/main.png?raw=true)
 
 - [Features](#features)
 - [Demo](#demo)
@@ -38,7 +38,7 @@
 
 ### Search
 
-![Search Demo](exampleSite/static/images/search-demo.gif)
+![Search Demo](https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/search-demo.gif?raw=true)
 
 A single dynamic search page replaces hundreds of per-tag/per-category static pages.
 Search is triggered via the `/` or `s` hotkey, or by clicking the search bar.
@@ -47,7 +47,7 @@ single tag, and multi-tag with AND/OR operators.
 
 ### Internationalization
 
-![i18n Demo](exampleSite/static/images/i18n-demo.gif)
+![i18n Demo](https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/i18n-demo.gif?raw=true)
 
 All 27 languages are served from a single HTML page. The language switcher
 in the toolbar translates UI text, dates, and ARIA labels instantly on
@@ -55,7 +55,7 @@ the client side — no page navigation, no URL changes.
 
 ### Dark Mode
 
-![Dark Mode Demo](exampleSite/static/images/light-dark-demo.gif)
+![Dark Mode Demo](https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/light-dark-demo.gif?raw=true)
 
 Switches between light and dark themes using CSS variables on a single
 `data-theme` attribute. Persisted in `localStorage`. Disqus comments are
@@ -63,7 +63,7 @@ synchronized via iframe reload.
 
 ### Code Blocks
 
-![Code Block](exampleSite/static/images/codeblock.png)
+![Code Block](https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/codeblock.png?raw=true)
 
 Mac-style window dots, line numbers (with copy exclusion), one-click copy
 with visual feedback, and a language label chip. Light theme uses

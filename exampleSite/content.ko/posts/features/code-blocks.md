@@ -4,7 +4,7 @@ date: 2026-01-13
 summary: "줄 번호, 복사 버튼, 언어 라벨을 갖춘 SeoTax 코드블럭을 소개합니다."
 categories: ["기능"]
 tags: ["코드블럭", "highlight.js", "복사 버튼"]
-cover: "/hugo-seotax/images/codeblock.png"
+cover: "https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/codeblock.png?raw=true"
 ---
 
 ## 기본 코드블럭

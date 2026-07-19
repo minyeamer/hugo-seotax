@@ -4,7 +4,7 @@ date: 2026-01-01
 summary: "SeoTax가 어떤 문제를 해결하는 Hugo 블로그 테마인지 짧게 소개합니다."
 categories: ["시작하기"]
 tags: ["SeoTax", "Hugo", "검색", "택소노미"]
-cover: "/hugo-seotax/images/main.png"
+cover: "https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/main.png?raw=true"
 ---
 
 ## SeoTax 테마란?

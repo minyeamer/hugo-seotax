@@ -35,7 +35,7 @@ Bob,85
 
 ```go-html
 {{</* image
-  src="/hugo-seotax/images/zion-national-park.jpg"
+  src="https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/zion-national-park.jpg?raw=true"
   alt="A canyon landscape"
   caption="Canyon landscape"
   max-width="360px"
@@ -44,7 +44,7 @@ Bob,85
 ```
 
 {{< image
-  src="/hugo-seotax/images/zion-national-park.jpg"
+  src="https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/zion-national-park.jpg?raw=true"
   alt="A canyon landscape"
   caption="Canyon landscape"
   max-width="360px"

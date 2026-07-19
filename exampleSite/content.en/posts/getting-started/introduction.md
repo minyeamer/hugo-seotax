@@ -4,7 +4,7 @@ date: 2026-01-01
 summary: "A Hugo blog theme built around search and taxonomy navigation."
 categories: ["Guide"]
 tags: ["SeoTax", "Hugo", "search", "taxonomies"]
-cover: "/hugo-seotax/images/main.png"
+cover: "https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/main.png?raw=true"
 ---
 
 ## What Is SeoTax?

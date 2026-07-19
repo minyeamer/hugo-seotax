@@ -4,7 +4,7 @@ date: 2026-01-11
 summary: "Use system-aware light and dark themes with a manual toggle."
 categories: ["Features"]
 tags: ["dark mode", "CSS Variables", "localStorage"]
-cover: "/hugo-seotax/images/light-dark-demo.gif"
+cover: "https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/light-dark-demo.gif?raw=true"
 ---
 
 ## Theme Preference

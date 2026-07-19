@@ -10,13 +10,13 @@ tags: ["image", "zoom", "caption"]
 
 ```go-html
 {{</* image
-  src="/hugo-seotax/images/zion-national-park.jpg"
+  src="https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/zion-national-park.jpg?raw=true"
   alt="A canyon landscape"
 */>}}
 ```
 
 {{< image
-  src="/hugo-seotax/images/zion-national-park.jpg"
+  src="https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/zion-national-park.jpg?raw=true"
   alt="A canyon landscape"
 >}}
 
@@ -26,7 +26,7 @@ Always provide meaningful `alt` text.
 
 ```go-html
 {{</* image
-  src="/hugo-seotax/images/zion-national-park.jpg"
+  src="https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/zion-national-park.jpg?raw=true"
   alt="Mobile layout"
   caption="Mobile layout"
   max-width="360px"
@@ -35,7 +35,7 @@ Always provide meaningful `alt` text.
 ```
 
 {{< image
-  src="/hugo-seotax/images/zion-national-park.jpg"
+  src="https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/zion-national-park.jpg?raw=true"
   alt="Mobile layout"
   caption="Mobile layout"
   max-width="360px"

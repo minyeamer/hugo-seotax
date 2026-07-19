@@ -4,7 +4,7 @@ date: 2026-01-10
 summary: "Use one dynamic search page for keywords, categories, and tags."
 categories: ["Features"]
 tags: ["search", "Fuse.js", "taxonomies", "categories", "tags"]
-cover: "/hugo-seotax/images/search-demo.gif"
+cover: "https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/search-demo.gif?raw=true"
 ---
 
 ## Search Modes

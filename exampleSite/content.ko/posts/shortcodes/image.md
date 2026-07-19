@@ -10,13 +10,13 @@ tags: ["image", "zoom", "caption"]
 
 ```go-html
 {{</* image
-  src="/hugo-seotax/images/zion-national-park.jpg"
+  src="https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/zion-national-park.jpg?raw=true"
   alt="화면 설명"
 */>}}
 ```
 
 {{< image
-  src="/hugo-seotax/images/zion-national-park.jpg"
+  src="https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/zion-national-park.jpg?raw=true"
   alt="화면 설명"
 >}}
 
@@ -26,7 +26,7 @@ tags: ["image", "zoom", "caption"]
 
 ```go-html
 {{</* image
-  src="/hugo-seotax/images/zion-national-park.jpg"
+  src="https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/zion-national-park.jpg?raw=true"
   alt="작은 화면 예시"
   caption="캡션"
   max-width="360px"
@@ -35,7 +35,7 @@ tags: ["image", "zoom", "caption"]
 ```
 
 {{< image
-  src="/hugo-seotax/images/zion-national-park.jpg"
+  src="https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/zion-national-park.jpg?raw=true"
   alt="작은 화면 예시"
   caption="캡션"
   max-width="360px"
