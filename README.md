@@ -24,6 +24,7 @@
 
 - **Dynamic Search** — Fuse.js-powered fuzzy search with instant results; no extra static pages generated
 - **Advanced Taxonomy Filters** — Filter by category, tag, or combination without a keyword
+- **Configurable List Sorting** — Choose newest or oldest post lists, plus relevance sorting for search
 - **27-Language i18n** — Client-side translation; no page reload, no per-language page duplication
 - **Dark Mode** — Auto-detects system preference; toggleable with keyboard shortcut (`Cmd/Ctrl + Shift + S`)
 - **Responsive Design** — Collapsible sidebar, overlay ToC on mobile, adaptive thumbnails
@@ -297,6 +298,26 @@ Supported values are `relevance`, `newest`, and `oldest`.
 - When the user selects a different sort, SeoTax writes `?sort=...` into the
   search URL and reorders the current results on the client.
 
+### Category Menu Order
+
+Set `params.menu.categoryOrder` to control the sidebar category order. Lower
+`weight` values are shown first; categories without a configured weight follow
+in alphabetical order.
+
+```yaml
+params:
+  menu:
+    categoryOrder:
+      - name: "Guide"
+        weight: 10
+      - name: "Features"
+        weight: 20
+```
+
+For a multilingual site, place the same setting under each language's `params`
+to define language-specific names and ordering. The order is applied to both
+parent and child categories.
+
 ### Image Settings
 
 Use `params.images`, not `params.image`.
@@ -324,6 +345,12 @@ languages:
 In addition, the theme includes **client-side i18n** for UI elements
 (menus, labels, dates) across 27 languages. This works independently of
 Hugo's multilingual content system and requires no extra configuration.
+
+The Hugo language menu opens a translated page when one exists. On localized
+taxonomy, search, and list pages without a page translation, it preserves the
+current path in the selected language and carries query parameters and hashes
+across. Search indexes and generated search assets are scoped per content
+language, so results do not mix between languages.
 
 ### Post Front Matter
 
