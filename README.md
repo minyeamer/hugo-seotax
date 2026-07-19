@@ -8,7 +8,7 @@
 > **SeoTax** = **Sea**rch + **Tax**onomies — built around the idea
 > that readers should discover content effortlessly.
 
-![Screenshot](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-00-cover.webp?raw=true)
+![Screenshot](exampleSite/static/images/main.png)
 
 - [Features](#features)
 - [Demo](#demo)
@@ -38,7 +38,7 @@
 
 ### Search
 
-![Search Demo](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-01-search-demo.gif?raw=true)
+![Search Demo](exampleSite/static/images/search-demo.gif)
 
 A single dynamic search page replaces hundreds of per-tag/per-category static pages.
 Search is triggered via the `/` or `s` hotkey, or by clicking the search bar.
@@ -47,7 +47,7 @@ single tag, and multi-tag with AND/OR operators.
 
 ### Internationalization
 
-![i18n Demo](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-02-i18n-demo.gif?raw=true)
+![i18n Demo](exampleSite/static/images/i18n-demo.gif)
 
 All 27 languages are served from a single HTML page. The language switcher
 in the toolbar translates UI text, dates, and ARIA labels instantly on
@@ -55,7 +55,7 @@ the client side — no page navigation, no URL changes.
 
 ### Dark Mode
 
-![Dark Mode Demo](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-32-light-dark-demo.gif?raw=true)
+![Dark Mode Demo](exampleSite/static/images/light-dark-demo.gif)
 
 Switches between light and dark themes using CSS variables on a single
 `data-theme` attribute. Persisted in `localStorage`. Disqus comments are
@@ -63,7 +63,7 @@ synchronized via iframe reload.
 
 ### Code Blocks
 
-![Code Block](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-40-codeblock-wide.webp?raw=true)
+![Code Block](exampleSite/static/images/codeblock.png)
 
 Mac-style window dots, line numbers (with copy exclusion), one-click copy
 with visual feedback, and a language label chip. Light theme uses
@@ -73,9 +73,9 @@ with visual feedback, and a language label chip. Light theme uses
 
 | Desktop | Mobile |
 |---------|--------|
-| ![Main Page](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-04-layout-main.webp?raw=true) | ![Mobile Main](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-16-layout-mobile-main.webp?raw=true) |
-| ![Search Page](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-09-layout-search-page.webp?raw=true) | ![Mobile Search](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-17-layout-mobile-search.webp?raw=true) |
-| ![Content Page](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-06-layout-content.webp?raw=true) | ![Mobile Menu](https://github.com/minyeamer/minyeamer/blob/main/images/frontend/blog/seotax-18-layout-mobile-menu.webp?raw=true) |
+| ![Main Page](https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/ss-main-desktop.png?raw=true) | ![Mobile Main](https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/ss-main-mobile.png?raw=true) |
+| ![Search Page](https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/ss-search-desktop.png?raw=true) | ![Mobile Search](https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/ss-search-mobile.png?raw=true) |
+| ![Content Page](https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/ss-content-desktop.png?raw=true) | ![Mobile Menu](https://github.com/minyeamer/minyeamer/blob/main/images/hugo-seotax/ss-content-mobile.png?raw=true) |
 
 ## Requirements
 

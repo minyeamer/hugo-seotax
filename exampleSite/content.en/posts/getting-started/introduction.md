@@ -28,5 +28,6 @@ SeoTax uses one search page and client-side filters to keep navigation focused.
 
 1. [Create a site](../create-a-site/)
 2. [Configure SeoTax](../configuration/)
-3. [Organize your content](../../content/structure/)
-4. [Explore search](../../features/search/)
+3. [Content Structure](../structure/)
+4. [Search](../search/)
+5. [Shortcode Overview](../overview/)
