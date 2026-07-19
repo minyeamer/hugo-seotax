@@ -1,0 +1,8 @@
+{{- $url := urls.Parse .Destination -}}
+{{- $path := strings.TrimPrefix "/" $url.Path -}}
+{{- $baseURL := urls.Parse .Page.Site.BaseURL -}}
+{{- $basePath := strings.TrimPrefix "/" $baseURL.Path -}}
+{{- if $basePath -}}
+  {{- $path = strings.TrimPrefix $basePath $path -}}
+{{- end -}}
+{{- return $path -}}

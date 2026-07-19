@@ -5,15 +5,19 @@
 {{- $isFragment := strings.HasPrefix .Destination "#" -}}
 
 {{- if and (not $isRemote) (not $isFragment) -}}
-  {{- $path := strings.TrimPrefix "./" $url.Path -}}
-  {{- $path = strings.TrimPrefix "/assets/" $path -}}
-  
-  {{- with (.Page.Resources.Get $path) -}}
-    {{- $destination = .RelPermalink -}}
-  {{- else with (resources.Get $path) -}}
-    {{- $destination = .RelPermalink -}}
+  {{- $staticPath := partial "links/static-path" . -}}
+  {{- if and $staticPath (fileExists (printf "static/%s" $staticPath)) -}}
+    {{- /* Static files are already published, so preserve the supplied URL. */ -}}
   {{- else -}}
-    {{- warnf "Image reference '%s' not found in '%s'" .Destination .Page.Permalink -}}
+    {{- $path := strings.TrimPrefix "./" $url.Path -}}
+    {{- $path = strings.TrimPrefix "/assets/" $path -}}
+    {{- with (.Page.Resources.Get $path) -}}
+      {{- $destination = .RelPermalink -}}
+    {{- else with (resources.Get $path) -}}
+      {{- $destination = .RelPermalink -}}
+    {{- else -}}
+      {{- warnf "Image reference '%s' not found in '%s'" .Destination .Page.Permalink -}}
+    {{- end -}}
   {{- end -}}
 
   {{- with $url.RawQuery -}}
