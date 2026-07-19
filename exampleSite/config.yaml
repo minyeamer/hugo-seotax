@@ -88,7 +88,7 @@ params:
 
   search:
     enabled: true
-    sort: "oldest" # ["relevance" | "newest" | "oldest"]
+    sort: "relevance" # ["relevance" | "newest" | "oldest"]
 
   assets:
     favicon: "/favicon.svg"

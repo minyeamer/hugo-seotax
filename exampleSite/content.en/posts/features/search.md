@@ -1,0 +1,25 @@
+---
+title: "Search"
+date: 2026-01-10
+summary: "Use one dynamic search page for keywords, categories, and tags."
+categories: ["Features"]
+tags: ["search", "Fuse.js", "taxonomies", "categories", "tags"]
+cover: "/hugo-seotax/images/search-demo.gif"
+---
+
+## Search Modes
+
+SeoTax supports keyword search, parent and child category filters,
+single tags, and multiple tags with AND or OR behavior.
+
+## Default Sort
+
+```yaml
+params:
+  search:
+    enabled: true
+    sort: "newest"
+```
+
+Supported values are `relevance`, `newest`, and `oldest`.
+A user-selected alternative is stored in the search URL as `sort`.
