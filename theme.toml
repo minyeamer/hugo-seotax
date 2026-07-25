@@ -3,7 +3,7 @@
 
 name = "seotax"
 license = "MIT"
-licenselink = "https://github.com/minyeamer/hugo-seotax/blob/master/LICENSE"
+licenselink = "https://github.com/minyeamer/hugo-seotax/blob/main/LICENSE"
 description = "Hugo theme for bloggers with advanced taxonomy search for better content discovery."
 homepage = "https://github.com/minyeamer/hugo-seotax"
 demosite = "https://minyeamer.github.io/hugo-seotax/"
@@ -11,6 +11,6 @@ tags = ["blog", "light", "dark", "dark mode", "search", "categories", "responsiv
 features = ["search", "categories", "tags", "dark mode", "i18n"]
 min_version = "0.146.0"
 
-[editor]
+[author]
   name = "minyeamer"
   homepage = "https://github.com/minyeamer/"

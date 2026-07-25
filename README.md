@@ -389,7 +389,9 @@ then parent category, then all posts.
 
 ## Shortcodes
 
-### Inherited from Hugo Book
+### Hugo Book Shortcode Components
+
+SeoTax reuses the following shortcode components from Hugo Book.
 
 | Shortcode | Description |
 |-----------|-------------|
