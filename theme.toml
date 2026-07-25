@@ -14,3 +14,8 @@ min_version = "0.146.0"
 [author]
   name = "minyeamer"
   homepage = "https://github.com/minyeamer/"
+
+[original]
+  author = "Alex Shpak"
+  homepage = "https://book.alxs.dev/"
+  repo = "https://github.com/alex-shpak/hugo-book"
