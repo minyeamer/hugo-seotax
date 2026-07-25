@@ -1,5 +1,6 @@
 {{- $defaultSort := default "newest" .Site.Params.posts.sort -}}
 {{- $sort := cond (eq .Type "post-list") (default $defaultSort .Params.sort) $defaultSort -}}
+{{- if ne (lower $defaultSort) "disabled" -}}
 <div class="sort-control">
   <div class="sort-options"
         role="group"
@@ -24,3 +25,4 @@
     {{- end -}}
   </div>
 </div>
+{{- end -}}

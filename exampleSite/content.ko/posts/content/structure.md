@@ -73,6 +73,7 @@ Hugo에서 이 파일들은 모두 `posts` 섹션에 속합니다. SeoTax의 홈
 ## 정렬된 글 목록 만들기
 
 홈 글 목록의 기본 순서는 `params.posts.sort`로 정합니다. `newest`와 `oldest`를 사용할 수 있습니다.
+`disabled`를 설정하면 정렬 UI를 숨기며, 홈 목록은 최신순으로 표시됩니다.
 
 ```yaml
 params:

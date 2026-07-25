@@ -84,11 +84,11 @@ params:
 
   posts:
     section: "posts"
-    sort: "oldest" # ["newest" | "oldest"]
+    sort: "oldest" # ["newest" | "oldest" | "disabled"]
 
   search:
     enabled: true
-    sort: "relevance" # ["relevance" | "newest" | "oldest"]
+    sort: "relevance" # ["relevance" | "newest" | "oldest" | "disabled"]
 
   assets:
     favicon: "/favicon.svg"

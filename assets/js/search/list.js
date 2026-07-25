@@ -103,6 +103,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const listHeader = document.querySelector('#list-header');
   const sortControl = document.querySelector('#search-sort');
 
+  if (DEFAULT_SORT === 'disabled') {
+    sortControl?.closest('.sort-control')?.style.setProperty('display', 'none');
+  }
+
   if (sortControl) {
     setupSortControl(sortControl, state.sort, function(sort) {
       state.sort = sort;

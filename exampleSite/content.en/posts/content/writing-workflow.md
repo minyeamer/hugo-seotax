@@ -24,4 +24,5 @@ hugo server --buildDrafts --disableFastRender
 
 Check responsive images, the table of contents, code copy controls,
 and category and tag links.
-Test the search page's relevance, newest, and oldest sort modes as well.
+When its sort control is enabled, test the search page's relevance, newest, and oldest sort modes as well.
+Set `params.search.sort` to `disabled` when the control should be hidden.

@@ -35,4 +35,5 @@ languages:
 ## Sorted Post Lists
 
 Set the home page order with `params.posts.sort` using `newest` or `oldest`.
+Set it to `disabled` to hide the sort control; the home page then uses newest-first order.
 A page with `type: "post-list"` can set its own `params.sort`.

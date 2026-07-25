@@ -24,7 +24,7 @@
 
 - **Dynamic Search** — Fuse.js-powered fuzzy search with instant results; no extra static pages generated
 - **Advanced Taxonomy Filters** — Filter by category, tag, or combination without a keyword
-- **Configurable List Sorting** — Choose newest or oldest post lists, plus relevance sorting for search
+- **Configurable List Sorting** — Choose newest or oldest post lists, plus relevance sorting for search and optional sort controls
 - **27-Language i18n** — Client-side translation; no page reload, no per-language page duplication
 - **Dark Mode** — Auto-detects system preference; toggleable with keyboard shortcut (`Cmd/Ctrl + Shift + S`)
 - **Responsive Design** — Collapsible sidebar, overlay ToC on mobile, adaptive thumbnails
@@ -180,12 +180,12 @@ params:
 
   posts:
     section: "posts"             # Content section for blog posts
-    sort: "newest"               # ["newest" | "oldest"]
+    sort: "newest"               # ["newest" | "oldest" | "disabled"]
 
   # Search
   search:
     enabled: true
-    sort: "newest"               # ["relevance" | "newest" | "oldest"]
+    sort: "newest"               # ["relevance" | "newest" | "oldest" | "disabled"]
 
   assets:
     favicon: "/images/favicon.ico"
@@ -274,6 +274,9 @@ The default sort uses `/` and `/page/2/`; the example site also provides
 static archive pages at `/list/newest/` and `/list/oldest/`, with additional
 pages under `/page/2/`.
 
+Set it to `disabled` to hide the sort control; the home page then uses newest-first
+order, while a `post-list` page can still set its own `params.sort`.
+
 Create matching list index files for each content language to enable the
 archive routes in your site:
 
@@ -291,7 +294,9 @@ If `params.sort` is omitted in a `post-list` page, it falls back to `params.post
 ### Search Sort
 
 `params.search.sort` controls the default sort mode of `/search`.
-Supported values are `relevance`, `newest`, and `oldest`.
+Supported values are `relevance`, `newest`, `oldest`, and `disabled`.
+`disabled` hides the sort control only; the search page continues to process
+its default newest-first order and any `sort` query parameter.
 
 - When the current sort matches `params.search.sort`, the search page omits
   the `sort` query parameter.

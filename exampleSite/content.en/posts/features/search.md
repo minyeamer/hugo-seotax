@@ -21,5 +21,7 @@ params:
     sort: "newest"
 ```
 
-Supported values are `relevance`, `newest`, and `oldest`.
-A user-selected alternative is stored in the search URL as `sort`.
+Supported values are `relevance`, `newest`, `oldest`, and `disabled`.
+Set `disabled` to hide the sort control while keeping newest-first search results
+and `sort` URL parameters working. A user-selected alternative is stored in the
+search URL as `sort`.
