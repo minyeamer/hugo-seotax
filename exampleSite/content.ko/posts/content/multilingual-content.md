@@ -25,11 +25,13 @@ content.ko/
 ```yaml
 languages:
   en:
-    languageName: "English"
+    label: "English"
+    locale: "en-US"
     contentDir: "content.en"
     weight: 1
   ko:
-    languageName: "한국어"
+    label: "한국어"
+    locale: "ko-KR"
     contentDir: "content.ko"
     weight: 2
 ```

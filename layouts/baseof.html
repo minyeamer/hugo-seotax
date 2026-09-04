@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ default .Site.Language.Lang .Site.LanguageCode }}" dir="{{ default `ltr` .Site.Language.LanguageDirection }}">
+<html lang="{{ .Site.Language.Locale }}" dir="{{ default `ltr` .Site.Language.Direction }}">
 <head>
   {{ partial "head" . }}
 </head>
 <body class="site-kind-{{ .Kind }} site-type-{{ .Type }} site-layout-{{ .Layout }}"
-      dir="{{ default `ltr` .Site.Language.LanguageDirection }}">
+      dir="{{ default `ltr` .Site.Language.Direction }}">
 
   <div class="scroll-progress">
     <div class="scroll-progress-bar"></div>

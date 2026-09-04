@@ -1,7 +1,7 @@
 {{- $seriesName := . -}}
 {{- $pages := slice -}}
 {{- if $seriesName -}}
-  {{- range partialCached "pages/posts" site "posts" site.Language.Lang -}}
+  {{- range partialCached "pages/posts" site "posts" site.Language.Name -}}
     {{- $postSeries := .Params.series -}}
     {{- if $postSeries -}}
       {{- if not (reflect.IsSlice $postSeries) -}}

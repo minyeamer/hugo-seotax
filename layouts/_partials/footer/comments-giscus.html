@@ -17,7 +17,7 @@
     s.setAttribute('data-emit-metadata', '0');
     s.setAttribute('data-input-position', '{{ .Site.Params.comments.giscus.inputPosition | default "bottom" }}');
     s.setAttribute('data-theme', isDark ? 'dark' : 'light');
-    var storedLang = localStorage.getItem('site-language') || '{{ .Site.Language.Lang }}';
+    var storedLang = localStorage.getItem('site-language') || '{{ .Site.Language.Name }}';
     s.setAttribute('data-lang', storedLang);
     s.setAttribute('data-loading', 'lazy');
     s.setAttribute('crossorigin', 'anonymous');

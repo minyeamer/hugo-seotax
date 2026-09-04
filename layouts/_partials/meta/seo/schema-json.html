@@ -72,7 +72,7 @@
   ],
   "articleBody": {{ .Content | safeJS | htmlUnescape | plainify }},
   "wordCount" : "{{ .WordCount }}",
-  "inLanguage": {{ .Language.Lang | default "en-us" }}
+  "inLanguage": {{ .Language.Locale | default "en-us" }}
   {{- with cond .Params.thumbnail .Params.thumbnail .Params.cover -}}
   , "image": "{{ . | absURL }}"
   {{- end -}},

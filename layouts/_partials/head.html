@@ -57,7 +57,7 @@ https://github.com/minyeamer/hugo-miny
 <link rel="canonical" href="{{ if .Params.canonicalURL -}} {{ trim .Params.canonicalURL ` ` }} {{- else -}} {{ .Permalink }} {{- end }}">
 
 {{- range .Translations }}
-  <link rel="alternate" hreflang="{{ default .Site.LanguageCode .Language.Lang }}" href="{{ .Permalink }}" title="{{ partial `title` . }}">
+  <link rel="alternate" hreflang="{{ .Language.Locale }}" href="{{ .Permalink }}" title="{{ partial `title` . }}">
 {{- end -}}
 
 <!-- Theme stylesheet, you can customize scss by creating `assets/css/custom.scss` in your website -->
@@ -269,41 +269,41 @@ void window.siteI18n.initData().catch(() => {});
   </script>
 
   <!-- Search Data: Content -->
-  {{- $contentDataTarget := printf "data/content.%s.json" .Site.Language.Lang -}}
+  {{- $contentDataTarget := printf "data/content.%s.json" .Site.Language.Name -}}
   {{- $dataContent := resources.Get "data/content.json" | resources.ExecuteAsTemplate $contentDataTarget . | resources.Minify | resources.Fingerprint }}
   <script>
     window.siteSearch.contentUrl = "{{ $dataContent.RelPermalink }}";
   </script>
 
   <!-- Search Data: Categories -->
-  {{- $categoriesDataTarget := printf "data/categories.%s.json" .Site.Language.Lang -}}
+  {{- $categoriesDataTarget := printf "data/categories.%s.json" .Site.Language.Name -}}
   {{- $dataCategories := resources.Get "data/categories.json" | resources.ExecuteAsTemplate $categoriesDataTarget . | resources.Minify | resources.Fingerprint }}
   <script>
     window.siteSearch.categoriesUrl = "{{ $dataCategories.RelPermalink }}";
   </script>
 
   <!-- Search Data: Tags -->
-  {{- $tagsDataTarget := printf "data/tags.%s.json" .Site.Language.Lang -}}
+  {{- $tagsDataTarget := printf "data/tags.%s.json" .Site.Language.Name -}}
   {{- $dataTags := resources.Get "data/tags.json" | resources.ExecuteAsTemplate $tagsDataTarget . | resources.Minify | resources.Fingerprint }}
   <script>
     window.siteSearch.tagsUrl = "{{ $dataTags.RelPermalink }}";
   </script>
 
   <!-- Search Initialization -->
-  {{- $searchInitTarget := printf "js/search/init.%s.js" .Site.Language.Lang -}}
+  {{- $searchInitTarget := printf "js/search/init.%s.js" .Site.Language.Name -}}
   {{- $searchInitJS := resources.Get "js/search/init.js" | resources.ExecuteAsTemplate $searchInitTarget . | resources.Minify | resources.Fingerprint }}
   <!-- https://cdn.jsdelivr.net/npm/fuse.js@7.1.0 -->
   <script defer src="{{ `fuse.min.js` | relURL }}"></script>
   <script defer src="{{ partial `links/resource-precache` $searchInitJS }}" {{ template `integrity` $searchInitJS }}></script>
 
   <!-- Search Input -->
-  {{- $searchInputTarget := printf "js/search/input.%s.js" .Site.Language.Lang -}}
+  {{- $searchInputTarget := printf "js/search/input.%s.js" .Site.Language.Name -}}
   {{- $searchInputJS := resources.Get "js/search/input.js" | resources.ExecuteAsTemplate $searchInputTarget . | resources.Minify | resources.Fingerprint }}
   <script defer src="{{ partial `links/resource-precache` $searchInputJS }}" {{ template `integrity` $searchInputJS }}></script>
 
   {{- if eq .Type "search" -}}
     <!-- Search List -->
-    {{- $searchListTarget := printf "js/search/list.%s.js" .Site.Language.Lang -}}
+    {{- $searchListTarget := printf "js/search/list.%s.js" .Site.Language.Name -}}
     {{- $searchListJS := resources.Get "js/search/list.js" | resources.ExecuteAsTemplate $searchListTarget . | resources.Minify | resources.Fingerprint }}
     <script defer src="{{ partial `links/resource-precache` $searchListJS }}" {{ template `integrity` $searchListJS }}></script>
   {{- end -}}

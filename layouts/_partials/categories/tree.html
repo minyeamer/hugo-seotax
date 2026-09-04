@@ -1,5 +1,5 @@
 {{ $treeL1 := dict }}
-  {{ range partialCached "pages/posts" . "posts" .Site.Language.Lang }}
+  {{ range partialCached "pages/posts" . "posts" .Site.Language.Name }}
     {{ if .Params.categories }}
       {{- $category1 := partial "categories/level1" .Params.categories | string -}}
       {{ if $category1 }}

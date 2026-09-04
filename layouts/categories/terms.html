@@ -1,6 +1,6 @@
 {{ define "content" }}
 <article class="markdown content-wrap">
-{{- $treeL1 := partialCached "categories/tree" . "categories" .Site.Language.Lang -}}
+{{- $treeL1 := partialCached "categories/tree" . "categories" .Site.Language.Name -}}
 {{/* Count leaf categories */}}
 {{ $leafCount := 0 }}
 {{ range $category1, $treeL2 := $treeL1 }}
@@ -20,7 +20,7 @@
 </header>
 {{/* Categories list for parent category */}}
 <div class="categories-tree">
-  {{ $pages := partialCached "pages/posts" . "posts" .Site.Language.Lang }}
+  {{ $pages := partialCached "pages/posts" . "posts" .Site.Language.Name }}
   <ul class="categories-list">
     {{ range $category1 := (partial "keys" $treeL1) }}
     {{/* Count and list pages including parent category */}}

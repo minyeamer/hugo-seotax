@@ -3,7 +3,7 @@
 {{ $currentCategory1 := partial "categories/level1" .Params.categories }}
 
 {{/* Use cached pages list */}}
-{{ $pages := partialCached "pages/posts" . "posts" .Site.Language.Lang }}
+{{ $pages := partialCached "pages/posts" . "posts" .Site.Language.Name }}
 
 {{/* Classify pages into 3 priority groups */}}
 {{ $group1 := slice }}  {{/* Same full category */}}

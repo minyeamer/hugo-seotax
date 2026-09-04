@@ -44,7 +44,7 @@
 {{- $permalink := .Permalink -}}
 {{- if $seriesName -}}
   {{- $seeAlso := slice -}}
-  {{- range partialCached "pages/series" $seriesName $seriesName .Site.Language.Lang | first 6 -}}
+  {{- range partialCached "pages/series" $seriesName $seriesName .Site.Language.Name | first 6 -}}
     {{- if ne .Permalink $permalink -}}
       <meta property="og:see_also" content="{{ .Permalink }}" />
     {{- end -}}

@@ -1,3 +1,3 @@
-{{- $pages := partialCached "pages/posts" . "posts" .Site.Language.Lang -}}
+{{- $pages := partialCached "pages/posts" . "posts" .Site.Language.Name -}}
 {{- $pages = where $pages "Params.searchExclude" "!=" true -}}
 {{- return $pages -}}

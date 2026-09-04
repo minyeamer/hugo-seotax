@@ -9,7 +9,7 @@ copyright: "[© CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode
 
 theme: "seotax"
 defaultContentLanguage: "en"
-languageCode: "en"
+locale: "en"
 
 enableRobotsTXT: true
 buildDrafts: false
@@ -32,7 +32,8 @@ permalinks:
 # See https://gohugo.io/content-management/multilingual/#translation-by-content-directory
 languages:
   en:
-    languageName: "English"
+    label: "English"
+    locale: "en-US"
     contentDir: "content.en"
     weight: 1
     params:
@@ -45,7 +46,8 @@ languages:
           - name: "Setup"
             weight: 30
   ko:
-    languageName: "한국어"
+    label: "한국어"
+    locale: "ko-KR"
     contentDir: "content.ko"
     weight: 2
     params:

@@ -3,7 +3,7 @@
 {{- $removePrefix := .Get 1 | default "" -}}
 {{- /* --- Render --- */ -}}
 {{- if $seriesName -}}
-  {{- $pages := (partialCached "pages/series" $seriesName $seriesName .Site.Language.Lang) -}}
+  {{- $pages := (partialCached "pages/series" $seriesName $seriesName .Site.Language.Name) -}}
   {{- if $pages -}}
     {{- $pages = $pages.ByDate -}}
   {{- end -}}

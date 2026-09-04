@@ -1,11 +1,11 @@
-{{ if gt (len .Site.Languages) 1 }}
-{{- $homeTranslations := dict .Site.Language.Lang .Site.Home -}}
+{{ if gt (len hugo.Sites) 1 }}
+{{- $homeTranslations := dict .Site.Language.Name .Site.Home -}}
 {{- range .Site.Home.Translations -}}
-  {{- $homeTranslations = merge $homeTranslations (dict .Language.Lang .) -}}
+  {{- $homeTranslations = merge $homeTranslations (dict .Language.Name .) -}}
 {{- end -}}
-{{- $pageTranslations := dict .Site.Language.Lang . -}}
+{{- $pageTranslations := dict .Site.Language.Name . -}}
 {{- range .Translations -}}
-  {{- $pageTranslations = merge $pageTranslations (dict .Language.Lang .) -}}
+  {{- $pageTranslations = merge $pageTranslations (dict .Language.Name .) -}}
 {{- end -}}
 {{- $currentPath := strings.TrimPrefix .Site.Home.RelPermalink .RelPermalink -}}
 
@@ -14,15 +14,15 @@
   <label for="languages-control" class="languages-label languages-toggle">
     <a role="button" class="languages-root">
       <i class="icon-globe"></i>
-      <span>{{ .Site.Language.LanguageName }}</span>
+      <span>{{ .Site.Language.Label }}</span>
     </a>
     <i class="icon-chevron-down languages-arrow"></i>
   </label>
   <ul>
-    {{ range .Site.Languages }}{{ with index $homeTranslations .Lang }}
+    {{ range hugo.Sites }}{{ with index $homeTranslations .Language.Name }}
     {{- $destination := .RelPermalink -}}
     {{- $absoluteDestination := .Permalink -}}
-    {{- with index $pageTranslations .Language.Lang -}}
+    {{- with index $pageTranslations .Language.Name -}}
       {{- $destination = .RelPermalink -}}
       {{- $absoluteDestination = .Permalink -}}
     {{- else -}}
@@ -34,7 +34,7 @@
     <li class="languages-label">
       <a href="{{ cond hugo.IsMultihost $absoluteDestination $destination }}"
           onclick="this.href += window.location.search + window.location.hash">
-        {{ .Language.LanguageName }}
+        {{ .Language.Label }}
       </a>
     </li>
     {{ end }}{{ end }}
