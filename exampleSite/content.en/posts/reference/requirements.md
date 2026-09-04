@@ -8,7 +8,7 @@ tags: ["Hugo", "dependencies", "libraries"]
 
 ## Hugo
 
-SeoTax requires Hugo **0.146.0** or later.
+SeoTax requires Hugo **0.158.0** or later.
 The extended edition is recommended for SCSS processing.
 
 ## Browser JavaScript

@@ -8,7 +8,7 @@ tags: ["Hugo", "설치", "Git Submodule", "Hugo Module"]
 
 ## 준비물
 
-SeoTax는 Hugo **0.146.0 이상**을 기준으로 작성되었습니다.
+SeoTax는 Hugo **0.158.0 이상**을 기준으로 작성되었습니다.
 로컬에서 먼저 Hugo가 설치되어 있는지 확인하세요.
 
 ```bash

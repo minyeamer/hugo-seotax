@@ -1,6 +1,6 @@
 # Hugo SeoTax Theme
 
-[![Hugo](https://img.shields.io/badge/hugo-0.146-blue.svg)](https://gohugo.io)
+[![Hugo](https://img.shields.io/badge/hugo-0.158-blue.svg)](https://gohugo.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ### A Hugo blog theme with dynamic taxonomy search and reader-first experience
@@ -79,7 +79,7 @@ with visual feedback, and a language label chip. Light theme uses
 
 ## Requirements
 
-- Hugo **0.146** or higher (extended version)
+- Hugo **0.158** or higher (extended version)
 - [Hugo Installation Guide](https://gohugo.io/installation/)
 
 ## Installation

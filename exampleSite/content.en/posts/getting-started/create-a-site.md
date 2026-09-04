@@ -8,7 +8,7 @@ tags: ["Hugo", "installation", "Git Submodule", "Hugo Module"]
 
 ## Prerequisites
 
-SeoTax requires Hugo **0.146.0 or later**. Check your installed version first.
+SeoTax requires Hugo **0.158.0 or later**. Check your installed version first.
 
 ```bash
 hugo version

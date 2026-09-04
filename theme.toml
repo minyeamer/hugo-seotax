@@ -9,7 +9,7 @@ homepage = "https://github.com/minyeamer/hugo-seotax"
 demosite = "https://minyeamer.github.io/hugo-seotax/"
 tags = ["blog", "light", "dark", "dark mode", "search", "categories", "responsive", "multilingual"]
 features = ["search", "categories", "tags", "dark mode", "i18n"]
-min_version = "0.146.0"
+min_version = "0.158.0"
 
 [author]
   name = "minyeamer"

@@ -8,7 +8,7 @@ tags: ["Hugo", "의존성", "라이브러리"]
 
 ## Hugo
 
-SeoTax의 최소 Hugo 버전은 `theme.toml` 기준 **0.146.0**입니다.
+SeoTax의 최소 Hugo 버전은 `theme.toml` 기준 **0.158.0**입니다.
 SCSS 처리를 위해 extended 버전을 권장합니다.
 
 ```bash
