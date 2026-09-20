@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?jrhayr');
-  src:  url('fonts/icomoon.eot?jrhayr#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?jrhayr') format('truetype'),
-    url('fonts/icomoon.woff?jrhayr') format('woff'),
-    url('fonts/icomoon.svg?jrhayr#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?9miy7i');
+  src:  url('fonts/icomoon.eot?9miy7i#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?9miy7i') format('truetype'),
+    url('fonts/icomoon.woff?9miy7i') format('woff'),
+    url('fonts/icomoon.svg?9miy7i#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -30,41 +30,35 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-xmark:before {
-  content: "\e907";
+.icon-list:before {
+  content: "\e900";
+}
+.icon-file:before {
+  content: "\e901";
 }
 .icon-clock:before {
   content: "\e902";
 }
-.icon-github:before {
-  content: "\e906";
+.icon-chevron-left:before {
+  content: "\e903";
 }
-.icon-moon:before {
-  content: "\e919";
-}
-.icon-file-copy:before {
-  content: "\e908";
-}
-.icon-exclamation-triangle:before {
-  content: "\e91b";
+.icon-chevron-up:before {
+  content: "\e904";
 }
 .icon-magic:before {
   content: "\e905";
 }
-.icon-globe:before {
-  content: "\e91a";
+.icon-github:before {
+  content: "\e906";
 }
-.icon-check:before {
-  content: "\e913";
+.icon-xmark:before {
+  content: "\e907";
 }
-.icon-list:before {
-  content: "\e900";
+.icon-file-copy:before {
+  content: "\e908";
 }
 .icon-folder-open:before {
   content: "\e909";
-}
-.icon-file:before {
-  content: "\e901";
 }
 .icon-arrow-left:before {
   content: "\e90a";
@@ -75,32 +69,26 @@
 .icon-chevron-right:before {
   content: "\e90c";
 }
-.icon-chevron-left:before {
-  content: "\e903";
-}
-.icon-chevron-up:before {
-  content: "\e904";
+.icon-file-text:before {
+  content: "\e90d";
 }
 .icon-backward:before {
   content: "\e90e";
 }
-.icon-file-text:before {
-  content: "\e90d";
+.icon-forward:before {
+  content: "\e90f";
 }
 .icon-folder:before {
   content: "\e910";
-}
-.icon-search:before {
-  content: "\e918";
-}
-.icon-forward:before {
-  content: "\e90f";
 }
 .icon-plus:before {
   content: "\e911";
 }
 .icon-bars:before {
   content: "\e912";
+}
+.icon-check:before {
+  content: "\e913";
 }
 .icon-tag:before {
   content: "\e914";
@@ -113,4 +101,16 @@
 }
 .icon-caret-up:before {
   content: "\e917";
+}
+.icon-search:before {
+  content: "\e918";
+}
+.icon-globe:before {
+  content: "\e91a";
+}
+.icon-exclamation-triangle:before {
+  content: "\e91b";
+}
+.icon-brightness-contrast:before {
+  content: "\e9d6";
 }

@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.siteSearch.initTags()
       ]).then(() => {
         clearHeader();
-        createListHeader({i18nId: 'search.results.title', icon: 'icon-file-lines'}, 0, '');
+        createListHeader({i18nId: 'search.results.title', icon: 'icon-file-text'}, 0, '');
         displayResults(new Set());
       });
       break;
