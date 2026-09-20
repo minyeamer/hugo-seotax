@@ -169,21 +169,30 @@ document.addEventListener('DOMContentLoaded', function() {
       break;
 
     case 'category1':
-      window.siteSearch.initCategories().then(() => {
+      Promise.all([
+        window.siteSearch.initCategories(),
+        window.siteSearch.initTags()
+      ]).then(() => {
         const ids = searchCategory1(state, true);
         displayResults(ids, state);
       });
       break;
 
     case 'category2':
-      window.siteSearch.initCategories().then(() => {
+      Promise.all([
+        window.siteSearch.initCategories(),
+        window.siteSearch.initTags()
+      ]).then(() => {
         const ids = searchCategory2(state, true);
         displayResults(ids, state);
       });
       break;
 
     case 'tags':
-      window.siteSearch.initTags().then(() => {
+      Promise.all([
+        window.siteSearch.initCategories(),
+        window.siteSearch.initTags()
+      ]).then(() => {
         const ids = searchTags(state, true);
         displayResults(ids, state);
       });
@@ -1171,7 +1180,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (appendHeader) {
       clearHeader();
       createListHeader({text: category1Name, icon: 'icon-folder'}, category1Posts.length);
-      createSearchFilter(category1Posts, 'false');
+      createSearchFilter(category1Posts);
 
       const taxonomies = Object.keys(category1).toSorted()
         .filter(key => (key !== 'A') && (category1[key] instanceof Object))
@@ -1209,7 +1218,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (appendHeader) {
       clearHeader();
       createListHeader({text: category2Name, icon: 'icon-file'}, category2Posts.length);
-      createSearchFilter(category2Posts, 'false');
+      createSearchFilter(category2Posts);
 
       if (category1Name) {
         taxonomy = {
@@ -1263,7 +1272,7 @@ document.addEventListener('DOMContentLoaded', function() {
       } else {
         createListHeader({i18nId: 'search.results.title', icon: 'icon-tags'}, tagPosts.size);
       }
-      createSearchFilter(tagPosts, 'false');
+      createSearchFilter(tagPosts);
 
       if (!hasSingleTag) {
         const taxonomies = tagNames.toSorted()
