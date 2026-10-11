@@ -4,7 +4,8 @@
  */
 function copyCode(button) {
   const codeBlock = button.closest('.sc-codeblock');
-  const code = codeBlock?.querySelector('pre code');
+  const code = codeBlock?.querySelector('.lntable td:last-child pre code')
+    || codeBlock?.querySelector('pre code');
 
   if (!code) return;
 
@@ -58,11 +59,17 @@ function copyCode(button) {
   }
 
   const codeLines = code.querySelectorAll('.hljs-ln-code');
-  text = Array.from(codeLines)
-    .map(line => {
-      const content = line.textContent || line.innerText || ''
-      return content.trim() === '' ? '' : content;
-    }).join('\n');
+  let text;
+  if (codeLines.length) {
+    text = Array.from(codeLines)
+      .map(line => line.textContent || '')
+      .join('\n');
+  } else {
+    const content = code.cloneNode(true);
+    content.querySelectorAll('.lnt, .ln, .hljs-ln-numbers')
+      .forEach(lineNumber => lineNumber.remove());
+    text = content.textContent || '';
+  }
 
   if (navigator.clipboard) {
     navigator.clipboard.writeText(text)
