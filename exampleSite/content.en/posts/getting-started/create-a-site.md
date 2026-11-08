@@ -9,9 +9,13 @@ tags: ["Hugo", "installation", "Git Submodule", "Hugo Module"]
 ## Prerequisites
 
 SeoTax requires Hugo **0.159.0 or later**. Check your installed version first.
+SeoTax also requires the Dart Sass CLI on your `PATH`; Hugo does not
+install it automatically. Set it up before starting the server (see the
+[requirements](../reference/requirements/) guide).
 
 ```bash
 hugo version
+sass --version
 ```
 
 ## Install as a Git Submodule

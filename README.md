@@ -79,8 +79,40 @@ with visual feedback, and a language label chip. Light theme uses
 
 ## Requirements
 
-- Hugo **0.158** or higher (extended version)
+- Hugo **0.159.0** or higher (extended version)
+- Dart Sass CLI, with the `sass` executable available in `PATH`
 - [Hugo Installation Guide](https://gohugo.io/installation/)
+
+Hugo does not include Dart Sass in its standard or extended installation. SeoTax
+uses Dart Sass to compile its SCSS, so install it before running `hugo server`
+or building the site. Installing Hugo alone otherwise causes a
+`no Dart Sass binary found in $PATH` error.
+
+On macOS or Linux with Homebrew:
+
+```bash
+brew install sass/sass/sass
+```
+
+On Windows, install it with [Chocolatey](https://chocolatey.org/) or
+[Scoop](https://scoop.sh/):
+
+```powershell
+choco install sass
+```
+
+```powershell
+scoop install sass
+```
+
+Confirm Hugo can find Dart Sass:
+
+```bash
+sass --version
+hugo env
+```
+
+`hugo env` should list the Dart Sass compiler and implementation.
 
 ## Installation
 

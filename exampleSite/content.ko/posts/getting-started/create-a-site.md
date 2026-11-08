@@ -10,9 +10,13 @@ tags: ["Hugo", "설치", "Git Submodule", "Hugo Module"]
 
 SeoTax는 Hugo **0.159.0 이상**을 기준으로 작성되었습니다.
 로컬에서 먼저 Hugo가 설치되어 있는지 확인하세요.
+Hugo가 자동으로 설치해주지 않는 Dart Sass CLI도 PATH에 있어야 합니다.
+서버를 실행하기 전에 설치하세요. (자세한 내용은
+[요구 사항](../reference/requirements/) 문서를 참고하세요.)
 
 ```bash
 hugo version
+sass --version
 ```
 
 Mac에서는 Homebrew로 설치할 수 있습니다.
