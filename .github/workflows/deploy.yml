@@ -61,6 +61,8 @@ jobs:
         run: |
           mkdir -p themes
           ln -sf ../.. themes/seotax
+          mkdir -p i18n
+          cp -R ../i18n/. i18n/
           hugo --minify --baseURL "https://minyeamer.github.io/hugo-seotax/"
 
       - name: Upload artifact

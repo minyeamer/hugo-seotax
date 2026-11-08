@@ -147,9 +147,10 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- highlight.js: End -->
 
 <!-- i18n: Start -->
-<script>
+<script data-prefer-page-language="{{ gt (len hugo.Sites) 1 }}">
   window.siteI18n = window.siteI18n || {};
-  window.siteI18n.defaultLang = '{{ default "en" .Site.Params.defaultContentLanguage }}';
+  window.siteI18n.defaultLang = '{{ .Site.Language.Lang }}';
+  window.siteI18n.preferPageLanguage = document.currentScript.dataset.preferPageLanguage === 'true';
   // Keep the root site's existing preference key, but isolate sites hosted in subdirectories.
   window.siteI18n.storageKey = (() => {
     const siteBasePath = new URL('{{ .Site.BaseURL }}', window.location.href).pathname.replace(/\/+$/, '') || '/';
@@ -191,14 +192,22 @@ window.siteI18n.initData = function() {
  * @param {Object} [translations={}]
  * @returns {string} One of: stored preference, browser language, or Hugo default
  */
-window.siteI18n.getLanguage = function(translations = {}) {
+window.siteI18n.getLanguage = function(translations = window.siteI18n.data || {}) {
   const stored = localStorage.getItem(window.siteI18n.storageKey);
-  if (stored) {
+  if (stored && translations[stored]) {
     return stored;
   }
 
+  if (window.siteI18n.preferPageLanguage && translations[window.siteI18n.defaultLang]) {
+    return window.siteI18n.defaultLang;
+  }
+
   const browserLang = (navigator.language || navigator.userLanguage).split('-')[0];
-  return (!translations || translations[browserLang]) ? browserLang : window.siteI18n.defaultLang;
+  if (translations[browserLang]) {
+    return browserLang;
+  }
+
+  return translations[window.siteI18n.defaultLang] ? window.siteI18n.defaultLang : 'en';
 }
 
 /**

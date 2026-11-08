@@ -6,11 +6,13 @@ A bilingual (English / Korean) demo site for the [Hugo SeoTax theme](https://git
 
 ```bash
 cd exampleSite
-mkdir -p themes && ln -sf ../.. themes/seotax
+mkdir -p themes i18n
+ln -sf ../.. themes/seotax
+cp -R ../i18n/. i18n/
 hugo server --minify
 ```
 
-The symlink makes the theme available at `themes/seotax/` so Hugo resolves all paths correctly.
+The symlink makes the theme available at `themes/seotax/`. The copy places translation files inside the example site's project root so Hugo can include them in the client-side i18n data.
 
 ## Use as Standalone Site
 

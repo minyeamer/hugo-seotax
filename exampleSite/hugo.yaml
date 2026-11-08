@@ -1,5 +1,5 @@
 # SeoTax Example Site
-# Local preview: cd exampleSite && mkdir -p themes && ln -sf ../.. themes/seotax && hugo server --minify
+# Local preview: follow the steps in README.md
 # GitHub Pages: push to main branch — .github/workflows/deploy.yml handles the build
 
 baseURL: "https://minyeamer.github.io/hugo-seotax/"
@@ -122,10 +122,8 @@ params:
   #     mapping: "pathname"
   #     inputPosition: "bottom"
 
-  # i18n: the theme ships its own i18n files under themes/seotax/i18n/
-  # When running standalone, Hugo auto-discovers them from the theme.
-  # Only set i18nDir if you need to override the translations.
-  # i18nDir: "themes/seotax/i18n"
+  # Use project-local copies because Hugo cannot read through the external theme symlink.
+  i18nDir: "i18n"
 
   images:
     rootPath: "_images"
