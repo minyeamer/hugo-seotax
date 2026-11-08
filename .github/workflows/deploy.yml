@@ -30,6 +30,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -37,17 +38,25 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "0.165.0"
+          hugo-version: "0.169.0"
           extended: true
 
       - name: Setup Dart Sass
+        timeout-minutes: 5
+        shell: bash
+        env:
+          DART_SASS_VERSION: "1.108.1"
         run: |
-          npm install --prefix "$RUNNER_TEMP/dart-sass" sass@1.108.1
-          SASS_BIN="$RUNNER_TEMP/dart-sass/node_modules/.bin/sass"
-          echo "$(dirname "$SASS_BIN")" >> "$GITHUB_PATH"
-          "$SASS_BIN" --version
+          # Hugo requires the embedded protocol, which npm's sass package does not support.
+          curl --fail --location --retry 3 --connect-timeout 15 --max-time 120 \
+            "https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz" \
+            --output "$RUNNER_TEMP/dart-sass.tar.gz"
+          tar -xzf "$RUNNER_TEMP/dart-sass.tar.gz" -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/dart-sass" >> "$GITHUB_PATH"
+          "$RUNNER_TEMP/dart-sass/sass" --embedded --version | jq -e 'select(.protocolVersion and .compilerVersion)'
 
       - name: Build with Hugo
+        timeout-minutes: 5
         working-directory: exampleSite
         run: |
           mkdir -p themes

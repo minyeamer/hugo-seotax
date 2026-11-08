@@ -80,7 +80,7 @@ with visual feedback, and a language label chip. Light theme uses
 ## Requirements
 
 - Hugo **0.159.0** or higher (extended version)
-- Dart Sass CLI, with the `sass` executable available in `PATH`
+- Native Dart Sass with embedded protocol support, available as `sass` in `PATH`
 - [Hugo Installation Guide](https://gohugo.io/installation/)
 
 Hugo does not include Dart Sass in its standard or extended installation. SeoTax
@@ -105,14 +105,18 @@ choco install sass
 scoop install sass
 ```
 
-Confirm Hugo can find Dart Sass:
+Use the native Dart Sass distribution. The npm `sass` package does not support
+the [embedded protocol](https://github.com/sass/dart-sass#embedded-dart-sass)
+required by Hugo and can cause builds to hang. Check protocol support before
+running Hugo:
 
 ```bash
-sass --version
-hugo env
+sass --embedded --version
 ```
 
-`hugo env` should list the Dart Sass compiler and implementation.
+The output must be JSON containing `protocolVersion` and `compilerVersion`.
+If it only shows a version compiled with `dart2js`, install native Dart Sass
+and place its directory before the npm executable in `PATH`.
 
 ## Installation
 
