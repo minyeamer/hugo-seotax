@@ -43,8 +43,9 @@ jobs:
       - name: Setup Dart Sass
         run: |
           npm install --prefix "$RUNNER_TEMP/dart-sass" sass@1.108.1
-          echo "$RUNNER_TEMP/dart-sass/node_modules/.bin" >> "$GITHUB_PATH"
-          sass --version
+          SASS_BIN="$RUNNER_TEMP/dart-sass/node_modules/.bin/sass"
+          echo "$(dirname "$SASS_BIN")" >> "$GITHUB_PATH"
+          "$SASS_BIN" --version
 
       - name: Build with Hugo
         working-directory: exampleSite
