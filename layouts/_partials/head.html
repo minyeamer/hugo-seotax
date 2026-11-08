@@ -150,6 +150,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <script>
   window.siteI18n = window.siteI18n || {};
   window.siteI18n.defaultLang = '{{ default "en" .Site.Params.defaultContentLanguage }}';
+  // Keep the root site's existing preference key, but isolate sites hosted in subdirectories.
+  window.siteI18n.storageKey = (() => {
+    const siteBasePath = new URL('{{ .Site.BaseURL }}', window.location.href).pathname.replace(/\/+$/, '') || '/';
+    return siteBasePath === '/' ? 'site-language' : `site-language:${siteBasePath}`;
+  })();
 </script>
 
 <!-- i18n Data -->
@@ -187,8 +192,7 @@ window.siteI18n.initData = function() {
  * @returns {string} One of: stored preference, browser language, or Hugo default
  */
 window.siteI18n.getLanguage = function(translations = {}) {
-  const storageKey = 'site-language';
-  const stored = localStorage.getItem(storageKey);
+  const stored = localStorage.getItem(window.siteI18n.storageKey);
   if (stored) {
     return stored;
   }

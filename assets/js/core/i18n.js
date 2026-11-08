@@ -154,7 +154,7 @@ window.addEventListener('DOMContentLoaded', function() {
   }
 
   const selector = document.getElementById('i18n-selector');
-  const storageKey = 'site-language';
+  const storageKey = window.siteI18n.storageKey;
 
   window.siteI18n.initData()
   .then(() => {
