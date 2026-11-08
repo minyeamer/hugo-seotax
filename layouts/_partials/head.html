@@ -61,7 +61,8 @@ https://github.com/minyeamer/hugo-miny
 {{- end -}}
 
 <!-- Theme stylesheet, you can customize scss by creating `assets/css/custom.scss` in your website -->
-{{- $styles := resources.Get "main.scss" | resources.ExecuteAsTemplate "main.scss" . | css.Sass | resources.Minify | resources.Fingerprint }}
+{{- $sassOptions := dict "transpiler" "dartsass" }}
+{{- $styles := resources.Get "main.scss" | resources.ExecuteAsTemplate "main.scss" . | css.Sass $sassOptions | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ partial `links/resource-precache` $styles }}" {{ template `integrity` $styles }}>
 
 <!-- Google Analytics -->

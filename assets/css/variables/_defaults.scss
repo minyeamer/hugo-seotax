@@ -1,3 +1,4 @@
+@use "sass:map";
 // margin, padding, gap
 
 $space-n: (
@@ -17,8 +18,8 @@ $space-n: (
 ) !default;
 
 @function space($n) {
-  @if map-has-key($space-n, $n) {
-    @return map-get($space-n, $n);
+  @if map.has-key($space-n, $n) {
+    @return map.get($space-n, $n);
   }
   @error "Missing spacing #{$n}";
 }
@@ -41,8 +42,8 @@ $font-size-n: (
 ) !default;
 
 @function font-size($n) {
-  @if map-has-key($font-size-n, $n) {
-    @return map-get($font-size-n, $n);
+  @if map.has-key($font-size-n, $n) {
+    @return map.get($font-size-n, $n);
   }
   @error "Missing font size #{$n}";
 }
@@ -66,8 +67,8 @@ $radius: (
 ) !default;
 
 @function radius($key) {
-  @if map-has-key($radius, $key) {
-    @return map-get($radius, $key);
+  @if map.has-key($radius, $key) {
+    @return map.get($radius, $key);
   }
   @error "Missing border radius #{$key}";
 }
@@ -90,12 +91,12 @@ $breakpoint: (
   toc: $menu-width + $body-max-width * 1.1 + $toc-width, // 1357px
   menu: $menu-width + $body-max-width * 1.3, // 1254px
   body: $body-max-width + 1rem, // 784px
-  narrow: ($body-min-width + $body-max-width) / 2 // 544px
+  narrow: ($body-min-width + $body-max-width) * 0.5 // 544px
 ) !default;
 
 @function breakpoint($key) {
-  @if map-has-key($breakpoint, $key) {
-    @return map-get($breakpoint, $key);
+  @if map.has-key($breakpoint, $key) {
+    @return map.get($breakpoint, $key);
   }
   @error "Missing breakpoint #{$key}";
 }
@@ -133,8 +134,8 @@ $z-index: (
 ) !default;
 
 @function z-index($key) {
-  @if map-has-key($z-index, $key) {
-    @return map-get($z-index, $key);
+  @if map.has-key($z-index, $key) {
+    @return map.get($z-index, $key);
   }
   @error "Missing z-index #{$key}";
 }

@@ -1,5 +1,8 @@
+@use "main/utils";
+@use "variables/defaults";
+
 html {
-  font-size: $font-size-base;
+  font-size: defaults.$font-size-base;
   scroll-behavior: auto;
   touch-action: manipulation;
   scrollbar-gutter: stable;
@@ -9,7 +12,7 @@ body {
   color: var(--body-font-color);
   background: var(--body-background);
 
-  font-weight: $body-font-weight;
+  font-weight: defaults.$body-font-weight;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -21,13 +24,13 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: $body-font-weight;
+  font-weight: defaults.$body-font-weight;
 }
 
 a {
   flex: auto;
   align-items: center;
-  gap: space(8);
+  gap: defaults.space(8);
 
   text-decoration: none;
   cursor: default;
@@ -43,7 +46,7 @@ small {
 }
 
 :focus {
-  @include outline;
+  @include utils.outline;
 }
 
 nav ul {
@@ -76,32 +79,32 @@ nav ul {
   max-width: 100%;
 
   // Descktop: flexible layout
-  @media screen and (min-width: breakpoint(menu)) {
+  @media screen and (min-width: defaults.breakpoint(menu)) {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
   }
 
   // Mobile: fixed layout for overlay
-  @media screen and (max-width: breakpoint(menu)) {
+  @media screen and (max-width: defaults.breakpoint(menu)) {
     display: block;
   }
 }
 
 .main-wrap {
   width: 100%;
-  max-width: $body-wide-width;
+  max-width: defaults.$body-wide-width;
   flex: 1 1 0;
-  margin: space(16) auto;
+  margin: defaults.space(16) auto;
 
   // Mobile: fixed layout for overlay
-  @media screen and (max-width: breakpoint(menu)) {
+  @media screen and (max-width: defaults.breakpoint(menu)) {
     display: block;
-    padding: 0 space(16);
+    padding: 0 defaults.space(16);
   }
 
   i {
-    font-size: $font-size-base;
+    font-size: defaults.$font-size-base;
   }
 }
 
@@ -123,7 +126,7 @@ nav ul {
   left: 0;
   width: 100vw;
   height: 3px;
-  z-index: z-index(scroll-progress);
+  z-index: defaults.z-index(scroll-progress);
   pointer-events: none;
 }
 
@@ -140,7 +143,7 @@ nav ul {
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   text-align: center;
-  z-index: z-index(image-overlay);
+  z-index: defaults.z-index(image-overlay);
   cursor: zoom-out;
   display: none;
 
@@ -171,7 +174,7 @@ nav ul {
   }
 
   img.rounded {
-    border-radius: radius(image);
+    border-radius: defaults.radius(image);
   }
 }
 
@@ -205,9 +208,9 @@ nav ul {
 }
 
 .site-menu {
-  width: $menu-width;
+  width: defaults.$menu-width;
   flex-shrink: 0;
-  font-size: font-size(14);
+  font-size: defaults.font-size(14);
   transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
   -ms-overflow-style: none;  /* IE and Edge */
@@ -217,7 +220,7 @@ nav ul {
   }
 
   // Desktop: sticky positioning
-  @media screen and (min-width: breakpoint(menu)) {
+  @media screen and (min-width: defaults.breakpoint(menu)) {
     position: sticky;
     top: 0;
     height: 100vh;
@@ -226,58 +229,58 @@ nav ul {
   }
 
   // Mobile: fixed positioning
-  @media screen and (max-width: breakpoint(menu)) {
+  @media screen and (max-width: defaults.breakpoint(menu)) {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: z-index(menu);
+    z-index: defaults.z-index(menu);
     visibility: hidden;
-    margin-inline-start: -$menu-width;
+    margin-inline-start: -(defaults.$menu-width);
   }
 
   &.menu-hidden {
-    @media screen and (min-width: breakpoint(menu)) {
+    @media screen and (min-width: defaults.breakpoint(menu)) {
       width: 0;
       opacity: 0;
       overflow: hidden;
     }
 
-    @media screen and (max-width: breakpoint(menu)) {
-      transform: translateX(-$menu-width);
+    @media screen and (max-width: defaults.breakpoint(menu)) {
+      transform: translateX(-(defaults.$menu-width));
     }
   }
 
   .menu-content {
-    width: $menu-width;
-    padding: space(32) space(16);
+    width: defaults.$menu-width;
+    padding: defaults.space(32) defaults.space(16);
     background: var(--gray-200);
     min-height: 100%;
 
     // Desktop: no fixed height needed
-    @media screen and (min-width: breakpoint(menu)) {
+    @media screen and (min-width: defaults.breakpoint(menu)) {
       height: auto;
     }
 
     // Mobile: use fixed mixin
-    @media screen and (max-width: breakpoint(menu)) {
-      @include fixed;
+    @media screen and (max-width: defaults.breakpoint(menu)) {
+      @include utils.fixed;
     }
   }
 
   .menu-toggle-button {
     position: absolute;
-    top: space(16);
-    right: space(16);
+    top: defaults.space(16);
+    right: defaults.space(16);
     background: transparent;
     border: none;
     color: var(--body-font-color);
-    padding: space(8);
+    padding: defaults.space(8);
     cursor: pointer;
-    z-index: z-index(content);
+    z-index: defaults.z-index(content);
     display: block;
 
     i {
-      font-size: font-size(16);
+      font-size: defaults.font-size(16);
     }
   }
 
@@ -313,13 +316,13 @@ nav ul {
 
 .menu-display-button {
   position: fixed;
-  top: space(16);
-  left: space(16);
+  top: defaults.space(16);
+  left: defaults.space(16);
   background: transparent;
   border: none;
-  margin: space(12);
+  margin: defaults.space(12);
   cursor: pointer;
-  z-index: z-index(menu-button);
+  z-index: defaults.z-index(menu-button);
   width: 2.5rem;
   height: 2.5rem;
   display: none;
@@ -331,17 +334,17 @@ nav ul {
   }
 
   i {
-    font-size: font-size(20);
+    font-size: defaults.font-size(20);
   }
 
   // Hide on mobile
-  @media screen and (max-width: breakpoint(menu)) {
+  @media screen and (max-width: defaults.breakpoint(menu)) {
     display: none;
   }
 }
 
 // Show button on desktop when menu is hidden
-@media screen and (min-width: breakpoint(menu)) {
+@media screen and (min-width: defaults.breakpoint(menu)) {
   .site-menu.menu-hidden ~ .menu-display-button {
     display: block;
   }
@@ -354,7 +357,7 @@ nav ul {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: z-index(menu-overlay);
+  z-index: defaults.z-index(menu-overlay);
   display: none;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -372,7 +375,7 @@ body[dir="rtl"] .site-menu {
 }
 
 .profile-image-wrap {
-  border-radius: radius(profile);
+  border-radius: defaults.radius(profile);
   overflow: hidden;
   margin-bottom: 1rem;
 
@@ -380,14 +383,14 @@ body[dir="rtl"] .site-menu {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    border-radius: radius(profile);
+    border-radius: defaults.radius(profile);
     display: block;
   }
 }
 
 .profile-title {
   margin-top: 0;
-  margin-bottom: space(16);
+  margin-bottom: defaults.space(16);
 
   a {
     display: block;
@@ -404,7 +407,7 @@ body[dir="rtl"] .site-menu {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: space(8);
+  gap: defaults.space(8);
   font-size: 1.5rem;
   width: 100%;
   margin-bottom: 1rem;
@@ -447,12 +450,12 @@ body[dir="rtl"] .site-menu {
 }
 
 .menu-languages {
-  margin: space(16) 0;
-  padding-bottom: space(16);
+  margin: defaults.space(16) 0;
+  padding-bottom: defaults.space(16);
   border-bottom: 1px solid var(--gray-500);
 
   i.icon-globe, i.icon-chevron-down {
-    font-size: font-size(16);
+    font-size: defaults.font-size(16);
     transition: transform 0.2s ease;
     flex-shrink: 0;
   }
@@ -466,10 +469,10 @@ body[dir="rtl"] .site-menu {
   .languages-toggle {
     display: flex;
     align-items: center;
-    padding: space(4) space(6);
+    padding: defaults.space(4) defaults.space(6);
     font-weight: 500;
     cursor: pointer;
-    border-radius: radius(block);
+    border-radius: defaults.radius(block);
 
     &:hover {
       color: var(--color-link);
@@ -483,12 +486,12 @@ body[dir="rtl"] .site-menu {
 
   ul {
     list-style: none;
-    padding: space(6) 0 0 0;
+    padding: defaults.space(6) 0 0 0;
     margin: 0;
   }
 
   li {
-    border-radius: radius(block);
+    border-radius: defaults.radius(block);
 
     &:hover {
       color: var(--color-link);
@@ -499,22 +502,22 @@ body[dir="rtl"] .site-menu {
   li a {
     display: flex;
     align-items: center;
-    padding: space(6) space(8) space(6) space(32);
+    padding: defaults.space(6) defaults.space(8) defaults.space(6) defaults.space(32);
     color: var(--body-font-color);
   }
 }
 
 .menu-categories {
-  margin: space(16) 0;
-  padding-bottom: space(16);
+  margin: defaults.space(16) 0;
+  padding-bottom: defaults.space(16);
   border-bottom: 1px solid var(--gray-500);
   position: relative;
-  z-index: z-index(base);
+  z-index: defaults.z-index(base);
 
   i.icon-file, i.icon-folder, i.icon-chevron-down, i.icon-chevron-up {
-    font-size: font-size(16);
+    font-size: defaults.font-size(16);
     transition: transform 0.2s ease;
-    max-width: font-size(18);
+    max-width: defaults.font-size(18);
   }
 
   .categories-root, .categories-leaf {
@@ -526,7 +529,7 @@ body[dir="rtl"] .site-menu {
   .categories-toggle {
     display: flex;
     align-items: center;
-    padding: space(4) space(8);
+    padding: defaults.space(4) defaults.space(8);
     min-height: 2.381rem;
     font-weight: 500;
     cursor: pointer;
@@ -538,7 +541,7 @@ body[dir="rtl"] .site-menu {
   }
 
   .category-count {
-    font-size: font-size(12);
+    font-size: defaults.font-size(12);
     color: var(--gray-500);
     white-space: nowrap;
     text-align: left;
@@ -567,18 +570,18 @@ body[dir="rtl"] .site-menu {
 }
 
 .recent-posts {
-  margin: space(16) 0;
-  padding-bottom: space(16);
+  margin: defaults.space(16) 0;
+  padding-bottom: defaults.space(16);
   border-bottom: 1px solid var(--gray-500);
 
   .recent-post-label {
-    margin-bottom: space(8);
-    padding: space(4) space(8);
+    margin-bottom: defaults.space(8);
+    padding: defaults.space(4) defaults.space(8);
     font-weight: 500;
     color: var(--body-font-color);
 
     .icon-clock {
-      font-size: font-size(14);
+      font-size: defaults.font-size(14);
       color: var(--color-link);
     }
   }
@@ -593,9 +596,9 @@ body[dir="rtl"] .site-menu {
 .recent-post-item {
   a {
     display: block;
-    padding: space(8);
+    padding: defaults.space(8);
     color: var(--body-font-color);
-    border-radius: radius(block);
+    border-radius: defaults.radius(block);
     text-decoration: none;
 
     &:hover {
@@ -605,16 +608,16 @@ body[dir="rtl"] .site-menu {
   }
 
   .recent-post-title {
-    font-size: font-size(14);
+    font-size: defaults.font-size(14);
     font-weight: 400;
-    margin-bottom: space(4);
+    margin-bottom: defaults.space(4);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
 
   .recent-post-date {
-    font-size: font-size(12);
+    font-size: defaults.font-size(12);
     color: var(--gray-500);
 
     time {
@@ -629,10 +632,10 @@ body[dir="rtl"] .site-menu {
   display: none;
 
   // Show on mobile
-  @media screen and (max-width: breakpoint(toc)) {
+  @media screen and (max-width: defaults.breakpoint(toc)) {
     display: block;
     position: sticky;
-    z-index: z-index(header);
+    z-index: defaults.z-index(header);
     opacity: 0.9;
     top: 0;
     background-color: var(--body-background);
@@ -646,7 +649,7 @@ body[dir="rtl"] .site-menu {
   h3 {
     overflow: hidden;
     text-overflow: ellipsis;
-    margin: 0 space(16);
+    margin: 0 defaults.space(16);
   }
 }
 
@@ -668,40 +671,40 @@ body[dir="rtl"] .site-menu {
 /* Content */
 
 .content-wrap {
-  margin-bottom: space(48);
+  margin-bottom: defaults.space(48);
 
-  @media screen and (max-width: breakpoint(toc)) {
-    margin-top: space(16);
+  @media screen and (max-width: defaults.breakpoint(toc)) {
+    margin-top: defaults.space(16);
   }
 }
 
 .content-header {
   text-align: center;
-  padding-bottom: space(24);
+  padding-bottom: defaults.space(24);
   border-bottom: 1px solid var(--gray-200);
 }
 
 .content-category {
-  margin-bottom: space(8);
-  font-size: font-size(16);
+  margin-bottom: defaults.space(8);
+  font-size: defaults.font-size(16);
   font-weight: 400;
 }
 
 .content-title {
-  font-size: font-size(40);
+  font-size: defaults.font-size(40);
   font-weight: 700;
   color: var(--body-font-color);
 
-  @media screen and (max-width: $body-max-width) {
-    font-size: font-size(32);
+  @media screen and (max-width: defaults.$body-max-width) {
+    font-size: defaults.font-size(32);
   }
 }
 
 .content-datetime {
   color: var(--gray-500);
-  font-size: font-size(14);
+  font-size: defaults.font-size(14);
   font-weight: 400;
-  margin-top: space(8);
+  margin-top: defaults.space(8);
 
   #reading-time {
     display: inline-block;
@@ -727,7 +730,7 @@ body[dir="rtl"] .site-menu {
 }
 
 .content-cover-wrap {
-  margin: space(32) 0;
+  margin: defaults.space(32) 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -736,19 +739,19 @@ body[dir="rtl"] .site-menu {
   .content-cover {
     max-width: 100%;
     height: auto;
-    border-radius: radius(cover);
+    border-radius: defaults.radius(cover);
   }
 }
 
 /* Footer */
 
 .site-footer {
-  padding-top: space(16);
-  font-size: font-size(14);
+  padding-top: defaults.space(16);
+  font-size: defaults.font-size(14);
 
   a {
-    margin: space(4) 0;
-    padding: space(4) 0;
+    margin: defaults.space(4) 0;
+    padding: defaults.space(4) 0;
   }
 }
 
@@ -756,19 +759,19 @@ body[dir="rtl"] .site-menu {
   display: flex;
   justify-content: space-between;
   gap: 0;
-  margin-top: space(24);
-  padding-top: space(24);
+  margin-top: defaults.space(24);
+  padding-top: defaults.space(24);
   border-top: 1px solid var(--gray-200);
   overflow: hidden;
 
-  @media screen and (max-width: breakpoint(narrow)) {
+  @media screen and (max-width: defaults.breakpoint(narrow)) {
     flex-direction: column;
   }
 
   .prev-link, .next-link {
     display: block;
     background: var(--gray-100);
-    padding: space(12);
+    padding: defaults.space(12);
     text-decoration: none;
     transition: background-color 0.2s ease;
     flex: 1;
@@ -778,26 +781,26 @@ body[dir="rtl"] .site-menu {
       background: var(--link-background);
     }
 
-    @media screen and (max-width: breakpoint(narrow)) {
+    @media screen and (max-width: defaults.breakpoint(narrow)) {
       max-width: 100%;
     }
   }
 
   .prev-link {
     text-align: left;
-    border-radius: radius(prev-next) 0 0 radius(prev-next);
+    border-radius: defaults.radius(prev-next) 0 0 defaults.radius(prev-next);
 
-    @media screen and (max-width: breakpoint(narrow)) {
-      border-radius: radius(prev-next);
+    @media screen and (max-width: defaults.breakpoint(narrow)) {
+      border-radius: defaults.radius(prev-next);
     }
   }
 
   .next-link {
     text-align: right;
-    border-radius: 0 radius(prev-next) radius(prev-next) 0;
+    border-radius: 0 defaults.radius(prev-next) defaults.radius(prev-next) 0;
 
-    @media screen and (max-width: breakpoint(narrow)) {
-      border-radius: radius(prev-next);
+    @media screen and (max-width: defaults.breakpoint(narrow)) {
+      border-radius: defaults.radius(prev-next);
     }
   }
 
@@ -810,19 +813,19 @@ body[dir="rtl"] .site-menu {
   .prev-next-label {
     display: block;
     color: var(--gray-500);
-    font-size: font-size(14);
+    font-size: defaults.font-size(14);
     font-weight: 600;
-    margin-bottom: space(8);
+    margin-bottom: defaults.space(8);
 
     .icon-backward, .icon-forward {
-      font-size: font-size(14);
+      font-size: defaults.font-size(14);
     }
   }
 
   .prev-next-title {
     display: block;
     color: var(--body-font-color);
-    font-size: font-size(16);
+    font-size: defaults.font-size(16);
     font-weight: 400;
     line-height: 1.5;
 
@@ -833,24 +836,24 @@ body[dir="rtl"] .site-menu {
 }
 
 .comments-wrap {
-  margin-top: space(16);
+  margin-top: defaults.space(16);
 }
 
 #disqus_thread {
   color-scheme: none;
-  margin-top: space(40);
+  margin-top: defaults.space(40);
 }
 
 .copyright-wrap {
-  margin-top: space(16);
+  margin-top: defaults.space(16);
 }
 
 /* ToC */
 
 .site-toc {
-  width: $toc-width;
+  width: defaults.$toc-width;
   flex-shrink: 0;
-  font-size: font-size(14);
+  font-size: defaults.font-size(14);
   transition: opacity 0.3s ease-in-out;
 
   -ms-overflow-style: none;  /* IE and Edge */
@@ -860,7 +863,7 @@ body[dir="rtl"] .site-menu {
   }
 
   // Desktop: sticky positioning
-  @media screen and (min-width: breakpoint(toc)) {
+  @media screen and (min-width: defaults.breakpoint(toc)) {
     position: sticky;
     top: 0;
     height: 100vh;
@@ -869,12 +872,12 @@ body[dir="rtl"] .site-menu {
   }
 
   // Mobile: hidden by default, overlay when active
-  @media screen and (max-width: breakpoint(toc)) {
+  @media screen and (max-width: defaults.breakpoint(toc)) {
     display: none;
     position: fixed;
     top: 0;
     right: 0;
-    z-index: z-index(toc);
+    z-index: defaults.z-index(toc);
     overflow-x: hidden;
 
     // Overlay: show ToC as modal
@@ -886,21 +889,21 @@ body[dir="rtl"] .site-menu {
       left: 50%;
       right: auto;
       width: 40%;
-      min-width: $toc-overlay-width;
+      min-width: defaults.$toc-overlay-width;
       height: auto;
-      max-height: $toc-overlay-height;
+      max-height: defaults.$toc-overlay-height;
       margin: 0;
       transform: translateX(-50%);
       background: var(--body-background);
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-      z-index: z-index(modal);
+      z-index: defaults.z-index(modal);
       overflow-y: auto;
-      border-radius: radius(overlay);
+      border-radius: defaults.radius(overlay);
 
       .toc-content {
         width: 100%;
         height: auto;
-        padding: space(24);
+        padding: defaults.space(24);
       }
 
       .toc-toggle-button {
@@ -908,18 +911,18 @@ body[dir="rtl"] .site-menu {
       }
 
       #TableOfContents > ul {
-        margin-left: space(16);
+        margin-left: defaults.space(16);
       }
     }
   }
 
-  @media screen and (min-width: $container-max-width) {
+  @media screen and (min-width: defaults.$container-max-width) {
     .toc-content {
-      padding: space(32) space(16);
+      padding: defaults.space(32) defaults.space(16);
     }
   }
 
-  @media screen and (max-width: ($toc-overlay-width * 1.1)) {
+  @media screen and (max-width: (defaults.$toc-overlay-width * 1.1)) {
     &.overlay-mode {
       width: 90%;
       min-width: 0;
@@ -929,27 +932,27 @@ body[dir="rtl"] .site-menu {
   .toc-content {
     width: 100%;
     min-height: 100%;
-    padding: space(32) space(16);
+    padding: defaults.space(32) defaults.space(16);
 
     // Desktop: no fixed height needed
-    @media screen and (min-width: breakpoint(toc)) {
+    @media screen and (min-width: defaults.breakpoint(toc)) {
       height: auto;
     }
   }
 
   .toc-toggle-button {
     position: absolute;
-    top: space(16);
-    right: space(16);
+    top: defaults.space(16);
+    right: defaults.space(16);
     background: transparent;
     border: none;
-    padding: space(8);
+    padding: defaults.space(8);
     cursor: pointer;
-    z-index: z-index(content);
+    z-index: defaults.z-index(content);
     display: none;
 
     i {
-      font-size: font-size(16);
+      font-size: defaults.font-size(16);
     }
   }
 
@@ -989,7 +992,7 @@ body[dir="rtl"] .site-menu {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: z-index(modal-overlay);
+  z-index: defaults.z-index(modal-overlay);
   display: none;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -1008,44 +1011,44 @@ body[dir="rtl"] .site-menu {
   position: fixed;
   bottom: 0;
   right: 0;
-  z-index: z-index(toolbar);
-  margin-bottom: space(16);
-  margin-right: space(64);
+  z-index: defaults.z-index(toolbar);
+  margin-bottom: defaults.space(16);
+  margin-right: defaults.space(64);
 
   display: flex;
   align-items: flex-end;
   flex-direction: column;
 
-  @media screen and (max-width: breakpoint(toc)) {
-    margin-right: space(32);
+  @media screen and (max-width: defaults.breakpoint(toc)) {
+    margin-right: defaults.space(32);
   }
 
-  @media screen and (max-width: breakpoint(menu)) {
-    margin-right: space(16);
+  @media screen and (max-width: defaults.breakpoint(menu)) {
+    margin-right: defaults.space(16);
   }
 
   .toolbar-button {
-    margin: space(4);
+    margin: defaults.space(4);
     border: 0px;
-    border-radius: radius(button);
+    border-radius: defaults.radius(button);
     background: var(--gray-200);
     color: var(--body-font-color);
 
-    width: font-size(40);
-    height: font-size(40);
+    width: defaults.font-size(40);
+    height: defaults.font-size(40);
     box-shadow: none;
 
     i {
-      font-size: font-size(20);
+      font-size: defaults.font-size(20);
     }
 
-    @media screen and (max-width: breakpoint(menu)) {
-      width: font-size(32);
-      height: font-size(32);
+    @media screen and (max-width: defaults.breakpoint(menu)) {
+      width: defaults.font-size(32);
+      height: defaults.font-size(32);
       box-shadow: 0 0 4px var(--body-font-color);
 
       i {
-        font-size: font-size(16);
+        font-size: defaults.font-size(16);
       }
     }
 
@@ -1108,7 +1111,7 @@ body[dir="rtl"] .site-menu {
   }
 
   // Desktop: default expanded
-  @media screen and (min-width: breakpoint(menu)) {
+  @media screen and (min-width: defaults.breakpoint(menu)) {
     #toolbar-toggle:checked ~ .toolbar-items {
       display: none;
     }
@@ -1142,7 +1145,7 @@ body[dir="rtl"] .site-menu {
   }
 
   // Mobile: default collapsed
-  @media screen and (max-width: breakpoint(menu)) {
+  @media screen and (max-width: defaults.breakpoint(menu)) {
     #toolbar-toggle:not(:checked) ~ .toolbar-items {
       display: none;
     }
@@ -1187,7 +1190,7 @@ body[dir="rtl"] .site-menu {
 
   .category-count {
     color: var(--gray-500);
-    font-size: font-size(14);
+    font-size: defaults.font-size(14);
     white-space: nowrap;
   }
 }
@@ -1264,36 +1267,36 @@ body[dir="rtl"] .site-menu {
 .container:has(.site-toc) {
 
   // Apply full ToC margin right on screens larger than wide breakpoint
-  @media screen and (min-width: breakpoint(wide)) {
+  @media screen and (min-width: defaults.breakpoint(wide)) {
     .site-menu {
-      margin-right: $toc-margin-right;
+      margin-right: defaults.$toc-margin-right;
     }
 
     .site-toc {
-      margin-right: $toc-margin-right;
+      margin-right: defaults.$toc-margin-right;
     }
   }
 
   // Halve ToC margin right on screens smaller than wide breakpoint
-  @media screen and (max-width: breakpoint(wide)) {
+  @media screen and (max-width: defaults.breakpoint(wide)) {
     .site-menu {
-      margin-right: ($toc-margin-right / 2);
+      margin-right: (defaults.$toc-margin-right * 0.5);
     }
 
     .site-toc {
-      margin-right: ($toc-margin-right / 2);
+      margin-right: (defaults.$toc-margin-right * 0.5);
     }
   }
 
   // Reduce body max-width between ToC breakpoint and wide breakpoint
-  @media (min-width: breakpoint(toc)) and (max-width: breakpoint(wide)) {
+  @media (min-width: defaults.breakpoint(toc)) and (max-width: defaults.breakpoint(wide)) {
     .main-wrap {
-      max-width: $body-max-width;
+      max-width: defaults.$body-max-width;
     }
   }
 
   // Restore content width when side ToC disappears
-  @media screen and (max-width: breakpoint(toc)) {
+  @media screen and (max-width: defaults.breakpoint(toc)) {
     .site-toc {
       margin-right: 0;
     }
@@ -1301,7 +1304,7 @@ body[dir="rtl"] .site-menu {
 }
 
 // Enable ToC control in mobile header when side ToC disappears
-@media screen and (max-width: breakpoint(toc)) {
+@media screen and (max-width: defaults.breakpoint(toc)) {
   #menu-control,
   #toc-control {
     display: inline;
@@ -1317,7 +1320,7 @@ body[dir="rtl"] .site-menu {
 }
 
 // Enable menu control in mobile header when side menu disappears
-@media screen and (max-width: breakpoint(menu)) {
+@media screen and (max-width: defaults.breakpoint(menu)) {
   #menu-control {
     display: inline;
   }
@@ -1339,8 +1342,8 @@ body[dir="rtl"] .site-menu {
     }
 
     .site-menu .menu-content {
-      transform: translateX($menu-width);
-      box-shadow: 0 0 space(8) rgba(0, 0, 0, 0.1);
+      transform: translateX(defaults.$menu-width);
+      box-shadow: 0 0 defaults.space(8) rgba(0, 0, 0, 0.1);
     }
 
     .menu-overlay {
@@ -1362,7 +1365,7 @@ body[dir="rtl"] .site-menu {
   // for RTL support
   body[dir="rtl"] #menu-control:checked ~ main {
     .site-menu .menu-content {
-      transform: translateX(-$menu-width);
+      transform: translateX(-(defaults.$menu-width));
     }
   }
 }

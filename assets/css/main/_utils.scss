@@ -1,8 +1,10 @@
+@use "../variables/defaults";
+
 .flex {
   display: flex;
 
   &.gap {
-    gap: space(16);
+    gap: defaults.space(16);
   }
 }
 

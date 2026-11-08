@@ -1,3 +1,5 @@
+@use "../variables/defaults";
+
 .markdown {
   line-height: 1.6;
 
@@ -12,10 +14,10 @@
   h4,
   h5,
   h6 {
-    font-weight: $body-font-weight;
+    font-weight: defaults.$body-font-weight;
     line-height: 1;
     margin-top: 1.5em;
-    margin-bottom: space(16);
+    margin-bottom: defaults.space(16);
 
     a.anchor {
       opacity: 0;
@@ -30,12 +32,12 @@
     }
   }
 
-  h1 { font-size: font-size(16) * 2; }
-  h2 { font-size: font-size(16) * 1.5; }
-  h3 { font-size: font-size(16) * 1.25; }
-  h4 { font-size: font-size(16) * 1.125; }
-  h5 { font-size: font-size(16) * 1; }
-  h6 { font-size: font-size(16) * 0.875; }
+  h1 { font-size: defaults.font-size(16) * 2; }
+  h2 { font-size: defaults.font-size(16) * 1.5; }
+  h3 { font-size: defaults.font-size(16) * 1.25; }
+  h4 { font-size: defaults.font-size(16) * 1.125; }
+  h5 { font-size: defaults.font-size(16) * 1; }
+  h6 { font-size: defaults.font-size(16) * 0.875; }
 
   b,
   optgroup,
@@ -62,16 +64,16 @@
   code {
     direction: ltr;
     unicode-bidi: embed;
-    padding: 0 space(4);
+    padding: 0 defaults.space(4);
     background: var(--gray-200);
-    border-radius: radius(block);
+    border-radius: defaults.radius(block);
     font-size: 0.875em;
   }
 
   pre {
-    padding: space(16);
+    padding: defaults.space(16);
     background: var(--gray-100);
-    border-radius: radius(block);
+    border-radius: defaults.radius(block);
     overflow-x: auto;
 
     code {
@@ -85,11 +87,11 @@
   }
 
   blockquote {
-    margin: space(16) 0;
-    padding: space(8) space(16) space(8) (space(16) - space(4)); //to keep total left space 16dp
+    margin: defaults.space(16) 0;
+    padding: defaults.space(8) defaults.space(16) defaults.space(8) (defaults.space(16) - defaults.space(4)); //to keep total left space 16dp
 
-    border-inline-start: space(4) solid var(--gray-200);
-    border-radius: radius(block);
+    border-inline-start: defaults.space(4) solid var(--gray-200);
+    border-radius: defaults.radius(block);
 
     :first-child {
       margin-top: 0;
@@ -104,13 +106,13 @@
     display: block;
     border-spacing: 0;
     border-collapse: collapse;
-    margin-top: space(16);
-    margin-bottom: space(16);
+    margin-top: defaults.space(16);
+    margin-bottom: defaults.space(16);
 
     tr th,
     tr td {
-      padding: space(8) space(16);
-      border: space(1) solid var(--gray-200);
+      padding: defaults.space(8) defaults.space(16);
+      border: defaults.space(1) solid var(--gray-200);
       text-align: start;
     }
 
@@ -120,26 +122,26 @@
   }
 
   hr {
-    height: space(1);
+    height: defaults.space(1);
     border: none;
     background: var(--gray-200);
   }
 
   ul,
   ol {
-    padding-inline-start: space(16);
+    padding-inline-start: defaults.space(16);
     word-wrap: break-word;
   }
 
   dl {
     dt {
       font-weight: bolder;
-      margin-top: space(16);
+      margin-top: defaults.space(16);
     }
 
     dd {
       margin-inline-start: 0;
-      margin-bottom: space(16);
+      margin-bottom: defaults.space(16);
     }
   }
 
@@ -147,7 +149,7 @@
   .highlight {
     direction: ltr;
     unicode-bidi: embed;
-    border-radius: radius(block);
+    border-radius: defaults.radius(block);
 
     table tr {
       td pre code > span {
@@ -165,22 +167,22 @@
     }
 
   pre > code:not(:has(table)) {
-    margin: space(16);
+    margin: defaults.space(16);
   }
 
   }
 
   details {
-    border: space(1) solid var(--gray-200);
-    border-radius: radius(block);
+    border: defaults.space(1) solid var(--gray-200);
+    border-radius: defaults.radius(block);
 
     > :not(summary) {
-      margin-inline: space(32);
+      margin-inline: defaults.space(32);
     }
 
     summary {
       line-height: 1;
-      padding: space(16);
+      padding: defaults.space(16);
       margin: -space(16);
       cursor: pointer;
       list-style: none;
@@ -188,7 +190,7 @@
       &::before {
         content: "›";
         display: inline-block;
-        margin-inline-end: space(8);
+        margin-inline-end: defaults.space(8);
         transition: transform 0.1s ease-in-out;
       }
     }
@@ -203,11 +205,11 @@
   }
 
   figure {
-    margin: space(16) 0;
+    margin: defaults.space(16) 0;
 
     figcaption {
       @extend .markdown-inner;
-      margin-top: space(16);
+      margin-top: defaults.space(16);
     }
   }
 

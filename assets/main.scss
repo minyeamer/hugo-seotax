@@ -1,20 +1,20 @@
-@import "css/variables/colors";
-@import "css/variables/defaults";
-@import "css/variables/fonts";
+@use "css/variables/colors";
+@use "css/variables/defaults";
+@use "css/variables/fonts";
 
-@import "css/themes/auto";
-@import "css/variables/highlight";
+@use "css/themes/auto";
+@use "css/variables/highlight";
 
-@import "css/main/normalize";
-@import "css/main/icon";
+@use "css/main/normalize";
+@use "css/main/icon";
 
-@import "css/main/utils";
-@import "css/main/print";
-@import "css/main/markdown";
+@use "css/main/utils";
+@use "css/main/print";
+@use "css/main/markdown";
 
-@import "css/layouts";
-@import "css/search";
-@import "css/shortcodes";
+@use "css/layouts";
+@use "css/search";
+@use "css/shortcodes";
 
 // Custom defined styles
-@import "css/custom";
+@use "css/custom";
