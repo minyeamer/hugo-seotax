@@ -1,3 +1,4 @@
+@use "main/markdown";
 @use "main/utils";
 @use "variables/colors";
 @use "variables/defaults";
@@ -173,9 +174,13 @@
       object-fit: cover;
     }
 
-    .markdown-inner {
-      padding: defaults.space(16);
-    }
+  }
+
+  // Card captions and nested markdown share the same inner spacing.
+  .sc-card .markdown-inner,
+  .sc-card figure figcaption,
+  figure .sc-card figcaption {
+    padding: defaults.space(16);
   }
 
   // {{< codeblock >}}

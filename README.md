@@ -502,6 +502,26 @@ Create `assets/css/_custom.scss` in your site root to add or override styles:
 }
 ```
 
+### Theme Sass Variables and Helpers
+
+Custom styles are now loaded as a Sass module. If an existing
+`assets/css/_custom.scss` uses theme variables, functions, or mixins, explicitly
+load the modules it needs. Place all `@use` statements before any CSS rules:
+
+```scss
+@use "variables/defaults";
+
+.custom-content {
+  padding: defaults.space(16);
+  font-size: defaults.$font-size-base;
+}
+```
+
+For existing code that uses unqualified names such as `space(16)` and
+`$font-size-base`, add `@use "variables/defaults" as *;` at the top of the file.
+Import `main/utils` as well if you use its mixins, such as `outline` or `fixed`.
+Plain CSS overrides do not require module imports.
+
 ### SCSS Variables
 
 Key variables are defined in `assets/css/variables/`:
