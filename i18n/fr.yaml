@@ -7,6 +7,9 @@
 - id: "menu.open.tooltip"
   translation: "Ouvrir le menu"
 
+- id: "menu.theme.tooltip"
+  translation: "Basculer en mode sombre"
+
 - id: "toc.aside.tooltip"
   translation: "Table des matières"
 
@@ -30,6 +33,9 @@
 
 - id: "toolbar.wrap.tooltip"
   translation: "Barre d'outils"
+
+- id: "toolbar.toggle.tooltip"
+  translation: "Afficher ou masquer la barre d’outils"
 
 - id: "toolbar.i18n.tooltip"
   translation: "Sélectionner la langue"

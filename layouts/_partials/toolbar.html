@@ -1,12 +1,17 @@
-<input type="checkbox" id="toolbar-toggle" class="hidden toggle" />
+<input type="checkbox"
+    id="toolbar-toggle"
+    class="hidden toggle"
+    aria-label="{{ i18n `toolbar.toggle.tooltip` | default `Toggle toolbar` }}"
+    data-i18n-id="toolbar.toggle.tooltip"
+    data-i18n-attrs="aria-label" />
 
 <div class="toolbar-items">
   <div class="toolbar-button i18n-button">
     <i class="icon-globe"></i>
     <select class="i18n-selector"
             id="i18n-selector"
-            aria-label="i18n `toolbar.i18n.tooltip` | default `Select language`"
-            title="i18n `toolbar.i18n.tooltip` | default `Select language`"
+            aria-label="{{ i18n `toolbar.i18n.tooltip` | default `Select language` }}"
+            title="{{ i18n `toolbar.i18n.tooltip` | default `Select language` }}"
             data-i18n-id="toolbar.i18n.tooltip"
             data-i18n-attrs="aria-label,title">
       <option value="en">English</option>
@@ -41,8 +46,8 @@
 
   <button class="toolbar-button"
           onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-          aria-label="i18n `toolbar.top.tooltip` | default `Go to top`"
-          title="i18n `toolbar.top.tooltip` | default `Go to top`"
+          aria-label="{{ i18n `toolbar.top.tooltip` | default `Go to top` }}"
+          title="{{ i18n `toolbar.top.tooltip` | default `Go to top` }}"
           data-i18n-id="toolbar.top.tooltip"
           data-i18n-attrs="aria-label,title">
     <i class="icon-chevron-up"></i>
@@ -50,8 +55,8 @@
 
   <button class="toolbar-button"
           onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})"
-          aria-label="i18n `toolbar.bottom.tooltip` | default `Go to bottom`"
-          title="i18n `toolbar.bottom.tooltip` | default `Go to bottom`"
+          aria-label="{{ i18n `toolbar.bottom.tooltip` | default `Go to bottom` }}"
+          title="{{ i18n `toolbar.bottom.tooltip` | default `Go to bottom` }}"
           data-i18n-id="toolbar.bottom.tooltip"
           data-i18n-attrs="aria-label,title">
     <i class="icon-chevron-down"></i>
@@ -59,15 +64,19 @@
 
   <button class="toolbar-button"
           onclick="history.back()"
-          aria-label="i18n `toolbar.back.tooltip` | default `Go back`"
-          title="i18n `toolbar.back.tooltip` | default `Go back`"
+          aria-label="{{ i18n `toolbar.back.tooltip` | default `Go back` }}"
+          title="{{ i18n `toolbar.back.tooltip` | default `Go back` }}"
           data-i18n-id="toolbar.back.tooltip"
           data-i18n-attrs="aria-label,title">
     <i class="icon-arrow-left"></i>
   </button>
 </div>
 
-<label for="toolbar-toggle" class="toolbar-button toolbar-toggle-label">
+<label for="toolbar-toggle"
+    class="toolbar-button toolbar-toggle-label"
+    title="{{ i18n `toolbar.toggle.tooltip` | default `Toggle toolbar` }}"
+    data-i18n-id="toolbar.toggle.tooltip"
+    data-i18n-attrs="title">
   <i class="icon-plus icon-expand"></i>
   <i class="icon-xmark icon-collapse"></i>
 </label>

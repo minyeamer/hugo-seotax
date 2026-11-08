@@ -7,6 +7,9 @@
 - id: "menu.open.tooltip"
   translation: "Menüyü aç"
 
+- id: "menu.theme.tooltip"
+  translation: "Koyu modu değiştir"
+
 - id: "toc.aside.tooltip"
   translation: "İçindekiler"
 
@@ -30,6 +33,10 @@
 
 - id: "toolbar.wrap.tooltip"
   translation: "Araç Çubuğu"
+
+- id: "toolbar.toggle.tooltip"
+  translation: "Araç çubuğunu aç veya kapat"
+
 - id: "toolbar.i18n.tooltip"
   translation: "Dil seçin"
 

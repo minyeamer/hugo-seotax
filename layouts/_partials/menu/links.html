@@ -3,15 +3,30 @@
     <i class="icon-github"></i>
   </a>
 
-  <a href="{{ `categories/` | relLangURL }}" id="categories-link" title="Categories">
+  <a href="{{ `categories/` | relLangURL }}"
+      id="categories-link"
+      title="{{ i18n `categories.terms.title` | default `Categories` }}"
+      aria-label="{{ i18n `categories.terms.title` | default `Categories` }}"
+      data-i18n-id="categories.terms.title"
+      data-i18n-attrs="title,aria-label">
     <i class="icon-folder"></i>
   </a>
 
-  <a href="{{ `tags/` | relLangURL }}" id="tags-link" title="Tags">
+  <a href="{{ `tags/` | relLangURL }}"
+      id="tags-link"
+      title="{{ i18n `tags.terms.title` | default `Tags` }}"
+      aria-label="{{ i18n `tags.terms.title` | default `Tags` }}"
+      data-i18n-id="tags.terms.title"
+      data-i18n-attrs="title,aria-label">
     <i class="icon-tags"></i>
   </a>
 
-  <button class="dark-mode-toggle" id="theme-toggle-button" aria-label="Toggle color scheme">
+  <button class="dark-mode-toggle"
+      id="theme-toggle-button"
+      aria-label="{{ i18n `menu.theme.tooltip` | default `Toggle dark mode` }}"
+      title="{{ i18n `menu.theme.tooltip` | default `Toggle dark mode` }}"
+      data-i18n-id="menu.theme.tooltip"
+      data-i18n-attrs="aria-label,title">
     <i class="icon-brightness-contrast"></i>
   </button>
 </div>

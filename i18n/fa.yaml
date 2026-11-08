@@ -7,6 +7,9 @@
 - id: "menu.open.tooltip"
   translation: "باز کردن منو"
 
+- id: "menu.theme.tooltip"
+  translation: "تغییر حالت تاریک"
+
 - id: "toc.aside.tooltip"
   translation: "فهرست مطالب"
 
@@ -30,6 +33,9 @@
 
 - id: "toolbar.wrap.tooltip"
   translation: "نوار ابزار"
+
+- id: "toolbar.toggle.tooltip"
+  translation: "تغییر نوار ابزار"
 
 - id: "toolbar.i18n.tooltip"
   translation: "انتخاب زبان"

@@ -7,6 +7,9 @@
 - id: "menu.open.tooltip"
   translation: "打开菜单"
 
+- id: "menu.theme.tooltip"
+  translation: "切换深色模式"
+
 - id: "toc.aside.tooltip"
   translation: "目录"
 
@@ -30,6 +33,9 @@
 
 - id: "toolbar.wrap.tooltip"
   translation: "工具栏"
+
+- id: "toolbar.toggle.tooltip"
+  translation: "切换工具栏"
 
 - id: "toolbar.i18n.tooltip"
   translation: "选择语言"

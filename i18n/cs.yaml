@@ -7,6 +7,9 @@
 - id: "menu.open.tooltip"
   translation: "Otevřít nabídku"
 
+- id: "menu.theme.tooltip"
+  translation: "Přepnout tmavý režim"
+
 - id: "toc.aside.tooltip"
   translation: "Obsah"
 
@@ -30,6 +33,9 @@
 
 - id: "toolbar.wrap.tooltip"
   translation: "Panel nástrojů"
+
+- id: "toolbar.toggle.tooltip"
+  translation: "Přepnout panel nástrojů"
 
 - id: "toolbar.i18n.tooltip"
   translation: "Vybrat jazyk"

@@ -7,6 +7,9 @@
 - id: "menu.open.tooltip"
   translation: "Open Menu"
 
+- id: "menu.theme.tooltip"
+  translation: "Toggle dark mode"
+
 - id: "toc.aside.tooltip"
   translation: "Table of Contents"
 
@@ -30,6 +33,9 @@
 
 - id: "toolbar.wrap.tooltip"
   translation: "Toolbar"
+
+- id: "toolbar.toggle.tooltip"
+  translation: "Toggle toolbar"
 
 - id: "toolbar.i18n.tooltip"
   translation: "Select language"

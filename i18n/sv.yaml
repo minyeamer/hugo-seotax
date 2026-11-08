@@ -7,6 +7,9 @@
 - id: "menu.open.tooltip"
   translation: "Öppna meny"
 
+- id: "menu.theme.tooltip"
+  translation: "Växla mörkt läge"
+
 - id: "toc.aside.tooltip"
   translation: "Innehållsförteckning"
 
@@ -30,6 +33,9 @@
 
 - id: "toolbar.wrap.tooltip"
   translation: "Verktygsfält"
+
+- id: "toolbar.toggle.tooltip"
+  translation: "Visa eller dölj verktygsfältet"
 
 - id: "toolbar.i18n.tooltip"
   translation: "Välj språk"

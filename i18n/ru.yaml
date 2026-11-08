@@ -7,6 +7,9 @@
 - id: "menu.open.tooltip"
   translation: "Открыть меню"
 
+- id: "menu.theme.tooltip"
+  translation: "Переключить тёмный режим"
+
 - id: "toc.aside.tooltip"
   translation: "Оглавление"
 
@@ -30,6 +33,9 @@
 
 - id: "toolbar.wrap.tooltip"
   translation: "Панель инструментов"
+
+- id: "toolbar.toggle.tooltip"
+  translation: "Показать или скрыть панель инструментов"
 
 - id: "toolbar.i18n.tooltip"
   translation: "Выбрать язык"

@@ -7,6 +7,9 @@
 - id: "menu.open.tooltip"
   translation: "Menu openen"
 
+- id: "menu.theme.tooltip"
+  translation: "Donkere modus wisselen"
+
 - id: "toc.aside.tooltip"
   translation: "Inhoudsopgave"
 
@@ -30,6 +33,9 @@
 
 - id: "toolbar.wrap.tooltip"
   translation: "Werkbalk"
+
+- id: "toolbar.toggle.tooltip"
+  translation: "Werkbalk in- of uitschakelen"
 
 - id: "toolbar.i18n.tooltip"
   translation: "Selecteer taal"

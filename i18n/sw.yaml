@@ -7,6 +7,9 @@
 - id: "menu.open.tooltip"
   translation: "Fungua menyu"
 
+- id: "menu.theme.tooltip"
+  translation: "Badilisha hali ya giza"
+
 - id: "toc.aside.tooltip"
   translation: "Yaliyomo"
 
@@ -30,6 +33,9 @@
 
 - id: "toolbar.wrap.tooltip"
   translation: "Upau wa Zana"
+
+- id: "toolbar.toggle.tooltip"
+  translation: "Onyesha au ficha upau wa zana"
 
 - id: "toolbar.i18n.tooltip"
   translation: "Chagua lugha"

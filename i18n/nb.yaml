@@ -7,6 +7,9 @@
 - id: "menu.open.tooltip"
   translation: "Åpne meny"
 
+- id: "menu.theme.tooltip"
+  translation: "Bytt mørk modus"
+
 - id: "toc.aside.tooltip"
   translation: "Innholdsfortegnelse"
 
@@ -30,6 +33,9 @@
 
 - id: "toolbar.wrap.tooltip"
   translation: "Verktøylinje"
+
+- id: "toolbar.toggle.tooltip"
+  translation: "Vis eller skjul verktøylinjen"
 
 - id: "toolbar.i18n.tooltip"
   translation: "Velg språk"

@@ -7,6 +7,9 @@
 - id: "menu.open.tooltip"
   translation: "פתח תפריט"
 
+- id: "menu.theme.tooltip"
+  translation: "החלפת מצב כהה"
+
 - id: "toc.aside.tooltip"
   translation: "תוכן העניינים"
 
@@ -30,6 +33,9 @@
 
 - id: "toolbar.wrap.tooltip"
   translation: "סרגל כלים"
+
+- id: "toolbar.toggle.tooltip"
+  translation: "הצגת סרגל הכלים או הסתרתו"
 
 - id: "toolbar.i18n.tooltip"
   translation: "בחר שפה"

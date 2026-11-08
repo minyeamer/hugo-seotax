@@ -7,6 +7,9 @@
 - id: "menu.open.tooltip"
   translation: "ምናሌ ክፈት"
 
+- id: "menu.theme.tooltip"
+  translation: "የጨለማ ሁነታን ቀይር"
+
 - id: "toc.aside.tooltip"
   translation: "የዝርዝራዎች ሰንጠሬዥ"
 
@@ -30,6 +33,9 @@
 
 - id: "toolbar.wrap.tooltip"
   translation: "የመሳሪያ መጣጠን"
+
+- id: "toolbar.toggle.tooltip"
+  translation: "የመሣሪያ አሞሌውን ቀይር"
 
 - id: "toolbar.i18n.tooltip"
   translation: "ቋንቋ ይምረጡ"

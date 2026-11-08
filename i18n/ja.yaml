@@ -7,6 +7,9 @@
 - id: "menu.open.tooltip"
   translation: "メニューを開く"
 
+- id: "menu.theme.tooltip"
+  translation: "ダークモードを切り替え"
+
 - id: "toc.aside.tooltip"
   translation: "目次"
 
@@ -30,6 +33,9 @@
 
 - id: "toolbar.wrap.tooltip"
   translation: "ツールバー"
+
+- id: "toolbar.toggle.tooltip"
+  translation: "ツールバーの表示を切り替え"
 
 - id: "toolbar.i18n.tooltip"
   translation: "言語を選択"

@@ -7,6 +7,9 @@
 - id: "menu.open.tooltip"
   translation: "메뉴 펼치기"
 
+- id: "menu.theme.tooltip"
+  translation: "다크 모드 전환"
+
 - id: "toc.aside.tooltip"
   translation: "목차"
 
@@ -30,6 +33,9 @@
 
 - id: "toolbar.wrap.tooltip"
   translation: "툴바"
+
+- id: "toolbar.toggle.tooltip"
+  translation: "툴바 표시 전환"
 
 - id: "toolbar.i18n.tooltip"
   translation: "언어 선택"

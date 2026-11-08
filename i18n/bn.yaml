@@ -7,6 +7,9 @@
 - id: "menu.open.tooltip"
   translation: "মেনু খুলুন"
 
+- id: "menu.theme.tooltip"
+  translation: "ডার্ক মোড চালু বা বন্ধ করুন"
+
 - id: "toc.aside.tooltip"
   translation: "সূচীপত্র"
 
@@ -30,6 +33,9 @@
 
 - id: "toolbar.wrap.tooltip"
   translation: "টুলবার"
+
+- id: "toolbar.toggle.tooltip"
+  translation: "টুলবার চালু বা বন্ধ করুন"
 
 - id: "toolbar.i18n.tooltip"
   translation: "ভাষা নির্বাচন করুন"

@@ -40,7 +40,7 @@
 <aside class="site-menu"
       aria-label="{{ i18n `menu.aside.tooltip` | default `Menu` }}"
       data-i18n-id="menu.aside.tooltip"
-      data-i18n-attrs="aira-label">
+      data-i18n-attrs="aria-label">
   <div class="menu-content">
     {{ template "menu" . }}
   </div>
@@ -116,7 +116,7 @@
 {{ if partial "toc-show" . }}
 <aside class="site-toc"
       aria-label="{{ i18n `toc.aside.tooltip` | default `Table of Contents` }}"
-      data-i18n-id="toc.aside.tooltip" data-i18n-attrs="aira-label">
+      data-i18n-id="toc.aside.tooltip" data-i18n-attrs="aria-label">
   <div class="toc-content">
     {{ template "toc" . }}
   </div>
@@ -133,8 +133,8 @@
 {{ end }}
 
 {{ define "toolbar" }}
-<div class="site-toolbar" role="toolbar" aria-label="{{ i18n `toolbar.wrap.tooltip` | default `Toolbar` }}'"
-    data-i18n-id="toolbar.wrap.tooltip" data-i18n-attrs="aira-label">
+<div class="site-toolbar" role="toolbar" aria-label="{{ i18n `toolbar.wrap.tooltip` | default `Toolbar` }}"
+    data-i18n-id="toolbar.wrap.tooltip" data-i18n-attrs="aria-label">
   {{ partial "toolbar" . }}
 </div>
 {{ end }}

@@ -7,6 +7,9 @@
 - id: "menu.open.tooltip"
   translation: "Abrir menu"
 
+- id: "menu.theme.tooltip"
+  translation: "Alternar modo escuro"
+
 - id: "toc.aside.tooltip"
   translation: "Índice"
 
@@ -30,6 +33,9 @@
 
 - id: "toolbar.wrap.tooltip"
   translation: "Barra de ferramentas"
+
+- id: "toolbar.toggle.tooltip"
+  translation: "Mostrar ou ocultar a barra de ferramentas"
 
 - id: "toolbar.i18n.tooltip"
   translation: "Selecionar idioma"
